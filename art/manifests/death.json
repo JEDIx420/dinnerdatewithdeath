@@ -1,0 +1,42 @@
+{
+  "id": "death",
+  "displayName": "Death",
+  "sourceFile": "art/source/characters/death/walk-source.png",
+  "targetSheet": {
+    "width": 256,
+    "height": 256,
+    "cellWidth": 64,
+    "cellHeight": 64,
+    "cols": 4,
+    "rows": 4
+  },
+  "characterScaleHeight": 46,
+  "footBaseline": 56,
+  "backgroundRemoval": {
+    "method": "flood_fill_exterior",
+    "threshold": 185,
+    "cleanStrayArtifacts": true
+  },
+  "directions": {
+    "down": {
+      "row": 0,
+      "frames": [0, 1, 2, 3],
+      "idleFrame": 3
+    },
+    "left": {
+      "row": 1,
+      "frames": [0, 1, 2, 3],
+      "idleFrame": 3
+    },
+    "right": {
+      "row": 2,
+      "frames": [0, 1, 2, 3],
+      "idleFrame": 3
+    },
+    "up": {
+      "row": 3,
+      "frames": [0, 1, 2, 3],
+      "idleFrame": 3
+    }
+  }
+}

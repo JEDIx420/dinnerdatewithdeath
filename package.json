@@ -1,6 +1,6 @@
 {
   "name": "dinnerdatewithdeath",
-  "version": "0.0.1",
+  "version": "0.0.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -12,6 +12,8 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "test": "vitest run",
+    "assets:death": "tsx tools/assets/process-death.ts",
+    "assets": "npm run assets:death",
     "verify": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "dependencies": {
@@ -19,8 +21,11 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
+    "@types/sharp": "^0.31.1",
     "eslint": "^9.21.0",
     "prettier": "^3.5.2",
+    "sharp": "^0.35.4",
+    "tsx": "^4.23.13",
     "typescript": "^5.8.2",
     "typescript-eslint": "^8.26.0",
     "vite": "^6.2.0",

@@ -1,4 +1,5 @@
 import Phaser from 'phaser';
+import { DEATH_MANIFEST } from '../entities/deathManifest';
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -6,11 +7,39 @@ export class BootScene extends Phaser.Scene {
   }
 
   public preload(): void {
-    // Generate crisp temporary procedural textures for engine validation
+    // Generate crisp procedural environment textures
     this.createPlaceholderTextures();
+
+    // Load Death runtime sprite sheet
+    this.load.spritesheet(DEATH_MANIFEST.textureKey, DEATH_MANIFEST.texturePath, {
+      frameWidth: DEATH_MANIFEST.frameWidth,
+      frameHeight: DEATH_MANIFEST.frameHeight,
+    });
   }
 
   public create(): void {
+    // Register Death walk animations dynamically from manifest
+    for (const [animName, animDef] of Object.entries(DEATH_MANIFEST.animations)) {
+      const animKey = `${DEATH_MANIFEST.id}_${animName}`;
+      if (!this.anims.exists(animKey)) {
+        this.anims.create({
+          key: animKey,
+          frames: this.anims.generateFrameNumbers(DEATH_MANIFEST.textureKey, {
+            frames: animDef.frames,
+          }),
+          frameRate: DEATH_MANIFEST.frameRate,
+          repeat: -1,
+        });
+      }
+    }
+
+    // Check if directly launched into dev Asset Lab via query parameter
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('scene') === 'asset-lab') {
+      this.scene.start('AssetLabScene');
+      return;
+    }
+
     this.scene.start('TitleScene');
   }
 
@@ -44,13 +73,10 @@ export class BootScene extends Phaser.Scene {
     const tableGfx = this.make.graphics({ x: 0, y: 0 });
     tableGfx.fillStyle(0x2e1a1c, 1);
     tableGfx.fillRect(0, 0, 48, 24);
-    // Table legs / border shadow
     tableGfx.fillStyle(0x150b0c, 1);
     tableGfx.strokeRect(0, 0, 48, 24);
-    // Crimson table runner
     tableGfx.fillStyle(0x6b1420, 1);
     tableGfx.fillRect(8, 2, 32, 20);
-    // Placeholders for wine goblets
     tableGfx.fillStyle(0xdedede, 1);
     tableGfx.fillRect(16, 8, 3, 3);
     tableGfx.fillRect(29, 8, 3, 3);
@@ -64,7 +90,7 @@ export class BootScene extends Phaser.Scene {
     mirrorGfx.fillStyle(0x6f7d8c, 1);
     mirrorGfx.fillRect(2, 4, 12, 24);
     mirrorGfx.fillStyle(0xa9b7c6, 1);
-    mirrorGfx.fillRect(3, 6, 3, 10); // reflection streak
+    mirrorGfx.fillRect(3, 6, 3, 10);
     mirrorGfx.generateTexture('obstacle_mirror', 16, 32);
     mirrorGfx.destroy();
 
@@ -74,36 +100,9 @@ export class BootScene extends Phaser.Scene {
     pillarGfx.fillRect(2, 8, 12, 24);
     pillarGfx.fillStyle(0x916d2b, 1);
     pillarGfx.fillRect(4, 2, 8, 6);
-    // Candle flame (amber pixel)
     pillarGfx.fillStyle(0xe5a337, 1);
     pillarGfx.fillRect(7, 0, 2, 2);
     pillarGfx.generateTexture('obstacle_pillar', 16, 32);
     pillarGfx.destroy();
-
-    // 6. Temporary Player Placeholder (16x22 pale face, black formal coat, red tie)
-    // Clearly identifiable and temporary until asset extraction milestone.
-    const playerGfx = this.make.graphics({ x: 0, y: 0 });
-    // Hair (black)
-    playerGfx.fillStyle(0x111115, 1);
-    playerGfx.fillRect(4, 1, 8, 5);
-    // Pale face
-    playerGfx.fillStyle(0xe2d7d5, 1);
-    playerGfx.fillRect(5, 4, 6, 5);
-    // Eyes
-    playerGfx.fillStyle(0x111115, 1);
-    playerGfx.fillRect(6, 6, 1, 1);
-    playerGfx.fillRect(9, 6, 1, 1);
-    // Red tie / cravat
-    playerGfx.fillStyle(0x8f1922, 1);
-    playerGfx.fillRect(7, 9, 2, 3);
-    // Black coat & body
-    playerGfx.fillStyle(0x18181f, 1);
-    playerGfx.fillRect(3, 9, 10, 8);
-    // Trousers / shoes
-    playerGfx.fillStyle(0x0c0c10, 1);
-    playerGfx.fillRect(4, 17, 3, 5);
-    playerGfx.fillRect(9, 17, 3, 5);
-    playerGfx.generateTexture('player_placeholder', 16, 22);
-    playerGfx.destroy();
   }
 }

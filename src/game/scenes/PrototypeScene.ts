@@ -1,14 +1,14 @@
 import Phaser from 'phaser';
 import { GAME_CONFIG } from '../config';
 import { InputManager } from '../systems/InputManager';
+import { Player } from '../entities/Player';
+import { DEATH_MANIFEST } from '../entities/deathManifest';
 
 export class PrototypeScene extends Phaser.Scene {
   private inputManager!: InputManager;
-  private player!: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
+  private player!: Player;
   private wallsGroup!: Phaser.Physics.Arcade.StaticGroup;
   private obstaclesGroup!: Phaser.Physics.Arcade.StaticGroup;
-
-  private readonly MOVE_SPEED = 75;
 
   constructor() {
     super({ key: 'PrototypeScene' });
@@ -24,7 +24,6 @@ export class PrototypeScene extends Phaser.Scene {
   }
 
   public create(): void {
-    // Room dimensions (24 tiles wide x 13 tiles high = 384 x 208 px)
     const cols = 24;
     const rows = 13;
     const tileSize = GAME_CONFIG.TILE_SIZE;
@@ -32,7 +31,7 @@ export class PrototypeScene extends Phaser.Scene {
     this.wallsGroup = this.physics.add.staticGroup();
     this.obstaclesGroup = this.physics.add.staticGroup();
 
-    // 1. Draw floor and border walls
+    // 1. Draw floor and perimeter walls
     for (let r = 0; r < rows; r++) {
       for (let c = 0; c < cols; c++) {
         const x = c * tileSize + tileSize / 2;
@@ -49,78 +48,62 @@ export class PrototypeScene extends Phaser.Scene {
       }
     }
 
-    // 2. Add obstacles to test collisions
-    // Obstacle A: Dining table in center
+    // 2. Add test obstacles
+    // Obstacle A: Dining banquet table in center
     const tableX = GAME_CONFIG.WIDTH / 2;
     const tableY = GAME_CONFIG.HEIGHT / 2 + 10;
     const table = this.obstaclesGroup.create(tableX, tableY, 'obstacle_table');
     table.refreshBody();
 
-    // Obstacle B: Gothic mirror on north wall
+    // Obstacle B: Mirror on north wall
     const mirrorX = 80;
     const mirrorY = 24;
     const mirror = this.obstaclesGroup.create(mirrorX, mirrorY, 'obstacle_mirror');
     mirror.refreshBody();
 
-    // Obstacle C: Candelabra / pillar divider
+    // Obstacle C: Candelabra divider pillar
     const pillarX = GAME_CONFIG.WIDTH - 80;
     const pillarY = 60;
     const pillar = this.obstaclesGroup.create(pillarX, pillarY, 'obstacle_pillar');
     pillar.refreshBody();
 
-    // 3. Spawn temporary player
+    // 3. Spawn Death using Player entity abstraction
     const spawnX = GAME_CONFIG.WIDTH / 2;
     const spawnY = tableY + 50;
 
-    this.player = this.physics.add.sprite(spawnX, spawnY, 'player_placeholder');
-    this.player.setCollideWorldBounds(true);
-    // Custom body size for classic RPG foot-level collision
-    this.player.body.setSize(12, 10);
-    this.player.body.setOffset(2, 12);
+    this.player = new Player({
+      scene: this,
+      x: spawnX,
+      y: spawnY,
+      manifest: DEATH_MANIFEST,
+      inputManager: this.inputManager,
+      moveSpeed: 75,
+      initialDirection: 'down',
+    });
 
-    // 4. Register collisions
-    this.physics.add.collider(this.player, this.wallsGroup);
-    this.physics.add.collider(this.player, this.obstaclesGroup);
+    // 4. Register obstacle collisions
+    this.physics.add.collider(this.player.sprite, this.wallsGroup);
+    this.physics.add.collider(this.player.sprite, this.obstaclesGroup);
 
-    // 5. Camera setup
+    // 5. Camera follow
     this.cameras.main.setBounds(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
-    this.cameras.main.startFollow(this.player, true, 0.1, 0.1);
+    this.cameras.main.startFollow(this.player.sprite, true, 0.1, 0.1);
 
-    // 6. Minimal HUD / validation text
-    this.add.text(6, GAME_CONFIG.HEIGHT - 12, 'WASD/Arrows: Move | Engine Prototype v0.0.3', {
+    // 6. HUD info text
+    this.add.text(6, GAME_CONFIG.HEIGHT - 12, 'WASD/Arrows: Move | [L] Asset Lab | v0.0.4', {
       fontFamily: 'monospace',
       fontSize: '7px',
       color: '#6e6578',
     });
+
+    // Dev shortcut to Asset Lab
+    this.input.keyboard?.on('keydown-L', () => {
+      this.scene.start('AssetLabScene');
+    });
   }
 
   public update(): void {
-    let vx = 0;
-    let vy = 0;
-
-    // Continuous 4-direction movement via abstract InputManager
-    if (this.inputManager.isDown('LEFT')) {
-      vx -= 1;
-    }
-    if (this.inputManager.isDown('RIGHT')) {
-      vx += 1;
-    }
-    if (this.inputManager.isDown('UP')) {
-      vy -= 1;
-    }
-    if (this.inputManager.isDown('DOWN')) {
-      vy += 1;
-    }
-
-    // Normalize diagonal movement to maintain consistent RPG walking speed
-    if (vx !== 0 && vy !== 0) {
-      const invSqrt2 = 0.70710678;
-      vx *= invSqrt2;
-      vy *= invSqrt2;
-    }
-
-    this.player.setVelocity(vx * this.MOVE_SPEED, vy * this.MOVE_SPEED);
-
+    this.player.update();
     this.inputManager.update();
   }
 }

@@ -12,22 +12,26 @@ This document tracks engineering and narrative production milestones for **A Din
 - Strict TypeScript compilation and verification command (`npm run verify`).
 
 ### `v0.0.2` — GitHub Pages CI & Deployment ✅
-- GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) configured for automated Pages deployment on push to `main`.
-- Portable Vite relative base (`./`) ensuring correct asset resolution at `https://JEDIx420.github.io/dinnerdatewithdeath/`.
+- GitHub Pages enabled via workflow build type.
+- GitHub Actions workflow (`.github/workflows/deploy-pages.yml`) deploying `dist/` on push to `main`.
+- Live and verified at [https://jedix420.github.io/dinnerdatewithdeath/](https://jedix420.github.io/dinnerdatewithdeath/).
 
 ### `v0.0.3` — Prototype Room & Input Abstraction ✅
 - Centralized logical resolution (384 × 216) with pixel-art integer scaling and letterboxing.
 - `InputManager` abstracting directional and action inputs.
-- Prototype room with perimeter wall boundaries, multiple test obstacles (dining table, mirror, candelabra pillar), and continuous 4-direction player movement with foot-level collision bounds.
+- Prototype room with perimeter wall boundaries, multiple test obstacles (dining table, mirror, candelabra pillar).
+
+### `v0.0.4` — Character Asset Pipeline & Death Overworld Sprite ✅
+- Deterministic extraction tool in `tools/assets/process-death.ts` driven by `art/manifests/death.json`.
+- Halo-free background removal and uniform foot baseline alignment (`Y=56`) in 64×64 cells.
+- Generated production sprite sheet (`public/game-assets/characters/death/overworld/walk.png`) and runtime manifest.
+- Reusable `Actor` and `Player` entities replacing the temporary prototype marker with Death's animated sprite.
+- Visual QA preview sheets and animated GIFs in `art/previews/death/`.
+- Developer Asset Lab scene (`AssetLabScene.ts`) for interactive visual inspection (`[L]` key or `?scene=asset-lab`).
 
 ---
 
 ## Upcoming Milestones
-
-### `v0.0.4` — Character Asset Pipeline & Death Overworld Sprite
-- Non-destructive sprite extraction pipeline using `tools/assets/`.
-- Crop and process canonical `walk-source.png` for Death into a normalized 64×64 cell runtime sheet (256×256 4-direction walk).
-- Integrate walking animations (`down`, `left`, `right`, `up`) replacing temporary placeholder.
 
 ### `v0.0.5` — Object Interaction & Basic Dialogue
 - Interaction raycasting: inspect mirror, inspect dining table, inspect phone.

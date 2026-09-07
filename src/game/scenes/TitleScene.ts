@@ -74,9 +74,24 @@ export class TitleScene extends Phaser.Scene {
       })
       .setOrigin(0.5);
 
+    // Developer Asset Lab shortcut
+    this.add
+      .text(centerX, 198, '[L] Asset Lab (Dev QA)', {
+        fontFamily: 'monospace',
+        fontSize: '6px',
+        color: '#433c4f',
+        align: 'center',
+      })
+      .setOrigin(0.5);
+
     // Mouse / touch click to start
     this.input.on('pointerdown', () => {
       this.startGame();
+    });
+
+    // Press 'L' to launch Asset Lab
+    this.input.keyboard?.on('keydown-L', () => {
+      this.scene.start('AssetLabScene');
     });
   }
 
