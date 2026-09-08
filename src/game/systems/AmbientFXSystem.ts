@@ -37,18 +37,23 @@ interface Spark {
   size: number;
 }
 
+import { LightingSystem } from './LightingSystem';
+
 export class AmbientFXSystem {
   private scene: Phaser.Scene;
   private isPaused: boolean = false;
   private timeAccumulator: number = 0;
+  private lightingSystem?: LightingSystem;
 
   // Graphics layers
   private fxGfx: Phaser.GameObjects.Graphics;
   private rainGfx: Phaser.GameObjects.Graphics;
+  private maskGfx: Phaser.GameObjects.Graphics;
+  private windowMask: Phaser.Display.Masks.GeometryMask;
 
   // Dust motes
   private dustMotes: DustMote[] = [];
-  private readonly maxDustCount: number = 24;
+  private readonly maxDustCount: number = 28;
 
   // Rain streaks
   private rainStreaks: RainStreak[] = [];
@@ -59,12 +64,16 @@ export class AmbientFXSystem {
   private fireplaceY: number = 0;
   private fireplaceState: 'idle' | 'surge' | 'portal' = 'idle';
 
+  // Periodic distant lightning (14 - 28 second interval)
+  private lightningTimer: number = 14000 + Math.random() * 8000;
+
   // Exterior silhouette timer (bat crossing window)
-  private silhouetteTimer: number = 15000;
+  private silhouetteTimer: number = 20000;
   private batSprite: Phaser.GameObjects.Sprite | null = null;
 
-  constructor(scene: Phaser.Scene) {
+  constructor(scene: Phaser.Scene, lightingSystem?: LightingSystem) {
     this.scene = scene;
+    this.lightingSystem = lightingSystem;
 
     // Graphics for dust, sparks, and flame micro-elements
     this.fxGfx = scene.add.graphics();
@@ -73,6 +82,15 @@ export class AmbientFXSystem {
     // Graphics for window rain (rendered just above windows, below foreground trim)
     this.rainGfx = scene.add.graphics();
     this.rainGfx.setDepth(DEPTH_LAYERS.FOREGROUND_AMBIENT - 100);
+
+    // Geometry mask graphics strictly containing rain within window panes
+    this.maskGfx = scene.make.graphics({ x: 0, y: 0 });
+    this.windowMask = this.maskGfx.createGeometryMask();
+    this.rainGfx.setMask(this.windowMask);
+  }
+
+  public setLightingSystem(lighting: LightingSystem): void {
+    this.lightingSystem = lighting;
   }
 
   /**
@@ -101,20 +119,30 @@ export class AmbientFXSystem {
   }
 
   /**
-   * Registers a gothic window area to receive exterior rain streaks.
+   * Registers a gothic window area to receive exterior rain streaks,
+   * strictly clipped to the interior glass bounds.
    */
   public registerWindowRain(x: number, y: number, width: number, height: number, streakCount: number = 8): void {
+    const glassX = x + 6;
+    const glassY = y + 12;
+    const glassW = width - 12;
+    const glassH = height - 24;
+
+    // Expand GPU geometry mask to include this window's glass pane
+    this.maskGfx.fillStyle(0xffffff, 1);
+    this.maskGfx.fillRect(glassX, glassY, glassW, glassH);
+
     for (let i = 0; i < streakCount; i++) {
       this.rainStreaks.push({
-        x: x + 4 + Math.random() * (width - 8),
-        y: y + 8 + Math.random() * (height - 16),
+        x: glassX + Math.random() * glassW,
+        y: glassY + Math.random() * glassH,
         speed: 120 + Math.random() * 80,
         length: 8 + Math.random() * 12,
         alpha: 0.25 + Math.random() * 0.35,
-        windowX: x + 4,
-        windowY: y + 8,
-        windowW: width - 8,
-        windowH: height - 16,
+        windowX: glassX,
+        windowY: glassY,
+        windowW: glassW,
+        windowH: glassH,
       });
     }
   }
@@ -140,7 +168,7 @@ export class AmbientFXSystem {
     this.fxGfx.clear();
     this.rainGfx.clear();
 
-    // 1. Update and draw window rain
+    // 1. Update and draw window rain (strictly masked)
     this.updateRain(dt);
 
     // 2. Update and draw floating dust motes
@@ -149,7 +177,10 @@ export class AmbientFXSystem {
     // 3. Update and draw fireplace flame layers & embers
     this.updateFireplace(dt);
 
-    // 4. Update occasional exterior silhouette
+    // 4. Update periodic distant lightning
+    this.updateLightning(delta);
+
+    // 5. Update occasional exterior silhouette
     this.updateExteriorSilhouettes(delta);
   }
 
@@ -202,7 +233,7 @@ export class AmbientFXSystem {
   private updateFireplace(dt: number): void {
     if (this.fireplaceX === 0 && this.fireplaceY === 0) return;
 
-    // Organic flame layers in hearth interior (width ~40px, height ~28px)
+    // Organic flame layers in hearth interior (width ~48px, height ~32px)
     const hearthBaseX = this.fireplaceX;
     const hearthBaseY = this.fireplaceY + 20;
 
@@ -210,31 +241,40 @@ export class AmbientFXSystem {
     const t = this.timeAccumulator * 0.008;
     const stateScale = this.fireplaceState === 'surge' ? 1.6 : this.fireplaceState === 'portal' ? 2.2 : 1.0;
 
-    // Outer crimson flame glow
-    const crimsonH = (16 + Math.sin(t * 1.7) * 4) * stateScale;
-    this.fxGfx.fillStyle(0xba2418, 0.75);
+    // Layer 1: Outer crimson flame
+    const crimsonH = (18 + Math.sin(t * 1.5) * 4) * stateScale;
+    this.fxGfx.fillStyle(0xb41e14, 0.75);
     this.fxGfx.fillTriangle(
-      hearthBaseX - 22, hearthBaseY,
-      hearthBaseX + 22, hearthBaseY,
-      hearthBaseX + Math.sin(t * 3.1) * 4, hearthBaseY - crimsonH
+      hearthBaseX - 24, hearthBaseY,
+      hearthBaseX + 24, hearthBaseY,
+      hearthBaseX + Math.sin(t * 2.8) * 5, hearthBaseY - crimsonH
     );
 
-    // Middle amber/orange flame
-    const orangeH = (20 + Math.sin(t * 2.3 + 1) * 5) * stateScale;
-    this.fxGfx.fillStyle(0xe86814, 0.85);
+    // Layer 2: Middle vibrant orange flame
+    const orangeH = (22 + Math.sin(t * 2.2 + 1) * 5) * stateScale;
+    this.fxGfx.fillStyle(0xeb6412, 0.85);
     this.fxGfx.fillTriangle(
-      hearthBaseX - 16, hearthBaseY,
-      hearthBaseX + 16, hearthBaseY,
-      hearthBaseX + Math.sin(t * 4.2) * 5, hearthBaseY - orangeH
+      hearthBaseX - 18, hearthBaseY,
+      hearthBaseX + 18, hearthBaseY,
+      hearthBaseX + Math.sin(t * 3.8) * 4, hearthBaseY - orangeH
     );
 
-    // Inner bright yellow flame core
-    const yellowH = (12 + Math.sin(t * 3.7 + 2) * 4) * stateScale;
-    this.fxGfx.fillStyle(0xffd038, 0.95);
+    // Layer 3: Inner bright yellow flame core
+    const yellowH = (14 + Math.sin(t * 3.5 + 2) * 4) * stateScale;
+    this.fxGfx.fillStyle(0xffc828, 0.95);
     this.fxGfx.fillTriangle(
-      hearthBaseX - 9, hearthBaseY,
-      hearthBaseX + 9, hearthBaseY,
-      hearthBaseX + Math.sin(t * 5.5) * 3, hearthBaseY - yellowH
+      hearthBaseX - 11, hearthBaseY,
+      hearthBaseX + 11, hearthBaseY,
+      hearthBaseX + Math.sin(t * 5.2) * 3, hearthBaseY - yellowH
+    );
+
+    // Layer 4: Hot white-yellow needle core tip
+    const hotH = (8 + Math.sin(t * 6.2 + 3) * 2) * stateScale;
+    this.fxGfx.fillStyle(0xfff8d0, 0.98);
+    this.fxGfx.fillTriangle(
+      hearthBaseX - 4, hearthBaseY,
+      hearthBaseX + 4, hearthBaseY,
+      hearthBaseX + Math.sin(t * 7.1) * 2, hearthBaseY - hotH
     );
 
     // Spawn sparks / embers occasionally
@@ -269,6 +309,26 @@ export class AmbientFXSystem {
     }
   }
 
+  private updateLightning(delta: number): void {
+    this.lightningTimer -= delta;
+    if (this.lightningTimer <= 0) {
+      // 14 - 28 second interval
+      this.lightningTimer = 14000 + Math.random() * 14000;
+      this.triggerLightningFlash();
+    }
+  }
+
+  private triggerLightningFlash(): void {
+    const doubleFlash = Math.random() < 0.45;
+    this.lightingSystem?.triggerLightning(0.65);
+
+    if (doubleFlash) {
+      this.scene.time.delayedCall(120, () => {
+        this.lightingSystem?.triggerLightning(0.4);
+      });
+    }
+  }
+
   private updateExteriorSilhouettes(delta: number): void {
     this.silhouetteTimer -= delta;
 
@@ -283,9 +343,9 @@ export class AmbientFXSystem {
     // Fly a tiny bat silhouette across dining north window
     if (!this.scene.textures.exists('silhouette_bat')) return;
 
-    const startX = 420;
-    const endX = 520;
-    const y = 36 + (Math.random() - 0.5) * 14;
+    const startX = 140;
+    const endX = 240;
+    const y = 480 + (Math.random() - 0.5) * 14;
 
     const bat = this.scene.add.sprite(startX, y, 'silhouette_bat');
     bat.setDepth(DEPTH_LAYERS.BACKGROUND + 50);
@@ -318,6 +378,8 @@ export class AmbientFXSystem {
   public destroy(): void {
     this.fxGfx.destroy();
     this.rainGfx.destroy();
+    this.maskGfx.destroy();
+    this.windowMask.destroy();
     this.dustMotes = [];
     this.rainStreaks = [];
     this.sparks = [];

@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { RoomDefinition, SafeBounds } from './RoomDefinition';
+import { Direction } from '../entities/CharacterManifest';
 import { DEPTH_LAYERS, calculateDynamicDepth } from '../systems/DepthSystem';
 import { LightingSystem } from '../systems/LightingSystem';
 import { AmbientFXSystem } from '../systems/AmbientFXSystem';
@@ -29,6 +30,7 @@ export class MansionRoom {
     this.furnitureGroup = scene.physics.add.staticGroup();
 
     this.buildFloors();
+    this.buildStaircase();
     this.buildWalls();
     this.buildWindows();
     this.buildFurniture();
@@ -50,6 +52,32 @@ export class MansionRoom {
     }
   }
 
+  private buildStaircase(): void {
+    if (!this.def.staircase) return;
+    const sc = this.def.staircase;
+
+    // Build steps descending from top landing to great hall floor
+    for (let s = 0; s < sc.stepCount; s++) {
+      const stepY = sc.y + s * 32;
+
+      // 1. Step tread & runner sprite
+      const stepSprite = this.scene.add.sprite(
+        sc.x + sc.width / 2,
+        stepY + 16,
+        sc.stepTextureKey
+      );
+      stepSprite.setDepth(calculateDynamicDepth(stepY, 2));
+
+      // 2. Left Balustrade segment
+      const balL = this.scene.add.sprite(sc.x + 8, stepY + 16, sc.balustradeLeftKey);
+      balL.setDepth(calculateDynamicDepth(stepY, 14));
+
+      // 3. Right Balustrade segment
+      const balR = this.scene.add.sprite(sc.x + sc.width - 8, stepY + 16, sc.balustradeRightKey);
+      balR.setDepth(calculateDynamicDepth(stepY, 14));
+    }
+  }
+
   private buildWalls(): void {
     for (const wall of this.def.walls) {
       // Visual wall sprite
@@ -60,8 +88,16 @@ export class MansionRoom {
         wall.height,
         wall.textureKey
       );
-      // North walls and high trim are placed at UPPER_WALLS depth
-      const depth = wall.y < 96 ? DEPTH_LAYERS.UPPER_WALLS : DEPTH_LAYERS.BACKGROUND + 50;
+
+      // Depth sorting based on wall type:
+      // Architectural North walls are placed at UPPER_WALLS depth so characters walk in front of base
+      let depth = DEPTH_LAYERS.BACKGROUND + 50;
+      if (wall.textureKey === 'wall_architectural_north') {
+        depth = DEPTH_LAYERS.UPPER_WALLS;
+      } else if (wall.textureKey === 'balustrade_rail') {
+        // Balustrade overlook rails sort dynamically so player on landing stands behind rail
+        depth = calculateDynamicDepth(wall.y + wall.height, 4);
+      }
       wallTile.setDepth(depth);
 
       // Physical collision body
@@ -91,13 +127,13 @@ export class MansionRoom {
         `light_${win.id}`,
         win.x,
         win.y + 60,
-        90,
+        64,
         'window',
         0x5c729a,
-        0.3
+        0.28
       );
 
-      // 3. Register window area with AmbientFX for rain streaks
+      // 3. Register window area with AmbientFX for rain streaks (strictly masked)
       this.ambientFXSystem.registerWindowRain(
         win.x - win.width / 2,
         win.y,
@@ -116,7 +152,7 @@ export class MansionRoom {
         this.scene.tweens.add({
           targets: [curL, curR],
           scaleX: { from: 1, to: 1.05 },
-          angle: { from: 0, to: curL === curL ? 1.5 : -1.5 },
+          angle: { from: 0, to: 1.5 },
           duration: 3200 + Math.random() * 800,
           yoyo: true,
           repeat: -1,
@@ -162,28 +198,37 @@ export class MansionRoom {
 
   private buildCandles(): void {
     for (const candle of this.def.candles) {
-      // 1. Light source in LightingSystem
+      // 1. Localized light source in LightingSystem (restrained radius & soft halo)
       this.lightingSystem.addLight(
         candle.id,
         candle.x,
         candle.y + (candle.flameOffsetY ?? -10),
-        candle.radius ?? 85,
+        candle.radius ?? 44,
         'candle',
         candle.color ?? 0xffb444,
-        candle.intensity ?? 0.45
+        candle.intensity ?? 0.38
       );
 
-      // 2. Visual candle holder & flame sprite
+      // 2. Visual brass candlestick holder
       if (this.scene.textures.exists('decor_candle_single')) {
         const candleSprite = this.scene.add.sprite(candle.x, candle.y, 'decor_candle_single');
         candleSprite.setDepth(calculateDynamicDepth(candle.y, 4));
+      }
 
-        // Subtle micro-scale flicker on candle flame
+      // 3. Tapered teardrop flame with desynchronized organic flicker & drift
+      if (this.scene.textures.exists('decor_flame_teardrop')) {
+        const flameY = candle.y + (candle.flameOffsetY ?? -10);
+        const flameSprite = this.scene.add.sprite(candle.x, flameY, 'decor_flame_teardrop');
+        flameSprite.setOrigin(0.5, 0.85); // pivot at base of teardrop flame
+        flameSprite.setDepth(calculateDynamicDepth(candle.y, 6));
+
+        // Desynchronized organic micro-scale flicker
         this.scene.tweens.add({
-          targets: candleSprite,
-          scaleY: { from: 0.94, to: 1.06 },
-          scaleX: { from: 0.97, to: 1.03 },
-          duration: 120 + Math.random() * 80,
+          targets: flameSprite,
+          scaleY: { from: 0.92, to: 1.08 },
+          scaleX: { from: 0.95, to: 1.05 },
+          x: { from: candle.x - 0.75, to: candle.x + 0.75 },
+          duration: 90 + Math.random() * 120,
           yoyo: true,
           repeat: -1,
           ease: 'Sine.easeInOut',
@@ -196,36 +241,40 @@ export class MansionRoom {
     if (!this.def.fireplace) return;
     const f = this.def.fireplace;
 
-    // Register hearth light in LightingSystem
+    // Register hearth light in LightingSystem (localized warmth)
     this.lightingSystem.addLight(
       f.id,
       f.x,
       f.y + 16,
-      130,
+      96,
       'fireplace',
       0xff7a28,
-      0.65
+      0.55
     );
 
-    // Register with AmbientFX for animated fire and embers
+    // Register with AmbientFX for animated 4-layer fire and rising embers
     this.ambientFXSystem.registerFireplace(f.x, f.y);
   }
 
   private buildAmbientZones(): void {
-    // Add sparse floating dust motes in warm pools
-    // 1. Dining table candelabra glow
-    this.ambientFXSystem.addDustZone(576, 320, 110, 8);
-    // 2. Hearth warm glow
-    this.ambientFXSystem.addDustZone(992, 120, 90, 6);
-    // 3. Dressing mirror vanity
-    this.ambientFXSystem.addDustZone(224, 130, 80, 5);
+    // Add sparse floating dust motes in warm ambient pools
+    // 1. Bedchamber Vanity mirror pool
+    this.ambientFXSystem.addDustZone(200, 140, 70, 5);
+    // 2. Upper Landing sconces pool
+    this.ambientFXSystem.addDustZone(640, 160, 80, 5);
+    // 3. Great Hall Chandelier pool
+    this.ambientFXSystem.addDustZone(640, 680, 100, 6);
+    // 4. Hero Dining Banquet table pool
+    this.ambientFXSystem.addDustZone(240, 720, 90, 7);
+    // 5. Lounge Hearth pool
+    this.ambientFXSystem.addDustZone(1040, 640, 90, 6);
   }
 
   public getSafeBounds(): SafeBounds {
     return this.def.safeBounds;
   }
 
-  public getSpawnPoint(): { x: number; y: number; direction: string } {
+  public getSpawnPoint(): { x: number; y: number; direction: Direction } {
     return this.def.spawnPoint;
   }
 }

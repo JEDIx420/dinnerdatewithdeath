@@ -41,13 +41,20 @@ This document tracks engineering and narrative production milestones for **A Din
 ### `v0.0.6` — Title Experience & Mansion Visual Foundation ✅
 - Solved player visual boundary clipping by separating physical obstacle collision from room visual safe bounds.
 - Replaced prototype title screen with a cinematic gothic opening scene: dark dining hall, tall windows with rain, the waiting table set for two, flickering candelabras, tracked serif typography, and smooth fade transition into gameplay.
-- Built a contiguous 3-zone mansion environment (`1152 × 640 px`): Dressing / Mirror Area, Grand Dining Hall, and Lounge & Hearth.
-- Created data-driven environment architecture in `src/game/world/` (`RoomDefinition.ts`, `MansionRoom.ts`, `MansionTextures.ts`).
-- Established spatial depth sorting (`DepthSystem.ts`) allowing Death to walk behind and in front of tables, chairs, and sofa.
+- Built initial 3-zone mansion environment (`1152 × 640 px`).
+- Created data-driven environment architecture in `src/game/world/`.
+- Established spatial depth sorting (`DepthSystem.ts`).
 - Added grounding contact shadows for Death and furniture.
-- Implemented ambient lighting overlay (`LightingSystem.ts`) with warm candlelight and hearth cutouts.
-- Implemented `AmbientFXSystem.ts` (floating dust motes, window rain streaks, hearth flames/embers, curtain breezes, and rare exterior bat silhouettes).
-- Replaced `PrototypeScene` with `MansionScene` with smooth lerped camera tracking and extended diagnostics overlay.
+- Implemented initial ambient lighting overlay (`LightingSystem.ts`) and `AmbientFXSystem.ts`.
+
+### `v0.0.6.1` — The Grand Mansion: Story-Driven Spatial & Visual Polish ✅
+- Replaced flat procedural layout with an ancient, grand two-level gothic residence (`1280 × 960 px`) structured around a vertical narrative journey across 5 story-driven zones.
+- **Upper Floor (Private Realm)**: Death's Bedchamber (grand ornate gothic mirror focal point, vanity console, antique wardrobe, nightstand, armchair, private violet rug, tall window with interior rain, New Year's Eve spawn point) and Upper Landing / Balustrade Overlook (ceremonial runner, wall sconces, aristocratic portrait, memento mori).
+- **Connector**: Grand Central Staircase (hero feature with 9 stone/mahogany stepped treads, deep burgundy runner with brass rods, turned balustrades with physics barriers strictly keeping Death on the flight).
+- **Ground Floor**: Great Hall / Central Gallery (vast slate/marble floor, cardinal compass medallion, overhead 6-taper bronze chandelier, celestial chart and battlefield study), Hero Dining Room (emotional centerpiece banquet table set for two with crimson runner, gold filigree hem, vintage wine bottle, decanter, bone china place settings, crystal goblets with red wine, folded napkins, and Love's waiting empty chair), and Lounge & Hearth (4-layer animated hearth fire, floating embers, tufted velvet sofa, armchair, coffee table with book, antique bookshelf with multi-colored tomes, and vintage TV).
+- **Lighting & Ambiance Rework**: Replaced stepped circular discs with restrained, soft radial light halos (radius ~44px), tapered teardrop candle flames with desynchronized micro-flicker and horizontal sway, window rain strictly clipped to interior glass using Phaser GPU geometry masks, and periodic distant lightning (14–28s interval, occasional double flash).
+- **Cinematic Title Intro**: Choreographed 0–4.5s staged reveal (darkness -> left candle ignites -> table revealed -> right candle ignites -> background windows/rain -> Love's chair -> title typography -> interactive start prompt) with instant skip on user input.
+- **Traversal & Bounds**: Set physics world bounds to 1280×960, camera follow with centerOn initial position and cinematic lerp, verified dynamic depth sorting behind the Banquet Table.
 
 ---
 

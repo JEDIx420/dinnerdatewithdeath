@@ -83,6 +83,19 @@ export interface FireplaceDef {
   state: 'idle' | 'surge' | 'portal';
 }
 
+export interface StaircaseDef {
+  id: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  stepCount: number;
+  stepTextureKey: string;
+  balustradeLeftKey: string;
+  balustradeRightKey: string;
+  walkableWidth: number;
+}
+
 export interface RoomDefinition {
   id: string;
   name: string;
@@ -99,550 +112,929 @@ export interface RoomDefinition {
   furniture: FurnitureDef[];
   candles: CandleDef[];
   windows: WindowDef[];
+  staircase?: StaircaseDef;
   fireplace?: FireplaceDef;
 }
 
 /**
- * Canonical Mansion Layout (Milestone v0.0.6)
- * Total dimensions: 1152 x 640 (36 x 20 tiles of 32px).
- * Features three contiguous zones:
- * 1. Dressing / Mirror Area (North-West)
- * 2. Grand Dining Hall (Central)
- * 3. Lounge & Fireplace Area (East)
+ * Grand Gothic Mansion Layout (Milestone v0.0.6.1)
+ * Dimensions: 1280 x 960 (40 x 30 tiles of 32px).
+ *
+ * Vertical narrative journey across 5 story-driven zones:
+ *
+ * FIRST FLOOR (Private):
+ * 1. Death's Bedchamber (Upper West: x: 48..448, y: 72..320)
+ * 2. Upper Landing & Balustrade (Upper East: x: 448..832, y: 72..288)
+ *
+ * CONNECTOR:
+ * 3. Grand Central Staircase (Hero Connector: x: 560..720, y: 260..548)
+ *
+ * GROUND FLOOR (Main Mansion):
+ * 4. Great Hall / Central Gallery (Ground Center: x: 448..832, y: 520..920)
+ * 5. Dining Room (Ground West: x: 48..448, y: 520..920)
+ * 6. Lounge & Hearth (Ground East: x: 832..1232, y: 520..920)
  */
 export const MANSION_ROOM_DEF: RoomDefinition = {
   id: 'death_mansion',
   name: "Death's Mansion",
-  width: 1152,
-  height: 640,
+  width: 1280,
+  height: 960,
   safeBounds: {
-    minX: 64,
-    maxX: 1088,
-    minY: 104,
-    maxY: 572,
+    minX: 48,
+    maxX: 1232,
+    minY: 72,
+    maxY: 912,
   },
   spawnPoint: {
+    // Spawns upstairs in his private Bedchamber in front of the ornate mirror
     x: 200,
-    y: 220,
-    direction: 'down',
+    y: 190,
+    direction: 'up',
   },
   floors: [
-    // Grand Dining Hall floor (rich dark hardwood planks)
-    {
-      id: 'dining_floor',
-      x: 368,
-      y: 96,
-      width: 416,
-      height: 496,
-      textureKey: 'tile_wood_floor',
-    },
-    // Dining Hall crimson velvet runner / area rug
-    {
-      id: 'dining_rug',
-      x: 432,
-      y: 208,
-      width: 288,
-      height: 256,
-      textureKey: 'rug_dining',
-      depth: 200,
-    },
-    // Dressing Area floor (dark slate patterned tiles)
+    // 1. Bedchamber Floor (Dark patterned stone slate)
     {
       id: 'dressing_floor',
       x: 48,
-      y: 96,
-      width: 320,
-      height: 288,
+      y: 72,
+      width: 400,
+      height: 256,
       textureKey: 'tile_stone_dressing',
     },
-    // Dressing Area ornate purple velvet rug
+    // Bedchamber private deep violet rug
     {
       id: 'dressing_rug',
       x: 112,
-      y: 176,
+      y: 128,
       width: 176,
       height: 144,
       textureKey: 'rug_dressing',
       depth: 200,
     },
-    // Lounge floor (dark oak parquet planks)
+
+    // 2. Upper Landing Floor (Dark polished mahogany)
     {
-      id: 'lounge_floor',
-      x: 784,
-      y: 96,
-      width: 320,
-      height: 496,
+      id: 'landing_floor',
+      x: 448,
+      y: 72,
+      width: 384,
+      height: 216,
       textureKey: 'tile_wood_floor',
     },
-    // Lounge velvet fireside rug
+    // Upper Landing ceremonial runner
+    {
+      id: 'landing_rug',
+      x: 448,
+      y: 160,
+      width: 384,
+      height: 56,
+      textureKey: 'rug_landing',
+      depth: 200,
+    },
+
+    // 3. Great Hall Floor (Polished slate & marble)
+    {
+      id: 'hall_floor',
+      x: 448,
+      y: 520,
+      width: 384,
+      height: 400,
+      textureKey: 'tile_stone_hall',
+    },
+    // Great Hall center compass medallion
+    {
+      id: 'hall_medallion',
+      x: 576,
+      y: 690,
+      width: 128,
+      height: 128,
+      textureKey: 'floor_medallion',
+      depth: 200,
+    },
+
+    // 4. Dining Room Floor (Dark mahogany planks)
+    {
+      id: 'dining_floor',
+      x: 48,
+      y: 520,
+      width: 400,
+      height: 400,
+      textureKey: 'tile_wood_floor',
+    },
+    // Dining Room crimson velvet area rug
+    {
+      id: 'dining_rug',
+      x: 96,
+      y: 592,
+      width: 288,
+      height: 256,
+      textureKey: 'rug_dining',
+      depth: 200,
+    },
+
+    // 5. Lounge Floor (Dark mahogany planks)
+    {
+      id: 'lounge_floor',
+      x: 832,
+      y: 520,
+      width: 400,
+      height: 400,
+      textureKey: 'tile_wood_floor',
+    },
+    // Lounge fireside rug
     {
       id: 'lounge_rug',
-      x: 816,
-      y: 272,
+      x: 920,
+      y: 616,
       width: 240,
       height: 208,
       textureKey: 'rug_lounge',
       depth: 200,
     },
   ],
+
+  staircase: {
+    id: 'grand_staircase',
+    x: 560,
+    y: 260,
+    width: 160,
+    height: 288,
+    stepCount: 9,
+    stepTextureKey: 'staircase_step',
+    balustradeLeftKey: 'staircase_balustrade_left',
+    balustradeRightKey: 'staircase_balustrade_right',
+    walkableWidth: 128,
+  },
+
   walls: [
-    // North perimeter wall (with architectural height from y=0 to y=96)
+    // --- UPPER FLOOR WALLS ---
+    // Bedchamber north wall
     {
-      id: 'north_wall',
-      x: 32,
+      id: 'wall_bedchamber_north',
+      x: 48,
       y: 0,
-      width: 1088,
+      width: 400,
       height: 96,
       textureKey: 'wall_architectural_north',
-      isPerimeter: true,
       hasCollision: true,
-      collisionOffsetY: 64,
-      collisionHeight: 32,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
     },
-    // South perimeter wall
+    // Bedchamber west wall
     {
-      id: 'south_wall',
-      x: 32,
-      y: 592,
-      width: 1088,
+      id: 'wall_bedchamber_west',
+      x: 0,
+      y: 0,
+      width: 48,
+      height: 328,
+      textureKey: 'wall_architectural_side',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 328,
+    },
+    // Bedchamber south wall
+    {
+      id: 'wall_bedchamber_south',
+      x: 48,
+      y: 320,
+      width: 400,
       height: 48,
       textureKey: 'wall_architectural_south',
-      isPerimeter: true,
       hasCollision: true,
       collisionOffsetY: 0,
       collisionHeight: 48,
     },
-    // West perimeter wall
+    // Dividing wall between Bedchamber and Landing (with doorway in middle)
     {
-      id: 'west_wall',
-      x: 0,
+      id: 'wall_divider_upper',
+      x: 440,
       y: 0,
-      width: 48,
-      height: 640,
+      width: 24,
+      height: 128,
       textureKey: 'wall_architectural_side',
-      isPerimeter: true,
       hasCollision: true,
       collisionOffsetY: 0,
-      collisionHeight: 640,
+      collisionHeight: 128,
     },
-    // East perimeter wall
     {
-      id: 'east_wall',
-      x: 1104,
-      y: 0,
-      width: 48,
-      height: 640,
-      textureKey: 'wall_architectural_side',
-      isPerimeter: true,
-      hasCollision: true,
-      collisionOffsetY: 0,
-      collisionHeight: 640,
-    },
-    // Dividing wall between Dressing and Dining (with open archway between Y=176 and Y=288)
-    {
-      id: 'divider_dressing_dining_top',
-      x: 352,
-      y: 96,
+      id: 'wall_divider_lower',
+      x: 440,
+      y: 248,
       width: 24,
       height: 80,
-      textureKey: 'wall_pilaster',
+      textureKey: 'wall_architectural_side',
       hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 80,
+    },
+
+    // Upper Landing north wall
+    {
+      id: 'wall_landing_north',
+      x: 448,
+      y: 0,
+      width: 384,
+      height: 96,
+      textureKey: 'wall_architectural_north',
+      hasCollision: true,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
+    },
+    // Upper Landing east wall
+    {
+      id: 'wall_landing_east',
+      x: 832,
+      y: 0,
+      width: 48,
+      height: 296,
+      textureKey: 'wall_architectural_side',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 296,
+    },
+
+    // Upper Landing Balustrade Overlook (South edge of landing, flanking staircase)
+    {
+      id: 'balustrade_overlook_left',
+      x: 448,
+      y: 268,
+      width: 112,
+      height: 28,
+      textureKey: 'balustrade_rail',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 28,
     },
     {
-      id: 'divider_dressing_dining_bottom',
-      x: 352,
+      id: 'balustrade_overlook_right',
+      x: 720,
+      y: 268,
+      width: 112,
+      height: 28,
+      textureKey: 'balustrade_rail',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 28,
+    },
+
+    // --- STAIRCASE COLLISION BARRIERS (keep player on runner) ---
+    {
+      id: 'stair_barrier_left',
+      x: 544,
       y: 288,
       width: 24,
+      height: 240,
+      textureKey: 'wall_architectural_side',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 240,
+    },
+    {
+      id: 'stair_barrier_right',
+      x: 712,
+      y: 288,
+      width: 24,
+      height: 240,
+      textureKey: 'wall_architectural_side',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 240,
+    },
+
+    // --- GROUND FLOOR WALLS ---
+    // Dining Room north wall
+    {
+      id: 'wall_dining_north',
+      x: 48,
+      y: 448,
+      width: 400,
       height: 96,
-      textureKey: 'wall_pilaster',
+      textureKey: 'wall_architectural_north',
       hasCollision: true,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
     },
-    // Dividing wall between Dining and Lounge (with archway between Y=208 and Y=384)
+    // Dining Room west wall
     {
-      id: 'divider_dining_lounge_top',
-      x: 772,
-      y: 96,
-      width: 24,
-      height: 112,
-      textureKey: 'wall_pilaster',
+      id: 'wall_dining_west',
+      x: 0,
+      y: 448,
+      width: 48,
+      height: 472,
+      textureKey: 'wall_architectural_side',
       hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 472,
     },
+    // Dining Room south wall
     {
-      id: 'divider_dining_lounge_bottom',
-      x: 772,
-      y: 384,
-      width: 24,
-      height: 208,
-      textureKey: 'wall_pilaster',
+      id: 'wall_dining_south',
+      x: 48,
+      y: 912,
+      width: 400,
+      height: 48,
+      textureKey: 'wall_architectural_south',
       hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 48,
     },
-  ],
-  windows: [
-    // Tall gothic arched windows on the north wall of Dining Hall
+
+    // Great Hall north wall (flanking staircase base)
     {
-      id: 'window_dining_left',
+      id: 'wall_hall_north_left',
       x: 448,
-      y: 16,
+      y: 448,
+      width: 112,
+      height: 96,
+      textureKey: 'wall_architectural_north',
+      hasCollision: true,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
+    },
+    {
+      id: 'wall_hall_north_right',
+      x: 720,
+      y: 448,
+      width: 112,
+      height: 96,
+      textureKey: 'wall_architectural_north',
+      hasCollision: true,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
+    },
+    // Great Hall south wall
+    {
+      id: 'wall_hall_south',
+      x: 448,
+      y: 912,
+      width: 384,
+      height: 48,
+      textureKey: 'wall_architectural_south',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 48,
+    },
+
+    // Lounge north wall
+    {
+      id: 'wall_lounge_north',
+      x: 832,
+      y: 448,
+      width: 400,
+      height: 96,
+      textureKey: 'wall_architectural_north',
+      hasCollision: true,
+      collisionOffsetY: 72,
+      collisionHeight: 24,
+    },
+    // Lounge east wall
+    {
+      id: 'wall_lounge_east',
+      x: 1232,
+      y: 448,
+      width: 48,
+      height: 472,
+      textureKey: 'wall_architectural_side',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 472,
+    },
+    // Lounge south wall
+    {
+      id: 'wall_lounge_south',
+      x: 832,
+      y: 912,
+      width: 400,
+      height: 48,
+      textureKey: 'wall_architectural_south',
+      hasCollision: true,
+      collisionOffsetY: 0,
+      collisionHeight: 48,
+    },
+
+    // Architectural Archway Pilasters separating rooms on Ground Floor
+    {
+      id: 'pilaster_dining_hall_top',
+      x: 440,
+      y: 544,
+      width: 24,
+      height: 32,
+      textureKey: 'wall_pilaster',
+      hasCollision: true,
+    },
+    {
+      id: 'pilaster_dining_hall_bottom',
+      x: 440,
+      y: 864,
+      width: 24,
+      height: 32,
+      textureKey: 'wall_pilaster',
+      hasCollision: true,
+    },
+    {
+      id: 'pilaster_hall_lounge_top',
+      x: 824,
+      y: 544,
+      width: 24,
+      height: 32,
+      textureKey: 'wall_pilaster',
+      hasCollision: true,
+    },
+    {
+      id: 'pilaster_hall_lounge_bottom',
+      x: 824,
+      y: 864,
+      width: 24,
+      height: 32,
+      textureKey: 'wall_pilaster',
+      hasCollision: true,
+    },
+  ],
+
+  windows: [
+    // 1. Bedchamber Window (North-west)
+    {
+      id: 'win_bedchamber',
+      x: 300,
+      y: 8,
+      width: 64,
+      height: 88,
+      hasCurtains: true,
+    },
+    // 2. Dining Room Windows (North-west ground)
+    {
+      id: 'win_dining_1',
+      x: 160,
+      y: 456,
       width: 64,
       height: 88,
       hasCurtains: true,
     },
     {
-      id: 'window_dining_right',
-      x: 640,
-      y: 16,
+      id: 'win_dining_2',
+      x: 340,
+      y: 456,
       width: 64,
       height: 88,
       hasCurtains: true,
     },
-    // Gothic window in Dressing area
+    // 3. Lounge Window (North-east ground)
     {
-      id: 'window_dressing',
-      x: 112,
-      y: 16,
-      width: 64,
-      height: 88,
-      hasCurtains: true,
-    },
-    // Gothic window in Lounge area
-    {
-      id: 'window_lounge',
-      x: 880,
-      y: 16,
+      id: 'win_lounge',
+      x: 1150,
+      y: 456,
       width: 64,
       height: 88,
       hasCurtains: true,
     },
   ],
+
   furniture: [
-    // 1. DRESSING / MIRROR AREA
-    // Grand Ornate Gothic Mirror (anchored on north wall)
+    // -----------------------------------------------------------
+    // BEDCHAMBER FURNITURE
+    // -----------------------------------------------------------
+    // Ornate Gothic Mirror (Hero Focal Point of Bedchamber)
     {
       id: 'dressing_mirror',
-      name: 'Ornate Gothic Mirror',
-      x: 224,
+      name: 'Grand Ornate Gothic Mirror',
+      x: 200,
       y: 84,
       textureKey: 'furniture_mirror_ornate',
-      depthOffset: 16,
-      collision: {
-        width: 48,
-        height: 24,
-        offsetY: 48,
-      },
+      depthOffset: -10,
     },
-    // Carved Dark Vanity Console under/beside mirror
+    // Carved Vanity Console
     {
       id: 'dressing_vanity',
-      name: 'Dressing Vanity',
-      x: 224,
-      y: 128,
+      name: 'Carved Vanity Console',
+      x: 200,
+      y: 116,
       textureKey: 'furniture_vanity',
-      depthOffset: 20,
+      depthOffset: 12,
       collision: {
-        width: 64,
-        height: 24,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_med',
-        width: 68,
-        height: 18,
-        offsetY: 20,
-      },
-    },
-    // Tall Antique Wardrobe
-    {
-      id: 'dressing_wardrobe',
-      name: 'Carved Wardrobe',
-      x: 96,
-      y: 140,
-      textureKey: 'furniture_wardrobe',
-      depthOffset: 36,
-      collision: {
-        width: 56,
-        height: 32,
-        offsetY: 28,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_med',
         width: 60,
-        height: 20,
-        offsetY: 40,
-      },
-    },
-    // Dressing armchair
-    {
-      id: 'dressing_armchair',
-      name: 'Dressing Armchair',
-      x: 296,
-      y: 220,
-      textureKey: 'furniture_armchair',
-      depthOffset: 18,
-      collision: {
-        width: 36,
-        height: 24,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_small',
-        width: 40,
-        height: 16,
-        offsetY: 18,
-      },
-    },
-
-    // 2. DINING HALL
-    // The Hero Dining Table (long dark mahogany with crimson runner, 2 place settings, wine bottle, glasses)
-    {
-      id: 'dining_table',
-      name: 'The Waiting Table',
-      x: 576,
-      y: 320,
-      textureKey: 'furniture_dining_table',
-      depthOffset: 24,
-      collision: {
-        width: 160,
-        height: 48,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_large',
-        width: 172,
-        height: 36,
-        offsetY: 28,
-      },
-    },
-    // High-backed chair North (for Love)
-    {
-      id: 'dining_chair_north',
-      name: "Love's Chair (Empty)",
-      x: 576,
-      y: 256,
-      textureKey: 'furniture_chair_down',
-      depthOffset: 16,
-      collision: {
-        width: 32,
-        height: 20,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_small',
-        width: 34,
-        height: 14,
-        offsetY: 16,
-      },
-    },
-    // High-backed chair South (for Death)
-    {
-      id: 'dining_chair_south',
-      name: "Death's Chair",
-      x: 576,
-      y: 384,
-      textureKey: 'furniture_chair_up',
-      depthOffset: 20,
-      collision: {
-        width: 32,
-        height: 20,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_small',
-        width: 34,
-        height: 14,
-        offsetY: 16,
-      },
-    },
-    // Dining sideboard / wine cabinet on left wall
-    {
-      id: 'dining_sideboard',
-      name: 'Wine Sideboard',
-      x: 400,
-      y: 448,
-      textureKey: 'furniture_sideboard',
-      depthOffset: 24,
-      collision: {
-        width: 48,
-        height: 32,
-        offsetY: 16,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_med',
-        width: 52,
-        height: 18,
-        offsetY: 28,
-      },
-    },
-
-    // 3. LOUNGE & FIREPLACE AREA
-    // Carved Stone Fireplace on North Wall of Lounge
-    {
-      id: 'lounge_fireplace',
-      name: 'Gothic Hearth',
-      x: 992,
-      y: 104,
-      textureKey: 'furniture_fireplace',
-      depthOffset: 32,
-      collision: {
-        width: 96,
-        height: 36,
-        offsetY: 24,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_large',
-        width: 104,
-        height: 24,
-        offsetY: 36,
-      },
-    },
-    // Velvet Lounge Sofa facing fireplace
-    {
-      id: 'lounge_sofa',
-      name: 'Burgundy Velvet Sofa',
-      x: 928,
-      y: 336,
-      textureKey: 'furniture_sofa',
-      depthOffset: 24,
-      collision: {
-        width: 96,
-        height: 36,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_large',
-        width: 102,
-        height: 24,
-        offsetY: 26,
-      },
-    },
-    // Velvet Armchair
-    {
-      id: 'lounge_armchair',
-      name: 'Plush Armchair',
-      x: 1048,
-      y: 336,
-      textureKey: 'furniture_armchair',
-      depthOffset: 20,
-      collision: {
-        width: 36,
-        height: 28,
-        offsetY: 12,
-      },
-      shadow: {
-        textureKey: 'shadow_furniture_small',
-        width: 40,
-        height: 16,
-        offsetY: 20,
-      },
-    },
-    // Low coffee table with book / ashtray
-    {
-      id: 'lounge_coffee_table',
-      name: 'Coffee Table',
-      x: 928,
-      y: 260,
-      textureKey: 'furniture_coffee_table',
-      depthOffset: 16,
-      collision: {
-        width: 64,
         height: 24,
         offsetY: 10,
       },
       shadow: {
         textureKey: 'shadow_furniture_med',
-        width: 68,
-        height: 16,
-        offsetY: 18,
+        width: 72,
+        height: 22,
+        offsetY: 20,
       },
     },
-    // Tall Bookshelf filled with occult tomes
+    // Antique Wardrobe
     {
-      id: 'lounge_bookshelf',
-      name: 'Ancient Bookshelf',
-      x: 832,
-      y: 136,
-      textureKey: 'furniture_bookshelf',
-      depthOffset: 36,
+      id: 'dressing_wardrobe',
+      name: 'Carved Antique Wardrobe',
+      x: 100,
+      y: 112,
+      textureKey: 'furniture_wardrobe',
+      depthOffset: 20,
       collision: {
-        width: 64,
+        width: 52,
         height: 28,
-        offsetY: 24,
+        offsetY: 28,
       },
       shadow: {
         textureKey: 'shadow_furniture_med',
-        width: 68,
-        height: 20,
-        offsetY: 36,
+        width: 64,
+        height: 22,
+        offsetY: 42,
       },
     },
-    // Antique Television aesthetic set (for future broadcast scene)
+    // Bedside Nightstand
     {
-      id: 'lounge_television',
-      name: 'Vintage Television Console',
-      x: 1064,
-      y: 200,
-      textureKey: 'furniture_tv_console',
-      depthOffset: 24,
+      id: 'dressing_bedside',
+      name: 'Dark Mahogany Nightstand',
+      x: 370,
+      y: 116,
+      textureKey: 'furniture_bedside',
+      depthOffset: 8,
       collision: {
-        width: 48,
-        height: 24,
-        offsetY: 16,
+        width: 28,
+        height: 20,
+        offsetY: 8,
       },
       shadow: {
         textureKey: 'shadow_furniture_small',
+        width: 36,
+        height: 14,
+        offsetY: 16,
+      },
+    },
+    // Plush Armchair in bedroom
+    {
+      id: 'dressing_armchair',
+      name: 'Gothic Dressing Armchair',
+      x: 380,
+      y: 200,
+      textureKey: 'furniture_armchair',
+      depthOffset: 12,
+      collision: {
+        width: 40,
+        height: 24,
+        offsetY: 10,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_small',
+        width: 44,
+        height: 18,
+        offsetY: 20,
+      },
+    },
+
+    // -----------------------------------------------------------
+    // UPPER LANDING FURNITURE & ARTWORK
+    // -----------------------------------------------------------
+    {
+      id: 'landing_art_portrait',
+      name: 'Portrait of an Aristocratic Silhouette',
+      x: 580,
+      y: 48,
+      textureKey: 'decor_art_portrait',
+      depthOffset: -100,
+    },
+    {
+      id: 'landing_art_memento',
+      name: 'Memento Mori Study',
+      x: 700,
+      y: 48,
+      textureKey: 'decor_art_memento_mori',
+      depthOffset: -100,
+    },
+    // Newel posts at landing entrance
+    {
+      id: 'landing_newel_left',
+      name: 'Staircase Newel Post',
+      x: 560,
+      y: 256,
+      textureKey: 'staircase_newel',
+      depthOffset: 20,
+      collision: {
+        width: 16,
+        height: 16,
+        offsetY: 12,
+      },
+    },
+    {
+      id: 'landing_newel_right',
+      name: 'Staircase Newel Post',
+      x: 720,
+      y: 256,
+      textureKey: 'staircase_newel',
+      depthOffset: 20,
+      collision: {
+        width: 16,
+        height: 16,
+        offsetY: 12,
+      },
+    },
+
+    // -----------------------------------------------------------
+    // GREAT HALL ARTWORK & CHANDELIER
+    // -----------------------------------------------------------
+    {
+      id: 'hall_chandelier',
+      name: 'Grand Gothic Chandelier',
+      x: 640,
+      y: 560,
+      textureKey: 'decor_chandelier',
+      depthOffset: 500, // Overhead fixture
+    },
+    {
+      id: 'hall_art_celestial',
+      name: 'Celestial Chart of the Spheres',
+      x: 504,
+      y: 496,
+      textureKey: 'decor_art_celestial',
+      depthOffset: -100,
+    },
+    {
+      id: 'hall_art_battlefield',
+      name: 'Study of a Distant Battlefield',
+      x: 776,
+      y: 496,
+      textureKey: 'decor_art_battlefield',
+      depthOffset: -100,
+    },
+    // Newel posts at foot of staircase
+    {
+      id: 'stair_newel_bottom_left',
+      name: 'Staircase Bottom Newel Post',
+      x: 560,
+      y: 536,
+      textureKey: 'staircase_newel',
+      depthOffset: 20,
+      collision: {
+        width: 16,
+        height: 16,
+        offsetY: 12,
+      },
+    },
+    {
+      id: 'stair_newel_bottom_right',
+      name: 'Staircase Bottom Newel Post',
+      x: 720,
+      y: 536,
+      textureKey: 'staircase_newel',
+      depthOffset: 20,
+      collision: {
+        width: 16,
+        height: 16,
+        offsetY: 12,
+      },
+    },
+
+    // -----------------------------------------------------------
+    // HERO DINING ROOM FURNITURE
+    // -----------------------------------------------------------
+    // Hero Banquet Dining Table set for Love & Death
+    {
+      id: 'dining_table',
+      name: 'The Banquet Table',
+      x: 240,
+      y: 720,
+      textureKey: 'furniture_dining_table',
+      depthOffset: 16,
+      collision: {
+        width: 160,
+        height: 32,
+        offsetY: 16,
+      },
+      shadow: {
+        textureKey: 'shadow_table_hero',
+        width: 180,
+        height: 32,
+        offsetY: 28,
+      },
+    },
+    // Love's Empty Chair (Waiting on Left)
+    {
+      id: 'dining_chair_love',
+      name: "Love's Empty Chair",
+      x: 130,
+      y: 710,
+      textureKey: 'furniture_chair_love',
+      depthOffset: 12,
+      collision: {
+        width: 24,
+        height: 24,
+        offsetY: 10,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_small',
+        width: 32,
+        height: 14,
+        offsetY: 18,
+      },
+    },
+    // Death's Chair (Waiting on Right)
+    {
+      id: 'dining_chair_death',
+      name: "Death's High-Backed Chair",
+      x: 350,
+      y: 710,
+      textureKey: 'furniture_chair_death',
+      depthOffset: 12,
+      collision: {
+        width: 24,
+        height: 24,
+        offsetY: 10,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_small',
+        width: 32,
+        height: 14,
+        offsetY: 20,
+      },
+    },
+
+    // Wine Sideboard / Credenza
+    {
+      id: 'dining_sideboard',
+      name: 'Carved Credenza Sideboard',
+      x: 240,
+      y: 536,
+      textureKey: 'furniture_sideboard',
+      depthOffset: 16,
+      collision: {
+        width: 44,
+        height: 24,
+        offsetY: 12,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_med',
         width: 52,
         height: 16,
         offsetY: 24,
       },
     },
-    // Framed paintings on walls
+
+    // -----------------------------------------------------------
+    // LOUNGE & HEARTH FURNITURE
+    // -----------------------------------------------------------
+    // Gothic Fireplace Hearth
     {
-      id: 'painting_dressing',
-      name: 'Portrait of an Unknown Lady',
-      x: 176,
-      y: 44,
-      textureKey: 'decor_painting_portrait',
-      depthOffset: -100, // On the upper wall
+      id: 'lounge_fireplace',
+      name: 'Gothic Hearth Fireplace',
+      x: 1040,
+      y: 520,
+      textureKey: 'furniture_fireplace',
+      depthOffset: 20,
+      collision: {
+        width: 90,
+        height: 36,
+        offsetY: 20,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_large',
+        width: 104,
+        height: 24,
+        offsetY: 38,
+      },
     },
+    // Velvet Sofa
     {
-      id: 'painting_dining',
-      name: 'Gothic Landscape in Oil',
-      x: 544,
-      y: 44,
-      textureKey: 'decor_painting_landscape',
-      depthOffset: -100,
+      id: 'lounge_sofa',
+      name: 'Tufted Velvet Sofa',
+      x: 1040,
+      y: 740,
+      textureKey: 'furniture_sofa',
+      depthOffset: 16,
+      collision: {
+        width: 90,
+        height: 28,
+        offsetY: 8,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_large',
+        width: 102,
+        height: 22,
+        offsetY: 22,
+      },
     },
+    // Velvet Armchair
     {
-      id: 'painting_lounge',
-      name: 'Equestrian Battle Study',
-      x: 904,
-      y: 44,
-      textureKey: 'decor_painting_portrait',
+      id: 'lounge_armchair',
+      name: 'Plush Velvet Armchair',
+      x: 910,
+      y: 690,
+      textureKey: 'furniture_armchair',
+      depthOffset: 12,
+      collision: {
+        width: 40,
+        height: 24,
+        offsetY: 10,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_small',
+        width: 44,
+        height: 18,
+        offsetY: 20,
+      },
+    },
+    // Coffee Table with Book & Ashtray
+    {
+      id: 'lounge_coffee_table',
+      name: 'Low Mahogany Coffee Table',
+      x: 1040,
+      y: 670,
+      textureKey: 'furniture_coffee_table',
+      depthOffset: 10,
+      collision: {
+        width: 58,
+        height: 20,
+        offsetY: 6,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_med',
+        width: 68,
+        height: 18,
+        offsetY: 14,
+      },
+    },
+    // Ancient Bookshelf
+    {
+      id: 'lounge_bookshelf',
+      name: 'Ancient Leather-Bound Bookshelf',
+      x: 880,
+      y: 530,
+      textureKey: 'furniture_bookshelf',
+      depthOffset: 16,
+      collision: {
+        width: 60,
+        height: 26,
+        offsetY: 28,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_med',
+        width: 70,
+        height: 20,
+        offsetY: 42,
+      },
+    },
+    // Vintage TV Console
+    {
+      id: 'lounge_tv',
+      name: 'Vintage TV Console',
+      x: 1190,
+      y: 690,
+      textureKey: 'furniture_tv_console',
+      depthOffset: 12,
+      collision: {
+        width: 42,
+        height: 24,
+        offsetY: 8,
+      },
+      shadow: {
+        textureKey: 'shadow_furniture_small',
+        width: 46,
+        height: 16,
+        offsetY: 18,
+      },
+    },
+    // Antique Maritime Map on Lounge wall
+    {
+      id: 'lounge_art_map',
+      name: 'Antique Maritime Map',
+      x: 970,
+      y: 496,
+      textureKey: 'decor_art_map',
       depthOffset: -100,
     },
   ],
+
   candles: [
-    // Dressing vanity candelabras
-    { id: 'candle_vanity_l', x: 196, y: 110, radius: 75, intensity: 0.35 },
-    { id: 'candle_vanity_r', x: 252, y: 110, radius: 75, intensity: 0.35 },
+    // --- Bedchamber Candles (Quiet, warm, intimate) ---
+    { id: 'candle_vanity_l', x: 172, y: 102, radius: 44, intensity: 0.35 },
+    { id: 'candle_vanity_r', x: 228, y: 102, radius: 44, intensity: 0.35 },
+    { id: 'candle_bedside', x: 370, y: 102, radius: 40, intensity: 0.3 },
 
-    // Dining table candelabras
-    { id: 'candle_table_l', x: 520, y: 300, radius: 95, intensity: 0.5 },
-    { id: 'candle_table_m', x: 576, y: 300, radius: 105, intensity: 0.55 },
-    { id: 'candle_table_r', x: 632, y: 300, radius: 95, intensity: 0.5 },
+    // --- Upper Landing Sconces (Ceremonial) ---
+    { id: 'sconce_landing_1', x: 500, y: 78, radius: 46, intensity: 0.35 },
+    { id: 'sconce_landing_2', x: 640, y: 78, radius: 46, intensity: 0.35 },
+    { id: 'sconce_landing_3', x: 780, y: 78, radius: 46, intensity: 0.35 },
 
-    // Dining sideboard candle
-    { id: 'candle_sideboard', x: 400, y: 430, radius: 70, intensity: 0.3 },
+    // --- Great Hall Candelabras & Chandelier ---
+    { id: 'candle_chandelier', x: 640, y: 560, radius: 75, intensity: 0.45 },
+    { id: 'candle_hall_foot_l', x: 540, y: 540, radius: 45, intensity: 0.35 },
+    { id: 'candle_hall_foot_r', x: 740, y: 540, radius: 45, intensity: 0.35 },
 
-    // Lounge coffee table candle
-    { id: 'candle_coffee_table', x: 928, y: 248, radius: 80, intensity: 0.4 },
+    // --- Dining Room Candles (Hero romantic table) ---
+    { id: 'candle_table_l', x: 192, y: 692, radius: 52, intensity: 0.45 },
+    { id: 'candle_table_r', x: 288, y: 692, radius: 52, intensity: 0.45 },
+    { id: 'candle_sideboard', x: 240, y: 520, radius: 40, intensity: 0.3 },
 
-    // Lounge bookshelf candle
-    { id: 'candle_bookshelf', x: 848, y: 115, radius: 75, intensity: 0.35 },
+    // --- Lounge Candles ---
+    { id: 'candle_hearth_l', x: 1005, y: 495, radius: 42, intensity: 0.35 },
+    { id: 'candle_hearth_r', x: 1075, y: 495, radius: 42, intensity: 0.35 },
+    { id: 'candle_coffee_table', x: 1040, y: 658, radius: 42, intensity: 0.35 },
   ],
+
   fireplace: {
     id: 'main_fireplace',
-    x: 992,
-    y: 104,
+    x: 1040,
+    y: 520,
     width: 96,
     height: 80,
     state: 'idle',

@@ -3,6 +3,7 @@ import { GAME_CONFIG } from '../config';
 import { InputManager } from '../systems/InputManager';
 import { Player } from '../entities/Player';
 import { DEATH_MANIFEST } from '../entities/deathManifest';
+import { Direction } from '../entities/CharacterManifest';
 import { LightingSystem } from '../systems/LightingSystem';
 import { AmbientFXSystem } from '../systems/AmbientFXSystem';
 import { MansionRoom } from '../world/MansionRoom';
@@ -36,7 +37,7 @@ export class MansionScene extends Phaser.Scene {
   public create(): void {
     // 1. Initialize systems
     this.lightingSystem = new LightingSystem(this);
-    this.ambientFXSystem = new AmbientFXSystem(this);
+    this.ambientFXSystem = new AmbientFXSystem(this, this.lightingSystem);
 
     // 2. Build mansion world geometry, floors, walls, furniture, windows, and hearth
     this.mansionRoom = new MansionRoom(
@@ -47,20 +48,38 @@ export class MansionScene extends Phaser.Scene {
     );
 
     // 3. Spawn Death using Player entity abstraction with visual safe bounds
+    // 3. Spawn Death using Player entity abstraction with visual safe bounds
     const spawn = this.mansionRoom.getSpawnPoint();
     const params = new URLSearchParams(window.location.search);
     let spawnX = spawn.x;
     let spawnY = spawn.y;
+    let initialDirection: Direction = spawn.direction;
+
     const pos = params.get('pos');
     if (pos === 'dining_behind') {
-      spawnX = 576;
-      spawnY = 295; // Behind the dining table (depth sorting test)
+      spawnX = 240;
+      spawnY = 660; // Behind the dining table (depth sorting test)
+      initialDirection = 'down';
     } else if (pos === 'dining') {
-      spawnX = 576;
-      spawnY = 370; // In front of the dining table
+      spawnX = 240;
+      spawnY = 770; // In front of the dining table
+      initialDirection = 'up';
     } else if (pos === 'lounge') {
-      spawnX = 960;
-      spawnY = 240; // In the lounge by the fireplace
+      spawnX = 1040;
+      spawnY = 620; // In the lounge by the fireplace
+      initialDirection = 'up';
+    } else if (pos === 'staircase') {
+      spawnX = 640;
+      spawnY = 380; // Descending the grand staircase
+      initialDirection = 'down';
+    } else if (pos === 'greathall') {
+      spawnX = 640;
+      spawnY = 650; // In the Great Hall
+      initialDirection = 'down';
+    } else if (pos === 'landing') {
+      spawnX = 640;
+      spawnY = 190; // On the upper landing
+      initialDirection = 'down';
     }
 
     this.player = new Player({
@@ -70,16 +89,18 @@ export class MansionScene extends Phaser.Scene {
       manifest: DEATH_MANIFEST,
       inputManager: this.inputManager,
       moveSpeed: 150,
-      initialDirection: 'down',
+      initialDirection,
       safeBounds: this.mansionRoom.getSafeBounds(),
     });
 
-    // 4. Register obstacle and perimeter wall physics colliders
+    // 4. Configure physics world bounds and register colliders
+    this.physics.world.setBounds(0, 0, MANSION_ROOM_DEF.width, MANSION_ROOM_DEF.height);
     this.physics.add.collider(this.player.sprite, this.mansionRoom.wallsGroup);
     this.physics.add.collider(this.player.sprite, this.mansionRoom.furnitureGroup);
 
     // 5. Camera follow with smooth cinematic lerp and room boundaries
     this.cameras.main.setBounds(0, 0, MANSION_ROOM_DEF.width, MANSION_ROOM_DEF.height);
+    this.cameras.main.centerOn(spawnX, spawnY);
     this.cameras.main.startFollow(this.player.sprite, true, 0.08, 0.08);
 
     // 6. Developer shortcuts (hidden from normal player presentation)
@@ -130,8 +151,15 @@ export class MansionScene extends Phaser.Scene {
 
   private getPlayerZoneName(): string {
     const px = this.player.sprite.x;
-    if (px < 368) return 'Dressing / Mirror Area';
-    if (px < 772) return 'Grand Dining Hall';
+    const py = this.player.sprite.y;
+    if (py < 340) {
+      return px < 448 ? "Death's Bedchamber" : 'Upper Landing & Balustrade';
+    }
+    if (py <= 544 && px >= 544 && px <= 736) {
+      return 'Grand Central Staircase';
+    }
+    if (px < 448) return 'Hero Dining Room';
+    if (px <= 832) return 'Great Hall & Gallery';
     return 'Lounge & Hearth';
   }
 
@@ -149,9 +177,10 @@ export class MansionScene extends Phaser.Scene {
     const zone = this.getPlayerZoneName();
     const particleCount = this.ambientFXSystem.getParticleCount();
     const lightsCount = this.lightingSystem.getLightsCount();
+    const sb = MANSION_ROOM_DEF.safeBounds;
 
     const lines = [
-      `[VISUAL QA DIAGNOSTICS - MANSION FOUNDATION]`,
+      `[VISUAL QA DIAGNOSTICS - GRAND MANSION v0.0.6.1]`,
       `Logical Res:   ${GAME_CONFIG.WIDTH} × ${GAME_CONFIG.HEIGHT} (16:9)`,
       `World Size:    ${MANSION_ROOM_DEF.width} × ${MANSION_ROOM_DEF.height} px`,
       `Backing Res:   ${backingW} × ${backingH} px | DPR: ${dpr}`,
@@ -161,7 +190,7 @@ export class MansionScene extends Phaser.Scene {
       `Player Pos:    (${px}, ${py}) | Depth: ${depth}`,
       `Environment:   ${this.mansionRoom.furnitureSprites.length} objects | ${lightsCount} lights`,
       `Ambient FX:    ${particleCount} active particles`,
-      `Safe Bounds:   [X: 64..1088, Y: 104..572]`,
+      `Safe Bounds:   [X: ${sb.minX}..${sb.maxX}, Y: ${sb.minY}..${sb.maxY}]`,
     ];
 
     this.debugOverlayGfx.clear();

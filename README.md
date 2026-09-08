@@ -6,7 +6,7 @@
 
 - **Live Deployment**: [https://jedix420.github.io/dinnerdatewithdeath/](https://jedix420.github.io/dinnerdatewithdeath/)
 - **Engine**: Phaser 3 + TypeScript + Vite
-- **Current Milestone**: `v0.0.6` (Title Experience & Mansion Visual Foundation)
+- **Current Milestone**: `v0.0.6.1` (The Grand Mansion: Story-Driven Spatial & Visual Polish)
 
 ---
 

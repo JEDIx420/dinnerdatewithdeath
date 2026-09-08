@@ -5,36 +5,50 @@ import { DEPTH_LAYERS, calculateDynamicDepth } from '../src/game/systems/DepthSy
 describe('Mansion Room Definition & World Geometry', () => {
   it('validates mansion dimensions and safe bounds', () => {
     expect(MANSION_ROOM_DEF.id).toBe('death_mansion');
-    expect(MANSION_ROOM_DEF.width).toBe(1152);
-    expect(MANSION_ROOM_DEF.height).toBe(640);
+    expect(MANSION_ROOM_DEF.width).toBe(1280);
+    expect(MANSION_ROOM_DEF.height).toBe(960);
 
     const bounds = MANSION_ROOM_DEF.safeBounds;
-    expect(bounds.minX).toBeGreaterThanOrEqual(32);
-    expect(bounds.maxX).toBeLessThanOrEqual(MANSION_ROOM_DEF.width - 32);
-    expect(bounds.minY).toBeGreaterThanOrEqual(96); // below north wall height
-    expect(bounds.maxY).toBeLessThanOrEqual(MANSION_ROOM_DEF.height - 48); // above south wall
+    expect(bounds.minX).toBe(48);
+    expect(bounds.maxX).toBe(1232);
+    expect(bounds.minY).toBe(72);
+    expect(bounds.maxY).toBe(912);
   });
 
-  it('validates spawn point is strictly within safe bounds', () => {
+  it('validates spawn point is strictly within safe bounds in Bedchamber', () => {
     const spawn = MANSION_ROOM_DEF.spawnPoint;
     const bounds = MANSION_ROOM_DEF.safeBounds;
 
+    expect(spawn.x).toBe(200);
+    expect(spawn.y).toBe(190);
+    expect(spawn.direction).toBe('up');
     expect(spawn.x).toBeGreaterThanOrEqual(bounds.minX);
     expect(spawn.x).toBeLessThanOrEqual(bounds.maxX);
     expect(spawn.y).toBeGreaterThanOrEqual(bounds.minY);
     expect(spawn.y).toBeLessThanOrEqual(bounds.maxY);
   });
 
-  it('validates 3 distinct zones exist with floor definitions', () => {
+  it('validates 5 distinct zones exist with floor and rug definitions', () => {
     const floorIds = MANSION_ROOM_DEF.floors.map((f) => f.id);
-    expect(floorIds).toContain('dining_floor');
     expect(floorIds).toContain('dressing_floor');
+    expect(floorIds).toContain('landing_floor');
+    expect(floorIds).toContain('hall_floor');
+    expect(floorIds).toContain('dining_floor');
     expect(floorIds).toContain('lounge_floor');
 
-    // Rugs
-    expect(floorIds).toContain('dining_rug');
+    // Rugs & Medallion
     expect(floorIds).toContain('dressing_rug');
+    expect(floorIds).toContain('landing_rug');
+    expect(floorIds).toContain('hall_medallion');
+    expect(floorIds).toContain('dining_rug');
     expect(floorIds).toContain('lounge_rug');
+  });
+
+  it('validates grand staircase connector is configured', () => {
+    expect(MANSION_ROOM_DEF.staircase).toBeDefined();
+    expect(MANSION_ROOM_DEF.staircase?.stepCount).toBe(9);
+    expect(MANSION_ROOM_DEF.staircase?.x).toBe(560);
+    expect(MANSION_ROOM_DEF.staircase?.y).toBe(260);
   });
 
   it('validates hero dining table and major narrative furniture are configured', () => {
@@ -45,11 +59,12 @@ describe('Mansion Room Definition & World Geometry', () => {
     expect(table).toBeDefined();
     expect(table?.collision).toBeDefined();
     expect(table?.shadow).toBeDefined();
-    expect(table?.x).toBe(576);
+    expect(table?.x).toBe(240);
+    expect(table?.y).toBe(720);
 
     // Love & Death chairs
-    expect(furnitureMap.get('dining_chair_north')).toBeDefined();
-    expect(furnitureMap.get('dining_chair_south')).toBeDefined();
+    expect(furnitureMap.get('dining_chair_love')).toBeDefined();
+    expect(furnitureMap.get('dining_chair_death')).toBeDefined();
 
     // Mirror & Vanity in dressing zone
     expect(furnitureMap.get('dressing_mirror')).toBeDefined();

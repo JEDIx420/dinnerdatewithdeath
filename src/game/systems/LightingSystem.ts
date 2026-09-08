@@ -105,7 +105,7 @@ export class LightingSystem {
       }
     }
 
-    // Redraw ambient darkness overlay with soft radial cutouts
+    // Redraw ambient darkness overlay
     this.renderDarkness();
   }
 
@@ -123,27 +123,24 @@ export class LightingSystem {
     this.darknessGfx.fillStyle(this.ambientColor, this.ambientAlpha);
     this.darknessGfx.fillRect(viewX, viewY, viewW, viewH);
 
-    // Subtract/soften darkness around lights by drawing counter-tinted concentric rings
-    for (const light of this.lights.values()) {
-      // Check if light is near camera viewport
-      if (
-        light.x < viewX - light.currentRadius ||
-        light.x > viewX + viewW + light.currentRadius ||
-        light.y < viewY - light.currentRadius ||
-        light.y > viewY + viewH + light.currentRadius
-      ) {
-        continue;
-      }
-
-      const steps = 4;
-      const stepRadius = light.currentRadius / steps;
-      for (let i = steps; i >= 1; i--) {
-        const r = stepRadius * i;
-        const ringAlpha = (1 - i / (steps + 1)) * (light.currentIntensity * 0.38);
-        this.darknessGfx.fillStyle(light.color, ringAlpha);
-        this.darknessGfx.fillCircle(light.x, light.y, r);
-      }
+    // Lightning sky/ambient flash overlay if active
+    if (this.lightningFlashIntensity > 0) {
+      this.darknessGfx.fillStyle(0x768eb4, this.lightningFlashIntensity * 0.45);
+      this.darknessGfx.fillRect(viewX, viewY, viewW, viewH);
     }
+  }
+
+  private lightningFlashIntensity: number = 0;
+
+  public triggerLightning(intensity: number = 0.6): void {
+    this.lightningFlashIntensity = intensity;
+    // Fast decay tween
+    this.scene.tweens.add({
+      targets: this,
+      lightningFlashIntensity: 0,
+      duration: 260,
+      ease: 'Quad.easeOut',
+    });
   }
 
   public setAmbientDarkness(alpha: number): void {
