@@ -32,7 +32,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   placements.push({
     id: 'bedchamber_armchair',
     assetId: 'bed03_armchair_crimson',
-    x: 95,
+    x: 90,
     y: 220,
     scale: 0.45,
     anchorPreset: 'bottom-center',
@@ -46,8 +46,8 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   placements.push({
     id: 'bedchamber_wardrobe',
     assetId: 'bed03_wardrobe_tall',
-    x: 205,
-    y: 130,
+    x: 180,
+    y: 126,
     scale: 0.45,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
@@ -56,12 +56,12 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'wardrobe_large',
   });
 
-  // 4. Dressing Vanity with antique mirror
+  // 4. Dressing Vanity with antique mirror (clean wall, no extra frame/panel behind it)
   placements.push({
     id: 'bedchamber_vanity',
     assetId: 'bed03_vanity_ornate',
-    x: 320,
-    y: 130,
+    x: 330,
+    y: 126,
     scale: 0.45,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
@@ -70,25 +70,12 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'vanity',
   });
 
-  // Curated Portrait Art above vanity
-  placements.push({
-    id: 'bedchamber_art_portrait',
-    assetId: 'art07_paintings_03',
-    x: 320,
-    y: 55,
-    scale: 0.42,
-    anchorPreset: 'center',
-    zone: 'bedchamber',
-    role: 'art',
-    depthClass: 'back-wall-detail',
-  });
-
-  // 5. Hero Grand Gothic Four-Poster Bed
+  // 5. Hero Grand Gothic Four-Poster Bed (anchored at x: 180, y: 270)
   placements.push({
     id: 'bedchamber_bed',
     assetId: 'bed03_bed_grand_gothic',
-    x: 205,
-    y: 290,
+    x: 180,
+    y: 270,
     scale: 0.46,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
@@ -97,13 +84,13 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'bed_large',
   });
 
-  // Bedside Nightstand
+  // Bedside Nightstand on left side of bed (leaving right-side spawn completely clear)
   placements.push({
     id: 'bedchamber_nightstand',
     assetId: 'bed03_bedside_cabinet',
-    x: 295,
-    y: 280,
-    scale: 0.42,
+    x: 118,
+    y: 260,
+    scale: 0.40,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
     role: 'nightstand',
@@ -117,24 +104,11 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     assetId: 'lounge06_candelabra_gold',
     x: 0,
     y: -22,
-    scale: 0.35,
+    scale: 0.30,
     parentPlacementId: 'bedchamber_nightstand',
     zone: 'bedchamber',
     role: 'candle',
     disableCollision: true,
-  });
-
-  // Hallway Edge Art leading from bedroom
-  placements.push({
-    id: 'bedchamber_art_hallway_edge',
-    assetId: 'art07_paintings_02',
-    x: 420,
-    y: 65,
-    scale: 0.42,
-    anchorPreset: 'center',
-    zone: 'bedchamber',
-    role: 'art',
-    depthClass: 'back-wall-detail',
   });
 
   // North wall wainscot panels
@@ -285,13 +259,13 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   // Grand, monumental. Bottom of stairs is a STRICT keep-clear zone (zero clutter).
   // Hero chandelier moved deeper into hall overhead.
   // =========================================================================
-  // 1. Singular Grand Chandelier placed deeper into hall at x: 640, y: 640
+  // 1. Singular Grand Chandelier lifted overhead at x: 640, y: 480 (revealing floor medallion)
   placements.push({
     id: 'hall_chandelier',
     assetId: 'hall04_chandelier_grand',
     x: AXIS_X,
-    y: 640,
-    scale: 0.52,
+    y: 480,
+    scale: 0.46,
     anchorPreset: 'top-center',
     zone: 'great_hall',
     role: 'chandelier',
@@ -332,50 +306,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   );
   placements.push(colBottomL, colBottomR);
 
-  // 3. Staircase Descent Framing Arches & Spandrels
-  const [hallArchL, hallArchR] = placeMirroredPair(
-    'hall_arch',
-    AXIS_X,
-    136,
-    470,
-    'arch_gothic_pointed_stone',
-    'arch_gothic_pointed_stone',
-    {
-      zone: 'great_hall',
-      role: 'arch',
-      flipXRight: true,
-      collisionProfile: 'none',
-    }
-  );
-  placements.push(hallArchL, hallArchR);
-
-  const [hallSpandrelL, hallSpandrelR] = placeMirroredPair(
-    'hall_spandrel',
-    AXIS_X,
-    180,
-    462,
-    'arch_spandrel_left',
-    'arch_spandrel_right',
-    {
-      zone: 'great_hall',
-      role: 'spandrel',
-    }
-  );
-  placements.push(hallSpandrelL, hallSpandrelR);
-
-  // Bust niche centered above staircase arrival
-  placements.push({
-    id: 'hall_bust_niche',
-    assetId: 'wall_niche_bust',
-    x: AXIS_X,
-    y: 466,
-    anchorPreset: 'bottom-center',
-    zone: 'great_hall',
-    role: 'niche',
-    depthClass: 'back-wall-detail',
-  });
-
-  // 4. Terminal Staircase Arrival Newels at y: 552
+  // 3. Terminal Staircase Arrival Newels at y: 552 (Framing stair opening, no clutter)
   const [stairBottomNewelL, stairBottomNewelR] = placeMirroredPair(
     'stair_bottom_newel',
     AXIS_X,
@@ -391,30 +322,6 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     }
   );
   placements.push(stairBottomNewelL, stairBottomNewelR);
-
-  // 5. Curated Fine Art: Celestial Chart & Battlefield on upper wall bays
-  placements.push({
-    id: 'hall_art_celestial',
-    assetId: 'art07_paintings_04',
-    x: AXIS_X - 120,
-    y: 465,
-    scale: 0.44,
-    anchorPreset: 'center',
-    zone: 'great_hall',
-    role: 'art',
-    depthClass: 'back-wall-detail',
-  });
-  placements.push({
-    id: 'hall_art_battlefield',
-    assetId: 'art07_paintings_07',
-    x: AXIS_X + 120,
-    y: 465,
-    scale: 0.44,
-    anchorPreset: 'center',
-    zone: 'great_hall',
-    role: 'art',
-    depthClass: 'back-wall-detail',
-  });
 
   // =========================================================================
   // ZONE 4: HERO DINING ROOM (Ground West: x: 48..448, y: 520..920)
@@ -435,7 +342,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'dining_table_large',
   });
 
-  // 2. Love's & Death's Captain Chairs
+  // 2. Love's & Death's Captain Chairs (properly facing the table)
   placements.push({
     id: 'dining_chair_love',
     assetId: 'dining05_chair_tufted',
@@ -447,6 +354,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     role: 'chair_love',
     depthClass: 'dynamic-solid',
     collisionProfile: 'dining_chair',
+    flipX: true, // Faces RIGHT toward the table
   });
   placements.push({
     id: 'dining_chair_death',
@@ -459,23 +367,45 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     role: 'chair_death',
     depthClass: 'dynamic-solid',
     collisionProfile: 'dining_chair',
-    flipX: true,
+    flipX: false, // Faces LEFT toward the table
   });
 
-  // 3. Single Candelabra Fixture on Dining Table runner
+  // 3. Table Setting: Center Candelabra and individual porcelain plate settings with cutlery
   placements.push({
     id: 'dining_candelabra',
     assetId: 'lounge06_candelabra_gold',
     x: 0,
     y: -26,
-    scale: 0.55,
+    scale: 0.52,
     parentPlacementId: 'dining_table',
     zone: 'dining_room',
     role: 'candelabra',
     disableCollision: true,
   });
+  placements.push({
+    id: 'dining_setting_love',
+    assetId: 'dining05_tableware_65',
+    x: -45,
+    y: -20,
+    scale: 0.65,
+    parentPlacementId: 'dining_table',
+    zone: 'dining_room',
+    role: 'tableware',
+    disableCollision: true,
+  });
+  placements.push({
+    id: 'dining_setting_death',
+    assetId: 'dining05_tableware_68',
+    x: 45,
+    y: -20,
+    scale: 0.65,
+    parentPlacementId: 'dining_table',
+    zone: 'dining_room',
+    role: 'tableware',
+    disableCollision: true,
+  });
 
-  // 4. Fear's Velvet Chaise Lounge (along south-west wall, completely out of transit corridor)
+  // 4. Fear's Velvet Chaise Lounge (along south-west wall, facing right toward landing)
   placements.push({
     id: 'dining_couch_fear',
     assetId: 'lounge06_couch_loveseat',
@@ -487,9 +417,10 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     role: 'sofa_fear',
     depthClass: 'dynamic-solid',
     collisionProfile: 'sofa',
+    flipX: true,
   });
 
-  // 5. North Wall Oak Wine Credenza
+  // 5. North Wall Oak Wine Credenza (clean centered sideboard)
   placements.push({
     id: 'dining_sideboard',
     assetId: 'dining05_sideboard_oak',
@@ -503,20 +434,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'sideboard',
   });
 
-  // 6. Curated Feast Still-Life Painting above Credenza
-  placements.push({
-    id: 'dining_art_feast',
-    assetId: 'art07_paintings_08',
-    x: 240,
-    y: 440,
-    scale: 0.44,
-    anchorPreset: 'center',
-    zone: 'dining_room',
-    role: 'art',
-    depthClass: 'back-wall-detail',
-  });
-
-  // 7. Paired Gothic Arched Windows with interior rain masks
+  // 6. Paired Gothic Arched Windows with interior rain masks (restored visible windows)
   placements.push({
     id: 'dining_window_left',
     assetId: 'env02_window_gothic_tall',
@@ -538,38 +456,6 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     zone: 'dining_room',
     role: 'window',
     depthClass: 'back-wall-detail',
-  });
-
-  // North wall damask and gold stone panels
-  placements.push({
-    id: 'dining_damask_west',
-    assetId: 'wall_panel_damask_crimson',
-    x: 100,
-    y: 520,
-    anchorPreset: 'bottom-center',
-    zone: 'dining_room',
-    role: 'panel',
-    depthClass: 'back-wall',
-  });
-  placements.push({
-    id: 'dining_panel_center',
-    assetId: 'wall_panel_stone_framed_gold',
-    x: 240,
-    y: 520,
-    anchorPreset: 'bottom-center',
-    zone: 'dining_room',
-    role: 'panel',
-    depthClass: 'back-wall',
-  });
-  placements.push({
-    id: 'dining_damask_east',
-    assetId: 'wall_panel_damask_crimson',
-    x: 380,
-    y: 520,
-    anchorPreset: 'bottom-center',
-    zone: 'dining_room',
-    role: 'panel',
-    depthClass: 'back-wall',
   });
 
   // Clean Entrance Portal: Corinthian columns framing open passage into Great Hall (x: 440)
@@ -641,27 +527,13 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     depthClass: 'back-wall-detail',
   });
 
-  // 4. Plush 3-Seater Velvet Sofa facing the Hearth
-  placements.push({
-    id: 'lounge_sofa',
-    assetId: 'lounge06_sofa_ornate',
-    x: 1040,
-    y: 740,
-    scale: 0.52,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'sofa',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'sofa',
-  });
-
-  // 5. Low Wood Coffee Table with candelabra & book
+  // 4. Centered Coffee Table with candelabra & book
   placements.push({
     id: 'lounge_coffee_table',
     assetId: 'lounge06_coffee_table_wood',
     x: 1040,
-    y: 665,
-    scale: 0.46,
+    y: 720,
+    scale: 0.48,
     anchorPreset: 'bottom-center',
     zone: 'lounge',
     role: 'coffee_table',
@@ -669,13 +541,42 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'coffee_table',
   });
 
-  // 6. Fireside Velvet Armchair
+  // 5. Main Sofa (West) facing the table
+  placements.push({
+    id: 'lounge_sofa',
+    assetId: 'lounge06_sofa_ornate',
+    x: 935,
+    y: 720,
+    scale: 0.42,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'sofa',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'sofa',
+  });
+
+  // 6. Mirrored Sofa (East) opposite, also facing the table
+  placements.push({
+    id: 'lounge_sofa_mirrored',
+    assetId: 'lounge06_sofa_ornate',
+    x: 1145,
+    y: 720,
+    scale: 0.42,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'sofa',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'sofa',
+    flipX: true,
+  });
+
+  // 7. Small Armchair facing the table from the south
   placements.push({
     id: 'lounge_armchair',
     assetId: 'lounge06_armchair_velvet',
-    x: 920,
-    y: 690,
-    scale: 0.44,
+    x: 1040,
+    y: 795,
+    scale: 0.42,
     anchorPreset: 'bottom-center',
     zone: 'lounge',
     role: 'armchair',
@@ -683,13 +584,13 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'armchair',
   });
 
-  // 7. Tall Leather-Bound Bookshelf with Globe
+  // 8. Tall Leather-Bound Bookshelf with Globe
   placements.push({
     id: 'lounge_bookshelf',
     assetId: 'lounge06_bookshelf_tall',
-    x: 890,
-    y: 530,
-    scale: 0.52,
+    x: 885,
+    y: 525,
+    scale: 0.50,
     anchorPreset: 'bottom-center',
     zone: 'lounge',
     role: 'bookshelf',
@@ -697,12 +598,12 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'bookshelf',
   });
 
-  // 8. Vintage Retro Television Console
+  // 9. Vintage Retro Television Console facing the seating area
   placements.push({
     id: 'lounge_tv',
     assetId: 'lounge06_tv_retro',
-    x: 1190,
-    y: 690,
+    x: 1180,
+    y: 580,
     scale: 0.44,
     anchorPreset: 'bottom-center',
     zone: 'lounge',
@@ -711,7 +612,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'tv_console',
   });
 
-  // 9. Visible Gothic Arched Window with interior rain mask
+  // 10. Visible Gothic Arched Window with interior rain mask
   placements.push({
     id: 'lounge_window',
     assetId: 'env02_window_gothic_tall',
@@ -722,28 +623,6 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     zone: 'lounge',
     role: 'window',
     depthClass: 'back-wall-detail',
-  });
-
-  // North wall dark damask panels
-  placements.push({
-    id: 'lounge_damask_west',
-    assetId: 'wall_panel_damask_crimson',
-    x: 890,
-    y: 520,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'panel',
-    depthClass: 'back-wall',
-  });
-  placements.push({
-    id: 'lounge_damask_east',
-    assetId: 'wall_panel_damask_crimson',
-    x: 1180,
-    y: 520,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'panel',
-    depthClass: 'back-wall',
   });
 
   // Clean Entrance Portal: Wood columns framing open passage into Great Hall (x: 840)

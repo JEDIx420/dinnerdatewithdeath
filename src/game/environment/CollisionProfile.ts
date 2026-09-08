@@ -133,7 +133,7 @@ export const COLLISION_PROFILES: Record<CollisionProfileId, CollisionProfile> = 
   bed_large: {
     id: 'bed_large',
     name: 'Hero Grand Bed Footprint',
-    footprint: { shape: 'rect', width: 140, height: 72, offsetX: 0, offsetY: -36 },
+    footprint: { shape: 'rect', width: 104, height: 60, offsetX: 0, offsetY: -30 },
   },
   wardrobe_large: {
     id: 'wardrobe_large',

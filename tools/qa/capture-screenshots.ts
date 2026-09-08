@@ -16,12 +16,13 @@ async function captureAll(): Promise<void> {
   await new Promise((r) => setTimeout(r, 1200));
 
   const views = [
-    { name: 'curated_repair_bedchamber.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=bedchamber' },
-    { name: 'curated_repair_landing.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=landing' },
-    { name: 'curated_repair_staircase.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=staircase' },
-    { name: 'curated_repair_greathall.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=greathall' },
-    { name: 'curated_repair_dining.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=dining' },
-    { name: 'curated_repair_lounge.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=lounge' },
+    { name: 'refined_new_game_spawn.png', url: 'http://127.0.0.1:4180/?scene=mansion' },
+    { name: 'refined_bedchamber.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=bedchamber' },
+    { name: 'refined_landing.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=landing' },
+    { name: 'refined_staircase.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=staircase' },
+    { name: 'refined_foot_of_stairs.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=greathall' },
+    { name: 'refined_dining.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=dining' },
+    { name: 'refined_lounge.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=lounge' },
   ];
 
   for (const v of views) {

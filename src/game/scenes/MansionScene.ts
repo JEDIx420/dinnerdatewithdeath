@@ -87,8 +87,8 @@ export class MansionScene extends Phaser.Scene {
       spawnY = 190; // On the upper landing
       initialDirection = 'down';
     } else if (pos === 'bedchamber') {
-      spawnX = 200;
-      spawnY = 220; // Inside the bedchamber
+      spawnX = 265;
+      spawnY = 240; // Beside the bed in the bedchamber
       initialDirection = 'down';
     }
 
@@ -108,10 +108,13 @@ export class MansionScene extends Phaser.Scene {
     this.physics.add.collider(this.player.sprite, this.mansionRoom.wallsGroup);
     this.physics.add.collider(this.player.sprite, this.mansionRoom.furnitureGroup);
 
-    // 5. Camera follow with smooth cinematic lerp and room boundaries
-    this.cameras.main.setBounds(0, 0, MANSION_ROOM_DEF.width, MANSION_ROOM_DEF.height);
-    this.cameras.main.centerOn(spawnX, spawnY);
-    this.cameras.main.startFollow(this.player.sprite, true, 0.08, 0.08);
+    // 5. Room-aware focus camera: smooth follow, deadzone, slight zoom tuning, and room focus
+    const cam = this.cameras.main;
+    cam.setBounds(0, 0, MANSION_ROOM_DEF.width, MANSION_ROOM_DEF.height);
+    cam.setZoom(1.12);
+    cam.centerOn(spawnX, spawnY);
+    cam.startFollow(this.player.sprite, true, 0.06, 0.06);
+    cam.setDeadzone(100, 70);
 
     // 6. Developer shortcuts (hidden from normal player presentation)
     // Press 'L' to launch Asset Lab

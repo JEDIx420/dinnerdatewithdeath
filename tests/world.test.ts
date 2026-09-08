@@ -19,9 +19,9 @@ describe('Mansion Room Definition & World Geometry', () => {
     const spawn = MANSION_ROOM_DEF.spawnPoint;
     const bounds = MANSION_ROOM_DEF.safeBounds;
 
-    expect(spawn.x).toBe(200);
-    expect(spawn.y).toBe(190);
-    expect(spawn.direction).toBe('up');
+    expect(spawn.x).toBe(265);
+    expect(spawn.y).toBe(240);
+    expect(spawn.direction).toBe('down');
     expect(spawn.x).toBeGreaterThanOrEqual(bounds.minX);
     expect(spawn.x).toBeLessThanOrEqual(bounds.maxX);
     expect(spawn.y).toBeGreaterThanOrEqual(bounds.minY);

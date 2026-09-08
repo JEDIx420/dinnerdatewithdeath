@@ -177,10 +177,10 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     maxY: 912,
   },
   spawnPoint: {
-    // Spawns upstairs in his private Bedchamber in front of the ornate mirror
-    x: 200,
-    y: 190,
-    direction: 'up',
+    // Spawns upstairs in his private Bedchamber beside the bed, immediately visible
+    x: 265,
+    y: 240,
+    direction: 'down',
   },
   floors: [
     // 1. Bedchamber Floor (Dark patterned stone blocks)
@@ -196,9 +196,9 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     {
       id: 'dressing_rug',
       x: 130,
-      y: 260,
-      width: 150,
-      height: 40,
+      y: 240,
+      width: 170,
+      height: 48,
       textureKey: 'carpet_crimson_border',
       depth: 200,
     },

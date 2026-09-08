@@ -1392,7 +1392,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 8,
         "radius": 44,
         "intensity": 0.4,
-        "flameMode": "overlay"
+        "flameMode": "none"
       }
     ],
     "notes": "Doors Windows Staircase asset (50x70)"
@@ -2954,7 +2954,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 22,
         "radius": 40,
         "intensity": 0.35,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "candle_2",
@@ -2962,7 +2962,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 26,
         "radius": 40,
         "intensity": 0.35,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "candle_3",
@@ -2970,7 +2970,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 28,
         "radius": 44,
         "intensity": 0.4,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "candle_4",
@@ -2978,7 +2978,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 26,
         "radius": 40,
         "intensity": 0.35,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "candle_5",
@@ -2986,7 +2986,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "localY": 22,
         "radius": 40,
         "intensity": 0.35,
-        "flameMode": "overlay"
+        "flameMode": "none"
       }
     ],
     "notes": "Great Hall & Gallery asset (134x227)"

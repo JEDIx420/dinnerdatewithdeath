@@ -9,34 +9,7 @@ export const MANSION_ARCHITECTURE_ELEMENTS: ArchitecturalSpriteDef[] = [
   // ZONE 1: DEATH'S BEDCHAMBER (Upper West: x: 48..448, y: 72..320)
   // Intimate private quarters where Death awakens facing his grand ornate mirror.
   // =========================================================================
-  // Mirror Wall architectural framing (Mirror is at x: 200, y: 88)
-  {
-    id: 'arch_bedchamber_mirror_cornice',
-    textureKey: 'trim_cornice_wood_a',
-    x: 200,
-    y: 38,
-    zone: 'bedchamber',
-    role: 'framing',
-    depthOffset: -120,
-  },
-  {
-    id: 'arch_bedchamber_mirror_col_left',
-    textureKey: 'column_wood_fluted',
-    x: 154,
-    y: 72,
-    zone: 'bedchamber',
-    role: 'framing',
-    depthOffset: -110,
-  },
-  {
-    id: 'arch_bedchamber_mirror_col_right',
-    textureKey: 'column_wood_fluted',
-    x: 246,
-    y: 72,
-    zone: 'bedchamber',
-    role: 'framing',
-    depthOffset: -110,
-  },
+
   // Bedchamber North Wall Wainscoting & Trims
   {
     id: 'arch_bedchamber_wainscot_1',
@@ -96,49 +69,7 @@ export const MANSION_ARCHITECTURE_ELEMENTS: ArchitecturalSpriteDef[] = [
     depthOffset: 20,
     collision: { width: 24, height: 20, offsetY: 10 },
   },
-  // Subtle Wall Ornament above Mirror
-  {
-    id: 'arch_bedchamber_ornament_mirror',
-    textureKey: 'ornament_fleur_de_lis',
-    x: 200,
-    y: 24,
-    zone: 'bedchamber',
-    role: 'ornament',
-    depthOffset: -135,
-  },
 
-  // =========================================================================
-  // ZONE 2: UPPER LANDING & BALUSTRADE (Upper East: x: 448..832, y: 72..288)
-  // Ceremonial corridor looking down over the Great Hall.
-  // =========================================================================
-  // North Wall Decorative Wood Paneling & Architraves
-  {
-    id: 'arch_landing_panel_1',
-    textureKey: 'wall_panel_fleur_ornate',
-    x: 520,
-    y: 56,
-    zone: 'upper_landing',
-    role: 'panel',
-    depthOffset: -130,
-  },
-  {
-    id: 'arch_landing_panel_2',
-    textureKey: 'wall_panel_fleur_small',
-    x: 640,
-    y: 56,
-    zone: 'upper_landing',
-    role: 'panel',
-    depthOffset: -130,
-  },
-  {
-    id: 'arch_landing_panel_3',
-    textureKey: 'wall_panel_fleur_ornate',
-    x: 760,
-    y: 56,
-    zone: 'upper_landing',
-    role: 'panel',
-    depthOffset: -130,
-  },
   // Upper Cornice run
   {
     id: 'arch_landing_cornice_left',
@@ -256,25 +187,7 @@ export const MANSION_ARCHITECTURE_ELEMENTS: ArchitecturalSpriteDef[] = [
   // ZONE 3: GREAT HALL / CENTRAL GALLERY (Ground Center: x: 448..832, y: 520..920)
   // Grand reception area with stone columns, pointed arches, and bust niche.
   // =========================================================================
-  // Pointed Gothic Arches framing the staircase descent north wall (y: 456)
-  {
-    id: 'arch_hall_arch_left',
-    textureKey: 'arch_gothic_pointed_stone',
-    x: 504,
-    y: 470,
-    zone: 'great_hall',
-    role: 'arch',
-    depthOffset: -120,
-  },
-  {
-    id: 'arch_hall_arch_right',
-    textureKey: 'arch_gothic_pointed_stone',
-    x: 776,
-    y: 470,
-    zone: 'great_hall',
-    role: 'arch',
-    depthOffset: -120,
-  },
+
   // Classical Stone Columns supporting the hall ceiling
   {
     id: 'arch_hall_col_left_top',
@@ -316,106 +229,7 @@ export const MANSION_ARCHITECTURE_ELEMENTS: ArchitecturalSpriteDef[] = [
     depthOffset: 10,
     collision: { width: 24, height: 16, offsetY: 24 },
   },
-  // Center North Wall Bust Niche (above staircase arch)
-  {
-    id: 'arch_hall_bust_niche',
-    textureKey: 'wall_niche_bust',
-    x: 640,
-    y: 466,
-    zone: 'great_hall',
-    role: 'niche',
-    depthOffset: -115,
-  },
-  // Foliate Spandrels flanking the archways
-  {
-    id: 'arch_hall_spandrel_l',
-    textureKey: 'arch_spandrel_left',
-    x: 460,
-    y: 462,
-    zone: 'great_hall',
-    role: 'spandrel',
-    depthOffset: -125,
-  },
-  {
-    id: 'arch_hall_spandrel_r',
-    textureKey: 'arch_spandrel_right',
-    x: 820,
-    y: 462,
-    zone: 'great_hall',
-    role: 'spandrel',
-    depthOffset: -125,
-  },
-  // Heraldic relief / crest above hall threshold
-  {
-    id: 'arch_hall_crest',
-    textureKey: 'ornament_foliage_crest_a',
-    x: 640,
-    y: 432,
-    zone: 'great_hall',
-    role: 'ornament',
-    depthOffset: -130,
-  },
 
-  // =========================================================================
-  // ZONE 4: DINING ROOM (Ground West: x: 48..448, y: 520..920)
-  // Opulent formal dining space where the dinner date will transpire.
-  // =========================================================================
-  // Crimson Damask Wall Panels
-  {
-    id: 'arch_dining_damask_1',
-    textureKey: 'wall_panel_damask_crimson',
-    x: 100,
-    y: 472,
-    zone: 'dining_room',
-    role: 'damask',
-    depthOffset: -130,
-  },
-  {
-    id: 'arch_dining_damask_2',
-    textureKey: 'wall_panel_stone_framed_gold',
-    x: 250,
-    y: 472,
-    zone: 'dining_room',
-    role: 'damask',
-    depthOffset: -130,
-  },
-  {
-    id: 'arch_dining_damask_3',
-    textureKey: 'wall_panel_damask_crimson',
-    x: 400,
-    y: 472,
-    zone: 'dining_room',
-    role: 'damask',
-    depthOffset: -130,
-  },
-  // High Wainscot Rail & Moulding
-  {
-    id: 'arch_dining_dado_1',
-    textureKey: 'trim_moulding_ribbed_h',
-    x: 100,
-    y: 494,
-    zone: 'dining_room',
-    role: 'trim',
-    depthOffset: -125,
-  },
-  {
-    id: 'arch_dining_dado_2',
-    textureKey: 'trim_moulding_ribbed_h',
-    x: 250,
-    y: 494,
-    zone: 'dining_room',
-    role: 'trim',
-    depthOffset: -125,
-  },
-  {
-    id: 'arch_dining_dado_3',
-    textureKey: 'trim_moulding_ribbed_h',
-    x: 400,
-    y: 494,
-    zone: 'dining_room',
-    role: 'trim',
-    depthOffset: -125,
-  },
   // Fluted Wood / Corinthian Columns at Dining entrance archway
   {
     id: 'arch_dining_col_entry_top',
