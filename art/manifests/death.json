@@ -3,15 +3,15 @@
   "displayName": "Death",
   "sourceFile": "art/source/characters/death/walk-source.png",
   "targetSheet": {
-    "width": 256,
-    "height": 256,
-    "cellWidth": 64,
-    "cellHeight": 64,
+    "width": 512,
+    "height": 512,
+    "cellWidth": 128,
+    "cellHeight": 128,
     "cols": 4,
     "rows": 4
   },
-  "characterScaleHeight": 46,
-  "footBaseline": 56,
+  "characterScaleHeight": 92,
+  "footBaseline": 112,
   "backgroundRemoval": {
     "method": "flood_fill_exterior",
     "threshold": 185,

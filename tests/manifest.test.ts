@@ -2,8 +2,17 @@ import { describe, it, expect } from 'vitest';
 import fs from 'node:fs';
 import path from 'node:path';
 import { DEATH_MANIFEST } from '../src/game/entities/deathManifest';
+import { GAME_CONFIG } from '../src/game/constants';
 
-describe('Death Character Manifests', () => {
+describe('Death Character Manifests & Rendering Constants', () => {
+  it('validates logical presentation constants (v0.0.5 standard)', () => {
+    expect(GAME_CONFIG.WIDTH).toBe(768);
+    expect(GAME_CONFIG.HEIGHT).toBe(432);
+    expect(GAME_CONFIG.TILE_SIZE).toBe(32);
+    expect(GAME_CONFIG.CHARACTER_CELL_SIZE).toBe(128);
+    expect(GAME_CONFIG.CHARACTER_FOOT_BASELINE).toBe(112);
+  });
+
   it('validates extraction manifest in art/manifests/death.json', () => {
     const manifestPath = path.join(process.cwd(), 'art/manifests/death.json');
     expect(fs.existsSync(manifestPath)).toBe(true);
@@ -12,9 +21,12 @@ describe('Death Character Manifests', () => {
     expect(data.id).toBe('death');
     expect(data.targetSheet.cols).toBe(4);
     expect(data.targetSheet.rows).toBe(4);
-    expect(data.targetSheet.cellWidth).toBe(64);
-    expect(data.targetSheet.cellHeight).toBe(64);
-    expect(data.footBaseline).toBe(56);
+    expect(data.targetSheet.width).toBe(512);
+    expect(data.targetSheet.height).toBe(512);
+    expect(data.targetSheet.cellWidth).toBe(128);
+    expect(data.targetSheet.cellHeight).toBe(128);
+    expect(data.characterScaleHeight).toBe(92);
+    expect(data.footBaseline).toBe(112);
     expect(data.backgroundRemoval.threshold).toBeGreaterThan(150);
 
     expect(data.directions.down.row).toBe(0);
@@ -32,9 +44,9 @@ describe('Death Character Manifests', () => {
 
     const runtimeData = JSON.parse(fs.readFileSync(runtimePath, 'utf-8'));
     expect(runtimeData.id).toBe('death');
-    expect(runtimeData.frameWidth).toBe(64);
-    expect(runtimeData.frameHeight).toBe(64);
-    expect(runtimeData.footBaseline).toBe(56);
+    expect(runtimeData.frameWidth).toBe(128);
+    expect(runtimeData.frameHeight).toBe(128);
+    expect(runtimeData.footBaseline).toBe(112);
 
     const directions = ['walk_down', 'walk_left', 'walk_right', 'walk_up'] as const;
     for (const dir of directions) {
@@ -52,9 +64,9 @@ describe('Death Character Manifests', () => {
 
   it('validates compiled DEATH_MANIFEST object matches runtime contract', () => {
     expect(DEATH_MANIFEST.id).toBe('death');
-    expect(DEATH_MANIFEST.frameWidth).toBe(64);
-    expect(DEATH_MANIFEST.frameHeight).toBe(64);
-    expect(DEATH_MANIFEST.footBaseline).toBe(56);
+    expect(DEATH_MANIFEST.frameWidth).toBe(128);
+    expect(DEATH_MANIFEST.frameHeight).toBe(128);
+    expect(DEATH_MANIFEST.footBaseline).toBe(112);
 
     // Verify all 16 frames partitioned cleanly into 4 rows of 4
     expect(DEATH_MANIFEST.animations.walk_down.frames).toEqual([0, 1, 2, 3]);
@@ -69,13 +81,13 @@ describe('Death Character Manifests', () => {
     expect(DEATH_MANIFEST.animations.walk_up.idleFrame).toBe(15);
   });
 
-  it('ensures production sprite sheet asset exists and is 256x256', () => {
+  it('ensures production sprite sheet asset exists and is 512x512', () => {
     const pngPath = path.join(
       process.cwd(),
       'public/game-assets/characters/death/overworld/walk.png'
     );
     expect(fs.existsSync(pngPath)).toBe(true);
     const stats = fs.statSync(pngPath);
-    expect(stats.size).toBeGreaterThan(5000);
+    expect(stats.size).toBeGreaterThan(20000);
   });
 });

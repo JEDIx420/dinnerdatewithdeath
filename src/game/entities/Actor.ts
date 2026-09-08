@@ -12,6 +12,7 @@ export interface ActorConfig {
 /**
  * Actor provides a standardized runtime contract for overworld characters (Death, Love, Fear, General).
  * Handles directional walk animation selection, idle frame holding, and foot-level collision bounds.
+ * Standardized in v0.0.5 for 128x128 frame cells.
  */
 export class Actor {
   public readonly sprite: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
@@ -31,10 +32,13 @@ export class Actor {
       this.getIdleFrameForDirection(this.facing)
     );
 
-    // Standardized foot-level collision box within 64x64 cell
-    // Feet anchor at baseline Y=56, character width ~28px, centered around X=32
-    this.sprite.body.setSize(16, 10);
-    this.sprite.body.setOffset(24, 48);
+    // Enforce crisp nearest-neighbor filtering on the overworld sprite
+    this.sprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    // Standardized foot-level collision box within 128x128 cell (character centered at X=64, feet at Y=112)
+    // Box: 32x20 px, offset at (48, 96)
+    this.sprite.body.setSize(32, 20);
+    this.sprite.body.setOffset(48, 96);
     this.sprite.setCollideWorldBounds(true);
   }
 

@@ -17,11 +17,12 @@ src/
   style.css                # Minimal dark canvas viewport wrapper
 
   game/
-    config.ts              # Virtual resolution (384x216), pixelArt, arcade physics
+    constants.ts         # Core logical resolution (768x432), tile units (32px), cell sizes (128px)
+    config.ts            # Phaser GameConfig with Scale.FIT, pixelArt: true, roundPixels: true
     scenes/
       BootScene.ts         # Asset loading & animation registration
       TitleScene.ts        # Title screen & New Game start (L key -> Asset Lab)
-      PrototypeScene.ts    # Main prototype room with Player and collision bounds
+      PrototypeScene.ts    # Main prototype room with Player, collision bounds, Visual QA overlay
       AssetLabScene.ts     # Developer QA scene for inspecting character assets
     entities/
       CharacterManifest.ts # Type schemas for character metadata and animations
@@ -46,24 +47,24 @@ src/
 - Maps physical keys (WASD, Arrows, Enter, Space, Z, Escape, X) to abstract actions (`UP`, `DOWN`, `LEFT`, `RIGHT`, `CONFIRM`, `CANCEL`, `PAUSE`).
 - Provides synthetic action setters so mobile touch D-pads and on-screen buttons can feed the exact same action pipeline.
 
-### Actor & Player Runtime Abstraction (v0.0.4)
-- `Actor`: Standardized character sprite wrapping Phaser Arcade physics. Manages facing direction (`down`, `left`, `right`, `up`), walk animation playback, and idle frame holding. Establishes a 16×10 foot-level collision box.
-- `Player`: Combines `Actor` with `InputManager` to provide normalized 4-direction walking at 75 px/sec.
+### Actor & Player Runtime Abstraction (v0.0.5)
+- `Actor`: Standardized character sprite wrapping Phaser Arcade physics. Manages facing direction (`down`, `left`, `right`, `up`), walk animation playback, and idle frame holding. Establishes a 32×20 foot-level collision box.
+- `Player`: Combines `Actor` with `InputManager` to provide normalized 4-direction walking at 150 px/sec.
 
-### Asset Pipeline (v0.0.4)
-- Non-destructive processing in `tools/assets/` consumes `art/manifests/*.json` and `art/source/` to produce production assets in `public/game-assets/` and QA previews in `art/previews/`.
+### Asset Pipeline (v0.0.5)
+- Non-destructive processing in `tools/assets/` consumes `art/manifests/*.json` and `art/source/` to produce production assets in `public/game-assets/` (512×512 sheets, 128×128 cells) and QA previews in `art/previews/`.
 
-### InteractionSystem (Planned for v0.0.5)
+### InteractionSystem (Planned for v0.0.6)
 - Evaluates the tile or object directly in front of the player based on facing direction.
 - Dispatches interaction triggers to inspectable objects (mirrors, dinner table, wine bottle) or characters.
 
-### DialogueSystem (Planned for v0.0.5)
+### DialogueSystem (Planned for v0.0.6)
 - Consumes structured dialogue nodes and renders text with a typewriter effect and expressive character portraits.
 
-### CutsceneRunner (Planned for v0.0.7)
+### CutsceneRunner (Planned for v0.0.8)
 - Executes sequential asynchronous commands using promises without callback spaghetti.
 
-### Character Portrait System (Planned for v0.0.6)
+### Character Portrait System (Planned for v0.0.7)
 - Maps logical expressions (`death + annoyed`, `love + amused`, `fear + manic`) to extracted portrait assets via character manifests.
 
 ### AudioManager (Planned for v0.1)

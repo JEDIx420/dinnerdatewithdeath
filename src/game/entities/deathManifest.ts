@@ -5,10 +5,10 @@ export const DEATH_MANIFEST: CharacterManifest = {
   displayName: 'Death',
   textureKey: 'death_walk',
   texturePath: 'game-assets/characters/death/overworld/walk.png',
-  frameWidth: 64,
-  frameHeight: 64,
+  frameWidth: 128,
+  frameHeight: 128,
   frameRate: 6,
-  footBaseline: 56,
+  footBaseline: 112,
   animations: {
     walk_down: {
       frames: [0, 1, 2, 3],

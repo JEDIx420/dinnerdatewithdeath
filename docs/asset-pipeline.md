@@ -28,7 +28,7 @@ QA PREVIEWS (art/previews/<name>/...)
 
 ---
 
-## 2. Implemented Character: Death (`v0.0.4`)
+## 2. Implemented Character: Death (`v0.0.5`)
 
 ### Source Assets
 - Source file: `art/source/characters/death/walk-source.png` (1254 × 1254, 4×4 nominal arrangement).
@@ -43,11 +43,12 @@ npm run assets:death
 ### Background Removal & Normalization
 1. **Halo-Free Flood Fill**: 8-connected flood fill from image borders with a threshold of 185 eliminates grey anti-aliasing rings around Death's jet-black spiky hair while completely preserving pale skin tones (`RGB ~ 180-195`), white eye highlights, and collar details.
 2. **Artifact Cleaning**: Cleans residual generative noise below Row 2's foot level.
-3. **Uniform Character Scale**: A single scaling factor (`0.1643`) is applied across all 16 frames to prevent visual jitter.
-4. **Foot Baseline Anchor**: Every frame anchors Death's shoes exactly at `Y = 56` within each 64×64 cell, with the bounding box horizontally centered around `X = 32`.
+3. **High-Fidelity Lanczos Resampling**: Preserves crisp pixel contours, hair spikes, and facial features using Lanczos3 filtering.
+4. **Uniform Character Scale**: Scaled to ~92px character height within a 128 × 128 cell to prevent visual jitter.
+5. **Foot Baseline Anchor**: Every frame anchors Death's shoes exactly at `Y = 112` within each 128 × 128 cell, with the bounding box horizontally centered around `X = 64`.
 
 ### Production Output
-- **Sprite Sheet**: `public/game-assets/characters/death/overworld/walk.png` (256 × 256 PNG, 64 × 64 cells, transparent background).
+- **Sprite Sheet**: `public/game-assets/characters/death/overworld/walk.png` (512 × 512 PNG, 128 × 128 cells, transparent background).
 - **Runtime Manifest**: `public/game-assets/characters/death/manifest.json`:
   - Row 0 (Frames 0–3): `walk_down` (Idle frame: 3)
   - Row 1 (Frames 4–7): `walk_left` (Idle frame: 7)
@@ -55,7 +56,7 @@ npm run assets:death
   - Row 3 (Frames 12–15): `walk_up` (Idle frame: 15)
 
 ### Visual QA Artifacts
-- Contact preview sheet with 64×64 grid lines and red foot baseline:
+- Contact preview sheet with 128×128 grid lines and red foot baseline:
   `art/previews/death/death-walk-sheet-preview.png`
 - Synchronized 4-direction animated walk GIF:
   `art/previews/death/death-walk-preview.gif`
@@ -67,6 +68,6 @@ npm run assets:death
 ## 3. Runtime Contract
 
 Every primary character implements:
-- Frame size: 64 × 64 pixels.
-- Foot collision body: 16 × 10 pixels at offset `(24, 48)` within the cell.
+- Frame size: 128 × 128 pixels.
+- Foot collision body: 32 × 20 pixels at offset `(48, 96)` within the cell.
 - Standard 4-direction walk cycles matching `Actor` and `Player` interfaces.

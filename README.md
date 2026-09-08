@@ -6,7 +6,7 @@
 
 - **Live Deployment**: [https://jedix420.github.io/dinnerdatewithdeath/](https://jedix420.github.io/dinnerdatewithdeath/)
 - **Engine**: Phaser 3 + TypeScript + Vite
-- **Current Milestone**: `v0.0.4` (Death Overworld Sprite & Character Pipeline)
+- **Current Milestone**: `v0.0.5` (Visual Foundation & HD Rendering Pass)
 
 ---
 
@@ -31,6 +31,7 @@ Starts the local development server at `http://localhost:3000`.
 - **Move**: `W` / `A` / `S` / `D` or Arrow keys
 - **Confirm / Interact**: `Enter`, `Space`, or `Z`
 - **Cancel**: `Escape` or `X`
+- **Visual QA Overlay**: Press `V` in Prototype Room (or visit `?debug=visual`)
 - **Developer Asset Lab**: Press `L` on Title Screen or Prototype Room (or visit `?scene=asset-lab`)
 
 ---

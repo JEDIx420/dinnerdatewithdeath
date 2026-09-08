@@ -19,7 +19,7 @@ export class AssetLabScene extends Phaser.Scene {
 
   public create(): void {
     const cx = GAME_CONFIG.WIDTH / 2;
-    const cy = GAME_CONFIG.HEIGHT / 2 - 10;
+    const cy = GAME_CONFIG.HEIGHT / 2 - 20;
 
     // Dark neutral background
     const bg = this.add.graphics();
@@ -27,13 +27,15 @@ export class AssetLabScene extends Phaser.Scene {
     bg.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
 
     // Title / Header
-    this.add.text(cx, 14, '— ASSET LAB (DEV QA) —', {
-      fontFamily: 'monospace',
-      fontSize: '8px',
-      color: '#a094b8',
-    }).setOrigin(0.5);
+    this.add
+      .text(cx, 28, '— ASSET LAB (DEVELOPER QA) —', {
+        fontFamily: 'monospace',
+        fontSize: '15px',
+        color: '#b0a4c8',
+      })
+      .setOrigin(0.5);
 
-    // Visual Guides (64x64 box & red baseline)
+    // Visual Guides (128x128 box & red baseline at Y=112)
     this.guidesGraphics = this.add.graphics();
     this.drawGuides(cx, cy);
 
@@ -45,26 +47,29 @@ export class AssetLabScene extends Phaser.Scene {
       DEATH_MANIFEST.textureKey,
       DEATH_MANIFEST.animations[`walk_${initialDir}`].idleFrame
     );
+    this.previewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
 
     // Info overlay text
-    this.infoText = this.add.text(12, GAME_CONFIG.HEIGHT - 48, '', {
+    this.infoText = this.add.text(24, GAME_CONFIG.HEIGHT - 110, '', {
       fontFamily: 'monospace',
-      fontSize: '7px',
-      color: '#d0c8e0',
-      lineSpacing: 3,
+      fontSize: '11px',
+      color: '#dcd4ec',
+      lineSpacing: 4,
     });
 
     // Instructions
-    this.add.text(
-      GAME_CONFIG.WIDTH / 2,
-      GAME_CONFIG.HEIGHT - 10,
-      '[Left/Right] Direction | [Space] Walk/Idle | [G] Guides | [Esc] Title',
-      {
-        fontFamily: 'monospace',
-        fontSize: '6px',
-        color: '#706880',
-      }
-    ).setOrigin(0.5);
+    this.add
+      .text(
+        GAME_CONFIG.WIDTH / 2,
+        GAME_CONFIG.HEIGHT - 16,
+        '[Arrows] Direction | [Space] Walk/Idle | [G] Guides | [Esc] Return to Title',
+        {
+          fontFamily: 'monospace',
+          fontSize: '11px',
+          color: '#7a7288',
+        }
+      )
+      .setOrigin(0.5);
 
     // Keyboard inputs
     this.input.keyboard?.on('keydown-LEFT', () => {
@@ -108,7 +113,8 @@ export class AssetLabScene extends Phaser.Scene {
       `Character: ${DEATH_MANIFEST.displayName} (${DEATH_MANIFEST.id})`,
       `Direction: ${dir.toUpperCase()} (Index ${this.currentDirectionIndex})`,
       `State:     ${animState}`,
-      `Frame:     #${currentFrame} (64x64 cell, Foot Baseline Y=56)`,
+      `Cell:      ${DEATH_MANIFEST.frameWidth} × ${DEATH_MANIFEST.frameHeight} px (Foot Baseline Y=${DEATH_MANIFEST.footBaseline}, Frame #${currentFrame})`,
+      `Filter:    NEAREST`,
     ]);
   }
 
@@ -145,16 +151,26 @@ export class AssetLabScene extends Phaser.Scene {
 
   private drawGuides(cx: number, cy: number): void {
     this.guidesGraphics.clear();
-    const halfCell = 32;
+    const halfCell = DEATH_MANIFEST.frameWidth / 2; // 64
 
-    // 64x64 bounding box in subtle cyan
-    this.guidesGraphics.lineStyle(1, 0x3d85a8, 0.6);
-    this.guidesGraphics.strokeRect(cx - halfCell, cy - halfCell, 64, 64);
+    // 128x128 bounding box in subtle cyan
+    this.guidesGraphics.lineStyle(1, 0x3d85a8, 0.65);
+    this.guidesGraphics.strokeRect(
+      cx - halfCell,
+      cy - halfCell,
+      DEATH_MANIFEST.frameWidth,
+      DEATH_MANIFEST.frameHeight
+    );
 
-    // Red foot baseline (Y=56 in cell, so cy - halfCell + 56 = cy - 32 + 56 = cy + 24)
+    // Red foot baseline (Y=112 in cell: cy - 64 + 112 = cy + 48)
     const baselineY = cy - halfCell + DEATH_MANIFEST.footBaseline;
-    this.guidesGraphics.lineStyle(1, 0xd43d48, 0.8);
-    this.guidesGraphics.lineBetween(cx - halfCell, baselineY, cx + halfCell, baselineY);
+    this.guidesGraphics.lineStyle(1, 0xd43d48, 0.85);
+    this.guidesGraphics.lineBetween(
+      cx - halfCell,
+      baselineY,
+      cx + halfCell,
+      baselineY
+    );
   }
 
   private updateDisplay(): void {

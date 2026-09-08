@@ -9,6 +9,7 @@ export interface PlayerConfig extends ActorConfig {
 
 /**
  * Player encapsulates player control, mapping InputManager actions to Actor movement and animation.
+ * Speed standardized in v0.0.5 to 150 px/sec for 768x432 logical resolution.
  */
 export class Player extends Actor {
   private inputManager: InputManager;
@@ -17,7 +18,7 @@ export class Player extends Actor {
   constructor(config: PlayerConfig) {
     super(config);
     this.inputManager = config.inputManager;
-    this.moveSpeed = config.moveSpeed ?? 75;
+    this.moveSpeed = config.moveSpeed ?? 150;
   }
 
   public update(): void {

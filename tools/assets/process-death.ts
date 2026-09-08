@@ -123,7 +123,7 @@ async function processDeath(): Promise<void> {
     }
   }
 
-  // 3. Process 4x4 cells into 256x256 target sheet (64x64 cell)
+  // 3. Process 4x4 cells into target sheet
   const targetCols = manifest.targetSheet.cols;
   const targetRows = manifest.targetSheet.rows;
   const targetCellW = manifest.targetSheet.cellWidth;
@@ -136,7 +136,9 @@ async function processDeath(): Promise<void> {
   const scale = manifest.characterScaleHeight / nominalMaxHeight;
   const footBaseline = manifest.footBaseline;
 
-  console.log(`[Asset Pipeline] Uniform scale: ${scale.toFixed(4)}, foot baseline: Y=${footBaseline}`);
+  console.log(
+    `[Asset Pipeline] Target sheet: ${targetSheetW}x${targetSheetH} (${targetCellW}x${targetCellH} cells), Scale: ${scale.toFixed(4)}, Baseline: Y=${footBaseline}`
+  );
 
   // Target sheet buffer (RGBA, transparent)
   const targetBuffer = new Uint8Array(targetSheetW * targetSheetH * 4);
@@ -190,7 +192,7 @@ async function processDeath(): Promise<void> {
         }
       }
 
-      // Rescale with sharp
+      // Rescale with high-fidelity lanczos3 kernel
       const scaledW = Math.max(1, Math.round(fgW * scale));
       const scaledH = Math.max(1, Math.round(fgH * scale));
 
@@ -202,8 +204,8 @@ async function processDeath(): Promise<void> {
         .toBuffer();
 
       // Place in target cell:
-      // Horizontally centered: c * 64 + (32 - scaledW / 2)
-      // Foot baseline aligned: r * 64 + (footBaseline - scaledH)
+      // Horizontally centered: c * targetCellW + (targetCellW / 2 - scaledW / 2)
+      // Foot baseline aligned: r * targetCellH + (footBaseline - scaledH)
       const destX = c * targetCellW + Math.round(targetCellW / 2 - scaledW / 2);
       const destY = r * targetCellH + (footBaseline - scaledH);
 
@@ -214,7 +216,6 @@ async function processDeath(): Promise<void> {
           if (targetX >= 0 && targetX < targetSheetW && targetY >= 0 && targetY < targetSheetH) {
             const sIdx = (y * scaledW + x) * 4;
             const tIdx = (targetY * targetSheetW + targetX) * 4;
-            // Simple alpha blend
             const sa = scaledBuffer[sIdx + 3]! / 255.0;
             if (sa > 0.05) {
               targetBuffer[tIdx] = scaledBuffer[sIdx]!;
@@ -228,7 +229,7 @@ async function processDeath(): Promise<void> {
     }
   }
 
-  // 4. Save production runtime sprite sheet
+  // 4. Save production runtime sprite sheet (512x512 PNG)
   const runtimeDir = path.join(rootDir, 'public/game-assets/characters/death');
   fs.mkdirSync(path.join(runtimeDir, 'overworld'), { recursive: true });
   const runtimeSheetPath = path.join(runtimeDir, 'overworld/walk.png');
@@ -280,7 +281,7 @@ async function processDeath(): Promise<void> {
   fs.mkdirSync(previewDir, { recursive: true });
 
   const previewBuffer = new Uint8Array(targetBuffer);
-  // Overlay cell boundaries (semi-transparent grey) and foot baseline (semi-transparent red)
+  // Overlay cell boundaries (semi-transparent cyan) and foot baseline (semi-transparent red)
   for (let y = 0; y < targetSheetH; y++) {
     for (let x = 0; x < targetSheetW; x++) {
       const isColBoundary = x % targetCellW === 0 || x === targetSheetW - 1;
@@ -294,7 +295,7 @@ async function processDeath(): Promise<void> {
         previewBuffer[idx] = 230;
         previewBuffer[idx + 1] = 40;
         previewBuffer[idx + 2] = 50;
-        previewBuffer[idx + 3] = 200;
+        previewBuffer[idx + 3] = 220;
       } else if (isColBoundary || isRowBoundary) {
         // Subtle cyan cell grid
         previewBuffer[idx] = 60;
@@ -312,6 +313,33 @@ async function processDeath(): Promise<void> {
     .png()
     .toFile(previewSheetPath);
   console.log(`[Asset Pipeline] Written QA preview sheet: ${previewSheetPath}`);
+
+  // 7. Generate directional strips
+  const directions = ['down', 'left', 'right', 'up'];
+  for (let r = 0; r < targetRows; r++) {
+    const dirName = directions[r]!;
+    const stripBuffer = Buffer.alloc(targetCellW * 4 * targetCellH * 4);
+
+    for (let c = 0; c < targetCols; c++) {
+      for (let y = 0; y < targetCellH; y++) {
+        for (let x = 0; x < targetCellW; x++) {
+          const srcIdx = ((r * targetCellH + y) * targetSheetW + (c * targetCellW + x)) * 4;
+          const dstIdx = (y * (targetCellW * 4) + (c * targetCellW + x)) * 4;
+          stripBuffer[dstIdx] = targetBuffer[srcIdx]!;
+          stripBuffer[dstIdx + 1] = targetBuffer[srcIdx + 1]!;
+          stripBuffer[dstIdx + 2] = targetBuffer[srcIdx + 2]!;
+          stripBuffer[dstIdx + 3] = targetBuffer[srcIdx + 3]!;
+        }
+      }
+    }
+
+    const stripPath = path.join(previewDir, `strip_${dirName}.png`);
+    await sharp(stripBuffer, {
+      raw: { width: targetCellW * 4, height: targetCellH, channels: 4 },
+    })
+      .png()
+      .toFile(stripPath);
+  }
 
   console.log('[Asset Pipeline] Extraction completed successfully!');
 }

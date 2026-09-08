@@ -1,16 +1,7 @@
 import Phaser from 'phaser';
+import { GAME_CONFIG } from './constants';
 
-/**
- * Central configuration for the game's logical viewport and rendering.
- * All resolutions and scaling rules are centralized here.
- */
-export const GAME_CONFIG = {
-  // Logical pixel-art virtual resolution (16:9 ratio)
-  WIDTH: 384,
-  HEIGHT: 216,
-  TILE_SIZE: 16,
-  BACKGROUND_COLOR: '#0a0a0f',
-} as const;
+export * from './constants';
 
 export const phaserGameConfig: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,

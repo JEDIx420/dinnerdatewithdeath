@@ -30,56 +30,46 @@ export class TitleScene extends Phaser.Scene {
 
     // Decorative thin gothic rule
     const ruleGfx = this.add.graphics();
-    ruleGfx.lineStyle(1, 0x6e1b27, 0.7);
-    ruleGfx.lineBetween(centerX - 90, 75, centerX + 90, 75);
+    ruleGfx.lineStyle(2, 0x6e1b27, 0.75);
+    ruleGfx.lineBetween(centerX - 180, 150, centerX + 180, 150);
 
-    // Title
+    // Title (clean 28px serif with deep crimson shadow)
     this.add
-      .text(centerX, 54, 'A DINNER DATE WITH DEATH', {
+      .text(centerX, 108, 'A DINNER DATE WITH DEATH', {
         fontFamily: 'Georgia, serif',
-        fontSize: '14px',
-        color: '#e0d8e8',
+        fontSize: '28px',
+        color: '#e4dce8',
         align: 'center',
       })
       .setOrigin(0.5)
-      .setShadow(1, 1, '#2c0c14', 2);
+      .setShadow(2, 2, '#2c0c14', 3);
 
-    // Subtitle
+    // Subtitle (15px serif)
     this.add
-      .text(centerX, 90, '— An Interactive Gothic Tale —', {
+      .text(centerX, 180, '— An Interactive Gothic Tale —', {
         fontFamily: 'Georgia, serif',
-        fontSize: '8px',
-        color: '#8b8094',
+        fontSize: '15px',
+        color: '#8f8498',
         align: 'center',
       })
       .setOrigin(0.5);
 
-    // New Game Prompt
+    // New Game Prompt (18px monospace)
     this.startPromptText = this.add
-      .text(centerX, 150, '▶  NEW GAME', {
+      .text(centerX, 300, '▶  NEW GAME', {
         fontFamily: 'monospace',
-        fontSize: '10px',
-        color: '#c4b5d0',
+        fontSize: '18px',
+        color: '#c8bad4',
         align: 'center',
       })
       .setOrigin(0.5);
 
-    // Sub-instruction
+    // Sub-instruction (12px monospace)
     this.add
-      .text(centerX, 172, 'Press ENTER or SPACE to Begin', {
+      .text(centerX, 344, 'Press ENTER or SPACE to Begin', {
         fontFamily: 'monospace',
-        fontSize: '7px',
-        color: '#5e5669',
-        align: 'center',
-      })
-      .setOrigin(0.5);
-
-    // Developer Asset Lab shortcut
-    this.add
-      .text(centerX, 198, '[L] Asset Lab (Dev QA)', {
-        fontFamily: 'monospace',
-        fontSize: '6px',
-        color: '#433c4f',
+        fontSize: '12px',
+        color: '#655d70',
         align: 'center',
       })
       .setOrigin(0.5);
@@ -89,7 +79,7 @@ export class TitleScene extends Phaser.Scene {
       this.startGame();
     });
 
-    // Press 'L' to launch Asset Lab
+    // Developer shortcut: press 'L' to launch Asset Lab (hidden from player-facing UI)
     this.input.keyboard?.on('keydown-L', () => {
       this.scene.start('AssetLabScene');
     });
