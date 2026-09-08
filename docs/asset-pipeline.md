@@ -104,3 +104,18 @@ The source sheet contains 80 distinct components organized across 7 functional c
 - Individual cropped PNGs placed under `public/game-assets/environment/mansion/architecture/<category>/<id>.png`.
 - High-resolution QA Contact Sheet: `art/previews/environment/mansion/architecture/contact-sheet.png`.
 
+---
+
+## 5. Generic Environment Sheet Runner (`v0.0.6.3`)
+
+For future environment source sheets (`DDWD_ENV_02`, furniture, decor, exterior assets):
+- Script: `tools/assets/process-environment-sheet.ts`
+- Usage:
+  ```bash
+  npx tsx tools/assets/process-environment-sheet.ts <manifestPath>
+  # Or default architecture manifest:
+  npm run assets:environment
+  ```
+- Reads any JSON manifest following the `EnvironmentManifest` schema (`sourceImage`, `sourceDimensions`, `categories`, `assets` with `sourceRect`).
+- Automatically extracts trimmed RGBA sprites into `public/game-assets/environment/mansion/<manifest-name>/<category>/` and builds an organized visual contact preview sheet in `art/previews/environment/mansion/<manifest-name>/contact-sheet.png`.
+

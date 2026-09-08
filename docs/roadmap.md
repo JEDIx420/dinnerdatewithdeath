@@ -67,25 +67,28 @@ This document tracks engineering and narrative production milestones for **A Din
 - Upgraded Developer Asset Lab scene (`AssetLabScene.ts`) with dedicated Architecture QA tab (`[A]` key), category cycling, bounding boxes, dimensions, and filter mode QA.
 - Added comprehensive unit tests in `tests/architecture.test.ts` (6 tests).
 
-### `v0.0.6.3` — Storm Title Experience & Procedural Lightning ✅
-- Eliminated dead black initial screen: faint gothic arched window silhouettes, waiting banquet table silhouette, and active window rain are immediately readable in frame 1 (`0.00s`).
-- Implemented pure procedural layered polyline lightning generator (`LightningBoltGeometry.ts`) with randomized forward segments, bell-curve lateral envelope, longitudinal jitter, and forking branch paths with customizable recursion.
-- Implemented `LightningBoltEffect.ts` with Phaser Graphics, `ADD` blend mode, layered strokes (1px pure white `#ffffff` core, 2.5px soft `#b8d4f8` inner glow, 5px deep blue `#5a7ca8` outer glow), and multi-phase electrical flash (primary strike, rapid extinguish, secondary micro-pulse reusing identical geometry, restrained 0.04–0.12 alpha ambient wash).
-- Accelerated title sequence choreography from ~4.5s down to snappy ~1.65s unskipped:
-  - `0.00s`: Window silhouettes, table silhouette, and active rain visible immediately.
-  - `0.12s`: Hero lightning bolt sweeps across upper sky, illuminating architecture.
-  - `0.25s`: Left candle catches sharply; radial bloom expands.
-  - `0.45s`: Banquet table reveals cleanly.
-  - `0.60s`: Right candle catches sharply; warm glowing pools connect across the table.
-  - `0.75s`: Title typography emerges with 3px upward settle.
-  - `1.05s`: Chairs settle into gothic silhouettes; secondary lightning fork flashes near left window.
-  - `1.40s`: Interactive prompt (`▶ NEW GAME`) and helper text appear.
-  - `1.65s`: Intro complete; prompts begin gentle sinusoidal breathing; idle atmospheric storm loop armed.
-- Responsive input: first click/confirm during intro skips to completed title; second click/confirm triggers snappy 400ms fade transition into `MansionScene`.
-- Idle storm loop: randomized strikes every 5–11s with weighted intensities (55% distant window forks, 35% medium diagonal streaks, 10% hero bolts).
-- Developer QA: `?intro=skip` query parameter bypasses intro; `[T]` key fires hero lightning strike on demand.
-- Audio hook: exposed `onLightning(payload)` event with intensity, distance, and delay to thunder for future sound engine integration without adding fake audio.
-- Added unit tests in `tests/lightning.test.ts` (5 tests).
+### `v0.0.6.3` — Structural World Composition, Collision & Symmetry Foundation ✅
+- **Eliminated Procedural Wall Artifacts**: Moved legacy procedural walls to `DEPTH_LAYERS.BACK_WALL = 300` and converted duplicate legacy visual barriers to `collision-only`, preventing old purple wall surfaces from occluding production architecture.
+- **Unified Semantic Spatial Depth Hierarchy (`DepthSystem.ts`)**:
+  - `BACKGROUND (0)` -> `FLOOR (100)` -> `FLOOR_DECOR / RUGS (200)` -> `BACK_WALL (300)` -> `BACK_WALL_DETAIL (400)` -> `CONTACT_SHADOWS (500)` -> `DYNAMIC_Y_BASE (1000 + groundY)` -> `FOREGROUND_STRUCTURE / FOREGROUND_ARCHES (6000)` -> `LIGHTING_OVERLAY (8000)` -> `FOREGROUND_AMBIENT (9000)` -> `UI (10000)`.
+  - Added `resolveDepthForClass()` and foot-level dynamic Y sorting.
+- **Physical Collision Profile System (`CollisionProfile.ts`)**:
+  - Decoupled visual sprite dimensions (e.g. 73×160 massive column) from physical contact footprints (e.g. 44×22 at base baseline).
+  - Registered standardized footprints (`column_massive`, `column_fluted`, `column_wood`, `half_column`, `newel_large`, `newel_small`, `balustrade_horizontal_132`, `balustrade_span_wide`, `door_jamb`, `archway_support`, `statue_base`).
+- **Environment Asset Catalog & Placement System (`EnvironmentAssetCatalog.ts`, `EnvironmentPlacement.ts`)**:
+  - Registered all 80 production architecture assets with native dimensions, anchor presets (`bottom-center`, `top-left`, etc.), depth classes, physical classes, and collision profiles.
+  - Symmetrical layout math helpers (`placeMirroredPair`, `placeRepeatedSpan`, `frameOpening`) guaranteeing exact mathematical symmetry around the central mansion axis `X = 640`.
+  - Authored authoritative environment placements across all 5 zones (`mansionPlacements.ts`).
+- **Environment Composer & Runtime Integration (`EnvironmentComposer.ts`, `MansionRoom.ts`)**:
+  - Procedural runtime instantiation of architectural sprites with precise anchor offsets and Arcade physics collision footprints.
+  - Staircase treads, runner, rods, and stringers unified using authoritative production art.
+- **Developer QA & Asset Lab Upgrades (`AssetLabScene.ts`, `WorldCompositionDebug.ts`)**:
+  - In-game world composition debug overlay (`[V]` key or `?debug=world`): green collision footprints, yellow ground anchors, cyan origins, and magenta symmetry axis.
+  - Asset Lab Architecture tab displaying live bounding boxes, yellow ground anchor, green collision footprint, physical class, and collision profile.
+- **Generalized Asset Pipeline**:
+  - Created `tools/assets/process-environment-sheet.ts` and `npm run assets:environment` runner ready for future sprite sheets (`DDWD_ENV_02`, furniture, decor).
+- **Automated Test Coverage**:
+  - Added `tests/environment.test.ts` (13 tests) validating catalog metadata integrity, footprint decoupling, symmetry math, depth hierarchy, and placement integration. All 42 unit tests passing.
 
 ---
 

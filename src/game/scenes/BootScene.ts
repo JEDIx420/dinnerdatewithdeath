@@ -54,7 +54,7 @@ export class BootScene extends Phaser.Scene {
 
     // Check if directly launched into dev scenes via query parameter
     const params = new URLSearchParams(window.location.search);
-    if (params.get('scene') === 'asset-lab') {
+    if (params.get('scene') === 'asset-lab' || params.get('scene') === 'assetlab') {
       this.scene.start('AssetLabScene');
       return;
     }

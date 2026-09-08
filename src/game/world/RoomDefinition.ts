@@ -1,5 +1,6 @@
 import { Direction } from '../entities/CharacterManifest';
 import { MANSION_ARCHITECTURE_ELEMENTS } from './mansionArchitectureDefs';
+import { buildMansionPlacements } from '../environment/mansionPlacements';
 
 export interface SafeBounds {
   minX: number;
@@ -28,6 +29,8 @@ export interface WallSegment {
   textureKey: string;
   isPerimeter?: boolean;
   hasCollision?: boolean;
+  // Visual rendering mode: 'render' (default), 'collision-only' (no visual sprite), 'backplate' (renders on BACK_WALL)
+  visualMode?: 'render' | 'collision-only' | 'backplate';
   // Baseline where feet collide
   collisionOffsetY?: number;
   collisionHeight?: number;
@@ -120,6 +123,8 @@ export interface ArchitecturalSpriteDef {
   role?: string;
 }
 
+import { EnvironmentPlacement } from '../environment/EnvironmentPlacement';
+
 export interface RoomDefinition {
   id: string;
   name: string;
@@ -134,6 +139,7 @@ export interface RoomDefinition {
   floors: FloorRegion[];
   walls: WallSegment[];
   architecture?: ArchitecturalSpriteDef[];
+  environmentPlacements?: EnvironmentPlacement[];
   furniture: FurnitureDef[];
   candles: CandleDef[];
   windows: WindowDef[];
@@ -280,6 +286,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
   ],
 
   architecture: MANSION_ARCHITECTURE_ELEMENTS,
+  environmentPlacements: buildMansionPlacements(),
 
   staircase: {
     id: 'grand_staircase',
@@ -382,6 +389,8 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     },
 
     // Upper Landing Balustrade Overlook (South edge of landing, flanking staircase)
+    // Visual balustrades and newels are now authoritatively rendered via production architecture.
+    // These segments remain as solid safety barriers so Death cannot walk through.
     {
       id: 'balustrade_overlook_left',
       x: 448,
@@ -390,6 +399,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 28,
       textureKey: 'balustrade_rail',
       hasCollision: true,
+      visualMode: 'collision-only',
       collisionOffsetY: 0,
       collisionHeight: 28,
     },
@@ -401,6 +411,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 28,
       textureKey: 'balustrade_rail',
       hasCollision: true,
+      visualMode: 'collision-only',
       collisionOffsetY: 0,
       collisionHeight: 28,
     },
@@ -414,6 +425,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 240,
       textureKey: 'wall_architectural_side',
       hasCollision: true,
+      visualMode: 'collision-only',
       collisionOffsetY: 0,
       collisionHeight: 240,
     },
@@ -425,6 +437,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 240,
       textureKey: 'wall_architectural_side',
       hasCollision: true,
+      visualMode: 'collision-only',
       collisionOffsetY: 0,
       collisionHeight: 240,
     },
@@ -541,6 +554,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     },
 
     // Architectural Archway Pilasters separating rooms on Ground Floor
+    // These remain as collision barriers for doorway support
     {
       id: 'pilaster_dining_hall_top',
       x: 440,
@@ -549,6 +563,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 32,
       textureKey: 'wall_pilaster',
       hasCollision: true,
+      visualMode: 'collision-only',
     },
     {
       id: 'pilaster_dining_hall_bottom',
@@ -558,6 +573,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 32,
       textureKey: 'wall_pilaster',
       hasCollision: true,
+      visualMode: 'collision-only',
     },
     {
       id: 'pilaster_hall_lounge_top',
@@ -567,6 +583,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 32,
       textureKey: 'wall_pilaster',
       hasCollision: true,
+      visualMode: 'collision-only',
     },
     {
       id: 'pilaster_hall_lounge_bottom',
@@ -576,6 +593,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 32,
       textureKey: 'wall_pilaster',
       hasCollision: true,
+      visualMode: 'collision-only',
     },
   ],
 

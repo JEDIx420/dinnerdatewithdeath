@@ -8,6 +8,7 @@ import { LightingSystem } from '../systems/LightingSystem';
 import { AmbientFXSystem } from '../systems/AmbientFXSystem';
 import { MansionRoom } from '../world/MansionRoom';
 import { MANSION_ROOM_DEF } from '../world/RoomDefinition';
+import { WorldCompositionDebug } from '../environment/WorldCompositionDebug';
 
 export class MansionScene extends Phaser.Scene {
   private inputManager!: InputManager;
@@ -20,6 +21,9 @@ export class MansionScene extends Phaser.Scene {
   private debugVisualMode: boolean = false;
   private debugOverlayGfx!: Phaser.GameObjects.Graphics;
   private debugOverlayText!: Phaser.GameObjects.Text;
+
+  // World composition debug (?debug=world)
+  private worldDebug!: WorldCompositionDebug;
 
   constructor() {
     super({ key: 'MansionScene' });
@@ -47,7 +51,9 @@ export class MansionScene extends Phaser.Scene {
       this.ambientFXSystem
     );
 
-    // 3. Spawn Death using Player entity abstraction with visual safe bounds
+    // World composition debug helper
+    this.worldDebug = new WorldCompositionDebug(this);
+
     // 3. Spawn Death using Player entity abstraction with visual safe bounds
     const spawn = this.mansionRoom.getSpawnPoint();
     const params = new URLSearchParams(window.location.search);
@@ -109,13 +115,18 @@ export class MansionScene extends Phaser.Scene {
       this.scene.start('AssetLabScene');
     });
 
-    // Setup Visual QA Overlay (?debug=visual or 'V' key)
+    // Setup Visual QA Overlay (?debug=visual or ?debug=world or 'V' key)
     this.setupVisualQAOverlay();
+
+    if (params.get('debug') === 'world') {
+      this.worldDebug.setEnabled(true);
+    }
   }
 
   private setupVisualQAOverlay(): void {
     const params = new URLSearchParams(window.location.search);
-    this.debugVisualMode = params.get('debug') === 'visual';
+    this.debugVisualMode =
+      params.get('debug') === 'visual' || params.get('debug') === 'world';
 
     this.debugOverlayGfx = this.add.graphics().setScrollFactor(0).setDepth(10001);
     this.debugOverlayText = this.add
@@ -132,6 +143,7 @@ export class MansionScene extends Phaser.Scene {
 
     this.input.keyboard?.on('keydown-V', () => {
       this.debugVisualMode = !this.debugVisualMode;
+      this.worldDebug.setEnabled(this.debugVisualMode);
     });
   }
 
@@ -143,6 +155,10 @@ export class MansionScene extends Phaser.Scene {
 
     if (this.debugVisualMode) {
       this.renderVisualQAOverlay();
+      this.worldDebug.render(
+        this.mansionRoom.resolvedEnvironmentObjects,
+        this.mansionRoom.structuralBarriers
+      );
     } else {
       this.debugOverlayGfx.clear();
       this.debugOverlayText.setText('');
@@ -177,11 +193,11 @@ export class MansionScene extends Phaser.Scene {
     const zone = this.getPlayerZoneName();
     const particleCount = this.ambientFXSystem.getParticleCount();
     const lightsCount = this.lightingSystem.getLightsCount();
-    const archCount = MANSION_ROOM_DEF.architecture?.length ?? 0;
+    const archCount = this.mansionRoom.resolvedEnvironmentObjects.length;
     const sb = MANSION_ROOM_DEF.safeBounds;
 
     const lines = [
-      `[VISUAL QA DIAGNOSTICS - GRAND MANSION v0.0.6.2]`,
+      `[VISUAL QA DIAGNOSTICS - GRAND MANSION v0.0.6.3]`,
       `Logical Res:   ${GAME_CONFIG.WIDTH} × ${GAME_CONFIG.HEIGHT} (16:9)`,
       `World Size:    ${MANSION_ROOM_DEF.width} × ${MANSION_ROOM_DEF.height} px`,
       `Backing Res:   ${backingW} × ${backingH} px | DPR: ${dpr}`,
@@ -189,18 +205,20 @@ export class MansionScene extends Phaser.Scene {
       `Performance:   ${fps} FPS`,
       `Zone:          ${zone}`,
       `Player Pos:    (${px}, ${py}) | Depth: ${depth}`,
-      `Architecture:  ${archCount} elements | Floors: ${MANSION_ROOM_DEF.floors.length}`,
-      `Environment:   ${this.mansionRoom.furnitureSprites.length} objects | ${lightsCount} lights`,
+      `Environment:   ${archCount} composed items | ${this.mansionRoom.structuralBarriers.length} barriers`,
+      `Furniture:     ${this.mansionRoom.furnitureSprites.length} objects | ${lightsCount} lights`,
       `Ambient FX:    ${particleCount} active particles`,
       `Safe Bounds:   [X: ${sb.minX}..${sb.maxX}, Y: ${sb.minY}..${sb.maxY}]`,
+      `[V]: Toggle Debug Mode (Green=Colliders, Yellow=Anchors)`,
     ];
 
     this.debugOverlayGfx.clear();
     this.debugOverlayGfx.fillStyle(0x080812, 0.88);
-    this.debugOverlayGfx.fillRect(GAME_CONFIG.WIDTH - 380, 8, 372, 174);
+    this.debugOverlayGfx.fillRect(GAME_CONFIG.WIDTH - 420, 8, 412, 190);
     this.debugOverlayGfx.lineStyle(1, 0x3d6e52, 0.9);
-    this.debugOverlayGfx.strokeRect(GAME_CONFIG.WIDTH - 380, 8, 372, 174);
+    this.debugOverlayGfx.strokeRect(GAME_CONFIG.WIDTH - 420, 8, 412, 190);
 
     this.debugOverlayText.setText(lines);
   }
 }
+

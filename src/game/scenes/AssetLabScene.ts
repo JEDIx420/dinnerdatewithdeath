@@ -7,6 +7,8 @@ import {
   CATEGORY_MAP,
   ArchitectureCategory,
 } from '../assets/mansionArchitecture';
+import { EnvironmentAssetCatalog } from '../environment/EnvironmentAssetCatalog';
+import { getCollisionProfile } from '../environment/CollisionProfile';
 
 type LabTab = 'characters' | 'architecture';
 
@@ -351,6 +353,9 @@ export class AssetLabScene extends Phaser.Scene {
 
     if (!key) return;
 
+    const assetDef = EnvironmentAssetCatalog.getAsset(key);
+    const colProfile = assetDef ? getCollisionProfile(assetDef.collisionProfile) : getCollisionProfile('none');
+
     this.archPreviewSprite.setTexture(key);
     this.archPreviewSprite.setPosition(GAME_CONFIG.WIDTH / 2, GAME_CONFIG.HEIGHT / 2 - 25);
     this.archPreviewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
@@ -359,37 +364,77 @@ export class AssetLabScene extends Phaser.Scene {
     const w = frame ? frame.width : 0;
     const h = frame ? frame.height : 0;
 
-    // Draw bounding box
-    this.archGuidesGraphics.clear();
-    this.archGuidesGraphics.lineStyle(1, 0x5a7090, 0.7);
-    this.archGuidesGraphics.strokeRect(
-      GAME_CONFIG.WIDTH / 2 - w / 2,
-      GAME_CONFIG.HEIGHT / 2 - 25 - h / 2,
-      w,
-      h
-    );
+    const centerX = GAME_CONFIG.WIDTH / 2;
+    const centerY = GAME_CONFIG.HEIGHT / 2 - 25;
+    const spriteLeft = centerX - w / 2;
+    const spriteTop = centerY - h / 2;
+    const spriteBottom = centerY + h / 2;
 
-    // Crosshairs
-    this.archGuidesGraphics.lineStyle(1, 0x3d4860, 0.4);
-    this.archGuidesGraphics.lineBetween(
-      GAME_CONFIG.WIDTH / 2 - w / 2 - 10,
-      GAME_CONFIG.HEIGHT / 2 - 25,
-      GAME_CONFIG.WIDTH / 2 + w / 2 + 10,
-      GAME_CONFIG.HEIGHT / 2 - 25
-    );
-    this.archGuidesGraphics.lineBetween(
-      GAME_CONFIG.WIDTH / 2,
-      GAME_CONFIG.HEIGHT / 2 - 25 - h / 2 - 10,
-      GAME_CONFIG.WIDTH / 2,
-      GAME_CONFIG.HEIGHT / 2 - 25 + h / 2 + 10
-    );
+    this.archGuidesGraphics.clear();
+
+    // 1. Draw sprite bounding box (slate blue)
+    this.archGuidesGraphics.lineStyle(1, 0x5a7090, 0.7);
+    this.archGuidesGraphics.strokeRect(spriteLeft, spriteTop, w, h);
+
+    // 2. Crosshairs through sprite center
+    this.archGuidesGraphics.lineStyle(1, 0x3d4860, 0.3);
+    this.archGuidesGraphics.lineBetween(spriteLeft - 10, centerY, spriteLeft + w + 10, centerY);
+    this.archGuidesGraphics.lineBetween(centerX, spriteTop - 10, centerX, spriteBottom + 10);
+
+    // 3. Ground Anchor point (Yellow crosshair + dot)
+    // For bottom-center (most columns/furniture), ground anchor is at (centerX, spriteBottom)
+    let anchorX = centerX;
+    let anchorY = spriteBottom;
+    if (assetDef) {
+      if (assetDef.anchorPreset === 'top-left') {
+        anchorX = spriteLeft;
+        anchorY = spriteTop;
+      } else if (assetDef.anchorPreset === 'center') {
+        anchorX = centerX;
+        anchorY = centerY;
+      } else if (assetDef.anchorPreset === 'bottom-left') {
+        anchorX = spriteLeft;
+        anchorY = spriteBottom;
+      } else if (assetDef.anchorPreset === 'bottom-right') {
+        anchorX = spriteLeft + w;
+        anchorY = spriteBottom;
+      }
+    }
+
+    this.archGuidesGraphics.lineStyle(1, 0xffe600, 0.9);
+    this.archGuidesGraphics.lineBetween(anchorX - 8, anchorY, anchorX + 8, anchorY);
+    this.archGuidesGraphics.lineBetween(anchorX, anchorY - 8, anchorX, anchorY + 8);
+    this.archGuidesGraphics.fillStyle(0xffe600, 1.0);
+    this.archGuidesGraphics.fillCircle(anchorX, anchorY, 2.5);
+
+    // 4. Physical Collision Footprint (Green outline + transparent fill if solid)
+    if (colProfile && colProfile.id !== 'none' && colProfile.footprint.width > 0) {
+      const fp = colProfile.footprint;
+      const fpLeft = anchorX - fp.width / 2 + fp.offsetX;
+      const fpTop = anchorY + fp.offsetY - fp.height / 2;
+
+      this.archGuidesGraphics.fillStyle(0x00ff88, 0.25);
+      this.archGuidesGraphics.fillRect(fpLeft, fpTop, fp.width, fp.height);
+      this.archGuidesGraphics.lineStyle(1, 0x00ff88, 0.95);
+      this.archGuidesGraphics.strokeRect(fpLeft, fpTop, fp.width, fp.height);
+    }
+
+    const anchorPresetStr = assetDef ? assetDef.anchorPreset : 'center (default)';
+    const depthClassStr = assetDef ? assetDef.depthClass.toUpperCase() : 'UNKNOWN';
+    const physicalClassStr = assetDef ? assetDef.physicalClass.toUpperCase() : 'NONE';
+    const collisionProfileStr = colProfile.id !== 'none'
+      ? `${colProfile.name} (${colProfile.footprint.width}×${colProfile.footprint.height}px)`
+      : 'NONE';
 
     this.archInfoText.setText([
-      `Category:    ${cat.toUpperCase()} (${this.selectedCategoryIndex + 1}/${this.archCategories.length})`,
-      `Asset Key:   ${key} (${this.selectedAssetIndex + 1}/${assets.length})`,
-      `Dimensions:  ${w} × ${h} px`,
-      `Category Total: ${assets.length} items | Architecture Total: ${ARCHITECTURE_TEXTURE_KEYS.length} items`,
-      `Filter:      NEAREST (Pixel-Crisp)`,
+      `Category:         ${cat.toUpperCase()} (${this.selectedCategoryIndex + 1}/${this.archCategories.length})`,
+      `Asset Key:        ${key} (${this.selectedAssetIndex + 1}/${assets.length})`,
+      `Dimensions:       ${w} × ${h} px`,
+      `Anchor Preset:    ${anchorPresetStr}`,
+      `Depth Class:      ${depthClassStr}`,
+      `Physical Class:   ${physicalClassStr}`,
+      `Collision Profile:${collisionProfileStr}`,
+      `Filter:           NEAREST (Pixel-Crisp)`,
     ]);
   }
 }

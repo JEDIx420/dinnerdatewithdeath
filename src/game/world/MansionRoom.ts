@@ -4,6 +4,10 @@ import { Direction } from '../entities/CharacterManifest';
 import { DEPTH_LAYERS, calculateDynamicDepth } from '../systems/DepthSystem';
 import { LightingSystem } from '../systems/LightingSystem';
 import { AmbientFXSystem } from '../systems/AmbientFXSystem';
+import {
+  EnvironmentComposer,
+  ResolvedEnvironmentObject,
+} from '../environment/EnvironmentComposer';
 
 export class MansionRoom {
   private scene: Phaser.Scene;
@@ -14,6 +18,9 @@ export class MansionRoom {
   public readonly wallsGroup: Phaser.Physics.Arcade.StaticGroup;
   public readonly furnitureGroup: Phaser.Physics.Arcade.StaticGroup;
   public readonly furnitureSprites: Phaser.GameObjects.Sprite[] = [];
+  public readonly structuralBarriers: Phaser.GameObjects.Zone[] = [];
+  public readonly resolvedEnvironmentObjects: ResolvedEnvironmentObject[] = [];
+  private environmentComposer: EnvironmentComposer;
 
   constructor(
     scene: Phaser.Scene,
@@ -28,11 +35,12 @@ export class MansionRoom {
 
     this.wallsGroup = scene.physics.add.staticGroup();
     this.furnitureGroup = scene.physics.add.staticGroup();
+    this.environmentComposer = new EnvironmentComposer(scene, this.wallsGroup);
 
     this.buildFloors();
     this.buildStaircase();
     this.buildWalls();
-    this.buildArchitectureDetails();
+    this.buildEnvironment();
     this.buildWindows();
     this.buildFurniture();
     this.buildCandles();
@@ -70,6 +78,7 @@ export class MansionRoom {
     // Build steps descending from top landing to great hall floor
     for (let s = 0; s < sc.stepCount; s++) {
       const stepY = sc.y + s * 32;
+      // Step surfaces sit cleanly in dynamic layer behind feet on lower steps
       const stepDepth = calculateDynamicDepth(stepY, 2);
 
       // 1. Step tread / base
@@ -81,16 +90,9 @@ export class MansionRoom {
         );
         treadSprite.setDisplaySize(sc.width, 32);
         treadSprite.setDepth(stepDepth);
-      } else if (this.scene.textures.exists(sc.stepTextureKey)) {
-        const stepSprite = this.scene.add.sprite(
-          sc.x + sc.width / 2,
-          stepY + 16,
-          sc.stepTextureKey
-        );
-        stepSprite.setDepth(stepDepth);
       }
 
-      // 2. Central runner carpet
+      // 2. Central runner carpet (width: 112px, centered)
       if (this.scene.textures.exists('stair_runner_carpet_wide')) {
         const runnerSprite = this.scene.add.sprite(
           sc.x + sc.width / 2,
@@ -112,88 +114,94 @@ export class MansionRoom {
         rodSprite.setDepth(stepDepth + 2);
       }
 
-      // 4. Left stringer / balustrade segment
-      const balL = this.scene.add.sprite(
-        sc.x + 8,
-        stepY + 16,
-        this.scene.textures.exists('stair_stringer_step_left')
-          ? 'stair_stringer_step_left'
-          : sc.balustradeLeftKey
-      );
-      balL.setDepth(calculateDynamicDepth(stepY, 14));
+      // 4. Left stringer / side step structure
+      if (this.scene.textures.exists('stair_stringer_step_left')) {
+        const balL = this.scene.add.sprite(
+          sc.x + 8,
+          stepY + 16,
+          'stair_stringer_step_left'
+        );
+        balL.setDepth(calculateDynamicDepth(stepY, 14));
+      }
 
-      // 5. Right stringer / balustrade segment
-      const balR = this.scene.add.sprite(
-        sc.x + sc.width - 8,
-        stepY + 16,
-        this.scene.textures.exists('stair_stringer_step_right')
-          ? 'stair_stringer_step_right'
-          : sc.balustradeRightKey
-      );
-      balR.setDepth(calculateDynamicDepth(stepY, 14));
+      // 5. Right stringer / side step structure
+      if (this.scene.textures.exists('stair_stringer_step_right')) {
+        const balR = this.scene.add.sprite(
+          sc.x + sc.width - 8,
+          stepY + 16,
+          'stair_stringer_step_right'
+        );
+        balR.setDepth(calculateDynamicDepth(stepY, 14));
+      }
     }
   }
 
-  private buildArchitectureDetails(): void {
-    if (!this.def.architecture) return;
+  private buildEnvironment(): void {
+    // 1. Production Environment Placements via EnvironmentComposer
+    if (this.def.environmentPlacements) {
+      const resolved = this.environmentComposer.composeAll(
+        this.def.environmentPlacements
+      );
+      this.resolvedEnvironmentObjects.push(...resolved);
+    } else if (this.def.architecture) {
+      // Fallback for legacy architecture defs
+      for (const arch of this.def.architecture) {
+        if (!this.scene.textures.exists(arch.textureKey)) continue;
+        const sprite = this.scene.add.sprite(arch.x, arch.y, arch.textureKey);
+        sprite.setOrigin(arch.originX ?? 0.5, arch.originY ?? 0.5);
+        if (arch.flipX) sprite.setFlipX(true);
+        if (arch.flipY) sprite.setFlipY(true);
+        if (arch.scale) sprite.setScale(arch.scale);
+        const depth =
+          arch.depth ?? calculateDynamicDepth(arch.y, arch.depthOffset ?? 0);
+        sprite.setDepth(depth);
 
-    for (const arch of this.def.architecture) {
-      if (!this.scene.textures.exists(arch.textureKey)) {
-        continue;
-      }
-
-      const sprite = this.scene.add.sprite(arch.x, arch.y, arch.textureKey);
-      sprite.setOrigin(arch.originX ?? 0.5, arch.originY ?? 0.5);
-
-      if (arch.flipX) sprite.setFlipX(true);
-      if (arch.flipY) sprite.setFlipY(true);
-      if (arch.scale) sprite.setScale(arch.scale);
-
-      const depth =
-        arch.depth ?? calculateDynamicDepth(arch.y, arch.depthOffset ?? 0);
-      sprite.setDepth(depth);
-
-      // If architectural element has collision (e.g. column base or archway pillar)
-      if (arch.collision) {
-        const colX = arch.x + (arch.collision.offsetX ?? 0);
-        const colY = arch.y + (arch.collision.offsetY ?? 0);
-        const colObj = this.scene.add.zone(
-          colX,
-          colY,
-          arch.collision.width,
-          arch.collision.height
-        );
-        this.scene.physics.add.existing(colObj, true);
-        this.wallsGroup.add(colObj);
+        if (arch.collision) {
+          const colX = arch.x + (arch.collision.offsetX ?? 0);
+          const colY = arch.y + (arch.collision.offsetY ?? 0);
+          const colObj = this.scene.add.zone(
+            colX,
+            colY,
+            arch.collision.width,
+            arch.collision.height
+          );
+          this.scene.physics.add.existing(colObj, true);
+          this.wallsGroup.add(colObj);
+          this.structuralBarriers.push(colObj);
+        }
       }
     }
   }
 
   private buildWalls(): void {
     for (const wall of this.def.walls) {
-      // Visual wall sprite
-      const wallTile = this.scene.add.tileSprite(
-        wall.x + wall.width / 2,
-        wall.y + wall.height / 2,
-        wall.width,
-        wall.height,
-        wall.textureKey
-      );
+      // Visual rendering mode:
+      // 'collision-only': only creates physics barrier, zero visual sprite
+      // 'backplate': renders at BACK_WALL depth behind all production art
+      // default: renders at BACK_WALL depth (NOT UPPER_WALLS!) so it never covers production architecture
+      if (wall.visualMode !== 'collision-only') {
+        const wallTile = this.scene.add.tileSprite(
+          wall.x + wall.width / 2,
+          wall.y + wall.height / 2,
+          wall.width,
+          wall.height,
+          wall.textureKey
+        );
 
-      // Depth sorting based on wall type:
-      // Architectural North walls are placed at UPPER_WALLS depth so characters walk in front of base
-      let depth = DEPTH_LAYERS.BACKGROUND + 50;
-      if (wall.textureKey === 'wall_architectural_north') {
-        depth = DEPTH_LAYERS.UPPER_WALLS;
-      } else if (wall.textureKey === 'balustrade_rail') {
-        // Balustrade overlook rails sort dynamically so player on landing stands behind rail
-        depth = calculateDynamicDepth(wall.y + wall.height, 4);
+        // Crucial fix: Wall surfaces render on BACK_WALL (300) behind all dynamic items and details
+        const depth =
+          wall.visualMode === 'backplate'
+            ? DEPTH_LAYERS.BACK_WALL - 10
+            : DEPTH_LAYERS.BACK_WALL;
+        wallTile.setDepth(depth);
       }
-      wallTile.setDepth(depth);
 
-      // Physical collision body
+      // Physical collision body (decoupled from visual rendering)
       if (wall.hasCollision) {
-        const colliderY = wall.y + (wall.collisionOffsetY ?? 0) + (wall.collisionHeight ?? wall.height) / 2;
+        const colliderY =
+          wall.y +
+          (wall.collisionOffsetY ?? 0) +
+          (wall.collisionHeight ?? wall.height) / 2;
         const colliderH = wall.collisionHeight ?? wall.height;
         const colObj = this.scene.add.zone(
           wall.x + wall.width / 2,
@@ -203,15 +211,20 @@ export class MansionRoom {
         );
         this.scene.physics.add.existing(colObj, true);
         this.wallsGroup.add(colObj);
+        this.structuralBarriers.push(colObj);
       }
     }
   }
 
   private buildWindows(): void {
     for (const win of this.def.windows) {
-      // 1. Tall gothic arched window frame
-      const winSprite = this.scene.add.sprite(win.x, win.y + win.height / 2, 'window_gothic');
-      winSprite.setDepth(DEPTH_LAYERS.UPPER_WALLS + 10);
+      // 1. Tall gothic arched window frame (renders on BACK_WALL_DETAIL above backplate)
+      const winSprite = this.scene.add.sprite(
+        win.x,
+        win.y + win.height / 2,
+        'window_gothic'
+      );
+      winSprite.setDepth(DEPTH_LAYERS.BACK_WALL_DETAIL + 10);
 
       // 2. Soft moonlight shaft into room
       this.lightingSystem.addLight(
@@ -234,10 +247,18 @@ export class MansionRoom {
 
       // 4. Subtle animated curtains at sides
       if (win.hasCurtains && this.scene.textures.exists('decor_curtain_left')) {
-        const curL = this.scene.add.sprite(win.x - 30, win.y + 40, 'decor_curtain_left');
-        const curR = this.scene.add.sprite(win.x + 30, win.y + 40, 'decor_curtain_right');
-        curL.setDepth(DEPTH_LAYERS.UPPER_WALLS + 20);
-        curR.setDepth(DEPTH_LAYERS.UPPER_WALLS + 20);
+        const curL = this.scene.add.sprite(
+          win.x - 30,
+          win.y + 40,
+          'decor_curtain_left'
+        );
+        const curR = this.scene.add.sprite(
+          win.x + 30,
+          win.y + 40,
+          'decor_curtain_right'
+        );
+        curL.setDepth(DEPTH_LAYERS.BACK_WALL_DETAIL + 20);
+        curR.setDepth(DEPTH_LAYERS.BACK_WALL_DETAIL + 20);
 
         // Sinusoidal subtle breeze displacement
         this.scene.tweens.add({

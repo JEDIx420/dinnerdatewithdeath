@@ -72,14 +72,15 @@ All entities and world elements follow standardized depth tiers defined in `src/
 | Layer Name | Z-Index Range | Elements |
 |---|---|---|
 | `BACKGROUND` | 0 | Room base canvas and nocturnal sky backdrop |
-| `FLOOR` | 100 | Hardwood and stone tile floors |
-| `RUGS` | 200 | Area rugs, runners, compass rose floor medallion |
-| `CONTACT_SHADOWS` | 300 | Soft elliptical grounding shadows for actors and furniture |
-| `DYNAMIC_Y_BASE` | 1000..5999 | Actors, staircase steps, and depth-sorted furniture (`depth = 1000 + y + anchorOffset`) |
-| `UPPER_WALLS` | 6000 | North wall cornice molding, wallpaper, window frames |
-| `FOREGROUND_ARCHES`| 7000 | Overhead grand chandelier, archway headers, pilaster capitals |
+| `FLOOR` | 100 | Hardwood, stone block, and marble floors |
+| `FLOOR_DECOR` (`RUGS`) | 200 | Area rugs, runners, compass rose floor medallion |
+| `BACK_WALL` | 300 | Structural north wall surfaces, wallpaper, wainscot panels |
+| `BACK_WALL_DETAIL` | 400 | Wall-mounted cornices, mouldings, niches, crests, window frames |
+| `CONTACT_SHADOWS` | 500 | Soft elliptical grounding shadows for actors and furniture |
+| `DYNAMIC_Y_BASE` | 1000..5999 | Actors, furniture, floor-standing columns, newel posts (`depth = 1000 + groundY + offset`) |
+| `FOREGROUND_STRUCTURE` | 6000 | True overhead archway headers, balcony fascias, grand chandelier |
 | `LIGHTING_OVERLAY` | 8000 | Ambient darkness wash and additive light halos |
-| `FOREGROUND_AMBIENT`| 9000 | Floating dust motes, window rain streaks, chimney soot |
+| `FOREGROUND_AMBIENT` | 9000 | Floating dust motes, window rain streaks, chimney soot |
 | `UI` | 10000 | Diagnostics overlay, menus, title typography |
 
 ---
