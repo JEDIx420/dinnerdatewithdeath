@@ -1209,8 +1209,8 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_02",
     "frame": "env02_window_gothic_tall",
     "packId": "ddwd_env_02",
-    "nativeWidth": 71,
-    "nativeHeight": 165,
+    "nativeWidth": 72,
+    "nativeHeight": 160,
     "anchorPreset": "bottom-center",
     "depthClass": "back-wall-detail",
     "physicalClass": "none",
@@ -1219,13 +1219,13 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "repeatable": false,
     "windowMasks": [
       {
-        "localX": 12,
+        "localX": 10,
         "localY": 16,
-        "width": 55,
-        "height": 131
+        "width": 52,
+        "height": 130
       }
     ],
-    "notes": "Doors Windows Staircase asset (71x165)"
+    "notes": "Doors Windows Staircase asset (72x160)"
   },
   "env02_windows_02": {
     "id": "env02_windows_02",
@@ -1377,8 +1377,8 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_02",
     "frame": "env02_sconce_bronze",
     "packId": "ddwd_env_02",
-    "nativeWidth": 61,
-    "nativeHeight": 73,
+    "nativeWidth": 50,
+    "nativeHeight": 70,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
@@ -1388,14 +1388,14 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "lightSockets": [
       {
         "id": "sconce_candle",
-        "localX": 31,
+        "localX": 25,
         "localY": 8,
         "radius": 44,
         "intensity": 0.4,
         "flameMode": "overlay"
       }
     ],
-    "notes": "Doors Windows Staircase asset (61x73)"
+    "notes": "Doors Windows Staircase asset (50x70)"
   },
   "env02_lighting_12": {
     "id": "env02_lighting_12",
@@ -2283,15 +2283,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_03",
     "frame": "bed03_bed_grand_gothic",
     "packId": "ddwd_env_03",
-    "nativeWidth": 721,
-    "nativeHeight": 371,
+    "nativeWidth": 221,
+    "nativeHeight": 364,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "bed_large",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Death Bedchamber asset (721x371)"
+    "notes": "Death Bedchamber asset (221x364)"
   },
   "bed03_vanity_ornate": {
     "id": "bed03_vanity_ornate",
@@ -2299,15 +2299,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_03",
     "frame": "bed03_vanity_ornate",
     "packId": "ddwd_env_03",
-    "nativeWidth": 441,
-    "nativeHeight": 307,
+    "nativeWidth": 106,
+    "nativeHeight": 251,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "vanity",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Death Bedchamber asset (441x307)"
+    "notes": "Death Bedchamber asset (106x251)"
   },
   "bed03_wardrobe_tall": {
     "id": "bed03_wardrobe_tall",
@@ -2315,15 +2315,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_03",
     "frame": "bed03_wardrobe_tall",
     "packId": "ddwd_env_03",
-    "nativeWidth": 149,
-    "nativeHeight": 287,
+    "nativeWidth": 121,
+    "nativeHeight": 304,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "wardrobe_large",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Death Bedchamber asset (149x287)"
+    "notes": "Death Bedchamber asset (121x304)"
   },
   "bed03_bedside_cabinet": {
     "id": "bed03_bedside_cabinet",
@@ -2331,15 +2331,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_03",
     "frame": "bed03_bedside_cabinet",
     "packId": "ddwd_env_03",
-    "nativeWidth": 123,
-    "nativeHeight": 207,
+    "nativeWidth": 110,
+    "nativeHeight": 180,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "nightstand",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Death Bedchamber asset (123x207)"
+    "notes": "Death Bedchamber asset (110x180)"
   },
   "bed03_furniture_05": {
     "id": "bed03_furniture_05",
@@ -2427,15 +2427,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_03",
     "frame": "bed03_armchair_crimson",
     "packId": "ddwd_env_03",
-    "nativeWidth": 143,
-    "nativeHeight": 139,
+    "nativeWidth": 121,
+    "nativeHeight": 214,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "armchair",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Death Bedchamber asset (143x139)"
+    "notes": "Death Bedchamber asset (121x214)"
   },
   "bed03_decor_11": {
     "id": "bed03_decor_11",
@@ -2939,7 +2939,7 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_04",
     "frame": "hall04_chandelier_grand",
     "packId": "ddwd_env_04",
-    "nativeWidth": 133,
+    "nativeWidth": 134,
     "nativeHeight": 227,
     "anchorPreset": "top-center",
     "depthClass": "foreground-structure",
@@ -2989,23 +2989,23 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "flameMode": "overlay"
       }
     ],
-    "notes": "Great Hall & Gallery asset (133x227)"
+    "notes": "Great Hall & Gallery asset (134x227)"
   },
   "hall04_statue_bust_marble": {
     "id": "hall04_statue_bust_marble",
-    "category": "lighting",
+    "category": "sculpture",
     "textureKey": "ddwd_env_04",
     "frame": "hall04_statue_bust_marble",
     "packId": "ddwd_env_04",
-    "nativeWidth": 133,
-    "nativeHeight": 225,
-    "anchorPreset": "top-center",
-    "depthClass": "foreground-structure",
-    "physicalClass": "none",
+    "nativeWidth": 111,
+    "nativeHeight": 201,
+    "anchorPreset": "bottom-center",
+    "depthClass": "dynamic-solid",
+    "physicalClass": "floor-solid",
     "collisionProfile": "statue_large",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Great Hall & Gallery asset (133x225)"
+    "notes": "Great Hall & Gallery asset (111x201)"
   },
   "hall04_lighting_03": {
     "id": "hall04_lighting_03",
@@ -3749,8 +3749,8 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_05",
     "frame": "dining05_table_banquet_runner",
     "packId": "ddwd_env_05",
-    "nativeWidth": 212,
-    "nativeHeight": 155,
+    "nativeWidth": 240,
+    "nativeHeight": 124,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
@@ -3763,11 +3763,11 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
         "name": "runner",
         "localX": 30,
         "localY": 20,
-        "width": 152,
-        "height": 120
+        "width": 180,
+        "height": 89
       }
     },
-    "notes": "Dining Room asset (212x155)"
+    "notes": "Dining Room asset (240x124)"
   },
   "dining05_sideboard_oak": {
     "id": "dining05_sideboard_oak",
@@ -3775,15 +3775,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_05",
     "frame": "dining05_sideboard_oak",
     "packId": "ddwd_env_05",
-    "nativeWidth": 80,
-    "nativeHeight": 163,
+    "nativeWidth": 124,
+    "nativeHeight": 152,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "sideboard",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Dining Room asset (80x163)"
+    "notes": "Dining Room asset (124x152)"
   },
   "dining05_furniture_03": {
     "id": "dining05_furniture_03",
@@ -3807,15 +3807,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_05",
     "frame": "dining05_chair_tufted",
     "packId": "ddwd_env_05",
-    "nativeWidth": 100,
-    "nativeHeight": 145,
+    "nativeWidth": 80,
+    "nativeHeight": 164,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "dining_chair",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Dining Room asset (100x145)"
+    "notes": "Dining Room asset (80x164)"
   },
   "dining05_furniture_05": {
     "id": "dining05_furniture_05",
@@ -3967,8 +3967,8 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_05",
     "frame": "dining05_candelabra_three_branch",
     "packId": "ddwd_env_05",
-    "nativeWidth": 88,
-    "nativeHeight": 87,
+    "nativeWidth": 50,
+    "nativeHeight": 60,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "none",
@@ -3978,30 +3978,30 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "lightSockets": [
       {
         "id": "left_flame",
-        "localX": 6,
-        "localY": 4,
+        "localX": 11,
+        "localY": 16,
         "radius": 40,
         "intensity": 0.38,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "center_flame",
-        "localX": 44,
-        "localY": 2,
+        "localX": 25,
+        "localY": 8,
         "radius": 44,
         "intensity": 0.42,
-        "flameMode": "overlay"
+        "flameMode": "none"
       },
       {
         "id": "right_flame",
-        "localX": 82,
-        "localY": 4,
+        "localX": 39,
+        "localY": 16,
         "radius": 40,
         "intensity": 0.38,
-        "flameMode": "overlay"
+        "flameMode": "none"
       }
     ],
-    "notes": "Dining Room asset (88x87)"
+    "notes": "Dining Room asset (50x60)"
   },
   "dining05_decor_15": {
     "id": "dining05_decor_15",
@@ -5059,21 +5059,32 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "repeatable": false,
     "notes": "Dining Room asset (67x117)"
   },
-  "lounge06_furniture_01": {
-    "id": "lounge06_furniture_01",
+  "lounge06_fireplace_stone": {
+    "id": "lounge06_fireplace_stone",
     "category": "furniture",
     "textureKey": "ddwd_env_06",
-    "frame": "lounge06_furniture_01",
+    "frame": "lounge06_fireplace_stone",
     "packId": "ddwd_env_06",
-    "nativeWidth": 103,
-    "nativeHeight": 127,
+    "nativeWidth": 114,
+    "nativeHeight": 130,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
-    "collisionProfile": "none",
+    "collisionProfile": "fireplace_hearth",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (103x127)"
+    "lightSockets": [
+      {
+        "id": "hearth_fire",
+        "localX": 57,
+        "localY": 95,
+        "radius": 80,
+        "intensity": 0.55,
+        "kind": "fireplace",
+        "flameMode": "none"
+      }
+    ],
+    "notes": "Lounge & Fireplace asset (114x130)"
   },
   "lounge06_furniture_02": {
     "id": "lounge06_furniture_02",
@@ -5145,15 +5156,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_06",
     "frame": "lounge06_armchair_velvet",
     "packId": "ddwd_env_06",
-    "nativeWidth": 67,
-    "nativeHeight": 99,
+    "nativeWidth": 110,
+    "nativeHeight": 155,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "armchair",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (67x99)"
+    "notes": "Lounge & Fireplace asset (110x155)"
   },
   "lounge06_furniture_07": {
     "id": "lounge06_furniture_07",
@@ -5193,15 +5204,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_06",
     "frame": "lounge06_coffee_table_wood",
     "packId": "ddwd_env_06",
-    "nativeWidth": 97,
-    "nativeHeight": 77,
+    "nativeWidth": 156,
+    "nativeHeight": 134,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "coffee_table",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (97x77)"
+    "notes": "Lounge & Fireplace asset (156x134)"
   },
   "lounge06_sofa_ornate": {
     "id": "lounge06_sofa_ornate",
@@ -5209,15 +5220,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_06",
     "frame": "lounge06_sofa_ornate",
     "packId": "ddwd_env_06",
-    "nativeWidth": 105,
-    "nativeHeight": 77,
+    "nativeWidth": 230,
+    "nativeHeight": 145,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "sofa",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (105x77)"
+    "notes": "Lounge & Fireplace asset (230x145)"
   },
   "lounge06_furniture_11": {
     "id": "lounge06_furniture_11",
@@ -5241,15 +5252,15 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_06",
     "frame": "lounge06_tv_retro",
     "packId": "ddwd_env_06",
-    "nativeWidth": 75,
-    "nativeHeight": 55,
+    "nativeWidth": 130,
+    "nativeHeight": 132,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "tv_console",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (75x55)"
+    "notes": "Lounge & Fireplace asset (130x132)"
   },
   "lounge06_furniture_13": {
     "id": "lounge06_furniture_13",
@@ -5283,32 +5294,21 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "repeatable": false,
     "notes": "Lounge & Fireplace asset (81x73)"
   },
-  "lounge06_fireplace_stone": {
-    "id": "lounge06_fireplace_stone",
+  "lounge06_couch_loveseat": {
+    "id": "lounge06_couch_loveseat",
     "category": "fireplace",
     "textureKey": "ddwd_env_06",
-    "frame": "lounge06_fireplace_stone",
+    "frame": "lounge06_couch_loveseat",
     "packId": "ddwd_env_06",
-    "nativeWidth": 519,
-    "nativeHeight": 159,
+    "nativeWidth": 170,
+    "nativeHeight": 145,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
-    "collisionProfile": "fireplace_hearth",
+    "collisionProfile": "sofa",
     "mirrorSafe": true,
     "repeatable": false,
-    "lightSockets": [
-      {
-        "id": "hearth_fire",
-        "localX": 260,
-        "localY": 134,
-        "radius": 80,
-        "intensity": 0.55,
-        "kind": "fireplace",
-        "flameMode": "none"
-      }
-    ],
-    "notes": "Lounge & Fireplace asset (519x159)"
+    "notes": "Lounge & Fireplace asset (170x145)"
   },
   "lounge06_furniture_16": {
     "id": "lounge06_furniture_16",
@@ -5358,21 +5358,21 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "repeatable": false,
     "notes": "Lounge & Fireplace asset (111x123)"
   },
-  "lounge06_furniture_19": {
-    "id": "lounge06_furniture_19",
-    "category": "furniture",
+  "lounge06_art_ship": {
+    "id": "lounge06_art_ship",
+    "category": "art",
     "textureKey": "ddwd_env_06",
-    "frame": "lounge06_furniture_19",
+    "frame": "lounge06_art_ship",
     "packId": "ddwd_env_06",
-    "nativeWidth": 97,
-    "nativeHeight": 93,
+    "nativeWidth": 170,
+    "nativeHeight": 140,
     "anchorPreset": "bottom-center",
-    "depthClass": "dynamic-solid",
-    "physicalClass": "floor-solid",
+    "depthClass": "back-wall-detail",
+    "physicalClass": "none",
     "collisionProfile": "none",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (97x93)"
+    "notes": "Lounge & Fireplace asset (170x140)"
   },
   "lounge06_furniture_20": {
     "id": "lounge06_furniture_20",
@@ -5390,21 +5390,21 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "repeatable": false,
     "notes": "Lounge & Fireplace asset (105x153)"
   },
-  "lounge06_fireplace_21": {
-    "id": "lounge06_fireplace_21",
+  "lounge06_basket_firewood": {
+    "id": "lounge06_basket_firewood",
     "category": "fireplace",
     "textureKey": "ddwd_env_06",
-    "frame": "lounge06_fireplace_21",
+    "frame": "lounge06_basket_firewood",
     "packId": "ddwd_env_06",
-    "nativeWidth": 155,
-    "nativeHeight": 131,
+    "nativeWidth": 112,
+    "nativeHeight": 124,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "none",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (155x131)"
+    "notes": "Lounge & Fireplace asset (112x124)"
   },
   "lounge06_bookshelf_tall": {
     "id": "lounge06_bookshelf_tall",
@@ -5412,31 +5412,57 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "textureKey": "ddwd_env_06",
     "frame": "lounge06_bookshelf_tall",
     "packId": "ddwd_env_06",
-    "nativeWidth": 73,
-    "nativeHeight": 149,
+    "nativeWidth": 118,
+    "nativeHeight": 174,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "bookshelf",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (73x149)"
+    "notes": "Lounge & Fireplace asset (118x174)"
   },
-  "lounge06_furniture_23": {
-    "id": "lounge06_furniture_23",
-    "category": "furniture",
+  "lounge06_candelabra_gold": {
+    "id": "lounge06_candelabra_gold",
+    "category": "decor",
     "textureKey": "ddwd_env_06",
-    "frame": "lounge06_furniture_23",
+    "frame": "lounge06_candelabra_gold",
     "packId": "ddwd_env_06",
-    "nativeWidth": 77,
-    "nativeHeight": 81,
+    "nativeWidth": 55,
+    "nativeHeight": 70,
     "anchorPreset": "bottom-center",
     "depthClass": "dynamic-solid",
     "physicalClass": "floor-solid",
     "collisionProfile": "none",
     "mirrorSafe": true,
     "repeatable": false,
-    "notes": "Lounge & Fireplace asset (77x81)"
+    "lightSockets": [
+      {
+        "id": "left_flame",
+        "localX": 12,
+        "localY": 18,
+        "radius": 36,
+        "intensity": 0.38,
+        "flameMode": "none"
+      },
+      {
+        "id": "mid_flame",
+        "localX": 28,
+        "localY": 8,
+        "radius": 44,
+        "intensity": 0.45,
+        "flameMode": "none"
+      },
+      {
+        "id": "right_flame",
+        "localX": 44,
+        "localY": 18,
+        "radius": 36,
+        "intensity": 0.38,
+        "flameMode": "none"
+      }
+    ],
+    "notes": "Lounge & Fireplace asset (55x70)"
   },
   "lounge06_furniture_24": {
     "id": "lounge06_furniture_24",

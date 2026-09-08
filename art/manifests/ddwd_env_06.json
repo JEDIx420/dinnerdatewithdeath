@@ -16,19 +16,30 @@
   ],
   "assets": [
     {
-      "id": "lounge06_furniture_01",
+      "id": "lounge06_fireplace_stone",
       "category": "furniture",
       "sourceRect": {
-        "x": 12,
-        "y": 90,
-        "width": 103,
-        "height": 127
+        "x": 126,
+        "y": 88,
+        "width": 114,
+        "height": 130
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
-      "collisionProfile": "none",
-      "notes": "Lounge & Fireplace asset (103x127)"
+      "collisionProfile": "fireplace_hearth",
+      "lightSockets": [
+        {
+          "id": "hearth_fire",
+          "localX": 57,
+          "localY": 95,
+          "radius": 80,
+          "intensity": 0.55,
+          "kind": "fireplace",
+          "flameMode": "none"
+        }
+      ],
+      "notes": "Lounge & Fireplace asset (114x130)"
     },
     {
       "id": "lounge06_furniture_02",
@@ -94,16 +105,16 @@
       "id": "lounge06_armchair_velvet",
       "category": "furniture",
       "sourceRect": {
-        "x": 1072,
-        "y": 110,
-        "width": 67,
-        "height": 99
+        "x": 880,
+        "y": 230,
+        "width": 110,
+        "height": 155
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "armchair",
-      "notes": "Lounge & Fireplace asset (67x99)"
+      "notes": "Lounge & Fireplace asset (110x155)"
     },
     {
       "id": "lounge06_furniture_07",
@@ -139,31 +150,31 @@
       "id": "lounge06_coffee_table_wood",
       "category": "furniture",
       "sourceRect": {
-        "x": 476,
-        "y": 136,
-        "width": 97,
-        "height": 77
+        "x": 1198,
+        "y": 258,
+        "width": 156,
+        "height": 134
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "coffee_table",
-      "notes": "Lounge & Fireplace asset (97x77)"
+      "notes": "Lounge & Fireplace asset (156x134)"
     },
     {
       "id": "lounge06_sofa_ornate",
       "category": "furniture",
       "sourceRect": {
-        "x": 584,
-        "y": 136,
-        "width": 105,
-        "height": 77
+        "x": 470,
+        "y": 235,
+        "width": 230,
+        "height": 145
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "sofa",
-      "notes": "Lounge & Fireplace asset (105x77)"
+      "notes": "Lounge & Fireplace asset (230x145)"
     },
     {
       "id": "lounge06_furniture_11",
@@ -184,16 +195,16 @@
       "id": "lounge06_tv_retro",
       "category": "furniture",
       "sourceRect": {
-        "x": 890,
-        "y": 156,
-        "width": 75,
-        "height": 55
+        "x": 552,
+        "y": 448,
+        "width": 130,
+        "height": 132
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "tv_console",
-      "notes": "Lounge & Fireplace asset (75x55)"
+      "notes": "Lounge & Fireplace asset (130x132)"
     },
     {
       "id": "lounge06_furniture_13",
@@ -226,30 +237,19 @@
       "notes": "Lounge & Fireplace asset (81x73)"
     },
     {
-      "id": "lounge06_fireplace_stone",
+      "id": "lounge06_couch_loveseat",
       "category": "fireplace",
       "sourceRect": {
-        "x": 470,
-        "y": 238,
-        "width": 519,
-        "height": 159
+        "x": 705,
+        "y": 235,
+        "width": 170,
+        "height": 145
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
-      "collisionProfile": "fireplace_hearth",
-      "lightSockets": [
-        {
-          "id": "hearth_fire",
-          "localX": 260,
-          "localY": 134,
-          "radius": 80,
-          "intensity": 0.55,
-          "kind": "fireplace",
-          "flameMode": "none"
-        }
-      ],
-      "notes": "Lounge & Fireplace asset (519x159)"
+      "collisionProfile": "sofa",
+      "notes": "Lounge & Fireplace asset (170x145)"
     },
     {
       "id": "lounge06_furniture_16",
@@ -297,19 +297,19 @@
       "notes": "Lounge & Fireplace asset (111x123)"
     },
     {
-      "id": "lounge06_furniture_19",
-      "category": "furniture",
+      "id": "lounge06_art_ship",
+      "category": "art",
       "sourceRect": {
-        "x": 362,
-        "y": 286,
-        "width": 97,
-        "height": 93
+        "x": 1148,
+        "y": 440,
+        "width": 170,
+        "height": 140
       },
       "anchorPreset": "bottom-center",
-      "depthClass": "dynamic-solid",
-      "physicalClass": "floor-solid",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
       "collisionProfile": "none",
-      "notes": "Lounge & Fireplace asset (97x93)"
+      "notes": "Lounge & Fireplace asset (170x140)"
     },
     {
       "id": "lounge06_furniture_20",
@@ -327,49 +327,75 @@
       "notes": "Lounge & Fireplace asset (105x153)"
     },
     {
-      "id": "lounge06_fireplace_21",
+      "id": "lounge06_basket_firewood",
       "category": "fireplace",
       "sourceRect": {
-        "x": 1198,
-        "y": 260,
-        "width": 155,
-        "height": 131
+        "x": 242,
+        "y": 266,
+        "width": 112,
+        "height": 124
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "none",
-      "notes": "Lounge & Fireplace asset (155x131)"
+      "notes": "Lounge & Fireplace asset (112x124)"
     },
     {
       "id": "lounge06_bookshelf_tall",
       "category": "furniture",
       "sourceRect": {
-        "x": 1360,
-        "y": 248,
-        "width": 73,
-        "height": 149
+        "x": 412,
+        "y": 410,
+        "width": 118,
+        "height": 174
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "bookshelf",
-      "notes": "Lounge & Fireplace asset (73x149)"
+      "notes": "Lounge & Fireplace asset (118x174)"
     },
     {
-      "id": "lounge06_furniture_23",
-      "category": "furniture",
+      "id": "lounge06_candelabra_gold",
+      "category": "decor",
       "sourceRect": {
-        "x": 1110,
-        "y": 310,
-        "width": 77,
-        "height": 81
+        "x": 1295,
+        "y": 262,
+        "width": 55,
+        "height": 70
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "none",
-      "notes": "Lounge & Fireplace asset (77x81)"
+      "lightSockets": [
+        {
+          "id": "left_flame",
+          "localX": 12,
+          "localY": 18,
+          "radius": 36,
+          "intensity": 0.38,
+          "flameMode": "none"
+        },
+        {
+          "id": "mid_flame",
+          "localX": 28,
+          "localY": 8,
+          "radius": 44,
+          "intensity": 0.45,
+          "flameMode": "none"
+        },
+        {
+          "id": "right_flame",
+          "localX": 44,
+          "localY": 18,
+          "radius": 36,
+          "intensity": 0.38,
+          "flameMode": "none"
+        }
+      ],
+      "notes": "Lounge & Fireplace asset (55x70)"
     },
     {
       "id": "lounge06_furniture_24",

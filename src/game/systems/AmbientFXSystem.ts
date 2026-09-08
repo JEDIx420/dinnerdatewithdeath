@@ -79,9 +79,9 @@ export class AmbientFXSystem {
     this.fxGfx = scene.add.graphics();
     this.fxGfx.setDepth(DEPTH_LAYERS.FOREGROUND_AMBIENT);
 
-    // Graphics for window rain (rendered just above windows, below foreground trim)
+    // Graphics for window rain (rendered just above window panes, behind all furniture)
     this.rainGfx = scene.add.graphics();
-    this.rainGfx.setDepth(DEPTH_LAYERS.FOREGROUND_AMBIENT - 100);
+    this.rainGfx.setDepth(DEPTH_LAYERS.BACK_WALL_DETAIL + 5);
 
     // Geometry mask graphics strictly containing rain within window panes
     this.maskGfx = scene.make.graphics({ x: 0, y: 0 });

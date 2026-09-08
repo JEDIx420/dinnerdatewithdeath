@@ -18,61 +18,61 @@
       "id": "bed03_bed_grand_gothic",
       "category": "furniture",
       "sourceRect": {
-        "x": 570,
+        "x": 580,
         "y": 56,
-        "width": 721,
-        "height": 371
+        "width": 221,
+        "height": 364
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "bed_large",
-      "notes": "Death Bedchamber asset (721x371)"
+      "notes": "Death Bedchamber asset (221x364)"
     },
     {
       "id": "bed03_vanity_ornate",
       "category": "furniture",
       "sourceRect": {
-        "x": 18,
-        "y": 108,
-        "width": 441,
-        "height": 307
+        "x": 125,
+        "y": 164,
+        "width": 106,
+        "height": 251
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "vanity",
-      "notes": "Death Bedchamber asset (441x307)"
+      "notes": "Death Bedchamber asset (106x251)"
     },
     {
       "id": "bed03_wardrobe_tall",
       "category": "furniture",
       "sourceRect": {
-        "x": 1296,
-        "y": 124,
-        "width": 149,
-        "height": 287
+        "x": 230,
+        "y": 108,
+        "width": 121,
+        "height": 304
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "wardrobe_large",
-      "notes": "Death Bedchamber asset (149x287)"
+      "notes": "Death Bedchamber asset (121x304)"
     },
     {
       "id": "bed03_bedside_cabinet",
       "category": "furniture",
       "sourceRect": {
-        "x": 460,
-        "y": 206,
-        "width": 123,
-        "height": 207
+        "x": 1170,
+        "y": 130,
+        "width": 110,
+        "height": 180
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "nightstand",
-      "notes": "Death Bedchamber asset (123x207)"
+      "notes": "Death Bedchamber asset (110x180)"
     },
     {
       "id": "bed03_furniture_05",
@@ -153,16 +153,16 @@
       "id": "bed03_armchair_crimson",
       "category": "furniture",
       "sourceRect": {
-        "x": 756,
-        "y": 444,
-        "width": 143,
-        "height": 139
+        "x": 460,
+        "y": 206,
+        "width": 121,
+        "height": 214
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "armchair",
-      "notes": "Death Bedchamber asset (143x139)"
+      "notes": "Death Bedchamber asset (121x214)"
     },
     {
       "id": "bed03_decor_11",

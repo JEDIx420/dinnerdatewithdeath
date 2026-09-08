@@ -262,33 +262,41 @@ export async function buildAllAssets(): Promise<void> {
       if (cfg.packId === 'ddwd_env_02') {
         if (i === 0) {
           id = 'env02_window_gothic_tall';
-          windowMasks = [{ localX: 12, localY: 16, width: 55, height: 131 }];
+          b.x = 28; b.y = 28; b.width = 72; b.height = 160;
+          windowMasks = [{ localX: 10, localY: 16, width: 52, height: 130 }];
         } else if (i === 10) {
           id = 'env02_sconce_bronze';
-          lightSockets = [{ id: 'sconce_candle', localX: Math.round(b.width / 2), localY: 8, radius: 44, intensity: 0.4, flameMode: 'overlay' }];
+          b.x = 61; b.y = 73; b.width = 50; b.height = 70;
+          lightSockets = [{ id: 'sconce_candle', localX: 25, localY: 8, radius: 44, intensity: 0.4, flameMode: 'overlay' }];
         } else if (i === 20) {
           id = 'env02_door_jamb_portal';
         }
       } else if (cfg.packId === 'ddwd_env_03') {
         if (i === 0) {
           id = 'bed03_bed_grand_gothic';
+          b.x = 580; b.y = 56; b.width = 221; b.height = 364;
           collisionProfile = 'bed_large';
         } else if (i === 1) {
           id = 'bed03_vanity_ornate';
+          b.x = 125; b.y = 164; b.width = 106; b.height = 251;
           collisionProfile = 'vanity';
         } else if (i === 2) {
           id = 'bed03_wardrobe_tall';
+          b.x = 230; b.y = 108; b.width = 121; b.height = 304;
           collisionProfile = 'wardrobe_large';
         } else if (i === 3) {
           id = 'bed03_bedside_cabinet';
+          b.x = 1170; b.y = 130; b.width = 110; b.height = 180;
           collisionProfile = 'nightstand';
         } else if (i === 9) {
           id = 'bed03_armchair_crimson';
+          b.x = 460; b.y = 206; b.width = 121; b.height = 214;
           collisionProfile = 'armchair';
         }
       } else if (cfg.packId === 'ddwd_env_04') {
         if (i === 0) {
           id = 'hall04_chandelier_grand';
+          b.x = 163; b.y = 33; b.width = 134; b.height = 227;
           lightSockets = [
             { id: 'candle_1', localX: 18, localY: 22, radius: 40, intensity: 0.35, flameMode: 'overlay' },
             { id: 'candle_2', localX: 42, localY: 26, radius: 40, intensity: 0.35, flameMode: 'overlay' },
@@ -297,29 +305,77 @@ export async function buildAllAssets(): Promise<void> {
             { id: 'candle_5', localX: 118, localY: 22, radius: 40, intensity: 0.35, flameMode: 'overlay' },
           ];
         } else if (i === 1) {
+          // Statues: Weeping Angel sculpture
           id = 'hall04_statue_bust_marble';
+          b.x = 880; b.y = 380; b.width = 111; b.height = 201;
+          cls.category = 'sculpture';
+          cls.anchorPreset = 'bottom-center';
+          cls.depthClass = 'dynamic-solid';
           collisionProfile = 'statue_large';
         }
+      } else if (cfg.packId === 'ddwd_env_05') {
+        if (i === 0) {
+          id = 'dining05_table_banquet_runner';
+          b.x = 28; b.y = 79; b.width = 213; b.height = 123;
+          collisionProfile = 'dining_table_large';
+        } else if (i === 1) {
+          id = 'dining05_chair_tufted';
+          b.x = 270; b.y = 50; b.width = 91; b.height = 171;
+          collisionProfile = 'dining_chair';
+        } else if (i === 2) {
+          id = 'dining05_sideboard_oak';
+          b.x = 370; b.y = 50; b.width = 128; b.height = 161;
+          collisionProfile = 'sideboard';
+        }
       } else if (cfg.packId === 'ddwd_env_06') {
-        if (i === 14 || (b.width > 500 && b.height > 150)) {
+        if (i === 0) {
           id = 'lounge06_fireplace_stone';
+          b.x = 126; b.y = 88; b.width = 114; b.height = 130;
           collisionProfile = 'fireplace_hearth';
-          lightSockets = [{ id: 'hearth_fire', localX: Math.round(b.width / 2), localY: b.height - 25, radius: 80, intensity: 0.55, kind: 'fireplace', flameMode: 'none' }];
+          lightSockets = [{ id: 'hearth_fire', localX: 57, localY: 95, radius: 80, intensity: 0.55, kind: 'fireplace', flameMode: 'none' }];
         } else if (i === 9) {
           id = 'lounge06_sofa_ornate';
+          b.x = 470; b.y = 235; b.width = 230; b.height = 145;
           collisionProfile = 'sofa';
         } else if (i === 5) {
           id = 'lounge06_armchair_velvet';
+          b.x = 880; b.y = 230; b.width = 110; b.height = 155;
           collisionProfile = 'armchair';
         } else if (i === 21) {
           id = 'lounge06_bookshelf_tall';
+          b.x = 412; b.y = 410; b.width = 118; b.height = 174;
           collisionProfile = 'bookshelf';
         } else if (i === 8) {
           id = 'lounge06_coffee_table_wood';
+          b.x = 1198; b.y = 258; b.width = 156; b.height = 134;
           collisionProfile = 'coffee_table';
         } else if (i === 11) {
           id = 'lounge06_tv_retro';
+          b.x = 552; b.y = 448; b.width = 130; b.height = 132;
           collisionProfile = 'tv_console';
+        } else if (i === 20) {
+          id = 'lounge06_basket_firewood';
+          b.x = 242; b.y = 266; b.width = 112; b.height = 124;
+          collisionProfile = 'none';
+        } else if (i === 18) {
+          id = 'lounge06_art_ship';
+          b.x = 1148; b.y = 440; b.width = 170; b.height = 140;
+          cls.category = 'art';
+          cls.depthClass = 'back-wall-detail';
+        } else if (i === 14) {
+          id = 'lounge06_couch_loveseat';
+          b.x = 705; b.y = 235; b.width = 170; b.height = 145;
+          collisionProfile = 'sofa';
+        } else if (i === 22) {
+          id = 'lounge06_candelabra_gold';
+          b.x = 1295; b.y = 262; b.width = 55; b.height = 70;
+          cls.category = 'decor';
+          cls.depthClass = 'dynamic-solid';
+          lightSockets = [
+            { id: 'left_flame', localX: 12, localY: 18, radius: 36, intensity: 0.38, flameMode: 'none' },
+            { id: 'mid_flame', localX: 28, localY: 8, radius: 44, intensity: 0.45, flameMode: 'none' },
+            { id: 'right_flame', localX: 44, localY: 18, radius: 36, intensity: 0.38, flameMode: 'none' },
+          ];
         }
       }
 
@@ -381,22 +437,26 @@ export async function buildAllAssets(): Promise<void> {
 
     if (i === 0) {
       id = 'dining05_table_banquet_runner';
+      b.x = 28; b.y = 80; b.width = 240; b.height = 124;
       col = 'dining_table_large';
       surfaces = {
         runner: { id: 'runner', name: 'runner', localX: 30, localY: 20, width: b.width - 60, height: b.height - 35 },
       };
     } else if (i === 1) {
       id = 'dining05_sideboard_oak';
+      b.x = 944; b.y = 60; b.width = 124; b.height = 152;
       col = 'sideboard';
     } else if (i === 3) {
       id = 'dining05_chair_tufted';
+      b.x = 536; b.y = 48; b.width = 80; b.height = 164;
       col = 'dining_chair';
     } else if (i === 13) {
       id = 'dining05_candelabra_three_branch';
+      b.x = 1297; b.y = 262; b.width = 50; b.height = 60;
       lightSockets = [
-        { id: 'left_flame', localX: 6, localY: 4, radius: 40, intensity: 0.38, flameMode: 'overlay' },
-        { id: 'center_flame', localX: Math.round(b.width / 2), localY: 2, radius: 44, intensity: 0.42, flameMode: 'overlay' },
-        { id: 'right_flame', localX: b.width - 6, localY: 4, radius: 40, intensity: 0.38, flameMode: 'overlay' },
+        { id: 'left_flame', localX: 11, localY: 16, radius: 40, intensity: 0.38, flameMode: 'none' },
+        { id: 'center_flame', localX: 25, localY: 8, radius: 44, intensity: 0.42, flameMode: 'none' },
+        { id: 'right_flame', localX: 39, localY: 16, radius: 40, intensity: 0.38, flameMode: 'none' },
       ];
     } else if (i === 32) {
       id = 'dining05_tableware_10';

@@ -59,9 +59,9 @@ export class LightFixtureSystem {
 
       this.lightingSystem.addLight(lightId, worldX, worldY, radius, lightType, color, intensity);
 
-      // Create Flame Overlay if requested and texture exists
+      // Create Flame Overlay ONLY if explicitly requested and texture exists
       let flameSprite: Phaser.GameObjects.Sprite | undefined;
-      const flameMode = socket.flameMode ?? 'overlay';
+      const flameMode = socket.flameMode ?? 'none';
 
       if (flameMode === 'overlay' && this.scene.textures.exists('decor_flame_teardrop')) {
         flameSprite = this.scene.add.sprite(worldX, worldY, 'decor_flame_teardrop');

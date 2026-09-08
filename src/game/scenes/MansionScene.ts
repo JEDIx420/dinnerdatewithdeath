@@ -86,6 +86,10 @@ export class MansionScene extends Phaser.Scene {
       spawnX = 640;
       spawnY = 190; // On the upper landing
       initialDirection = 'down';
+    } else if (pos === 'bedchamber') {
+      spawnX = 200;
+      spawnY = 220; // Inside the bedchamber
+      initialDirection = 'down';
     }
 
     this.player = new Player({

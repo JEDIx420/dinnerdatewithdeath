@@ -18,10 +18,10 @@
       "id": "dining05_table_banquet_runner",
       "category": "furniture",
       "sourceRect": {
-        "x": 286,
-        "y": 58,
-        "width": 212,
-        "height": 155
+        "x": 28,
+        "y": 80,
+        "width": 240,
+        "height": 124
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
@@ -33,26 +33,26 @@
           "name": "runner",
           "localX": 30,
           "localY": 20,
-          "width": 152,
-          "height": 120
+          "width": 180,
+          "height": 89
         }
       },
-      "notes": "Dining Room asset (212x155)"
+      "notes": "Dining Room asset (240x124)"
     },
     {
       "id": "dining05_sideboard_oak",
       "category": "furniture",
       "sourceRect": {
-        "x": 536,
-        "y": 48,
-        "width": 80,
-        "height": 163
+        "x": 944,
+        "y": 60,
+        "width": 124,
+        "height": 152
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "sideboard",
-      "notes": "Dining Room asset (80x163)"
+      "notes": "Dining Room asset (124x152)"
     },
     {
       "id": "dining05_furniture_03",
@@ -73,16 +73,16 @@
       "id": "dining05_chair_tufted",
       "category": "furniture",
       "sourceRect": {
-        "x": 1407,
-        "y": 58,
-        "width": 100,
-        "height": 145
+        "x": 536,
+        "y": 48,
+        "width": 80,
+        "height": 164
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
       "physicalClass": "floor-solid",
       "collisionProfile": "dining_chair",
-      "notes": "Dining Room asset (100x145)"
+      "notes": "Dining Room asset (80x164)"
     },
     {
       "id": "dining05_furniture_05",
@@ -223,10 +223,10 @@
       "id": "dining05_candelabra_three_branch",
       "category": "decor",
       "sourceRect": {
-        "x": 1317,
-        "y": 238,
-        "width": 88,
-        "height": 87
+        "x": 1297,
+        "y": 262,
+        "width": 50,
+        "height": 60
       },
       "anchorPreset": "bottom-center",
       "depthClass": "dynamic-solid",
@@ -235,30 +235,30 @@
       "lightSockets": [
         {
           "id": "left_flame",
-          "localX": 6,
-          "localY": 4,
+          "localX": 11,
+          "localY": 16,
           "radius": 40,
           "intensity": 0.38,
-          "flameMode": "overlay"
+          "flameMode": "none"
         },
         {
           "id": "center_flame",
-          "localX": 44,
-          "localY": 2,
+          "localX": 25,
+          "localY": 8,
           "radius": 44,
           "intensity": 0.42,
-          "flameMode": "overlay"
+          "flameMode": "none"
         },
         {
           "id": "right_flame",
-          "localX": 82,
-          "localY": 4,
+          "localX": 39,
+          "localY": 16,
           "radius": 40,
           "intensity": 0.38,
-          "flameMode": "overlay"
+          "flameMode": "none"
         }
       ],
-      "notes": "Dining Room asset (88x87)"
+      "notes": "Dining Room asset (50x60)"
     },
     {
       "id": "dining05_decor_15",

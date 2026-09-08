@@ -192,14 +192,14 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 256,
       textureKey: 'floor_stone_blocks_dark',
     },
-    // Bedchamber private deep violet rug
+    // Bedchamber private subtle runner rug (matching crimson & gold aesthetic)
     {
       id: 'dressing_rug',
-      x: 112,
-      y: 128,
-      width: 176,
-      height: 144,
-      textureKey: 'rug_dressing',
+      x: 130,
+      y: 260,
+      width: 150,
+      height: 40,
+      textureKey: 'carpet_crimson_border',
       depth: 200,
     },
 
@@ -597,43 +597,7 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     },
   ],
 
-  windows: [
-    // 1. Bedchamber Window (North-west)
-    {
-      id: 'win_bedchamber',
-      x: 300,
-      y: 8,
-      width: 64,
-      height: 88,
-      hasCurtains: true,
-    },
-    // 2. Dining Room Windows (North-west ground)
-    {
-      id: 'win_dining_1',
-      x: 160,
-      y: 456,
-      width: 64,
-      height: 88,
-      hasCurtains: true,
-    },
-    {
-      id: 'win_dining_2',
-      x: 340,
-      y: 456,
-      width: 64,
-      height: 88,
-      hasCurtains: true,
-    },
-    // 3. Lounge Window (North-east ground)
-    {
-      id: 'win_lounge',
-      x: 1150,
-      y: 456,
-      width: 64,
-      height: 88,
-      hasCurtains: true,
-    },
-  ],
+  windows: [],
 
   furniture: [],
   candles: [],

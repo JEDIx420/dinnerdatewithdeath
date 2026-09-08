@@ -19,9 +19,9 @@
       "id": "hall04_chandelier_grand",
       "category": "lighting",
       "sourceRect": {
-        "x": 24,
-        "y": 34,
-        "width": 133,
+        "x": 163,
+        "y": 33,
+        "width": 134,
         "height": 227
       },
       "anchorPreset": "top-center",
@@ -70,22 +70,22 @@
           "flameMode": "overlay"
         }
       ],
-      "notes": "Great Hall & Gallery asset (133x227)"
+      "notes": "Great Hall & Gallery asset (134x227)"
     },
     {
       "id": "hall04_statue_bust_marble",
-      "category": "lighting",
+      "category": "sculpture",
       "sourceRect": {
-        "x": 164,
-        "y": 34,
-        "width": 133,
-        "height": 225
+        "x": 880,
+        "y": 380,
+        "width": 111,
+        "height": 201
       },
-      "anchorPreset": "top-center",
-      "depthClass": "foreground-structure",
-      "physicalClass": "none",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
       "collisionProfile": "statue_large",
-      "notes": "Great Hall & Gallery asset (133x225)"
+      "notes": "Great Hall & Gallery asset (111x201)"
     },
     {
       "id": "hall04_lighting_03",
