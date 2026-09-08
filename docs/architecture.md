@@ -20,17 +20,24 @@ src/
     constants.ts         # Core logical resolution (768x432), tile units (32px), cell sizes (128px)
     config.ts            # Phaser GameConfig with Scale.FIT, pixelArt: true, roundPixels: true
     scenes/
-      BootScene.ts         # Asset loading & animation registration
-      TitleScene.ts        # Title screen & New Game start (L key -> Asset Lab)
-      PrototypeScene.ts    # Main prototype room with Player, collision bounds, Visual QA overlay
+      BootScene.ts         # Procedural texture compilation & asset preloading
+      TitleScene.ts        # Cinematic gothic opening scene & New Game prompt
+      MansionScene.ts      # Contiguous 3-zone mansion environment with camera tracking & Visual QA
       AssetLabScene.ts     # Developer QA scene for inspecting character assets
     entities/
       CharacterManifest.ts # Type schemas for character metadata and animations
       deathManifest.ts     # Compiled runtime manifest for Death
-      Actor.ts             # Base overworld character sprite with facing & walk cycles
-      Player.ts            # Player entity mapping InputManager to Actor movement
+      Actor.ts             # Base overworld character sprite with facing, walk cycles & contact shadow
+      Player.ts            # Player entity enforcing safe bounds & movement input
+    world/
+      RoomDefinition.ts    # Data-driven definitions for room geometry, furniture, lights, safe bounds
+      MansionRoom.ts       # Room builder instantiating floors, walls, furniture colliders, and zones
+      MansionTextures.ts   # Procedural gothic texture library (floors, walls, furniture, shadows, glow)
     systems/
       InputManager.ts      # Abstract action mapper (keyboard / future touch)
+      DepthSystem.ts       # Centralized depth layering constants & dynamic Y-depth calculation
+      LightingSystem.ts    # Ambient darkness overlay & candle/hearth light cutouts
+      AmbientFXSystem.ts   # Ambient dust motes, window rain, fireplace flames, and exterior silhouettes
 
   content/                 # Future narrative data files (pure JSON / TypeScript)
     characters/            # Manifests mapping expressions to portrait files
@@ -47,25 +54,35 @@ src/
 - Maps physical keys (WASD, Arrows, Enter, Space, Z, Escape, X) to abstract actions (`UP`, `DOWN`, `LEFT`, `RIGHT`, `CONFIRM`, `CANCEL`, `PAUSE`).
 - Provides synthetic action setters so mobile touch D-pads and on-screen buttons can feed the exact same action pipeline.
 
-### Actor & Player Runtime Abstraction (v0.0.5)
-- `Actor`: Standardized character sprite wrapping Phaser Arcade physics. Manages facing direction (`down`, `left`, `right`, `up`), walk animation playback, and idle frame holding. Establishes a 32×20 foot-level collision box.
-- `Player`: Combines `Actor` with `InputManager` to provide normalized 4-direction walking at 150 px/sec.
+### Actor & Player Runtime Abstraction (v0.0.6)
+- `Actor`: Standardized character sprite wrapping Phaser Arcade physics. Manages facing direction (`down`, `left`, `right`, `up`), walk animation playback, idle frame holding, 32×20 foot-level collision box, and attached grounding contact shadow.
+- `Player`: Combines `Actor` with `InputManager` to provide normalized 4-direction walking at 150 px/sec and enforces visual safe bounds to prevent character clipping.
 
-### Asset Pipeline (v0.0.5)
-- Non-destructive processing in `tools/assets/` consumes `art/manifests/*.json` and `art/source/` to produce production assets in `public/game-assets/` (512×512 sheets, 128×128 cells) and QA previews in `art/previews/`.
+### World & Environment Architecture (v0.0.6)
+- `RoomDefinition`: Data-driven schema for multi-zone mansion rooms containing floors, architectural walls, furniture with custom collision boxes, windows, candles, and safe bounds.
+- `MansionRoom`: Assembles geometry, registers physics colliders, and integrates lighting/ambient systems.
+- `MansionTextures`: Generates high-detail procedural gothic textures without external image bloat.
 
-### InteractionSystem (Planned for v0.0.6)
+### Depth & Occlusion System (v0.0.6)
+- Defines discrete depth layers (`BACKGROUND`, `FLOOR`, `RUGS`, `CONTACT_SHADOWS`, `DYNAMIC_Y_BASE`, `UPPER_WALLS`, `FOREGROUND_ARCHES`, `LIGHTING_OVERLAY`, `FOREGROUND_AMBIENT`, `UI`).
+- Dynamically sorts actors and furniture based on foot baseline Y position (`1000 + y + depthOffset`).
+
+### Lighting & Ambient FX Systems (v0.0.6)
+- `LightingSystem`: Manages ambient darkness overlay with soft radial cutouts for candles, fireplace, and moonlit windows, with organic flicker noise.
+- `AmbientFXSystem`: Manages floating dust motes in warm light cones, window rain streaks, animated fireplace hearth flames/embers, curtain breezes, and occasional exterior silhouettes.
+
+### InteractionSystem (Planned for v0.0.7)
 - Evaluates the tile or object directly in front of the player based on facing direction.
 - Dispatches interaction triggers to inspectable objects (mirrors, dinner table, wine bottle) or characters.
 
-### DialogueSystem (Planned for v0.0.6)
+### DialogueSystem (Planned for v0.0.7)
 - Consumes structured dialogue nodes and renders text with a typewriter effect and expressive character portraits.
 
-### CutsceneRunner (Planned for v0.0.8)
-- Executes sequential asynchronous commands using promises without callback spaghetti.
-
-### Character Portrait System (Planned for v0.0.7)
+### Character Portrait System (Planned for v0.0.8)
 - Maps logical expressions (`death + annoyed`, `love + amused`, `fear + manic`) to extracted portrait assets via character manifests.
+
+### CutsceneRunner (Planned for v0.0.9)
+- Executes sequential asynchronous commands using promises without callback spaghetti.
 
 ### AudioManager (Planned for v0.1)
 - Manages background music tracks and sound effects with graceful fading and browser autoplay compliance.

@@ -1,24 +1,33 @@
 import { Actor, ActorConfig } from './Actor';
 import { InputManager } from '../systems/InputManager';
 import { Direction } from './CharacterManifest';
+import { SafeBounds } from '../world/RoomDefinition';
 
 export interface PlayerConfig extends ActorConfig {
   inputManager: InputManager;
   moveSpeed?: number;
+  safeBounds?: SafeBounds;
 }
 
 /**
  * Player encapsulates player control, mapping InputManager actions to Actor movement and animation.
  * Speed standardized in v0.0.5 to 150 px/sec for 768x432 logical resolution.
+ * Enforces visual safe bounds to prevent character clipping outside rooms.
  */
 export class Player extends Actor {
   private inputManager: InputManager;
   private readonly moveSpeed: number;
+  private safeBounds?: SafeBounds;
 
   constructor(config: PlayerConfig) {
     super(config);
     this.inputManager = config.inputManager;
     this.moveSpeed = config.moveSpeed ?? 150;
+    this.safeBounds = config.safeBounds;
+  }
+
+  public setSafeBounds(bounds: SafeBounds): void {
+    this.safeBounds = bounds;
   }
 
   public update(): void {
@@ -63,5 +72,18 @@ export class Player extends Actor {
       this.stop();
       this.setVelocity(0, 0);
     }
+
+    // Enforce navigable visual safe bounds (prevents upper body clipping through north wall/screen)
+    if (this.safeBounds) {
+      const clampedX = Math.min(Math.max(this.sprite.x, this.safeBounds.minX), this.safeBounds.maxX);
+      const clampedY = Math.min(Math.max(this.sprite.y, this.safeBounds.minY), this.safeBounds.maxY);
+
+      if (clampedX !== this.sprite.x || clampedY !== this.sprite.y) {
+        this.sprite.setPosition(clampedX, clampedY);
+      }
+    }
+
+    // Synchronize dynamic Y-depth and grounding shadow
+    this.updateDepth();
   }
 }

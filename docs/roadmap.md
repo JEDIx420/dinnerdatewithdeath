@@ -38,19 +38,30 @@ This document tracks engineering and narrative production milestones for **A Din
 - Player title screen cleaned of developer affordances while preserving dev shortcut (`L` key).
 - Documented blur root cause analysis and mitigation in `docs/visual-foundation.md`.
 
+### `v0.0.6` — Title Experience & Mansion Visual Foundation ✅
+- Solved player visual boundary clipping by separating physical obstacle collision from room visual safe bounds.
+- Replaced prototype title screen with a cinematic gothic opening scene: dark dining hall, tall windows with rain, the waiting table set for two, flickering candelabras, tracked serif typography, and smooth fade transition into gameplay.
+- Built a contiguous 3-zone mansion environment (`1152 × 640 px`): Dressing / Mirror Area, Grand Dining Hall, and Lounge & Hearth.
+- Created data-driven environment architecture in `src/game/world/` (`RoomDefinition.ts`, `MansionRoom.ts`, `MansionTextures.ts`).
+- Established spatial depth sorting (`DepthSystem.ts`) allowing Death to walk behind and in front of tables, chairs, and sofa.
+- Added grounding contact shadows for Death and furniture.
+- Implemented ambient lighting overlay (`LightingSystem.ts`) with warm candlelight and hearth cutouts.
+- Implemented `AmbientFXSystem.ts` (floating dust motes, window rain streaks, hearth flames/embers, curtain breezes, and rare exterior bat silhouettes).
+- Replaced `PrototypeScene` with `MansionScene` with smooth lerped camera tracking and extended diagnostics overlay.
+
 ---
 
 ## Upcoming Milestones
 
-### `v0.0.6` — Object Interaction & Basic Dialogue
-- Interaction raycasting: inspect mirror, inspect dining table, inspect phone.
+### `v0.0.7` — Object Interaction & Basic Dialogue
+- Interaction raycasting: inspect mirror, inspect dining table, inspect wine, inspect phone.
 - Dialogue box UI with typewriter text rendering and confirm-to-advance input.
 
-### `v0.0.7` — Expressive Portrait System
+### `v0.0.8` — Expressive Portrait System
 - Crop and normalize character expressions from `detailed-source.png`.
 - Character manifest mapping logical emotional states (`neutral`, `annoyed`, `smirking`, `pensive`) to dialogue portrait displays.
 
-### `v0.0.8` — Cutscene Runner & Fear Entrance
+### `v0.0.9` — Cutscene Runner & Fear Entrance
 - Promise-based sequential cutscene runner.
 - Scripted event: Fear materializes, walks into the room, faces Death, and initiates conversation.
 

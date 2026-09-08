@@ -1,5 +1,6 @@
 import Phaser from 'phaser';
 import { CharacterManifest, Direction } from './CharacterManifest';
+import { calculateDynamicDepth, DEPTH_LAYERS } from '../systems/DepthSystem';
 
 export interface ActorConfig {
   scene: Phaser.Scene;
@@ -7,15 +8,18 @@ export interface ActorConfig {
   y: number;
   manifest: CharacterManifest;
   initialDirection?: Direction;
+  hasShadow?: boolean;
 }
 
 /**
  * Actor provides a standardized runtime contract for overworld characters (Death, Love, Fear, General).
- * Handles directional walk animation selection, idle frame holding, and foot-level collision bounds.
+ * Handles directional walk animation selection, idle frame holding, foot-level collision bounds,
+ * dynamic Y-depth sorting, and attached grounding contact shadows.
  * Standardized in v0.0.5 for 128x128 frame cells.
  */
 export class Actor {
   public readonly sprite: Phaser.Types.Physics.Arcade.SpriteWithDynamicBody;
+  public readonly shadowSprite?: Phaser.GameObjects.Sprite;
   protected manifest: CharacterManifest;
   protected facing: Direction;
   protected isWalking: boolean = false;
@@ -24,7 +28,15 @@ export class Actor {
     this.manifest = config.manifest;
     this.facing = config.initialDirection ?? 'down';
 
-    // Create the physics sprite using character texture key
+    // 1. Grounding contact shadow anchored at foot baseline (Y=112, offset +48 from center)
+    const showShadow = config.hasShadow ?? true;
+    if (showShadow && config.scene.textures.exists('shadow_actor')) {
+      this.shadowSprite = config.scene.add.sprite(config.x, config.y + 48, 'shadow_actor');
+      this.shadowSprite.setDepth(DEPTH_LAYERS.CONTACT_SHADOWS);
+      this.shadowSprite.setAlpha(0.55);
+    }
+
+    // 2. Physics sprite
     this.sprite = config.scene.physics.add.sprite(
       config.x,
       config.y,
@@ -40,6 +52,16 @@ export class Actor {
     this.sprite.body.setSize(32, 20);
     this.sprite.body.setOffset(48, 96);
     this.sprite.setCollideWorldBounds(true);
+
+    // Initialize dynamic depth
+    this.updateDepth();
+  }
+
+  public updateDepth(): void {
+    this.sprite.setDepth(calculateDynamicDepth(this.sprite.y, 48));
+    if (this.shadowSprite) {
+      this.shadowSprite.setPosition(this.sprite.x, this.sprite.y + 48);
+    }
   }
 
   public getFacing(): Direction {
@@ -86,6 +108,9 @@ export class Actor {
 
   public setPosition(x: number, y: number): void {
     this.sprite.setPosition(x, y);
+    if (this.shadowSprite) {
+      this.shadowSprite.setPosition(x, y + 48);
+    }
   }
 
   public setVelocity(vx: number, vy: number): void {
@@ -93,6 +118,7 @@ export class Actor {
   }
 
   public destroy(): void {
+    this.shadowSprite?.destroy();
     this.sprite.destroy();
   }
 }
