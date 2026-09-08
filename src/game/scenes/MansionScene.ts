@@ -177,10 +177,11 @@ export class MansionScene extends Phaser.Scene {
     const zone = this.getPlayerZoneName();
     const particleCount = this.ambientFXSystem.getParticleCount();
     const lightsCount = this.lightingSystem.getLightsCount();
+    const archCount = MANSION_ROOM_DEF.architecture?.length ?? 0;
     const sb = MANSION_ROOM_DEF.safeBounds;
 
     const lines = [
-      `[VISUAL QA DIAGNOSTICS - GRAND MANSION v0.0.6.1]`,
+      `[VISUAL QA DIAGNOSTICS - GRAND MANSION v0.0.6.2]`,
       `Logical Res:   ${GAME_CONFIG.WIDTH} × ${GAME_CONFIG.HEIGHT} (16:9)`,
       `World Size:    ${MANSION_ROOM_DEF.width} × ${MANSION_ROOM_DEF.height} px`,
       `Backing Res:   ${backingW} × ${backingH} px | DPR: ${dpr}`,
@@ -188,6 +189,7 @@ export class MansionScene extends Phaser.Scene {
       `Performance:   ${fps} FPS`,
       `Zone:          ${zone}`,
       `Player Pos:    (${px}, ${py}) | Depth: ${depth}`,
+      `Architecture:  ${archCount} elements | Floors: ${MANSION_ROOM_DEF.floors.length}`,
       `Environment:   ${this.mansionRoom.furnitureSprites.length} objects | ${lightsCount} lights`,
       `Ambient FX:    ${particleCount} active particles`,
       `Safe Bounds:   [X: ${sb.minX}..${sb.maxX}, Y: ${sb.minY}..${sb.maxY}]`,

@@ -1,6 +1,6 @@
 {
   "name": "dinnerdatewithdeath",
-  "version": "0.0.6.1",
+  "version": "0.0.6.2",
   "private": true,
   "type": "module",
   "scripts": {
@@ -13,7 +13,8 @@
     "format": "prettier --write .",
     "test": "vitest run",
     "assets:death": "tsx tools/assets/process-death.ts",
-    "assets": "npm run assets:death",
+    "assets:mansion-architecture": "tsx tools/assets/process-mansion-architecture.ts",
+    "assets": "npm run assets:death && npm run assets:mansion-architecture",
     "verify": "npm run lint && npm run typecheck && npm test && npm run build"
   },
   "dependencies": {

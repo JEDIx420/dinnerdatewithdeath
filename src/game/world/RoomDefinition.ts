@@ -1,4 +1,5 @@
 import { Direction } from '../entities/CharacterManifest';
+import { MANSION_ARCHITECTURE_ELEMENTS } from './mansionArchitectureDefs';
 
 export interface SafeBounds {
   minX: number;
@@ -15,6 +16,7 @@ export interface FloorRegion {
   height: number;
   textureKey: string;
   depth?: number;
+  isSprite?: boolean;
 }
 
 export interface WallSegment {
@@ -96,6 +98,28 @@ export interface StaircaseDef {
   walkableWidth: number;
 }
 
+export interface ArchitecturalSpriteDef {
+  id: string;
+  textureKey: string;
+  x: number;
+  y: number;
+  originX?: number;
+  originY?: number;
+  depth?: number;
+  depthOffset?: number;
+  flipX?: boolean;
+  flipY?: boolean;
+  scale?: number;
+  collision?: {
+    width: number;
+    height: number;
+    offsetX?: number;
+    offsetY?: number;
+  };
+  zone?: string;
+  role?: string;
+}
+
 export interface RoomDefinition {
   id: string;
   name: string;
@@ -109,6 +133,7 @@ export interface RoomDefinition {
   };
   floors: FloorRegion[];
   walls: WallSegment[];
+  architecture?: ArchitecturalSpriteDef[];
   furniture: FurnitureDef[];
   candles: CandleDef[];
   windows: WindowDef[];
@@ -152,14 +177,14 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
     direction: 'up',
   },
   floors: [
-    // 1. Bedchamber Floor (Dark patterned stone slate)
+    // 1. Bedchamber Floor (Dark patterned stone blocks)
     {
       id: 'dressing_floor',
       x: 48,
       y: 72,
       width: 400,
       height: 256,
-      textureKey: 'tile_stone_dressing',
+      textureKey: 'floor_stone_blocks_dark',
     },
     // Bedchamber private deep violet rug
     {
@@ -172,14 +197,14 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       depth: 200,
     },
 
-    // 2. Upper Landing Floor (Dark polished mahogany)
+    // 2. Upper Landing Floor (Dark wood planks)
     {
       id: 'landing_floor',
       x: 448,
       y: 72,
       width: 384,
       height: 216,
-      textureKey: 'tile_wood_floor',
+      textureKey: 'floor_wood_planks_dark',
     },
     // Upper Landing ceremonial runner
     {
@@ -188,38 +213,39 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       y: 160,
       width: 384,
       height: 56,
-      textureKey: 'rug_landing',
+      textureKey: 'carpet_crimson_border',
       depth: 200,
     },
 
-    // 3. Great Hall Floor (Polished slate & marble)
+    // 3. Great Hall Floor (Black veined polished marble)
     {
       id: 'hall_floor',
       x: 448,
       y: 520,
       width: 384,
       height: 400,
-      textureKey: 'tile_stone_hall',
+      textureKey: 'floor_marble_black_veined',
     },
     // Great Hall center compass medallion
     {
       id: 'hall_medallion',
-      x: 576,
+      x: 584,
       y: 690,
-      width: 128,
-      height: 128,
-      textureKey: 'floor_medallion',
+      width: 112,
+      height: 112,
+      textureKey: 'floor_medallion_octagonal',
       depth: 200,
+      isSprite: true,
     },
 
-    // 4. Dining Room Floor (Dark mahogany planks)
+    // 4. Dining Room Floor (Dark mahogany wood planks)
     {
       id: 'dining_floor',
       x: 48,
       y: 520,
       width: 400,
       height: 400,
-      textureKey: 'tile_wood_floor',
+      textureKey: 'floor_wood_planks_dark',
     },
     // Dining Room crimson velvet area rug
     {
@@ -232,14 +258,14 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       depth: 200,
     },
 
-    // 5. Lounge Floor (Dark mahogany planks)
+    // 5. Lounge Floor (Dark herringbone wood)
     {
       id: 'lounge_floor',
       x: 832,
       y: 520,
       width: 400,
       height: 400,
-      textureKey: 'tile_wood_floor',
+      textureKey: 'floor_herringbone_dark',
     },
     // Lounge fireside rug
     {
@@ -252,6 +278,8 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       depth: 200,
     },
   ],
+
+  architecture: MANSION_ARCHITECTURE_ELEMENTS,
 
   staircase: {
     id: 'grand_staircase',

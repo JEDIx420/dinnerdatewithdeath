@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { DEATH_MANIFEST } from '../entities/deathManifest';
 import { generateMansionTextures } from '../world/MansionTextures';
+import { preloadMansionArchitecture } from '../assets/mansionArchitecture';
 
 export class BootScene extends Phaser.Scene {
   constructor() {
@@ -10,6 +11,9 @@ export class BootScene extends Phaser.Scene {
   public preload(): void {
     // Generate crisp gothic procedural environment textures
     generateMansionTextures(this);
+
+    // Preload production mansion architecture sprites
+    preloadMansionArchitecture(this);
 
     // Load Death runtime sprite sheet (512x512 with 128x128 cells)
     this.load.spritesheet(DEATH_MANIFEST.textureKey, DEATH_MANIFEST.texturePath, {

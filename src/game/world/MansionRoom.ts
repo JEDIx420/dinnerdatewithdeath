@@ -32,6 +32,7 @@ export class MansionRoom {
     this.buildFloors();
     this.buildStaircase();
     this.buildWalls();
+    this.buildArchitectureDetails();
     this.buildWindows();
     this.buildFurniture();
     this.buildCandles();
@@ -41,14 +42,24 @@ export class MansionRoom {
 
   private buildFloors(): void {
     for (const floor of this.def.floors) {
-      const tileSprite = this.scene.add.tileSprite(
-        floor.x + floor.width / 2,
-        floor.y + floor.height / 2,
-        floor.width,
-        floor.height,
-        floor.textureKey
-      );
-      tileSprite.setDepth(floor.depth ?? DEPTH_LAYERS.FLOOR);
+      if (floor.isSprite) {
+        const sprite = this.scene.add.sprite(
+          floor.x + floor.width / 2,
+          floor.y + floor.height / 2,
+          floor.textureKey
+        );
+        sprite.setDisplaySize(floor.width, floor.height);
+        sprite.setDepth(floor.depth ?? DEPTH_LAYERS.FLOOR);
+      } else {
+        const tileSprite = this.scene.add.tileSprite(
+          floor.x + floor.width / 2,
+          floor.y + floor.height / 2,
+          floor.width,
+          floor.height,
+          floor.textureKey
+        );
+        tileSprite.setDepth(floor.depth ?? DEPTH_LAYERS.FLOOR);
+      }
     }
   }
 
@@ -59,22 +70,102 @@ export class MansionRoom {
     // Build steps descending from top landing to great hall floor
     for (let s = 0; s < sc.stepCount; s++) {
       const stepY = sc.y + s * 32;
+      const stepDepth = calculateDynamicDepth(stepY, 2);
 
-      // 1. Step tread & runner sprite
-      const stepSprite = this.scene.add.sprite(
-        sc.x + sc.width / 2,
+      // 1. Step tread / base
+      if (this.scene.textures.exists('stair_tread_wide')) {
+        const treadSprite = this.scene.add.sprite(
+          sc.x + sc.width / 2,
+          stepY + 16,
+          'stair_tread_wide'
+        );
+        treadSprite.setDisplaySize(sc.width, 32);
+        treadSprite.setDepth(stepDepth);
+      } else if (this.scene.textures.exists(sc.stepTextureKey)) {
+        const stepSprite = this.scene.add.sprite(
+          sc.x + sc.width / 2,
+          stepY + 16,
+          sc.stepTextureKey
+        );
+        stepSprite.setDepth(stepDepth);
+      }
+
+      // 2. Central runner carpet
+      if (this.scene.textures.exists('stair_runner_carpet_wide')) {
+        const runnerSprite = this.scene.add.sprite(
+          sc.x + sc.width / 2,
+          stepY + 16,
+          'stair_runner_carpet_wide'
+        );
+        runnerSprite.setDisplaySize(112, 32);
+        runnerSprite.setDepth(stepDepth + 1);
+      }
+
+      // 3. Brass stair carpet rod at step bend
+      if (this.scene.textures.exists('stair_rod_brass')) {
+        const rodSprite = this.scene.add.sprite(
+          sc.x + sc.width / 2,
+          stepY + 28,
+          'stair_rod_brass'
+        );
+        rodSprite.setDisplaySize(116, 8);
+        rodSprite.setDepth(stepDepth + 2);
+      }
+
+      // 4. Left stringer / balustrade segment
+      const balL = this.scene.add.sprite(
+        sc.x + 8,
         stepY + 16,
-        sc.stepTextureKey
+        this.scene.textures.exists('stair_stringer_step_left')
+          ? 'stair_stringer_step_left'
+          : sc.balustradeLeftKey
       );
-      stepSprite.setDepth(calculateDynamicDepth(stepY, 2));
-
-      // 2. Left Balustrade segment
-      const balL = this.scene.add.sprite(sc.x + 8, stepY + 16, sc.balustradeLeftKey);
       balL.setDepth(calculateDynamicDepth(stepY, 14));
 
-      // 3. Right Balustrade segment
-      const balR = this.scene.add.sprite(sc.x + sc.width - 8, stepY + 16, sc.balustradeRightKey);
+      // 5. Right stringer / balustrade segment
+      const balR = this.scene.add.sprite(
+        sc.x + sc.width - 8,
+        stepY + 16,
+        this.scene.textures.exists('stair_stringer_step_right')
+          ? 'stair_stringer_step_right'
+          : sc.balustradeRightKey
+      );
       balR.setDepth(calculateDynamicDepth(stepY, 14));
+    }
+  }
+
+  private buildArchitectureDetails(): void {
+    if (!this.def.architecture) return;
+
+    for (const arch of this.def.architecture) {
+      if (!this.scene.textures.exists(arch.textureKey)) {
+        continue;
+      }
+
+      const sprite = this.scene.add.sprite(arch.x, arch.y, arch.textureKey);
+      sprite.setOrigin(arch.originX ?? 0.5, arch.originY ?? 0.5);
+
+      if (arch.flipX) sprite.setFlipX(true);
+      if (arch.flipY) sprite.setFlipY(true);
+      if (arch.scale) sprite.setScale(arch.scale);
+
+      const depth =
+        arch.depth ?? calculateDynamicDepth(arch.y, arch.depthOffset ?? 0);
+      sprite.setDepth(depth);
+
+      // If architectural element has collision (e.g. column base or archway pillar)
+      if (arch.collision) {
+        const colX = arch.x + (arch.collision.offsetX ?? 0);
+        const colY = arch.y + (arch.collision.offsetY ?? 0);
+        const colObj = this.scene.add.zone(
+          colX,
+          colY,
+          arch.collision.width,
+          arch.collision.height
+        );
+        this.scene.physics.add.existing(colObj, true);
+        this.wallsGroup.add(colObj);
+      }
     }
   }
 

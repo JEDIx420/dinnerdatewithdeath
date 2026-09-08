@@ -6,7 +6,7 @@
 
 - **Live Deployment**: [https://jedix420.github.io/dinnerdatewithdeath/](https://jedix420.github.io/dinnerdatewithdeath/)
 - **Engine**: Phaser 3 + TypeScript + Vite
-- **Current Milestone**: `v0.0.6.1` (The Grand Mansion: Story-Driven Spatial & Visual Polish)
+- **Current Milestone**: `v0.0.6.2` (Production Mansion Architecture Integration)
 
 ---
 
@@ -33,6 +33,7 @@ Starts the local development server at `http://localhost:3000`.
 - **Cancel**: `Escape` or `X`
 - **Visual QA Overlay**: Press `V` in Mansion (or visit `?debug=visual`)
 - **Developer Asset Lab**: Press `L` on Title Screen or Mansion (or visit `?scene=asset-lab`)
+  - Press `[C]` for Character QA, `[A]` for Architecture QA
 
 ---
 
@@ -43,7 +44,20 @@ Regenerate Death's production sprite sheet and QA previews from canonical source
 npm run assets:death
 ```
 
-- Extraction manifest: `art/manifests/death.json`
+Regenerate the 80 production mansion architectural assets and contact sheet:
+```bash
+npm run assets:mansion-architecture
+```
+
+Or run both deterministic pipelines:
+```bash
+npm run assets
+```
+
+- Architecture manifest: `art/manifests/mansion-architecture.json`
+- Production architecture sprites: `public/game-assets/environment/mansion/architecture/`
+- Visual QA contact sheet: `art/previews/environment/mansion/architecture/contact-sheet.png`
+- Character manifest: `art/manifests/death.json`
 - Production sheet: `public/game-assets/characters/death/overworld/walk.png`
 - Visual QA preview: `art/previews/death/death-walk-sheet-preview.png`
 

@@ -71,3 +71,36 @@ Every primary character implements:
 - Frame size: 128 × 128 pixels.
 - Foot collision body: 32 × 20 pixels at offset `(48, 96)` within the cell.
 - Standard 4-direction walk cycles matching `Actor` and `Player` interfaces.
+
+---
+
+## 4. Environment Architecture Pipeline (`v0.0.6.2`)
+
+### Source Assets
+- Source file: `art/source/environment/mansion/DDWD_ENV_01 — Mansion Architecture.png` (1448 × 1086 RGBA, transparent background).
+- Manifest: `art/manifests/mansion-architecture.json`.
+
+### Pipeline Execution
+Regenerate all architectural assets and the contact sheet preview with:
+```bash
+npm run assets:mansion-architecture
+```
+Or execute both character and environment pipelines:
+```bash
+npm run assets
+```
+
+### Extraction Architecture & Categorization
+The source sheet contains 80 distinct components organized across 7 functional categories:
+1. `floors` (13): Mahogany planks, dark herringbone, black veined marble, slate/ashlar blocks, ornamental inlays, borders, and large octagonal compass medallion.
+2. `carpets` (2): Crimson damask bordered rugs and runners.
+3. `walls` (12): Horizontal wood panels, crimson damask insets, ashlar masonry, coffered wainscot, fleur panels, and arched bust niche.
+4. `trims` (9): Heavy dentil and egg-and-dart cornices, acanthus friezes, horizontal mouldings, and corner profiles.
+5. `columns_arches` (17): Corinthian, fluted, and Solomonic columns; pointed gothic arches, foliate spandrels, and grotesque/leaf corbels.
+6. `stairs_balustrade` (15): Stepped treads, crimson runners, brass carpet rods, stringers, turned balustrade rails, and newel posts with finials.
+7. `ornaments` (12): Fleur-de-lis carvings, heraldic crests, rosette ceiling bosses, and medallions.
+
+### Production Output
+- Individual cropped PNGs placed under `public/game-assets/environment/mansion/architecture/<category>/<id>.png`.
+- High-resolution QA Contact Sheet: `art/previews/environment/mansion/architecture/contact-sheet.png`.
+

@@ -56,6 +56,17 @@ This document tracks engineering and narrative production milestones for **A Din
 - **Cinematic Title Intro**: Choreographed 0–4.5s staged reveal (darkness -> left candle ignites -> table revealed -> right candle ignites -> background windows/rain -> Love's chair -> title typography -> interactive start prompt) with instant skip on user input.
 - **Traversal & Bounds**: Set physics world bounds to 1280×960, camera follow with centerOn initial position and cinematic lerp, verified dynamic depth sorting behind the Banquet Table.
 
+### `v0.0.6.2` — Production Mansion Architecture Integration ✅
+- Extracted and integrated production environment source sheet (`DDWD_ENV_01 — Mansion Architecture.png`, 1448 × 1086 RGBA).
+- Deterministic asset extraction pipeline (`tools/assets/process-mansion-architecture.ts` driven by `art/manifests/mansion-architecture.json`).
+- Extracted all 80 architectural components into 7 modular categories (`floors`, `carpets`, `walls`, `trims`, `columns_arches`, `stairs_balustrade`, `ornaments`) under `public/game-assets/environment/mansion/architecture/`.
+- Generated high-resolution labeled QA contact preview sheet (`art/previews/environment/mansion/architecture/contact-sheet.png`).
+- Replaced procedural floors across all zones with production assets (`floor_stone_blocks_dark`, `floor_wood_planks_dark`, `floor_herringbone_dark`, `floor_marble_black_veined`, and `floor_medallion_octagonal`).
+- Replaced procedural staircase with production components (`stair_tread_wide`, `stair_runner_carpet_wide`, `stair_rod_brass`, `stair_stringer_step_left/right`, `balustrade_section`, `balustrade_post`, `newel_post_large`).
+- Composed architectural character elements across all 5 narrative zones via `src/game/world/mansionArchitectureDefs.ts` (framing columns, egg-and-dart/dentil cornices, wainscots, pointed gothic arches, bust niche, and corbels).
+- Upgraded Developer Asset Lab scene (`AssetLabScene.ts`) with dedicated Architecture QA tab (`[A]` key), category cycling, bounding boxes, dimensions, and filter mode QA.
+- Added comprehensive unit tests in `tests/architecture.test.ts` (6 tests).
+
 ---
 
 ## Upcoming Milestones

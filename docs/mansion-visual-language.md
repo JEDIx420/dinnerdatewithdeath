@@ -26,39 +26,42 @@ The mansion floor plan is structured as a vertical narrative journey across two 
 
 ### Upper Floor (Private Realm)
 1. **Death's Bedchamber / Dressing Chamber (North-West, x: 48..448, y: 72..320)**:
-   - Dark patterned stone slate floor (`tile_stone_dressing`) with deep violet rug (`rug_dressing`).
-   - Ornate Gothic Mirror (`furniture_mirror_ornate`) as hero focal point, carved vanity console (`furniture_vanity`), antique wardrobe (`furniture_wardrobe`), bedside nightstand (`furniture_bedside`), plush armchair (`furniture_armchair`), and tall window with interior-masked rain.
+   - Dark patterned stone blocks floor (`floor_stone_blocks_dark`) with deep violet rug (`rug_dressing`).
+   - Ornate Gothic Mirror (`dressing_mirror`) framed by fluted wood columns (`column_wood_fluted`), egg-and-dart carved cornice (`trim_cornice_wood_a`), and fleur-de-lis wall ornament (`ornament_fleur_de_lis`). Carved vanity console, antique wardrobe, bedside nightstand, armchair, and tall window with interior-masked rain.
    - Death spawns here in front of his mirror on New Year's Eve, facing north.
 2. **Upper Landing & Balustrade Overlook (North-East, x: 448..832, y: 72..288)**:
-   - Polished dark mahogany planks (`tile_wood_floor`) with ceremonial burgundy runner (`rug_landing`) edged in antique gold.
-   - Wall sconces with soft flickering light halos, aristocratic silhouette portrait (`decor_art_portrait`), and memento mori study (`decor_art_memento_mori`).
-   - Carved balustrade overlooking the Great Hall below.
+   - Polished dark mahogany planks (`floor_wood_planks_dark`) with ceremonial bordered crimson runner (`carpet_crimson_border`).
+   - Carved wood wall panels (`wall_panel_fleur_ornate`, `wall_panel_fleur_small`), studded cornice moulding (`trim_cornice_studded`), wall sconces with soft flickering light halos, aristocratic silhouette portrait, and memento mori study.
+   - Production turned balustrade overlook (`balustrade_section`) with large newel posts (`newel_post_large`) looking down over the Great Hall below.
 
 ### Connector
 3. **Grand Central Staircase (Hero Traversal, x: 560..720, y: 260..548)**:
-   - 9 broad stone/dark mahogany steps with stepped treads, deep burgundy runner carpet, and polished brass stair rods.
-   - Turned wooden balustrades on both flanks topped with turned newel posts and brass finials.
+   - 9 broad steps with production stepped treads (`stair_tread_wide`), crimson stair-runner carpet (`stair_runner_carpet_wide`), polished brass stair rods (`stair_rod_brass`), and stepped stringers (`stair_stringer_step_left/right`).
+   - Turned wooden balustrades on both flanks topped with newel posts and brass finials.
    - Physical collision barriers along left and right balustrades constrain traversal strictly to the walkable runner.
    - Dynamic camera follow smoothly tracks Death's descent, revealing the immense Great Hall.
 
 ### Ground Floor (Public & Intimate Realm)
 4. **Great Hall / Central Gallery (Ground Center, x: 448..832, y: 520..920)**:
-   - Vast polished dark slate and marble floor (`tile_stone_hall`) centered with a four-point cardinal compass rose medallion (`floor_medallion`).
+   - Vast polished black-veined marble floor (`floor_marble_black_veined`) centered with an octagonal ornamental compass medallion in gold frame (`floor_medallion_octagonal`).
+   - Massive stone columns (`column_stone_massive`), pointed gothic arches (`arch_gothic_pointed_stone`), foliate spandrels (`arch_spandrel_left/right`), arched bust niche (`wall_niche_bust`), and heraldic crest (`ornament_foliage_crest_a`).
    - Grand gothic bronze chandelier (`decor_chandelier`) with 6 burning tapers floating overhead at foreground arch depth.
-   - Curated fine artwork collection: *Celestial Chart of the Spheres* (`decor_art_celestial`) and *Study of a Distant Battlefield* (`decor_art_battlefield`).
+   - Curated fine artwork collection: *Celestial Chart of the Spheres* and *Study of a Distant Battlefield*.
 5. **Hero Dining Room (Ground West, x: 48..448, y: 520..920)**:
-   - Emotional centerpiece of the game. Dark mahogany wood plank floor with deep crimson velvet area rug (`rug_dining`, 288×256).
-   - Hero Banquet Table (`furniture_dining_table`, 176×68) set for two:
+   - Emotional centerpiece of the game. Dark mahogany wood plank floor (`floor_wood_planks_dark`) with deep crimson velvet area rug (`rug_dining`, 288×256).
+   - Rich crimson damask fabric wall panels (`wall_panel_damask_crimson`), gold-framed stone insets (`wall_panel_stone_framed_gold`), ribbed horizontal moulding (`trim_moulding_ribbed_h`), and Corinthian fluted columns (`column_wood_corinthian`).
+   - Hero Banquet Table (`dining_table`, 176×68) set for two:
      - Rich crimson velvet runner with gold filigree hems.
      - Centerpiece vintage wine bottle with ivory label and cork, plus crystal decanter with crimson wine.
      - Two silver 3-branch candelabras with flickering teardrop flames.
-     - Love's setting (left): fine bone china plate with gold rim and crimson well, polished silverware, crystal goblet with red wine, neatly folded ivory linen napkin, and Love's waiting carved high-back chair (`furniture_chair_love`) pulled out slightly.
-     - Death's setting (right): matching plate, cutlery, filled wine goblet, folded napkin, and Death's dark gothic chair (`furniture_chair_death`).
-     - Wine credenza sideboard (`furniture_sideboard`) along north wall.
+     - Love's setting (left): fine bone china plate with gold rim and crimson well, polished silverware, crystal goblet with red wine, neatly folded ivory linen napkin, and Love's waiting carved high-back chair pulled out slightly.
+     - Death's setting (right): matching plate, cutlery, filled wine goblet, folded napkin, and Death's dark gothic chair.
+     - Wine credenza sideboard along north wall.
 6. **Lounge & Hearth Area (Ground East, x: 832..1232, y: 520..920)**:
-   - Mahogany plank flooring with fireside velvet rug (`rug_lounge`, 240×208).
-   - Carved stone fireplace hearth (`furniture_fireplace`, 96×80) featuring a 4-layer animated hearth fire (crimson outer mantle, orange body, yellow core, pale needle tip) and rising ambient embers.
-   - Tufted burgundy velvet sofa (`furniture_sofa`), plush armchair (`furniture_armchair`), coffee table (`furniture_coffee_table`) with leather-bound book and crystal ashtray, tall ancient bookshelf (`furniture_bookshelf`) with multi-colored tome spines, and retro television console (`furniture_tv`).
+   - Dark herringbone parquet flooring (`floor_herringbone_dark`) with fireside velvet rug (`rug_lounge`, 240×208).
+   - Recessed stone niche backing (`wall_niche_empty`), ornate grotesque/shield corbels (`corbel_shield_fleur`, `corbel_ornate_foliage`), gold-accented wood panels (`panel_inset_wood_gold`), and fluted stone columns (`column_stone_fluted`).
+   - Carved stone fireplace hearth featuring a 4-layer animated hearth fire and rising ambient embers.
+   - Tufted burgundy velvet sofa, plush armchair, coffee table with leather-bound book and crystal ashtray, tall ancient bookshelf with multi-colored tome spines, and retro television console.
 
 ---
 
