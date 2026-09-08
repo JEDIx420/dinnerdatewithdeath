@@ -157,7 +157,8 @@ export class MansionScene extends Phaser.Scene {
       this.renderVisualQAOverlay();
       this.worldDebug.render(
         this.mansionRoom.resolvedEnvironmentObjects,
-        this.mansionRoom.structuralBarriers
+        this.mansionRoom.structuralBarriers,
+        this.mansionRoom.getActiveFixtures()
       );
     } else {
       this.debugOverlayGfx.clear();

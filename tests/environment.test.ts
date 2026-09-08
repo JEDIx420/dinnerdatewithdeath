@@ -8,10 +8,13 @@ import { MANSION_ROOM_DEF } from '../src/game/world/RoomDefinition';
 
 describe('EnvironmentAssetCatalog & Metadata Integrity', () => {
   it('registers all 80 production architecture assets with valid attributes', () => {
-    const assets = EnvironmentAssetCatalog.getAllAssets();
-    expect(assets.length).toBe(80);
+    const archAssets = EnvironmentAssetCatalog.getAssetsByPack('mansion_architecture');
+    expect(archAssets.length).toBe(80);
 
-    for (const asset of assets) {
+    const allAssets = EnvironmentAssetCatalog.getAllAssets();
+    expect(allAssets.length).toBeGreaterThanOrEqual(400);
+
+    for (const asset of allAssets) {
       expect(asset.id).toBeTruthy();
       expect(asset.category).toBeTruthy();
       expect(asset.textureKey).toBeTruthy();
@@ -36,6 +39,17 @@ describe('EnvironmentAssetCatalog & Metadata Integrity', () => {
     const columns = EnvironmentAssetCatalog.getAssetsByCategory('columns_arches');
     expect(columns.length).toBeGreaterThanOrEqual(10);
     expect(columns.some((c) => c.id === 'column_stone_massive')).toBe(true);
+  });
+
+  it('registers environment packs and enforces cemetery isolation from mansion placements', () => {
+    const cemAssets = EnvironmentAssetCatalog.getAssetsByPack('ddwd_env_11');
+    expect(cemAssets.length).toBeGreaterThan(0);
+
+    // Hard non-negotiable: 0 cemetery assets in mansion room definition placements
+    const cemIds = new Set(cemAssets.map((a) => a.id));
+    for (const p of MANSION_ROOM_DEF.environmentPlacements!) {
+      expect(cemIds.has(p.assetId)).toBe(false);
+    }
   });
 
   it('throws for non-existent asset retrieval via requireAsset', () => {

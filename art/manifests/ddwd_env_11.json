@@ -1,0 +1,995 @@
+{
+  "packId": "ddwd_env_11",
+  "environmentId": "cemetery",
+  "name": "Cemetery",
+  "sourceImage": "art/source/environment/cemetery/DDWD_ENV_11 — Cemetery.png",
+  "sourceDimensions": {
+    "width": 1254,
+    "height": 1254
+  },
+  "categories": [
+    "graves",
+    "buildings",
+    "statues",
+    "vegetation",
+    "lighting",
+    "clutter"
+  ],
+  "assets": [
+    {
+      "id": "cem11_statues_01",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1060,
+        "y": 48,
+        "width": 79,
+        "height": 141
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (79x141)"
+    },
+    {
+      "id": "cem11_statues_02",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1158,
+        "y": 50,
+        "width": 75,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (75x139)"
+    },
+    {
+      "id": "cem11_statues_03",
+      "category": "statues",
+      "sourceRect": {
+        "x": 24,
+        "y": 66,
+        "width": 101,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (101x109)"
+    },
+    {
+      "id": "cem11_statues_04",
+      "category": "statues",
+      "sourceRect": {
+        "x": 136,
+        "y": 66,
+        "width": 103,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (103x109)"
+    },
+    {
+      "id": "cem11_statues_05",
+      "category": "statues",
+      "sourceRect": {
+        "x": 250,
+        "y": 66,
+        "width": 109,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (109x111)"
+    },
+    {
+      "id": "cem11_statues_06",
+      "category": "statues",
+      "sourceRect": {
+        "x": 372,
+        "y": 66,
+        "width": 107,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (107x109)"
+    },
+    {
+      "id": "cem11_statues_07",
+      "category": "statues",
+      "sourceRect": {
+        "x": 490,
+        "y": 66,
+        "width": 109,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (109x111)"
+    },
+    {
+      "id": "cem11_statues_08",
+      "category": "statues",
+      "sourceRect": {
+        "x": 612,
+        "y": 66,
+        "width": 107,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (107x109)"
+    },
+    {
+      "id": "cem11_statues_09",
+      "category": "statues",
+      "sourceRect": {
+        "x": 730,
+        "y": 66,
+        "width": 111,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (111x111)"
+    },
+    {
+      "id": "cem11_statues_10",
+      "category": "statues",
+      "sourceRect": {
+        "x": 856,
+        "y": 72,
+        "width": 81,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (81x111)"
+    },
+    {
+      "id": "cem11_statues_11",
+      "category": "statues",
+      "sourceRect": {
+        "x": 954,
+        "y": 76,
+        "width": 93,
+        "height": 107
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (93x107)"
+    },
+    {
+      "id": "cem11_statues_12",
+      "category": "statues",
+      "sourceRect": {
+        "x": 114,
+        "y": 196,
+        "width": 85,
+        "height": 189
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (85x189)"
+    },
+    {
+      "id": "cem11_buildings_13",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 374,
+        "y": 196,
+        "width": 143,
+        "height": 181
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (143x181)"
+    },
+    {
+      "id": "cem11_buildings_14",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 530,
+        "y": 192,
+        "width": 169,
+        "height": 187
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (169x187)"
+    },
+    {
+      "id": "cem11_buildings_15",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 918,
+        "y": 232,
+        "width": 145,
+        "height": 147
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (145x147)"
+    },
+    {
+      "id": "cem11_statues_16",
+      "category": "statues",
+      "sourceRect": {
+        "x": 16,
+        "y": 268,
+        "width": 93,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (93x111)"
+    },
+    {
+      "id": "cem11_buildings_17",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 206,
+        "y": 254,
+        "width": 157,
+        "height": 125
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (157x125)"
+    },
+    {
+      "id": "cem11_buildings_18",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 716,
+        "y": 252,
+        "width": 183,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (183x129)"
+    },
+    {
+      "id": "cem11_buildings_19",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 1080,
+        "y": 246,
+        "width": 151,
+        "height": 135
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (151x135)"
+    },
+    {
+      "id": "cem11_buildings_20",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 360,
+        "y": 390,
+        "width": 289,
+        "height": 199
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (289x199)"
+    },
+    {
+      "id": "cem11_statues_21",
+      "category": "statues",
+      "sourceRect": {
+        "x": 672,
+        "y": 390,
+        "width": 77,
+        "height": 203
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (77x203)"
+    },
+    {
+      "id": "cem11_buildings_22",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 764,
+        "y": 402,
+        "width": 139,
+        "height": 193
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (139x193)"
+    },
+    {
+      "id": "cem11_buildings_23",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 922,
+        "y": 384,
+        "width": 205,
+        "height": 217
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (205x217)"
+    },
+    {
+      "id": "cem11_statues_24",
+      "category": "statues",
+      "sourceRect": {
+        "x": 16,
+        "y": 444,
+        "width": 107,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (107x139)"
+    },
+    {
+      "id": "cem11_statues_25",
+      "category": "statues",
+      "sourceRect": {
+        "x": 130,
+        "y": 436,
+        "width": 111,
+        "height": 159
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (111x159)"
+    },
+    {
+      "id": "cem11_statues_26",
+      "category": "statues",
+      "sourceRect": {
+        "x": 262,
+        "y": 434,
+        "width": 91,
+        "height": 151
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (91x151)"
+    },
+    {
+      "id": "cem11_statues_27",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1136,
+        "y": 426,
+        "width": 103,
+        "height": 173
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (103x173)"
+    },
+    {
+      "id": "cem11_statues_28",
+      "category": "statues",
+      "sourceRect": {
+        "x": 338,
+        "y": 596,
+        "width": 51,
+        "height": 197
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (51x197)"
+    },
+    {
+      "id": "cem11_buildings_29",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 12,
+        "y": 638,
+        "width": 121,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (121x129)"
+    },
+    {
+      "id": "cem11_statues_30",
+      "category": "statues",
+      "sourceRect": {
+        "x": 430,
+        "y": 622,
+        "width": 59,
+        "height": 173
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (59x173)"
+    },
+    {
+      "id": "cem11_statues_31",
+      "category": "statues",
+      "sourceRect": {
+        "x": 526,
+        "y": 604,
+        "width": 103,
+        "height": 201
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (103x201)"
+    },
+    {
+      "id": "cem11_statues_32",
+      "category": "statues",
+      "sourceRect": {
+        "x": 652,
+        "y": 612,
+        "width": 87,
+        "height": 195
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (87x195)"
+    },
+    {
+      "id": "cem11_buildings_33",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 766,
+        "y": 620,
+        "width": 121,
+        "height": 185
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (121x185)"
+    },
+    {
+      "id": "cem11_statues_34",
+      "category": "statues",
+      "sourceRect": {
+        "x": 906,
+        "y": 628,
+        "width": 119,
+        "height": 179
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (119x179)"
+    },
+    {
+      "id": "cem11_statues_35",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1058,
+        "y": 648,
+        "width": 79,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (79x161)"
+    },
+    {
+      "id": "cem11_statues_36",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1166,
+        "y": 656,
+        "width": 65,
+        "height": 153
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (65x153)"
+    },
+    {
+      "id": "cem11_statues_37",
+      "category": "statues",
+      "sourceRect": {
+        "x": 142,
+        "y": 678,
+        "width": 169,
+        "height": 93
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (169x93)"
+    },
+    {
+      "id": "cem11_statues_38",
+      "category": "statues",
+      "sourceRect": {
+        "x": 24,
+        "y": 776,
+        "width": 69,
+        "height": 203
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (69x203)"
+    },
+    {
+      "id": "cem11_buildings_39",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 100,
+        "y": 798,
+        "width": 149,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (149x183)"
+    },
+    {
+      "id": "cem11_buildings_40",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 242,
+        "y": 806,
+        "width": 131,
+        "height": 173
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (131x173)"
+    },
+    {
+      "id": "cem11_statues_41",
+      "category": "statues",
+      "sourceRect": {
+        "x": 372,
+        "y": 868,
+        "width": 147,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (147x101)"
+    },
+    {
+      "id": "cem11_statues_42",
+      "category": "statues",
+      "sourceRect": {
+        "x": 532,
+        "y": 852,
+        "width": 75,
+        "height": 123
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (75x123)"
+    },
+    {
+      "id": "cem11_statues_43",
+      "category": "statues",
+      "sourceRect": {
+        "x": 622,
+        "y": 888,
+        "width": 117,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (117x87)"
+    },
+    {
+      "id": "cem11_statues_44",
+      "category": "statues",
+      "sourceRect": {
+        "x": 750,
+        "y": 888,
+        "width": 69,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (69x83)"
+    },
+    {
+      "id": "cem11_statues_45",
+      "category": "statues",
+      "sourceRect": {
+        "x": 834,
+        "y": 882,
+        "width": 81,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (81x91)"
+    },
+    {
+      "id": "cem11_statues_46",
+      "category": "statues",
+      "sourceRect": {
+        "x": 930,
+        "y": 854,
+        "width": 97,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (97x117)"
+    },
+    {
+      "id": "cem11_statues_47",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1038,
+        "y": 840,
+        "width": 109,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (109x137)"
+    },
+    {
+      "id": "cem11_statues_48",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1160,
+        "y": 846,
+        "width": 75,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (75x127)"
+    },
+    {
+      "id": "cem11_statues_49",
+      "category": "statues",
+      "sourceRect": {
+        "x": 32,
+        "y": 998,
+        "width": 75,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (75x127)"
+    },
+    {
+      "id": "cem11_buildings_50",
+      "category": "buildings",
+      "sourceRect": {
+        "x": 450,
+        "y": 988,
+        "width": 307,
+        "height": 143
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (307x143)"
+    },
+    {
+      "id": "cem11_statues_51",
+      "category": "statues",
+      "sourceRect": {
+        "x": 776,
+        "y": 990,
+        "width": 81,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (81x139)"
+    },
+    {
+      "id": "cem11_statues_52",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1126,
+        "y": 980,
+        "width": 107,
+        "height": 149
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (107x149)"
+    },
+    {
+      "id": "cem11_statues_53",
+      "category": "statues",
+      "sourceRect": {
+        "x": 118,
+        "y": 1022,
+        "width": 85,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (85x99)"
+    },
+    {
+      "id": "cem11_statues_54",
+      "category": "statues",
+      "sourceRect": {
+        "x": 220,
+        "y": 1022,
+        "width": 85,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (85x101)"
+    },
+    {
+      "id": "cem11_statues_55",
+      "category": "statues",
+      "sourceRect": {
+        "x": 314,
+        "y": 1022,
+        "width": 123,
+        "height": 103
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (123x103)"
+    },
+    {
+      "id": "cem11_statues_56",
+      "category": "statues",
+      "sourceRect": {
+        "x": 868,
+        "y": 1026,
+        "width": 115,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (115x95)"
+    },
+    {
+      "id": "cem11_statues_57",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1028,
+        "y": 1028,
+        "width": 83,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (83x89)"
+    },
+    {
+      "id": "cem11_statues_58",
+      "category": "statues",
+      "sourceRect": {
+        "x": 550,
+        "y": 1132,
+        "width": 111,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (111x109)"
+    },
+    {
+      "id": "cem11_statues_59",
+      "category": "statues",
+      "sourceRect": {
+        "x": 950,
+        "y": 1126,
+        "width": 109,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (109x117)"
+    },
+    {
+      "id": "cem11_statues_60",
+      "category": "statues",
+      "sourceRect": {
+        "x": 22,
+        "y": 1142,
+        "width": 157,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (157x99)"
+    },
+    {
+      "id": "cem11_graves_61",
+      "category": "graves",
+      "sourceRect": {
+        "x": 192,
+        "y": 1164,
+        "width": 187,
+        "height": 77
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (187x77)"
+    },
+    {
+      "id": "cem11_statues_62",
+      "category": "statues",
+      "sourceRect": {
+        "x": 394,
+        "y": 1146,
+        "width": 135,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (135x95)"
+    },
+    {
+      "id": "cem11_graves_63",
+      "category": "graves",
+      "sourceRect": {
+        "x": 692,
+        "y": 1160,
+        "width": 85,
+        "height": 79
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (85x79)"
+    },
+    {
+      "id": "cem11_statues_64",
+      "category": "statues",
+      "sourceRect": {
+        "x": 760,
+        "y": 1154,
+        "width": 189,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (189x83)"
+    },
+    {
+      "id": "cem11_statues_65",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1082,
+        "y": 1144,
+        "width": 149,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Cemetery asset (149x95)"
+    }
+  ]
+}

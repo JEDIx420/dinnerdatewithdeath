@@ -25,7 +25,12 @@
         "height": 98
       },
       "repeatable": true,
-      "notes": "Dark mahogany plank flooring"
+      "notes": "Dark mahogany plank flooring",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_herringbone_dark",
@@ -37,7 +42,12 @@
         "height": 98
       },
       "repeatable": true,
-      "notes": "Herringbone / parquet dark wood floor"
+      "notes": "Herringbone / parquet dark wood floor",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_marble_black_veined",
@@ -49,7 +59,12 @@
         "height": 98
       },
       "repeatable": true,
-      "notes": "Black veined polished marble"
+      "notes": "Black veined polished marble",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_stone_blocks_dark",
@@ -61,7 +76,12 @@
         "height": 99
       },
       "repeatable": true,
-      "notes": "Dark slate stone block tile"
+      "notes": "Dark slate stone block tile",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_wood_inlay_ornate",
@@ -73,7 +93,12 @@
         "height": 101
       },
       "repeatable": true,
-      "notes": "Ornate wood inset diamond floor tile"
+      "notes": "Ornate wood inset diamond floor tile",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_marble_border_corner_a",
@@ -85,7 +110,12 @@
         "height": 102
       },
       "repeatable": false,
-      "notes": "Pale marble corner border with dark stone inset"
+      "notes": "Pale marble corner border with dark stone inset",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_marble_border_corner_b",
@@ -97,7 +127,12 @@
         "height": 101
       },
       "repeatable": false,
-      "notes": "Pale marble corner border with dark veined marble"
+      "notes": "Pale marble corner border with dark veined marble",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_threshold_gold",
@@ -109,7 +144,12 @@
         "height": 99
       },
       "repeatable": false,
-      "notes": "Dark wood floor module with antique gold threshold trim"
+      "notes": "Dark wood floor module with antique gold threshold trim",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_wood_planks_alt",
@@ -121,7 +161,12 @@
         "height": 105
       },
       "repeatable": true,
-      "notes": "Alternate dark wood plank tile"
+      "notes": "Alternate dark wood plank tile",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_stone_cracked",
@@ -133,7 +178,12 @@
         "height": 105
       },
       "repeatable": true,
-      "notes": "Aged cracked dark stone floor tile"
+      "notes": "Aged cracked dark stone floor tile",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_stone_polished_reflective",
@@ -145,7 +195,12 @@
         "height": 106
       },
       "repeatable": true,
-      "notes": "Polished reflective stone tile with vertical specular streak"
+      "notes": "Polished reflective stone tile with vertical specular streak",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "carpet_crimson_border",
@@ -157,7 +212,12 @@
         "height": 107
       },
       "repeatable": true,
-      "notes": "Crimson velvet carpet with embroidered gold border"
+      "notes": "Crimson velvet carpet with embroidered gold border",
+      "anchorPreset": "top-left",
+      "depthClass": "floor-decor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "carpet_crimson_corner",
@@ -169,7 +229,12 @@
         "height": 108
       },
       "repeatable": false,
-      "notes": "Crimson velvet carpet corner with embroidered gold border"
+      "notes": "Crimson velvet carpet corner with embroidered gold border",
+      "anchorPreset": "top-left",
+      "depthClass": "floor-decor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_black_gold_grid",
@@ -181,7 +246,12 @@
         "height": 108
       },
       "repeatable": true,
-      "notes": "Black square floor tile with gold diamond intersections"
+      "notes": "Black square floor tile with gold diamond intersections",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "floor_medallion_octagonal",
@@ -193,7 +263,12 @@
         "height": 111
       },
       "repeatable": false,
-      "notes": "Large octagonal ornamental compass medallion in gold frame"
+      "notes": "Large octagonal ornamental compass medallion in gold frame",
+      "anchorPreset": "top-left",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_wood_horizontal",
@@ -205,7 +280,12 @@
         "height": 150
       },
       "repeatable": true,
-      "notes": "Dark horizontal wood plank wall panel with moulded base and cap"
+      "notes": "Dark horizontal wood plank wall panel with moulded base and cap",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_damask_crimson",
@@ -217,7 +297,12 @@
         "height": 151
       },
       "repeatable": true,
-      "notes": "Rich crimson damask fabric wall panel in dark wood frame"
+      "notes": "Rich crimson damask fabric wall panel in dark wood frame",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_stone_masonry",
@@ -229,7 +314,12 @@
         "height": 150
       },
       "repeatable": true,
-      "notes": "Dark ashlar masonry stone block panel"
+      "notes": "Dark ashlar masonry stone block panel",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_wood_wainscot_a",
@@ -241,7 +331,12 @@
         "height": 150
       },
       "repeatable": true,
-      "notes": "Dark wood vertical panel with coffered wainscot base"
+      "notes": "Dark wood vertical panel with coffered wainscot base",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_fleur_ornate",
@@ -253,7 +348,12 @@
         "height": 150
       },
       "repeatable": true,
-      "notes": "Ornate dark wood panel with carved gold fleur-de-lis and beaded inner frame"
+      "notes": "Ornate dark wood panel with carved gold fleur-de-lis and beaded inner frame",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_stone_framed_gold",
@@ -265,7 +365,12 @@
         "height": 146
       },
       "repeatable": true,
-      "notes": "Grey stone panel with gold inner filigree frame"
+      "notes": "Grey stone panel with gold inner filigree frame",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_wood_wainscot_b",
@@ -277,7 +382,12 @@
         "height": 149
       },
       "repeatable": true,
-      "notes": "Dark wood panel variant with coffered wainscot base"
+      "notes": "Dark wood panel variant with coffered wainscot base",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_fleur_small",
@@ -289,7 +399,12 @@
         "height": 140
       },
       "repeatable": true,
-      "notes": "Dark wood panel with gold fleur-de-lis emblem"
+      "notes": "Dark wood panel with gold fleur-de-lis emblem",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_wood_framed_plain",
@@ -301,7 +416,12 @@
         "height": 147
       },
       "repeatable": true,
-      "notes": "Classic dark wood framed wall panel"
+      "notes": "Classic dark wood framed wall panel",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_stone_framed_light",
@@ -313,7 +433,12 @@
         "height": 146
       },
       "repeatable": true,
-      "notes": "Pale carved stone framed wall panel"
+      "notes": "Pale carved stone framed wall panel",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_panel_stone_cracked",
@@ -325,7 +450,12 @@
         "height": 146
       },
       "repeatable": true,
-      "notes": "Cracked ancient stone wall panel with brass base trim"
+      "notes": "Cracked ancient stone wall panel with brass base trim",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_niche_bust",
@@ -337,7 +467,12 @@
         "height": 146
       },
       "repeatable": false,
-      "notes": "Gothic pointed arch stone niche housing a classical sculptural bust"
+      "notes": "Gothic pointed arch stone niche housing a classical sculptural bust",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_cornice_wood_a",
@@ -349,7 +484,12 @@
         "height": 49
       },
       "repeatable": true,
-      "notes": "Heavy dark wood architectural cornice / baseboard moulding"
+      "notes": "Heavy dark wood architectural cornice / baseboard moulding",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_cornice_wood_b",
@@ -361,7 +501,12 @@
         "height": 47
       },
       "repeatable": true,
-      "notes": "Medium dark wood architectural cornice"
+      "notes": "Medium dark wood architectural cornice",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_cornice_studded",
@@ -373,7 +518,12 @@
         "height": 50
       },
       "repeatable": true,
-      "notes": "Architectural wood cornice with decorative gold studded dentil frieze"
+      "notes": "Architectural wood cornice with decorative gold studded dentil frieze",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_moulding_horizontal",
@@ -385,7 +535,12 @@
         "height": 36
       },
       "repeatable": true,
-      "notes": "Long slender horizontal wood dado rail / trim moulding"
+      "notes": "Long slender horizontal wood dado rail / trim moulding",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_corner_inside",
@@ -397,7 +552,12 @@
         "height": 95
       },
       "repeatable": false,
-      "notes": "Internal corner junction piece with tiered moulding"
+      "notes": "Internal corner junction piece with tiered moulding",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_corner_outside",
@@ -409,7 +569,12 @@
         "height": 101
       },
       "repeatable": false,
-      "notes": "External corner / architectural pillar plinth with gold rim"
+      "notes": "External corner / architectural pillar plinth with gold rim",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_vertical_strip_a",
@@ -421,7 +586,12 @@
         "height": 97
       },
       "repeatable": true,
-      "notes": "Vertical panel divider strip with stepped gold highlight"
+      "notes": "Vertical panel divider strip with stepped gold highlight",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_vertical_strip_b",
@@ -433,7 +603,12 @@
         "height": 97
       },
       "repeatable": true,
-      "notes": "Vertical panel divider strip variant"
+      "notes": "Vertical panel divider strip variant",
+      "anchorPreset": "top-left",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_corbel_curved",
@@ -445,7 +620,12 @@
         "height": 92
       },
       "repeatable": false,
-      "notes": "Carved architectural bracket / curved corner corbel"
+      "notes": "Carved architectural bracket / curved corner corbel",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "column_wood_fluted",
@@ -457,7 +637,12 @@
         "height": 160
       },
       "repeatable": false,
-      "notes": "Dark fluted wood column with base plinth and carved capital"
+      "notes": "Dark fluted wood column with base plinth and carved capital",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_fluted",
+      "mirrorSafe": true
     },
     {
       "id": "column_wood_corinthian",
@@ -469,7 +654,12 @@
         "height": 161
       },
       "repeatable": false,
-      "notes": "Wood column with broad ornate Corinthian acanthus capital"
+      "notes": "Wood column with broad ornate Corinthian acanthus capital",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_wood",
+      "mirrorSafe": true
     },
     {
       "id": "column_wood_gold_trim",
@@ -481,7 +671,12 @@
         "height": 162
       },
       "repeatable": false,
-      "notes": "Dark wood fluted column with gold brass collar rings"
+      "notes": "Dark wood fluted column with gold brass collar rings",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_wood",
+      "mirrorSafe": true
     },
     {
       "id": "column_stone_fluted",
@@ -493,7 +688,12 @@
         "height": 163
       },
       "repeatable": false,
-      "notes": "Grey fluted stone column with gold collar rings"
+      "notes": "Grey fluted stone column with gold collar rings",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_fluted",
+      "mirrorSafe": true
     },
     {
       "id": "column_stone_massive",
@@ -505,7 +705,12 @@
         "height": 160
       },
       "repeatable": false,
-      "notes": "Massive grey stone column with wide base and ornate gold filigree capital"
+      "notes": "Massive grey stone column with wide base and ornate gold filigree capital",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_massive",
+      "mirrorSafe": true
     },
     {
       "id": "column_stone_slender",
@@ -517,7 +722,12 @@
         "height": 159
       },
       "repeatable": false,
-      "notes": "Slender grey stone pillar with brass rings"
+      "notes": "Slender grey stone pillar with brass rings",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_wood",
+      "mirrorSafe": true
     },
     {
       "id": "column_wood_capital_ornate",
@@ -529,7 +739,12 @@
         "height": 159
       },
       "repeatable": false,
-      "notes": "Dark wood column with elaborate sculpted gold capital"
+      "notes": "Dark wood column with elaborate sculpted gold capital",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_wood",
+      "mirrorSafe": true
     },
     {
       "id": "column_wood_ringed",
@@ -541,7 +756,12 @@
         "height": 157
       },
       "repeatable": false,
-      "notes": "Medium dark wood column with brass astragal rings"
+      "notes": "Medium dark wood column with brass astragal rings",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "column_wood",
+      "mirrorSafe": true
     },
     {
       "id": "arch_gothic_pointed_stone",
@@ -553,7 +773,12 @@
         "height": 154
       },
       "repeatable": false,
-      "notes": "Pointed gothic arch in grey stone with gold fleur finial"
+      "notes": "Pointed gothic arch in grey stone with gold fleur finial",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "arch_gothic_pointed_gold",
@@ -565,7 +790,12 @@
         "height": 160
       },
       "repeatable": false,
-      "notes": "Elaborate pointed gothic arch in dark wood and gold filigree"
+      "notes": "Elaborate pointed gothic arch in dark wood and gold filigree",
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "corbel_shield_fleur",
@@ -577,7 +807,12 @@
         "height": 92
       },
       "repeatable": false,
-      "notes": "Triangular stone wall bracket / corbel pendant with gold fleur-de-lis"
+      "notes": "Triangular stone wall bracket / corbel pendant with gold fleur-de-lis",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "arch_spandrel_left",
@@ -589,7 +824,12 @@
         "height": 101
       },
       "repeatable": false,
-      "notes": "Left arch spandrel bracket with gold rosette and filigree border"
+      "notes": "Left arch spandrel bracket with gold rosette and filigree border",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "arch_spandrel_right",
@@ -601,7 +841,12 @@
         "height": 101
       },
       "repeatable": false,
-      "notes": "Right arch spandrel bracket with gold rosette and filigree border"
+      "notes": "Right arch spandrel bracket with gold rosette and filigree border",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "half_column_wood_gold",
@@ -613,7 +858,12 @@
         "height": 144
       },
       "repeatable": false,
-      "notes": "Engaged half-column in dark wood with gold vertical fluting"
+      "notes": "Engaged half-column in dark wood with gold vertical fluting",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "half_column",
+      "mirrorSafe": true
     },
     {
       "id": "half_column_stone_gold",
@@ -625,7 +875,12 @@
         "height": 144
       },
       "repeatable": false,
-      "notes": "Engaged half-column in grey stone with gold collar rings"
+      "notes": "Engaged half-column in grey stone with gold collar rings",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "half_column",
+      "mirrorSafe": true
     },
     {
       "id": "corbel_ornate_foliage",
@@ -637,7 +892,12 @@
         "height": 136
       },
       "repeatable": false,
-      "notes": "Carved architectural wall corbel with classical volutes and acanthus leaves"
+      "notes": "Carved architectural wall corbel with classical volutes and acanthus leaves",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "wall_niche_empty",
@@ -649,7 +909,12 @@
         "height": 167
       },
       "repeatable": false,
-      "notes": "Tall pointed gothic wall niche / recess in dark stone"
+      "notes": "Tall pointed gothic wall niche / recess in dark stone",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "balustrade_section",
@@ -661,7 +926,12 @@
         "height": 115
       },
       "repeatable": true,
-      "notes": "Full carved dark wood balustrade railing section with 4 turned balusters"
+      "notes": "Full carved dark wood balustrade railing section with 4 turned balusters",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "barrier",
+      "collisionProfile": "balustrade_horizontal_132",
+      "mirrorSafe": true
     },
     {
       "id": "balustrade_post",
@@ -673,7 +943,12 @@
         "height": 136
       },
       "repeatable": false,
-      "notes": "Individual turned wooden baluster / support spindle"
+      "notes": "Individual turned wooden baluster / support spindle",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "newel_small",
+      "mirrorSafe": true
     },
     {
       "id": "newel_post_large",
@@ -685,7 +960,12 @@
         "height": 128
       },
       "repeatable": false,
-      "notes": "Substantial staircase newel post with spherical brass finial"
+      "notes": "Substantial staircase newel post with spherical brass finial",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "newel_large",
+      "mirrorSafe": true
     },
     {
       "id": "newel_post_small",
@@ -697,7 +977,12 @@
         "height": 101
       },
       "repeatable": false,
-      "notes": "Medium staircase newel post with spherical brass finial"
+      "notes": "Medium staircase newel post with spherical brass finial",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "newel_small",
+      "mirrorSafe": true
     },
     {
       "id": "stair_stringer_step_left",
@@ -709,7 +994,12 @@
         "height": 125
       },
       "repeatable": false,
-      "notes": "Staircase left side stringer / skirting transition block with gold cross"
+      "notes": "Staircase left side stringer / skirting transition block with gold cross",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "barrier",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_stringer_step_right",
@@ -721,7 +1011,12 @@
         "height": 122
       },
       "repeatable": false,
-      "notes": "Staircase right side stringer / skirting transition block with gold cross"
+      "notes": "Staircase right side stringer / skirting transition block with gold cross",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "barrier",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_stringer_bottom_left",
@@ -733,7 +1028,12 @@
         "height": 122
       },
       "repeatable": false,
-      "notes": "Staircase bottom landing stepped plinth stringer with gold cross"
+      "notes": "Staircase bottom landing stepped plinth stringer with gold cross",
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "barrier",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_tread_wide",
@@ -745,7 +1045,12 @@
         "height": 70
       },
       "repeatable": true,
-      "notes": "Dark mahogany wood stair step tread (top perspective)"
+      "notes": "Dark mahogany wood stair step tread (top perspective)",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_tread_medium",
@@ -757,7 +1062,12 @@
         "height": 66
       },
       "repeatable": true,
-      "notes": "Dark mahogany wood stair step tread variant"
+      "notes": "Dark mahogany wood stair step tread variant",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_runner_carpet_wide",
@@ -769,7 +1079,12 @@
         "height": 76
       },
       "repeatable": true,
-      "notes": "Crimson stair-runner carpet section with gold embroidered borders"
+      "notes": "Crimson stair-runner carpet section with gold embroidered borders",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_runner_carpet_left_edge",
@@ -781,7 +1096,12 @@
         "height": 75
       },
       "repeatable": true,
-      "notes": "Crimson stair-runner left border segment"
+      "notes": "Crimson stair-runner left border segment",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_runner_carpet_right_edge",
@@ -793,7 +1113,12 @@
         "height": 76
       },
       "repeatable": true,
-      "notes": "Crimson stair-runner right border segment"
+      "notes": "Crimson stair-runner right border segment",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_rod_brass",
@@ -805,7 +1130,12 @@
         "height": 29
       },
       "repeatable": false,
-      "notes": "Polished brass stair carpet rod with spherical end finials"
+      "notes": "Polished brass stair carpet rod with spherical end finials",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_rod_finial_left",
@@ -817,7 +1147,12 @@
         "height": 27
       },
       "repeatable": false,
-      "notes": "Brass stair rod end bracket"
+      "notes": "Brass stair rod end bracket",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "stair_rod_finial_right",
@@ -829,7 +1164,12 @@
         "height": 26
       },
       "repeatable": false,
-      "notes": "Brass spherical finial cap"
+      "notes": "Brass spherical finial cap",
+      "anchorPreset": "center",
+      "depthClass": "floor",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_fleur_de_lis",
@@ -841,7 +1181,12 @@
         "height": 87
       },
       "repeatable": false,
-      "notes": "Carved gold fleur-de-lis wall ornament"
+      "notes": "Carved gold fleur-de-lis wall ornament",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_foliage_crest_a",
@@ -853,7 +1198,12 @@
         "height": 116
       },
       "repeatable": false,
-      "notes": "Carved gold acanthus foliage pediment crest"
+      "notes": "Carved gold acanthus foliage pediment crest",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_foliage_crest_b",
@@ -865,7 +1215,12 @@
         "height": 116
       },
       "repeatable": false,
-      "notes": "Carved gold scroll foliage wall ornament"
+      "notes": "Carved gold scroll foliage wall ornament",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_rosette_round",
@@ -877,7 +1232,12 @@
         "height": 78
       },
       "repeatable": false,
-      "notes": "Circular carved gold flower rosette"
+      "notes": "Circular carved gold flower rosette",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_moulding_ribbed_h",
@@ -889,7 +1249,12 @@
         "height": 39
       },
       "repeatable": true,
-      "notes": "Horizontal ribbed wood moulding with gold inlay"
+      "notes": "Horizontal ribbed wood moulding with gold inlay",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_moulding_ribbed_v",
@@ -901,7 +1266,12 @@
         "height": 84
       },
       "repeatable": true,
-      "notes": "Vertical ribbed wood moulding with gold inlay"
+      "notes": "Vertical ribbed wood moulding with gold inlay",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_boss_square",
@@ -913,7 +1283,12 @@
         "height": 68
       },
       "repeatable": false,
-      "notes": "Pyramidal square boss with gold frame"
+      "notes": "Pyramidal square boss with gold frame",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "trim_gold_pattern_x",
@@ -925,7 +1300,12 @@
         "height": 36
       },
       "repeatable": true,
-      "notes": "Long horizontal dark wood trim with gold criss-cross pattern"
+      "notes": "Long horizontal dark wood trim with gold criss-cross pattern",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "panel_inset_stone_pale",
@@ -937,7 +1317,12 @@
         "height": 113
       },
       "repeatable": false,
-      "notes": "Pale carved stone wall inset with stepped frame"
+      "notes": "Pale carved stone wall inset with stepped frame",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "panel_inset_wood_gold",
@@ -949,7 +1334,12 @@
         "height": 117
       },
       "repeatable": false,
-      "notes": "Dark wood framed wall inset with gold corner flourishes"
+      "notes": "Dark wood framed wall inset with gold corner flourishes",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "ornament_medallion_rosette_large",
@@ -961,7 +1351,12 @@
         "height": 112
       },
       "repeatable": false,
-      "notes": "Large circular medallion with intricate foliage rosette"
+      "notes": "Large circular medallion with intricate foliage rosette",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     },
     {
       "id": "panel_cross_gold",
@@ -973,7 +1368,12 @@
         "height": 115
       },
       "repeatable": false,
-      "notes": "Dark wood panel with prominent gold filigree cross"
+      "notes": "Dark wood panel with prominent gold filigree cross",
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "mirrorSafe": true
     }
   ]
 }

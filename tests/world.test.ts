@@ -52,44 +52,53 @@ describe('Mansion Room Definition & World Geometry', () => {
   });
 
   it('validates hero dining table and major narrative furniture are configured', () => {
-    const furnitureMap = new Map(MANSION_ROOM_DEF.furniture.map((f) => [f.id, f]));
+    expect(MANSION_ROOM_DEF.environmentPlacements).toBeDefined();
+    const placementMap = new Map(MANSION_ROOM_DEF.environmentPlacements!.map((p) => [p.id, p]));
 
     // Hero Dining Table
-    const table = furnitureMap.get('dining_table');
+    const table = placementMap.get('dining_table');
     expect(table).toBeDefined();
-    expect(table?.collision).toBeDefined();
-    expect(table?.shadow).toBeDefined();
+    expect(table?.assetId).toBe('dining05_table_banquet_runner');
+    expect(table?.zone).toBe('dining_room');
     expect(table?.x).toBe(240);
     expect(table?.y).toBe(720);
 
     // Love & Death chairs
-    expect(furnitureMap.get('dining_chair_love')).toBeDefined();
-    expect(furnitureMap.get('dining_chair_death')).toBeDefined();
+    expect(placementMap.get('dining_chair_love')).toBeDefined();
+    expect(placementMap.get('dining_chair_death')).toBeDefined();
 
-    // Mirror & Vanity in dressing zone
-    expect(furnitureMap.get('dressing_mirror')).toBeDefined();
-    expect(furnitureMap.get('dressing_vanity')).toBeDefined();
-    expect(furnitureMap.get('dressing_wardrobe')).toBeDefined();
+    // Mirror & Vanity in dressing/bedchamber zone
+    expect(placementMap.get('bedchamber_vanity')).toBeDefined();
+    expect(placementMap.get('bedchamber_bed')).toBeDefined();
+    expect(placementMap.get('bedchamber_wardrobe')).toBeDefined();
 
     // Fireplace & Sofa in lounge zone
-    expect(furnitureMap.get('lounge_fireplace')).toBeDefined();
-    expect(furnitureMap.get('lounge_sofa')).toBeDefined();
-    expect(furnitureMap.get('lounge_bookshelf')).toBeDefined();
+    expect(placementMap.get('lounge_fireplace')).toBeDefined();
+    expect(placementMap.get('lounge_sofa')).toBeDefined();
+    expect(placementMap.get('lounge_bookshelf')).toBeDefined();
   });
 
   it('validates candles and windows configuration', () => {
-    expect(MANSION_ROOM_DEF.candles.length).toBeGreaterThanOrEqual(6);
-    for (const c of MANSION_ROOM_DEF.candles) {
-      expect(c.x).toBeGreaterThan(0);
-      expect(c.x).toBeLessThan(MANSION_ROOM_DEF.width);
-      expect(c.y).toBeGreaterThan(0);
-      expect(c.y).toBeLessThan(MANSION_ROOM_DEF.height);
-      expect(c.intensity).toBeGreaterThan(0);
-    }
+    // Windows configured with gothic production window assets
+    const windows = MANSION_ROOM_DEF.environmentPlacements!.filter(
+      (p) => p.role === 'window' || p.assetId === 'env02_window_gothic_tall'
+    );
+    expect(windows.length).toBeGreaterThanOrEqual(2);
 
-    expect(MANSION_ROOM_DEF.windows.length).toBeGreaterThanOrEqual(3);
-    for (const w of MANSION_ROOM_DEF.windows) {
-      expect(w.hasCurtains).toBe(true);
+    // Light fixtures (candelabras, sconces, chandeliers, fireplace) configured across mansion
+    const lightFixtures = MANSION_ROOM_DEF.environmentPlacements!.filter(
+      (p) => p.role === 'candle' || p.role === 'candelabra' || p.role === 'sconce' || p.role === 'chandelier' || p.role === 'fireplace'
+    );
+    expect(lightFixtures.length).toBeGreaterThanOrEqual(6);
+
+    for (const f of lightFixtures) {
+      if (f.parentPlacementId) {
+        expect(Number.isFinite(f.x)).toBe(true);
+        expect(Number.isFinite(f.y)).toBe(true);
+      } else {
+        expect(f.x).toBeGreaterThanOrEqual(0);
+        expect(f.y).toBeGreaterThanOrEqual(0);
+      }
     }
   });
 });

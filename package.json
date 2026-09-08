@@ -1,6 +1,6 @@
 {
   "name": "dinnerdatewithdeath",
-  "version": "0.0.6.3",
+  "version": "0.0.6.4",
   "private": true,
   "type": "module",
   "scripts": {
@@ -14,9 +14,9 @@
     "test": "vitest run",
     "assets:death": "tsx tools/assets/process-death.ts",
     "assets:mansion-architecture": "tsx tools/assets/process-mansion-architecture.ts",
-    "assets:environment": "tsx tools/assets/process-environment-sheet.ts",
-    "assets": "npm run assets:death && npm run assets:mansion-architecture",
-    "verify": "npm run lint && npm run typecheck && npm test && npm run build"
+    "assets": "tsx tools/assets/build-all-assets.ts",
+    "verify": "npm run lint && npm run typecheck && npm test && npm run build",
+    "assets:environment:all": "tsx tools/assets/build-pack-atlases.ts && tsx tools/assets/build-compiled-catalog.ts"
   },
   "dependencies": {
     "phaser": "^3.88.2"

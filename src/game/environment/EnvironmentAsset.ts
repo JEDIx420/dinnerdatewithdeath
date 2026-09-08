@@ -14,12 +14,48 @@ export type PhysicalClass =
   | 'none'          // No collision (wallpapers, trims, mouldings, rugs, floor tiles)
   | 'floor-solid'   // Free-standing solid object on floor (columns, newels, statues, furniture)
   | 'barrier'       // Continuous safety barrier (balustrades, stair walls, room boundaries)
-  | 'overhead';     // Passes over player (arch headers)
+  | 'overhead';     // Passes over player (arch headers, chandeliers)
+
+export interface LightSocketDef {
+  id: string;
+  localX: number;
+  localY: number;
+  kind?: 'candle' | 'fireplace' | 'sconce' | 'chandelier';
+  radius?: number;
+  intensity?: number;
+  color?: number;
+  flameMode?: 'baked' | 'overlay' | 'none';
+}
+
+export interface SurfaceRegionDef {
+  id: string;
+  name?: string;
+  localBounds?: {
+    x: number;
+    y: number;
+    width: number;
+    height: number;
+  };
+  localX?: number;
+  localY?: number;
+  width?: number;
+  height?: number;
+  relativeDepthOffset?: number;
+}
+
+export interface WindowMaskDef {
+  localX: number;
+  localY: number;
+  width: number;
+  height: number;
+}
 
 export interface EnvironmentAssetDef {
   id: string;
   category: string;
   textureKey: string;
+  frame?: string;
+  packId?: string;
   nativeWidth: number;
   nativeHeight: number;
   anchorPreset: AnchorPreset;
@@ -28,6 +64,9 @@ export interface EnvironmentAssetDef {
   collisionProfile: CollisionProfileId;
   mirrorSafe?: boolean;
   repeatable?: boolean;
+  lightSockets?: LightSocketDef[];
+  surfaces?: Record<string, SurfaceRegionDef>;
+  windowMasks?: WindowMaskDef[];
   tags?: string[];
   notes?: string;
 }

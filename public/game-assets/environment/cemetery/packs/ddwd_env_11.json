@@ -1,0 +1,1575 @@
+{
+  "frames": {
+    "cem11_buildings_23": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 205,
+        "h": 217
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 205,
+        "h": 217
+      },
+      "sourceSize": {
+        "w": 205,
+        "h": 217
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_21": {
+      "frame": {
+        "x": 213,
+        "y": 4,
+        "w": 77,
+        "h": 203
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 203
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 203
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_38": {
+      "frame": {
+        "x": 294,
+        "y": 4,
+        "w": 69,
+        "h": 203
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 203
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 203
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_31": {
+      "frame": {
+        "x": 367,
+        "y": 4,
+        "w": 103,
+        "h": 201
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 201
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 201
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_20": {
+      "frame": {
+        "x": 474,
+        "y": 4,
+        "w": 289,
+        "h": 199
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 289,
+        "h": 199
+      },
+      "sourceSize": {
+        "w": 289,
+        "h": 199
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_28": {
+      "frame": {
+        "x": 767,
+        "y": 4,
+        "w": 51,
+        "h": 197
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 51,
+        "h": 197
+      },
+      "sourceSize": {
+        "w": 51,
+        "h": 197
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_32": {
+      "frame": {
+        "x": 822,
+        "y": 4,
+        "w": 87,
+        "h": 195
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 87,
+        "h": 195
+      },
+      "sourceSize": {
+        "w": 87,
+        "h": 195
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_22": {
+      "frame": {
+        "x": 913,
+        "y": 4,
+        "w": 139,
+        "h": 193
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 139,
+        "h": 193
+      },
+      "sourceSize": {
+        "w": 139,
+        "h": 193
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_12": {
+      "frame": {
+        "x": 1056,
+        "y": 4,
+        "w": 85,
+        "h": 189
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 189
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 189
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_14": {
+      "frame": {
+        "x": 1145,
+        "y": 4,
+        "w": 169,
+        "h": 187
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 169,
+        "h": 187
+      },
+      "sourceSize": {
+        "w": 169,
+        "h": 187
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_33": {
+      "frame": {
+        "x": 1318,
+        "y": 4,
+        "w": 121,
+        "h": 185
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 121,
+        "h": 185
+      },
+      "sourceSize": {
+        "w": 121,
+        "h": 185
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_39": {
+      "frame": {
+        "x": 1443,
+        "y": 4,
+        "w": 149,
+        "h": 183
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 183
+      },
+      "sourceSize": {
+        "w": 149,
+        "h": 183
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_13": {
+      "frame": {
+        "x": 1596,
+        "y": 4,
+        "w": 143,
+        "h": 181
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 143,
+        "h": 181
+      },
+      "sourceSize": {
+        "w": 143,
+        "h": 181
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_34": {
+      "frame": {
+        "x": 1743,
+        "y": 4,
+        "w": 119,
+        "h": 179
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 179
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 179
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_27": {
+      "frame": {
+        "x": 1866,
+        "y": 4,
+        "w": 103,
+        "h": 173
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 173
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 173
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_30": {
+      "frame": {
+        "x": 1973,
+        "y": 4,
+        "w": 59,
+        "h": 173
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 59,
+        "h": 173
+      },
+      "sourceSize": {
+        "w": 59,
+        "h": 173
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_40": {
+      "frame": {
+        "x": 4,
+        "y": 225,
+        "w": 131,
+        "h": 173
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 173
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 173
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_35": {
+      "frame": {
+        "x": 139,
+        "y": 225,
+        "w": 79,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_25": {
+      "frame": {
+        "x": 222,
+        "y": 225,
+        "w": 111,
+        "h": 159
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 111,
+        "h": 159
+      },
+      "sourceSize": {
+        "w": 111,
+        "h": 159
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_36": {
+      "frame": {
+        "x": 337,
+        "y": 225,
+        "w": 65,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 153
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_26": {
+      "frame": {
+        "x": 406,
+        "y": 225,
+        "w": 91,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 151
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_52": {
+      "frame": {
+        "x": 501,
+        "y": 225,
+        "w": 107,
+        "h": 149
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 149
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 149
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_15": {
+      "frame": {
+        "x": 612,
+        "y": 225,
+        "w": 145,
+        "h": 147
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 145,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 145,
+        "h": 147
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_50": {
+      "frame": {
+        "x": 761,
+        "y": 225,
+        "w": 307,
+        "h": 143
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 307,
+        "h": 143
+      },
+      "sourceSize": {
+        "w": 307,
+        "h": 143
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_01": {
+      "frame": {
+        "x": 1072,
+        "y": 225,
+        "w": 79,
+        "h": 141
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 141
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 141
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_02": {
+      "frame": {
+        "x": 1155,
+        "y": 225,
+        "w": 75,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 139
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_24": {
+      "frame": {
+        "x": 1234,
+        "y": 225,
+        "w": 107,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 139
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_51": {
+      "frame": {
+        "x": 1345,
+        "y": 225,
+        "w": 81,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 139
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_47": {
+      "frame": {
+        "x": 1430,
+        "y": 225,
+        "w": 109,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 137
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_19": {
+      "frame": {
+        "x": 1543,
+        "y": 225,
+        "w": 151,
+        "h": 135
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 151,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 151,
+        "h": 135
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_18": {
+      "frame": {
+        "x": 1698,
+        "y": 225,
+        "w": 183,
+        "h": 129
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 183,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 183,
+        "h": 129
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_29": {
+      "frame": {
+        "x": 1885,
+        "y": 225,
+        "w": 121,
+        "h": 129
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 121,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 121,
+        "h": 129
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_48": {
+      "frame": {
+        "x": 4,
+        "y": 402,
+        "w": 75,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_49": {
+      "frame": {
+        "x": 83,
+        "y": 402,
+        "w": 75,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_buildings_17": {
+      "frame": {
+        "x": 162,
+        "y": 402,
+        "w": 157,
+        "h": 125
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 125
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 125
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_42": {
+      "frame": {
+        "x": 323,
+        "y": 402,
+        "w": 75,
+        "h": 123
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 123
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_46": {
+      "frame": {
+        "x": 402,
+        "y": 402,
+        "w": 97,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_59": {
+      "frame": {
+        "x": 503,
+        "y": 402,
+        "w": 109,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_05": {
+      "frame": {
+        "x": 616,
+        "y": 402,
+        "w": 109,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_07": {
+      "frame": {
+        "x": 729,
+        "y": 402,
+        "w": 109,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_09": {
+      "frame": {
+        "x": 842,
+        "y": 402,
+        "w": 111,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 111,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 111,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_10": {
+      "frame": {
+        "x": 957,
+        "y": 402,
+        "w": 81,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_16": {
+      "frame": {
+        "x": 1042,
+        "y": 402,
+        "w": 93,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 93,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 93,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_03": {
+      "frame": {
+        "x": 1139,
+        "y": 402,
+        "w": 101,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_04": {
+      "frame": {
+        "x": 1244,
+        "y": 402,
+        "w": 103,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_06": {
+      "frame": {
+        "x": 1351,
+        "y": 402,
+        "w": 107,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_08": {
+      "frame": {
+        "x": 1462,
+        "y": 402,
+        "w": 107,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_58": {
+      "frame": {
+        "x": 1573,
+        "y": 402,
+        "w": 111,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 111,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 111,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_11": {
+      "frame": {
+        "x": 1688,
+        "y": 402,
+        "w": 93,
+        "h": 107
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 93,
+        "h": 107
+      },
+      "sourceSize": {
+        "w": 93,
+        "h": 107
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_55": {
+      "frame": {
+        "x": 1785,
+        "y": 402,
+        "w": 123,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 103
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_41": {
+      "frame": {
+        "x": 4,
+        "y": 533,
+        "w": 147,
+        "h": 101
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 147,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 147,
+        "h": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_54": {
+      "frame": {
+        "x": 155,
+        "y": 533,
+        "w": 85,
+        "h": 101
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_53": {
+      "frame": {
+        "x": 244,
+        "y": 533,
+        "w": 85,
+        "h": 99
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 99
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_60": {
+      "frame": {
+        "x": 333,
+        "y": 533,
+        "w": 157,
+        "h": 99
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 157,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 157,
+        "h": 99
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_56": {
+      "frame": {
+        "x": 494,
+        "y": 533,
+        "w": 115,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 115,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 115,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_62": {
+      "frame": {
+        "x": 613,
+        "y": 533,
+        "w": 135,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 135,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 135,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_65": {
+      "frame": {
+        "x": 752,
+        "y": 533,
+        "w": 149,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 149,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_37": {
+      "frame": {
+        "x": 905,
+        "y": 533,
+        "w": 169,
+        "h": 93
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 169,
+        "h": 93
+      },
+      "sourceSize": {
+        "w": 169,
+        "h": 93
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_45": {
+      "frame": {
+        "x": 1078,
+        "y": 533,
+        "w": 81,
+        "h": 91
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 91
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 91
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_57": {
+      "frame": {
+        "x": 1163,
+        "y": 533,
+        "w": 83,
+        "h": 89
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 89
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 89
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_43": {
+      "frame": {
+        "x": 1250,
+        "y": 533,
+        "w": 117,
+        "h": 87
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 87
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 87
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_44": {
+      "frame": {
+        "x": 1371,
+        "y": 533,
+        "w": 69,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 69,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 69,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_statues_64": {
+      "frame": {
+        "x": 1444,
+        "y": 533,
+        "w": 189,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 189,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 189,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_graves_63": {
+      "frame": {
+        "x": 1637,
+        "y": 533,
+        "w": 85,
+        "h": 79
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 79
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 79
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "cem11_graves_61": {
+      "frame": {
+        "x": 1726,
+        "y": 533,
+        "w": 187,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 187,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 187,
+        "h": 77
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  },
+  "meta": {
+    "app": "DDWD Environment Atlas Packer",
+    "version": "1.0",
+    "image": "ddwd_env_11.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2040,
+      "h": 638
+    },
+    "scale": 1
+  }
+}

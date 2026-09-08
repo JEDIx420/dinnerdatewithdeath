@@ -6,6 +6,7 @@ export interface EnvironmentPlacement {
   id: string;
   assetId: string;
   textureKey?: string;
+  frame?: string;
 
   // Spatial coordinates
   x: number;
@@ -18,8 +19,11 @@ export interface EnvironmentPlacement {
   originX?: number;
   originY?: number;
   scale?: number;
+  scaleX?: number;
+  scaleY?: number;
   flipX?: boolean;
   flipY?: boolean;
+  alpha?: number;
 
   // Depth control
   depthClass?: DepthClass;
@@ -30,6 +34,12 @@ export interface EnvironmentPlacement {
   collisionProfile?: CollisionProfileId;
   collisionFootprint?: PhysicalFootprint;
   disableCollision?: boolean;
+
+  // Surface attachment parent linkage
+  parentPlacementId?: string;
+  surfaceName?: string;
+  inheritParentScale?: boolean;
+  inheritParentFlip?: boolean;
 
   // Spatial grouping & narrative role
   zone?: string;

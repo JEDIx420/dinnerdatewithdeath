@@ -1,0 +1,1254 @@
+{
+  "packId": "ddwd_env_05",
+  "environmentId": "mansion",
+  "name": "Dining Room",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_05 — Dining Room.png",
+  "sourceDimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "categories": [
+    "furniture",
+    "tableware",
+    "lighting",
+    "decor"
+  ],
+  "assets": [
+    {
+      "id": "dining05_table_banquet_runner",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 286,
+        "y": 58,
+        "width": 212,
+        "height": 155
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "dining_table_large",
+      "surfaces": {
+        "runner": {
+          "id": "runner",
+          "name": "runner",
+          "localX": 30,
+          "localY": 20,
+          "width": 152,
+          "height": 120
+        }
+      },
+      "notes": "Dining Room asset (212x155)"
+    },
+    {
+      "id": "dining05_sideboard_oak",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 536,
+        "y": 48,
+        "width": 80,
+        "height": 163
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "sideboard",
+      "notes": "Dining Room asset (80x163)"
+    },
+    {
+      "id": "dining05_furniture_03",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 944,
+        "y": 58,
+        "width": 122,
+        "height": 151
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (122x151)"
+    },
+    {
+      "id": "dining05_chair_tufted",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1407,
+        "y": 58,
+        "width": 100,
+        "height": 145
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "dining_chair",
+      "notes": "Dining Room asset (100x145)"
+    },
+    {
+      "id": "dining05_furniture_05",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 29,
+        "y": 80,
+        "width": 238,
+        "height": 121
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (238x121)"
+    },
+    {
+      "id": "dining05_furniture_06",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 673,
+        "y": 62,
+        "width": 65,
+        "height": 141
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (65x141)"
+    },
+    {
+      "id": "dining05_furniture_07",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 781,
+        "y": 86,
+        "width": 138,
+        "height": 121
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (138x121)"
+    },
+    {
+      "id": "dining05_furniture_08",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1092,
+        "y": 68,
+        "width": 169,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (169x137)"
+    },
+    {
+      "id": "dining05_furniture_09",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1294,
+        "y": 94,
+        "width": 79,
+        "height": 107
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (79x107)"
+    },
+    {
+      "id": "dining05_furniture_10",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 32,
+        "y": 230,
+        "width": 228,
+        "height": 103
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (228x103)"
+    },
+    {
+      "id": "dining05_furniture_11",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 294,
+        "y": 232,
+        "width": 45,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (45x101)"
+    },
+    {
+      "id": "dining05_furniture_12",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 361,
+        "y": 230,
+        "width": 129,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (129x105)"
+    },
+    {
+      "id": "dining05_furniture_13",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 788,
+        "y": 232,
+        "width": 109,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (109x99)"
+    },
+    {
+      "id": "dining05_candelabra_three_branch",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1317,
+        "y": 238,
+        "width": 88,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "lightSockets": [
+        {
+          "id": "left_flame",
+          "localX": 6,
+          "localY": 4,
+          "radius": 40,
+          "intensity": 0.38,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "center_flame",
+          "localX": 44,
+          "localY": 2,
+          "radius": 44,
+          "intensity": 0.42,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "right_flame",
+          "localX": 82,
+          "localY": 4,
+          "radius": 40,
+          "intensity": 0.38,
+          "flameMode": "overlay"
+        }
+      ],
+      "notes": "Dining Room asset (88x87)"
+    },
+    {
+      "id": "dining05_decor_15",
+      "category": "decor",
+      "sourceRect": {
+        "x": 522,
+        "y": 240,
+        "width": 109,
+        "height": 81
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (109x81)"
+    },
+    {
+      "id": "dining05_decor_16",
+      "category": "decor",
+      "sourceRect": {
+        "x": 680,
+        "y": 256,
+        "width": 53,
+        "height": 51
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (53x51)"
+    },
+    {
+      "id": "dining05_decor_17",
+      "category": "decor",
+      "sourceRect": {
+        "x": 930,
+        "y": 240,
+        "width": 104,
+        "height": 81
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (104x81)"
+    },
+    {
+      "id": "dining05_decor_18",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1064,
+        "y": 240,
+        "width": 105,
+        "height": 85
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (105x85)"
+    },
+    {
+      "id": "dining05_decor_19",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1201,
+        "y": 246,
+        "width": 93,
+        "height": 69
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (93x69)"
+    },
+    {
+      "id": "dining05_decor_20",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1432,
+        "y": 252,
+        "width": 71,
+        "height": 63
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (71x63)"
+    },
+    {
+      "id": "dining05_furniture_21",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 71,
+        "y": 359,
+        "width": 20,
+        "height": 115
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (20x115)"
+    },
+    {
+      "id": "dining05_furniture_22",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 311,
+        "y": 359,
+        "width": 32,
+        "height": 115
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (32x115)"
+    },
+    {
+      "id": "dining05_furniture_23",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 941,
+        "y": 355,
+        "width": 37,
+        "height": 123
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (37x123)"
+    },
+    {
+      "id": "dining05_furniture_24",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1067,
+        "y": 355,
+        "width": 63,
+        "height": 121
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (63x121)"
+    },
+    {
+      "id": "dining05_furniture_25",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1184,
+        "y": 355,
+        "width": 85,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (85x119)"
+    },
+    {
+      "id": "dining05_furniture_26",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 192,
+        "y": 361,
+        "width": 27,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (27x113)"
+    },
+    {
+      "id": "dining05_furniture_27",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 435,
+        "y": 361,
+        "width": 25,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (25x113)"
+    },
+    {
+      "id": "dining05_furniture_28",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 544,
+        "y": 361,
+        "width": 65,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (65x113)"
+    },
+    {
+      "id": "dining05_furniture_29",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 686,
+        "y": 367,
+        "width": 46,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (46x109)"
+    },
+    {
+      "id": "dining05_furniture_30",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 812,
+        "y": 367,
+        "width": 47,
+        "height": 107
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (47x107)"
+    },
+    {
+      "id": "dining05_lighting_31",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1340,
+        "y": 383,
+        "width": 29,
+        "height": 51
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (29x51)"
+    },
+    {
+      "id": "dining05_furniture_32",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1427,
+        "y": 361,
+        "width": 74,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (74x105)"
+    },
+    {
+      "id": "dining05_tableware_10",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 36,
+        "y": 500,
+        "width": 90,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (90x119)"
+    },
+    {
+      "id": "dining05_tableware_02",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 167,
+        "y": 490,
+        "width": 92,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (92x129)"
+    },
+    {
+      "id": "dining05_furniture_35",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 320,
+        "y": 500,
+        "width": 28,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (28x113)"
+    },
+    {
+      "id": "dining05_furniture_36",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 429,
+        "y": 496,
+        "width": 18,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (18x117)"
+    },
+    {
+      "id": "dining05_furniture_37",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 537,
+        "y": 502,
+        "width": 24,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (24x113)"
+    },
+    {
+      "id": "dining05_furniture_38",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 650,
+        "y": 502,
+        "width": 56,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (56x111)"
+    },
+    {
+      "id": "dining05_furniture_39",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 777,
+        "y": 504,
+        "width": 94,
+        "height": 103
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (94x103)"
+    },
+    {
+      "id": "dining05_decor_40",
+      "category": "decor",
+      "sourceRect": {
+        "x": 911,
+        "y": 518,
+        "width": 113,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (113x83)"
+    },
+    {
+      "id": "dining05_furniture_41",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1057,
+        "y": 518,
+        "width": 152,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (152x83)"
+    },
+    {
+      "id": "dining05_decor_42",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1245,
+        "y": 516,
+        "width": 95,
+        "height": 77
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (95x77)"
+    },
+    {
+      "id": "dining05_decor_43",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1402,
+        "y": 522,
+        "width": 77,
+        "height": 57
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (77x57)"
+    },
+    {
+      "id": "dining05_decor_44",
+      "category": "decor",
+      "sourceRect": {
+        "x": 167,
+        "y": 639,
+        "width": 94,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (94x83)"
+    },
+    {
+      "id": "dining05_furniture_45",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 300,
+        "y": 647,
+        "width": 125,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (125x71)"
+    },
+    {
+      "id": "dining05_decor_46",
+      "category": "decor",
+      "sourceRect": {
+        "x": 476,
+        "y": 649,
+        "width": 97,
+        "height": 67
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (97x67)"
+    },
+    {
+      "id": "dining05_decor_47",
+      "category": "decor",
+      "sourceRect": {
+        "x": 627,
+        "y": 647,
+        "width": 99,
+        "height": 65
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (99x65)"
+    },
+    {
+      "id": "dining05_decor_48",
+      "category": "decor",
+      "sourceRect": {
+        "x": 772,
+        "y": 641,
+        "width": 98,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (98x87)"
+    },
+    {
+      "id": "dining05_decor_49",
+      "category": "decor",
+      "sourceRect": {
+        "x": 927,
+        "y": 651,
+        "width": 80,
+        "height": 47
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (80x47)"
+    },
+    {
+      "id": "dining05_decor_50",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1053,
+        "y": 649,
+        "width": 117,
+        "height": 69
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (117x69)"
+    },
+    {
+      "id": "dining05_lighting_51",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1237,
+        "y": 651,
+        "width": 31,
+        "height": 65
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (31x65)"
+    },
+    {
+      "id": "dining05_lighting_52",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1287,
+        "y": 653,
+        "width": 30,
+        "height": 63
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (30x63)"
+    },
+    {
+      "id": "dining05_decor_53",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1388,
+        "y": 639,
+        "width": 91,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (91x83)"
+    },
+    {
+      "id": "dining05_decor_54",
+      "category": "decor",
+      "sourceRect": {
+        "x": 41,
+        "y": 663,
+        "width": 77,
+        "height": 53
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (77x53)"
+    },
+    {
+      "id": "dining05_furniture_55",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 41,
+        "y": 748,
+        "width": 74,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (74x99)"
+    },
+    {
+      "id": "dining05_furniture_56",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 165,
+        "y": 752,
+        "width": 58,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (58x91)"
+    },
+    {
+      "id": "dining05_furniture_57",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 277,
+        "y": 752,
+        "width": 49,
+        "height": 93
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (49x93)"
+    },
+    {
+      "id": "dining05_decor_58",
+      "category": "decor",
+      "sourceRect": {
+        "x": 368,
+        "y": 760,
+        "width": 109,
+        "height": 77
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (109x77)"
+    },
+    {
+      "id": "dining05_decor_59",
+      "category": "decor",
+      "sourceRect": {
+        "x": 517,
+        "y": 764,
+        "width": 68,
+        "height": 75
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (68x75)"
+    },
+    {
+      "id": "dining05_furniture_60",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 647,
+        "y": 754,
+        "width": 60,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (60x91)"
+    },
+    {
+      "id": "dining05_decor_61",
+      "category": "decor",
+      "sourceRect": {
+        "x": 776,
+        "y": 756,
+        "width": 64,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (64x89)"
+    },
+    {
+      "id": "dining05_decor_62",
+      "category": "decor",
+      "sourceRect": {
+        "x": 890,
+        "y": 774,
+        "width": 83,
+        "height": 51
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (83x51)"
+    },
+    {
+      "id": "dining05_decor_63",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1011,
+        "y": 768,
+        "width": 114,
+        "height": 63
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (114x63)"
+    },
+    {
+      "id": "dining05_decor_64",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1162,
+        "y": 766,
+        "width": 95,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (95x71)"
+    },
+    {
+      "id": "dining05_tableware_65",
+      "category": "tableware",
+      "sourceRect": {
+        "x": 1305,
+        "y": 772,
+        "width": 27,
+        "height": 33
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (27x33)"
+    },
+    {
+      "id": "dining05_tableware_66",
+      "category": "tableware",
+      "sourceRect": {
+        "x": 1335,
+        "y": 768,
+        "width": 29,
+        "height": 35
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (29x35)"
+    },
+    {
+      "id": "dining05_decor_67",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1401,
+        "y": 776,
+        "width": 101,
+        "height": 55
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (101x55)"
+    },
+    {
+      "id": "dining05_tableware_68",
+      "category": "tableware",
+      "sourceRect": {
+        "x": 1307,
+        "y": 802,
+        "width": 35,
+        "height": 33
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (35x33)"
+    },
+    {
+      "id": "dining05_tableware_69",
+      "category": "tableware",
+      "sourceRect": {
+        "x": 1349,
+        "y": 816,
+        "width": 15,
+        "height": 13
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (15x13)"
+    },
+    {
+      "id": "dining05_furniture_70",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 26,
+        "y": 873,
+        "width": 131,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (131x105)"
+    },
+    {
+      "id": "dining05_furniture_71",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 186,
+        "y": 891,
+        "width": 121,
+        "height": 85
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (121x85)"
+    },
+    {
+      "id": "dining05_decor_72",
+      "category": "decor",
+      "sourceRect": {
+        "x": 351,
+        "y": 897,
+        "width": 114,
+        "height": 81
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (114x81)"
+    },
+    {
+      "id": "dining05_furniture_73",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 503,
+        "y": 869,
+        "width": 109,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (109x113)"
+    },
+    {
+      "id": "dining05_furniture_74",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 646,
+        "y": 859,
+        "width": 91,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (91x127)"
+    },
+    {
+      "id": "dining05_furniture_75",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 780,
+        "y": 863,
+        "width": 69,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (69x127)"
+    },
+    {
+      "id": "dining05_furniture_76",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 886,
+        "y": 863,
+        "width": 86,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (86x129)"
+    },
+    {
+      "id": "dining05_furniture_77",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1010,
+        "y": 865,
+        "width": 94,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (94x127)"
+    },
+    {
+      "id": "dining05_furniture_78",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1139,
+        "y": 871,
+        "width": 126,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (126x119)"
+    },
+    {
+      "id": "dining05_furniture_79",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1300,
+        "y": 877,
+        "width": 96,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (96x99)"
+    },
+    {
+      "id": "dining05_furniture_80",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1432,
+        "y": 863,
+        "width": 67,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Dining Room asset (67x117)"
+    }
+  ]
+}

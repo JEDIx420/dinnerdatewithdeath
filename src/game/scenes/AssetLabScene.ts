@@ -2,15 +2,11 @@ import Phaser from 'phaser';
 import { GAME_CONFIG } from '../config';
 import { DEATH_MANIFEST } from '../entities/deathManifest';
 import { Direction } from '../entities/CharacterManifest';
-import {
-  ARCHITECTURE_TEXTURE_KEYS,
-  CATEGORY_MAP,
-  ArchitectureCategory,
-} from '../assets/mansionArchitecture';
 import { EnvironmentAssetCatalog } from '../environment/EnvironmentAssetCatalog';
 import { getCollisionProfile } from '../environment/CollisionProfile';
+import { EnvironmentAssetDef } from '../environment/EnvironmentAsset';
 
-type LabTab = 'characters' | 'architecture';
+type LabTab = 'characters' | 'environment';
 
 export class AssetLabScene extends Phaser.Scene {
   private activeTab: LabTab = 'characters';
@@ -25,22 +21,25 @@ export class AssetLabScene extends Phaser.Scene {
   private guidesGraphics!: Phaser.GameObjects.Graphics;
   private charInfoText!: Phaser.GameObjects.Text;
 
-  // --- Architecture QA state ---
-  private archContainer!: Phaser.GameObjects.Container;
-  private readonly archCategories: ArchitectureCategory[] = [
-    'floors',
-    'carpets',
-    'walls',
-    'trims',
-    'columns_arches',
-    'stairs_balustrade',
-    'ornaments',
+  // --- Environment QA state ---
+  private envContainer!: Phaser.GameObjects.Container;
+  private readonly packIds: string[] = [
+    'mansion_architecture',
+    'ddwd_env_02',
+    'ddwd_env_03',
+    'ddwd_env_04',
+    'ddwd_env_05',
+    'ddwd_env_06',
+    'ddwd_env_07',
+    'ddwd_env_08',
+    'ddwd_env_11',
   ];
+  private selectedPackIndex: number = 0;
   private selectedCategoryIndex: number = 0;
   private selectedAssetIndex: number = 0;
-  private archInfoText!: Phaser.GameObjects.Text;
-  private archPreviewSprite!: Phaser.GameObjects.Sprite;
-  private archGuidesGraphics!: Phaser.GameObjects.Graphics;
+  private envInfoText!: Phaser.GameObjects.Text;
+  private envPreviewSprite!: Phaser.GameObjects.Sprite;
+  private envGuidesGraphics!: Phaser.GameObjects.Graphics;
   private headerText!: Phaser.GameObjects.Text;
 
   constructor() {
@@ -48,61 +47,54 @@ export class AssetLabScene extends Phaser.Scene {
   }
 
   public create(): void {
-    // Check URL params
     const params = new URLSearchParams(window.location.search);
-    if (params.get('tab') === 'architecture') {
-      this.activeTab = 'architecture';
+    if (params.get('tab') === 'architecture' || params.get('tab') === 'environment') {
+      this.activeTab = 'environment';
     }
 
-    // Dark neutral background
     const bg = this.add.graphics();
     bg.fillStyle(0x14141c, 1);
     bg.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
 
-    // Title / Header
-    this.headerText = this.add
-      .text(GAME_CONFIG.WIDTH / 2, 22, '', {
-        fontFamily: 'monospace',
-        fontSize: '15px',
-        color: '#b0a4c8',
-      })
-      .setOrigin(0.5);
-
-    // Instructions bar at bottom
-    this.add
-      .text(
-        GAME_CONFIG.WIDTH / 2,
-        GAME_CONFIG.HEIGHT - 16,
-        '[Tab / C / A] Switch Mode | [Esc] Return to Title',
-        {
-          fontFamily: 'monospace',
-          fontSize: '11px',
-          color: '#7a7288',
-        }
-      )
-      .setOrigin(0.5);
+    this.headerText = this.add.text(GAME_CONFIG.WIDTH / 2, 22, '', {
+      fontFamily: 'monospace',
+      fontSize: '13px',
+      color: '#c8bfe7',
+      align: 'center',
+    }).setOrigin(0.5);
 
     this.createCharacterQA();
-    this.createArchitectureQA();
-
-    // Setup input listeners
+    this.createEnvironmentQA();
     this.setupInputs();
 
     this.switchTab(this.activeTab);
   }
 
+  private switchTab(tab: LabTab): void {
+    this.activeTab = tab;
+    if (tab === 'characters') {
+      this.charContainer.setVisible(true);
+      this.envContainer.setVisible(false);
+      this.headerText.setText('— ASSET LAB: CHARACTER QA [C] —');
+      this.updateCharDisplay();
+    } else {
+      this.charContainer.setVisible(false);
+      this.envContainer.setVisible(true);
+      this.headerText.setText('— ASSET LAB: ENVIRONMENT PACK QA [E] —');
+      this.updateEnvDisplay();
+    }
+  }
+
   private createCharacterQA(): void {
     const cx = GAME_CONFIG.WIDTH / 2;
-    const cy = GAME_CONFIG.HEIGHT / 2 - 20;
+    const cy = GAME_CONFIG.HEIGHT / 2 - 25;
 
     this.charContainer = this.add.container(0, 0);
 
-    // Visual Guides (128x128 box & red baseline at Y=112)
     this.guidesGraphics = this.add.graphics();
     this.drawCharGuides(cx, cy);
     this.charContainer.add(this.guidesGraphics);
 
-    // Character Sprite
     const initialDir = this.directions[this.currentDirectionIndex]!;
     this.previewSprite = this.add.sprite(
       cx,
@@ -113,7 +105,6 @@ export class AssetLabScene extends Phaser.Scene {
     this.previewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
     this.charContainer.add(this.previewSprite);
 
-    // Info overlay text
     this.charInfoText = this.add.text(24, GAME_CONFIG.HEIGHT - 110, '', {
       fontFamily: 'monospace',
       fontSize: '11px',
@@ -135,66 +126,95 @@ export class AssetLabScene extends Phaser.Scene {
     this.charContainer.add(charControls);
   }
 
-  private createArchitectureQA(): void {
+  private createEnvironmentQA(): void {
     const cx = GAME_CONFIG.WIDTH / 2;
     const cy = GAME_CONFIG.HEIGHT / 2 - 25;
 
-    this.archContainer = this.add.container(0, 0);
+    this.envContainer = this.add.container(0, 0);
 
-    // Guides graphics for architecture
-    this.archGuidesGraphics = this.add.graphics();
-    this.archContainer.add(this.archGuidesGraphics);
+    this.envGuidesGraphics = this.add.graphics();
+    this.envContainer.add(this.envGuidesGraphics);
 
-    // Preview Sprite
-    const initialKey = ARCHITECTURE_TEXTURE_KEYS[0];
-    this.archPreviewSprite = this.add.sprite(cx, cy, initialKey);
-    this.archPreviewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-    this.archContainer.add(this.archPreviewSprite);
+    const allAssets = EnvironmentAssetCatalog.getAllAssets();
+    const firstAsset = allAssets[0]!;
 
-    // Info text
-    this.archInfoText = this.add.text(24, GAME_CONFIG.HEIGHT - 120, '', {
+    this.envPreviewSprite = this.add.sprite(cx, cy, firstAsset.textureKey);
+    this.envPreviewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+    this.envContainer.add(this.envPreviewSprite);
+
+    this.envInfoText = this.add.text(24, GAME_CONFIG.HEIGHT - 130, '', {
       fontFamily: 'monospace',
-      fontSize: '11px',
+      fontSize: '10px',
       color: '#dcd4ec',
-      lineSpacing: 4,
+      lineSpacing: 3,
     });
-    this.archContainer.add(this.archInfoText);
+    this.envContainer.add(this.envInfoText);
 
-    const archControls = this.add.text(
+    const envControls = this.add.text(
       GAME_CONFIG.WIDTH / 2,
-      GAME_CONFIG.HEIGHT - 38,
-      '[Left/Right] Asset | [Up/Down] Category | [1-5] Composed Samples',
+      GAME_CONFIG.HEIGHT - 28,
+      '[P] Cycle Pack | [Up/Down] Category | [Left/Right] Asset | [Tab] Switch Mode',
       {
         fontFamily: 'monospace',
-        fontSize: '11px',
+        fontSize: '10px',
         color: '#9a90b4',
       }
     ).setOrigin(0.5);
-    this.archContainer.add(archControls);
+    this.envContainer.add(envControls);
   }
 
   private setupInputs(): void {
     this.input.keyboard?.on('keydown-TAB', (e: KeyboardEvent) => {
       e.preventDefault();
-      this.switchTab(this.activeTab === 'characters' ? 'architecture' : 'characters');
+      this.switchTab(this.activeTab === 'characters' ? 'environment' : 'characters');
     });
 
-    this.input.keyboard?.on('keydown-C', () => {
-      this.switchTab('characters');
+    this.input.keyboard?.on('keydown-C', () => this.switchTab('characters'));
+    this.input.keyboard?.on('keydown-A', () => this.switchTab('environment'));
+    this.input.keyboard?.on('keydown-E', () => this.switchTab('environment'));
+
+    this.input.keyboard?.on('keydown-P', () => {
+      if (this.activeTab === 'environment') {
+        this.selectedPackIndex = (this.selectedPackIndex + 1) % this.packIds.length;
+        this.selectedCategoryIndex = 0;
+        this.selectedAssetIndex = 0;
+        this.updateEnvDisplay();
+      }
     });
 
-    this.input.keyboard?.on('keydown-A', () => {
-      this.switchTab('architecture');
+    this.input.keyboard?.on('keydown-UP', () => {
+      if (this.activeTab === 'characters') {
+        this.setDirection('up');
+      } else {
+        this.cycleCategory(-1);
+      }
+    });
+    this.input.keyboard?.on('keydown-DOWN', () => {
+      if (this.activeTab === 'characters') {
+        this.setDirection('down');
+      } else {
+        this.cycleCategory(1);
+      }
+    });
+    this.input.keyboard?.on('keydown-LEFT', () => {
+      if (this.activeTab === 'characters') {
+        this.setDirection('left');
+      } else {
+        this.cycleAsset(-1);
+      }
+    });
+    this.input.keyboard?.on('keydown-RIGHT', () => {
+      if (this.activeTab === 'characters') {
+        this.setDirection('right');
+      } else {
+        this.cycleAsset(1);
+      }
     });
 
-    this.input.keyboard?.on('keydown-ESC', () => {
-      this.scene.start('TitleScene');
-    });
-
-    // Character QA keys
     this.input.keyboard?.on('keydown-SPACE', () => {
       if (this.activeTab === 'characters') {
-        this.toggleAnimation();
+        this.isWalking = !this.isWalking;
+        this.updateCharDisplay();
       }
     });
 
@@ -205,236 +225,186 @@ export class AssetLabScene extends Phaser.Scene {
       }
     });
 
-    // Arrow keys
-    this.input.keyboard?.on('keydown-LEFT', () => {
-      if (this.activeTab === 'characters') {
-        this.cycleDirection(-1);
-      } else {
-        this.cycleArchAsset(-1);
-      }
+    this.input.keyboard?.on('keydown-ESC', () => {
+      this.scene.start('TitleScene');
     });
-
-    this.input.keyboard?.on('keydown-RIGHT', () => {
-      if (this.activeTab === 'characters') {
-        this.cycleDirection(1);
-      } else {
-        this.cycleArchAsset(1);
-      }
-    });
-
-    this.input.keyboard?.on('keydown-UP', () => {
-      if (this.activeTab === 'characters') {
-        this.setDirection('up');
-      } else {
-        this.cycleArchCategory(-1);
-      }
-    });
-
-    this.input.keyboard?.on('keydown-DOWN', () => {
-      if (this.activeTab === 'characters') {
-        this.setDirection('down');
-      } else {
-        this.cycleArchCategory(1);
-      }
-    });
-  }
-
-  private switchTab(tab: LabTab): void {
-    this.activeTab = tab;
-    if (tab === 'characters') {
-      this.headerText.setText('— ASSET LAB: CHARACTER QA [C] —');
-      this.charContainer.setVisible(true);
-      this.archContainer.setVisible(false);
-      this.applyDirection();
-    } else {
-      this.headerText.setText('— ASSET LAB: ARCHITECTURE QA [A] —');
-      this.charContainer.setVisible(false);
-      this.archContainer.setVisible(true);
-      this.updateArchDisplay();
-    }
-  }
-
-  public update(): void {
-    if (this.activeTab === 'characters') {
-      const dir = this.directions[this.currentDirectionIndex]!;
-      const animState = this.isWalking ? 'WALK (Looping)' : 'IDLE';
-      const currentFrame = this.previewSprite.frame?.name ?? '0';
-
-      this.charInfoText.setText([
-        `Character: ${DEATH_MANIFEST.displayName} (${DEATH_MANIFEST.id})`,
-        `Direction: ${dir.toUpperCase()} (Index ${this.currentDirectionIndex})`,
-        `State:     ${animState}`,
-        `Cell:      ${DEATH_MANIFEST.frameWidth} × ${DEATH_MANIFEST.frameHeight} px (Foot Baseline Y=${DEATH_MANIFEST.footBaseline}, Frame #${currentFrame})`,
-        `Filter:    NEAREST`,
-      ]);
-    }
-  }
-
-  // --- Character Logic ---
-  private cycleDirection(delta: number): void {
-    this.currentDirectionIndex =
-      (this.currentDirectionIndex + delta + this.directions.length) % this.directions.length;
-    this.applyDirection();
   }
 
   private setDirection(dir: Direction): void {
     const idx = this.directions.indexOf(dir);
     if (idx !== -1) {
       this.currentDirectionIndex = idx;
-      this.applyDirection();
+      this.updateCharDisplay();
     }
   }
 
-  private toggleAnimation(): void {
-    this.isWalking = !this.isWalking;
-    this.applyDirection();
-  }
-
-  private applyDirection(): void {
+  private updateCharDisplay(): void {
     const dir = this.directions[this.currentDirectionIndex]!;
     const animKey = `${DEATH_MANIFEST.id}_walk_${dir}`;
 
     if (this.isWalking) {
-      this.previewSprite.play(animKey, true);
+      if (!this.previewSprite.anims.isPlaying || this.previewSprite.anims.currentAnim?.key !== animKey) {
+        this.previewSprite.play(animKey);
+      }
     } else {
       this.previewSprite.anims.stop();
       this.previewSprite.setFrame(DEATH_MANIFEST.animations[`walk_${dir}`].idleFrame);
     }
+
+    this.charInfoText.setText([
+      `Character:   ${DEATH_MANIFEST.displayName} (${DEATH_MANIFEST.id})`,
+      `Direction:   ${dir.toUpperCase()}`,
+      `State:       ${this.isWalking ? 'WALKING (Animated)' : 'IDLE (Static Frame)'}`,
+      `Frame Rate:  ${DEATH_MANIFEST.frameRate} FPS`,
+      `Cell Size:   ${DEATH_MANIFEST.frameWidth} × ${DEATH_MANIFEST.frameHeight} px`,
+    ]);
   }
 
   private drawCharGuides(cx: number, cy: number): void {
     this.guidesGraphics.clear();
-    const halfCell = DEATH_MANIFEST.frameWidth / 2; // 64
+    const halfCell = DEATH_MANIFEST.frameWidth / 2;
 
     this.guidesGraphics.lineStyle(1, 0x3d85a8, 0.65);
-    this.guidesGraphics.strokeRect(
-      cx - halfCell,
-      cy - halfCell,
-      DEATH_MANIFEST.frameWidth,
-      DEATH_MANIFEST.frameHeight
-    );
+    this.guidesGraphics.strokeRect(cx - halfCell, cy - halfCell, DEATH_MANIFEST.frameWidth, DEATH_MANIFEST.frameHeight);
 
     const baselineY = cy - halfCell + DEATH_MANIFEST.footBaseline;
     this.guidesGraphics.lineStyle(1, 0xd43d48, 0.85);
-    this.guidesGraphics.lineBetween(
-      cx - halfCell,
-      baselineY,
-      cx + halfCell,
-      baselineY
-    );
+    this.guidesGraphics.lineBetween(cx - halfCell, baselineY, cx + halfCell, baselineY);
   }
 
-  // --- Architecture Logic ---
-  private getCategoryAssets(): string[] {
-    const cat = this.archCategories[this.selectedCategoryIndex]!;
-    return ARCHITECTURE_TEXTURE_KEYS.filter((key) => CATEGORY_MAP[key] === cat);
+  // --- Environment Pack Logic ---
+  private getCurrentPackAssets(): EnvironmentAssetDef[] {
+    const packId = this.packIds[this.selectedPackIndex]!;
+    return EnvironmentAssetCatalog.getAssetsByPack(packId);
   }
 
-  private cycleArchCategory(delta: number): void {
-    this.selectedCategoryIndex =
-      (this.selectedCategoryIndex + delta + this.archCategories.length) %
-      this.archCategories.length;
+  private getCurrentPackCategories(): string[] {
+    const assets = this.getCurrentPackAssets();
+    return Array.from(new Set(assets.map((a) => a.category)));
+  }
+
+  private getCategoryAssets(): EnvironmentAssetDef[] {
+    const cats = this.getCurrentPackCategories();
+    const currentCat = cats[this.selectedCategoryIndex] || cats[0];
+    return this.getCurrentPackAssets().filter((a) => a.category === currentCat);
+  }
+
+  private cycleCategory(delta: number): void {
+    const cats = this.getCurrentPackCategories();
+    if (cats.length === 0) return;
+    this.selectedCategoryIndex = (this.selectedCategoryIndex + delta + cats.length) % cats.length;
     this.selectedAssetIndex = 0;
-    this.updateArchDisplay();
+    this.updateEnvDisplay();
   }
 
-  private cycleArchAsset(delta: number): void {
+  private cycleAsset(delta: number): void {
     const assets = this.getCategoryAssets();
     if (assets.length === 0) return;
-    this.selectedAssetIndex =
-      (this.selectedAssetIndex + delta + assets.length) % assets.length;
-    this.updateArchDisplay();
+    this.selectedAssetIndex = (this.selectedAssetIndex + delta + assets.length) % assets.length;
+    this.updateEnvDisplay();
   }
 
-  private updateArchDisplay(): void {
-    const cat = this.archCategories[this.selectedCategoryIndex]!;
+  private updateEnvDisplay(): void {
+    const packId = this.packIds[this.selectedPackIndex]!;
+    const cats = this.getCurrentPackCategories();
+    const cat = cats[this.selectedCategoryIndex] || cats[0] || 'all';
     const assets = this.getCategoryAssets();
-    const key = assets[this.selectedAssetIndex] || assets[0];
+    const assetDef = assets[this.selectedAssetIndex] || assets[0];
 
-    if (!key) return;
+    if (!assetDef) return;
 
-    const assetDef = EnvironmentAssetCatalog.getAsset(key);
-    const colProfile = assetDef ? getCollisionProfile(assetDef.collisionProfile) : getCollisionProfile('none');
-
-    this.archPreviewSprite.setTexture(key);
-    this.archPreviewSprite.setPosition(GAME_CONFIG.WIDTH / 2, GAME_CONFIG.HEIGHT / 2 - 25);
-    this.archPreviewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
-
-    const frame = this.archPreviewSprite.frame;
-    const w = frame ? frame.width : 0;
-    const h = frame ? frame.height : 0;
+    if (assetDef.frame && this.textures.get(assetDef.textureKey).has(assetDef.frame)) {
+      this.envPreviewSprite.setTexture(assetDef.textureKey, assetDef.frame);
+    } else {
+      this.envPreviewSprite.setTexture(assetDef.textureKey);
+    }
 
     const centerX = GAME_CONFIG.WIDTH / 2;
     const centerY = GAME_CONFIG.HEIGHT / 2 - 25;
+    this.envPreviewSprite.setPosition(centerX, centerY);
+    this.envPreviewSprite.texture.setFilter(Phaser.Textures.FilterMode.NEAREST);
+
+    const frame = this.envPreviewSprite.frame;
+    const w = frame ? frame.width : assetDef.nativeWidth;
+    const h = frame ? frame.height : assetDef.nativeHeight;
+
     const spriteLeft = centerX - w / 2;
     const spriteTop = centerY - h / 2;
     const spriteBottom = centerY + h / 2;
 
-    this.archGuidesGraphics.clear();
+    this.envGuidesGraphics.clear();
 
-    // 1. Draw sprite bounding box (slate blue)
-    this.archGuidesGraphics.lineStyle(1, 0x5a7090, 0.7);
-    this.archGuidesGraphics.strokeRect(spriteLeft, spriteTop, w, h);
+    // 1. Sprite bounding box (slate blue)
+    this.envGuidesGraphics.lineStyle(1, 0x5a7090, 0.7);
+    this.envGuidesGraphics.strokeRect(spriteLeft, spriteTop, w, h);
 
-    // 2. Crosshairs through sprite center
-    this.archGuidesGraphics.lineStyle(1, 0x3d4860, 0.3);
-    this.archGuidesGraphics.lineBetween(spriteLeft - 10, centerY, spriteLeft + w + 10, centerY);
-    this.archGuidesGraphics.lineBetween(centerX, spriteTop - 10, centerX, spriteBottom + 10);
+    // 2. Crosshairs through center
+    this.envGuidesGraphics.lineStyle(1, 0x3d4860, 0.3);
+    this.envGuidesGraphics.lineBetween(spriteLeft - 10, centerY, spriteLeft + w + 10, centerY);
+    this.envGuidesGraphics.lineBetween(centerX, spriteTop - 10, centerX, spriteBottom + 10);
 
     // 3. Ground Anchor point (Yellow crosshair + dot)
-    // For bottom-center (most columns/furniture), ground anchor is at (centerX, spriteBottom)
     let anchorX = centerX;
     let anchorY = spriteBottom;
-    if (assetDef) {
-      if (assetDef.anchorPreset === 'top-left') {
-        anchorX = spriteLeft;
-        anchorY = spriteTop;
-      } else if (assetDef.anchorPreset === 'center') {
-        anchorX = centerX;
-        anchorY = centerY;
-      } else if (assetDef.anchorPreset === 'bottom-left') {
-        anchorX = spriteLeft;
-        anchorY = spriteBottom;
-      } else if (assetDef.anchorPreset === 'bottom-right') {
-        anchorX = spriteLeft + w;
-        anchorY = spriteBottom;
-      }
+    if (assetDef.anchorPreset === 'top-left') {
+      anchorX = spriteLeft;
+      anchorY = spriteTop;
+    } else if (assetDef.anchorPreset === 'center') {
+      anchorX = centerX;
+      anchorY = centerY;
+    } else if (assetDef.anchorPreset === 'bottom-left') {
+      anchorX = spriteLeft;
+      anchorY = spriteBottom;
+    } else if (assetDef.anchorPreset === 'bottom-right') {
+      anchorX = spriteLeft + w;
+      anchorY = spriteBottom;
     }
 
-    this.archGuidesGraphics.lineStyle(1, 0xffe600, 0.9);
-    this.archGuidesGraphics.lineBetween(anchorX - 8, anchorY, anchorX + 8, anchorY);
-    this.archGuidesGraphics.lineBetween(anchorX, anchorY - 8, anchorX, anchorY + 8);
-    this.archGuidesGraphics.fillStyle(0xffe600, 1.0);
-    this.archGuidesGraphics.fillCircle(anchorX, anchorY, 2.5);
+    this.envGuidesGraphics.lineStyle(1, 0xffe600, 0.9);
+    this.envGuidesGraphics.lineBetween(anchorX - 8, anchorY, anchorX + 8, anchorY);
+    this.envGuidesGraphics.lineBetween(anchorX, anchorY - 8, anchorX, anchorY + 8);
+    this.envGuidesGraphics.fillStyle(0xffe600, 1.0);
+    this.envGuidesGraphics.fillCircle(anchorX, anchorY, 2.5);
 
-    // 4. Physical Collision Footprint (Green outline + transparent fill if solid)
+    // 4. Physical Collision Footprint (Green outline)
+    const colProfile = getCollisionProfile(assetDef.collisionProfile);
     if (colProfile && colProfile.id !== 'none' && colProfile.footprint.width > 0) {
       const fp = colProfile.footprint;
       const fpLeft = anchorX - fp.width / 2 + fp.offsetX;
       const fpTop = anchorY + fp.offsetY - fp.height / 2;
 
-      this.archGuidesGraphics.fillStyle(0x00ff88, 0.25);
-      this.archGuidesGraphics.fillRect(fpLeft, fpTop, fp.width, fp.height);
-      this.archGuidesGraphics.lineStyle(1, 0x00ff88, 0.95);
-      this.archGuidesGraphics.strokeRect(fpLeft, fpTop, fp.width, fp.height);
+      this.envGuidesGraphics.fillStyle(0x00ff88, 0.25);
+      this.envGuidesGraphics.fillRect(fpLeft, fpTop, fp.width, fp.height);
+      this.envGuidesGraphics.lineStyle(1, 0x00ff88, 0.95);
+      this.envGuidesGraphics.strokeRect(fpLeft, fpTop, fp.width, fp.height);
     }
 
-    const anchorPresetStr = assetDef ? assetDef.anchorPreset : 'center (default)';
-    const depthClassStr = assetDef ? assetDef.depthClass.toUpperCase() : 'UNKNOWN';
-    const physicalClassStr = assetDef ? assetDef.physicalClass.toUpperCase() : 'NONE';
-    const collisionProfileStr = colProfile.id !== 'none'
+    // 5. Light Sockets (Blue circles)
+    if (assetDef.lightSockets && assetDef.lightSockets.length > 0) {
+      this.envGuidesGraphics.fillStyle(0x0099ff, 1.0);
+      this.envGuidesGraphics.lineStyle(1, 0x0099ff, 0.85);
+      for (const socket of assetDef.lightSockets) {
+        const sx = spriteLeft + socket.localX;
+        const sy = spriteTop + socket.localY;
+        this.envGuidesGraphics.fillCircle(sx, sy, 3);
+        this.envGuidesGraphics.strokeCircle(sx, sy, 7);
+      }
+    }
+
+    const collisionStr = colProfile.id !== 'none'
       ? `${colProfile.name} (${colProfile.footprint.width}×${colProfile.footprint.height}px)`
       : 'NONE';
 
-    this.archInfoText.setText([
-      `Category:         ${cat.toUpperCase()} (${this.selectedCategoryIndex + 1}/${this.archCategories.length})`,
-      `Asset Key:        ${key} (${this.selectedAssetIndex + 1}/${assets.length})`,
-      `Dimensions:       ${w} × ${h} px`,
-      `Anchor Preset:    ${anchorPresetStr}`,
-      `Depth Class:      ${depthClassStr}`,
-      `Physical Class:   ${physicalClassStr}`,
-      `Collision Profile:${collisionProfileStr}`,
-      `Filter:           NEAREST (Pixel-Crisp)`,
+    const socketsCount = assetDef.lightSockets ? assetDef.lightSockets.length : 0;
+
+    this.envInfoText.setText([
+      `Pack:             ${packId.toUpperCase()} (${this.selectedPackIndex + 1}/${this.packIds.length})`,
+      `Category:         ${cat.toUpperCase()} (${this.selectedCategoryIndex + 1}/${cats.length})`,
+      `Asset ID:         ${assetDef.id} (${this.selectedAssetIndex + 1}/${assets.length})`,
+      `Dimensions:       ${w} × ${h} px | Anchor: ${assetDef.anchorPreset}`,
+      `Depth Tier:       ${assetDef.depthClass.toUpperCase()} | Physical: ${assetDef.physicalClass.toUpperCase()}`,
+      `Collision:        ${collisionStr}`,
+      `Light Sockets:    ${socketsCount} sockets | Filter: NEAREST (Crisp)`,
     ]);
   }
 }

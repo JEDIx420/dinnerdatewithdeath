@@ -1,0 +1,1098 @@
+{
+  "packId": "ddwd_env_08",
+  "environmentId": "mansion",
+  "name": "Busts Statues & Clutter",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_08 — Busts Statues & Clutter.png",
+  "sourceDimensions": {
+    "width": 1448,
+    "height": 1086
+  },
+  "categories": [
+    "statues",
+    "busts",
+    "pedestals",
+    "clutter"
+  ],
+  "assets": [
+    {
+      "id": "clutter08_statues_01",
+      "category": "statues",
+      "sourceRect": {
+        "x": 34,
+        "y": 50,
+        "width": 79,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (79x137)"
+    },
+    {
+      "id": "clutter08_statues_02",
+      "category": "statues",
+      "sourceRect": {
+        "x": 160,
+        "y": 30,
+        "width": 73,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (73x161)"
+    },
+    {
+      "id": "clutter08_statues_03",
+      "category": "statues",
+      "sourceRect": {
+        "x": 276,
+        "y": 32,
+        "width": 89,
+        "height": 159
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (89x159)"
+    },
+    {
+      "id": "clutter08_statues_04",
+      "category": "statues",
+      "sourceRect": {
+        "x": 408,
+        "y": 32,
+        "width": 77,
+        "height": 159
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (77x159)"
+    },
+    {
+      "id": "clutter08_statues_05",
+      "category": "statues",
+      "sourceRect": {
+        "x": 526,
+        "y": 26,
+        "width": 97,
+        "height": 175
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (97x175)"
+    },
+    {
+      "id": "clutter08_statues_06",
+      "category": "statues",
+      "sourceRect": {
+        "x": 662,
+        "y": 34,
+        "width": 97,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (97x165)"
+    },
+    {
+      "id": "clutter08_statues_07",
+      "category": "statues",
+      "sourceRect": {
+        "x": 790,
+        "y": 30,
+        "width": 113,
+        "height": 169
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (113x169)"
+    },
+    {
+      "id": "clutter08_statues_08",
+      "category": "statues",
+      "sourceRect": {
+        "x": 932,
+        "y": 34,
+        "width": 105,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (105x165)"
+    },
+    {
+      "id": "clutter08_statues_09",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1070,
+        "y": 38,
+        "width": 101,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (101x161)"
+    },
+    {
+      "id": "clutter08_statues_10",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1196,
+        "y": 42,
+        "width": 95,
+        "height": 157
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (95x157)"
+    },
+    {
+      "id": "clutter08_statues_11",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1318,
+        "y": 34,
+        "width": 95,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (95x165)"
+    },
+    {
+      "id": "clutter08_statues_12",
+      "category": "statues",
+      "sourceRect": {
+        "x": 34,
+        "y": 206,
+        "width": 95,
+        "height": 219
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (95x219)"
+    },
+    {
+      "id": "clutter08_statues_13",
+      "category": "statues",
+      "sourceRect": {
+        "x": 164,
+        "y": 212,
+        "width": 119,
+        "height": 211
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (119x211)"
+    },
+    {
+      "id": "clutter08_statues_14",
+      "category": "statues",
+      "sourceRect": {
+        "x": 318,
+        "y": 204,
+        "width": 119,
+        "height": 221
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (119x221)"
+    },
+    {
+      "id": "clutter08_statues_15",
+      "category": "statues",
+      "sourceRect": {
+        "x": 492,
+        "y": 218,
+        "width": 127,
+        "height": 179
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (127x179)"
+    },
+    {
+      "id": "clutter08_statues_16",
+      "category": "statues",
+      "sourceRect": {
+        "x": 666,
+        "y": 234,
+        "width": 91,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (91x161)"
+    },
+    {
+      "id": "clutter08_statues_17",
+      "category": "statues",
+      "sourceRect": {
+        "x": 800,
+        "y": 234,
+        "width": 81,
+        "height": 163
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (81x163)"
+    },
+    {
+      "id": "clutter08_statues_18",
+      "category": "statues",
+      "sourceRect": {
+        "x": 934,
+        "y": 234,
+        "width": 85,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (85x161)"
+    },
+    {
+      "id": "clutter08_statues_19",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1308,
+        "y": 230,
+        "width": 113,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (113x165)"
+    },
+    {
+      "id": "clutter08_statues_20",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1068,
+        "y": 242,
+        "width": 83,
+        "height": 153
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (83x153)"
+    },
+    {
+      "id": "clutter08_statues_21",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1200,
+        "y": 240,
+        "width": 71,
+        "height": 155
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (71x155)"
+    },
+    {
+      "id": "clutter08_statues_22",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1106,
+        "y": 400,
+        "width": 61,
+        "height": 193
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (61x193)"
+    },
+    {
+      "id": "clutter08_statues_23",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1172,
+        "y": 406,
+        "width": 63,
+        "height": 187
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (63x187)"
+    },
+    {
+      "id": "clutter08_statues_24",
+      "category": "statues",
+      "sourceRect": {
+        "x": 40,
+        "y": 446,
+        "width": 79,
+        "height": 133
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (79x133)"
+    },
+    {
+      "id": "clutter08_statues_25",
+      "category": "statues",
+      "sourceRect": {
+        "x": 158,
+        "y": 454,
+        "width": 83,
+        "height": 123
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (83x123)"
+    },
+    {
+      "id": "clutter08_statues_26",
+      "category": "statues",
+      "sourceRect": {
+        "x": 280,
+        "y": 448,
+        "width": 95,
+        "height": 131
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (95x131)"
+    },
+    {
+      "id": "clutter08_busts_27",
+      "category": "busts",
+      "sourceRect": {
+        "x": 414,
+        "y": 456,
+        "width": 109,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (109x117)"
+    },
+    {
+      "id": "clutter08_statues_28",
+      "category": "statues",
+      "sourceRect": {
+        "x": 688,
+        "y": 450,
+        "width": 99,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (99x129)"
+    },
+    {
+      "id": "clutter08_statues_29",
+      "category": "statues",
+      "sourceRect": {
+        "x": 850,
+        "y": 436,
+        "width": 53,
+        "height": 145
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (53x145)"
+    },
+    {
+      "id": "clutter08_statues_30",
+      "category": "statues",
+      "sourceRect": {
+        "x": 944,
+        "y": 430,
+        "width": 99,
+        "height": 151
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (99x151)"
+    },
+    {
+      "id": "clutter08_statues_31",
+      "category": "statues",
+      "sourceRect": {
+        "x": 1294,
+        "y": 422,
+        "width": 125,
+        "height": 159
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (125x159)"
+    },
+    {
+      "id": "clutter08_busts_32",
+      "category": "busts",
+      "sourceRect": {
+        "x": 562,
+        "y": 480,
+        "width": 89,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (89x95)"
+    },
+    {
+      "id": "clutter08_statues_33",
+      "category": "statues",
+      "sourceRect": {
+        "x": 26,
+        "y": 594,
+        "width": 117,
+        "height": 133
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (117x133)"
+    },
+    {
+      "id": "clutter08_statues_34",
+      "category": "statues",
+      "sourceRect": {
+        "x": 158,
+        "y": 588,
+        "width": 141,
+        "height": 143
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (141x143)"
+    },
+    {
+      "id": "clutter08_statues_35",
+      "category": "statues",
+      "sourceRect": {
+        "x": 556,
+        "y": 596,
+        "width": 127,
+        "height": 123
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (127x123)"
+    },
+    {
+      "id": "clutter08_busts_36",
+      "category": "busts",
+      "sourceRect": {
+        "x": 298,
+        "y": 608,
+        "width": 111,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (111x119)"
+    },
+    {
+      "id": "clutter08_busts_37",
+      "category": "busts",
+      "sourceRect": {
+        "x": 446,
+        "y": 608,
+        "width": 85,
+        "height": 107
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (85x107)"
+    },
+    {
+      "id": "clutter08_busts_38",
+      "category": "busts",
+      "sourceRect": {
+        "x": 722,
+        "y": 614,
+        "width": 75,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (75x99)"
+    },
+    {
+      "id": "clutter08_statues_39",
+      "category": "statues",
+      "sourceRect": {
+        "x": 856,
+        "y": 600,
+        "width": 65,
+        "height": 121
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (65x121)"
+    },
+    {
+      "id": "clutter08_busts_40",
+      "category": "busts",
+      "sourceRect": {
+        "x": 976,
+        "y": 614,
+        "width": 129,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (129x113)"
+    },
+    {
+      "id": "clutter08_busts_41",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1132,
+        "y": 622,
+        "width": 155,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (155x89)"
+    },
+    {
+      "id": "clutter08_busts_42",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1326,
+        "y": 602,
+        "width": 87,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (87x119)"
+    },
+    {
+      "id": "clutter08_busts_43",
+      "category": "busts",
+      "sourceRect": {
+        "x": 28,
+        "y": 736,
+        "width": 105,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (105x111)"
+    },
+    {
+      "id": "clutter08_busts_44",
+      "category": "busts",
+      "sourceRect": {
+        "x": 148,
+        "y": 768,
+        "width": 117,
+        "height": 63
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (117x63)"
+    },
+    {
+      "id": "clutter08_busts_45",
+      "category": "busts",
+      "sourceRect": {
+        "x": 276,
+        "y": 746,
+        "width": 179,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (179x95)"
+    },
+    {
+      "id": "clutter08_busts_46",
+      "category": "busts",
+      "sourceRect": {
+        "x": 482,
+        "y": 724,
+        "width": 61,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (61x111)"
+    },
+    {
+      "id": "clutter08_busts_47",
+      "category": "busts",
+      "sourceRect": {
+        "x": 586,
+        "y": 742,
+        "width": 47,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (47x91)"
+    },
+    {
+      "id": "clutter08_busts_48",
+      "category": "busts",
+      "sourceRect": {
+        "x": 676,
+        "y": 728,
+        "width": 57,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (57x109)"
+    },
+    {
+      "id": "clutter08_busts_49",
+      "category": "busts",
+      "sourceRect": {
+        "x": 768,
+        "y": 746,
+        "width": 131,
+        "height": 85
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (131x85)"
+    },
+    {
+      "id": "clutter08_busts_50",
+      "category": "busts",
+      "sourceRect": {
+        "x": 930,
+        "y": 752,
+        "width": 161,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (161x87)"
+    },
+    {
+      "id": "clutter08_busts_51",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1110,
+        "y": 734,
+        "width": 159,
+        "height": 115
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (159x115)"
+    },
+    {
+      "id": "clutter08_busts_52",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1290,
+        "y": 736,
+        "width": 43,
+        "height": 97
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (43x97)"
+    },
+    {
+      "id": "clutter08_busts_53",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1342,
+        "y": 746,
+        "width": 43,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (43x87)"
+    },
+    {
+      "id": "clutter08_busts_54",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1390,
+        "y": 768,
+        "width": 37,
+        "height": 65
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (37x65)"
+    },
+    {
+      "id": "clutter08_busts_55",
+      "category": "busts",
+      "sourceRect": {
+        "x": 20,
+        "y": 866,
+        "width": 87,
+        "height": 55
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (87x55)"
+    },
+    {
+      "id": "clutter08_busts_56",
+      "category": "busts",
+      "sourceRect": {
+        "x": 134,
+        "y": 862,
+        "width": 77,
+        "height": 61
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (77x61)"
+    },
+    {
+      "id": "clutter08_busts_57",
+      "category": "busts",
+      "sourceRect": {
+        "x": 236,
+        "y": 870,
+        "width": 171,
+        "height": 51
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (171x51)"
+    },
+    {
+      "id": "clutter08_busts_58",
+      "category": "busts",
+      "sourceRect": {
+        "x": 430,
+        "y": 848,
+        "width": 153,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (153x105)"
+    },
+    {
+      "id": "clutter08_busts_59",
+      "category": "busts",
+      "sourceRect": {
+        "x": 610,
+        "y": 856,
+        "width": 121,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (121x83)"
+    },
+    {
+      "id": "clutter08_busts_60",
+      "category": "busts",
+      "sourceRect": {
+        "x": 746,
+        "y": 846,
+        "width": 105,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (105x95)"
+    },
+    {
+      "id": "clutter08_busts_61",
+      "category": "busts",
+      "sourceRect": {
+        "x": 882,
+        "y": 848,
+        "width": 123,
+        "height": 93
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (123x93)"
+    },
+    {
+      "id": "clutter08_busts_62",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1038,
+        "y": 850,
+        "width": 109,
+        "height": 99
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (109x99)"
+    },
+    {
+      "id": "clutter08_busts_63",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1182,
+        "y": 844,
+        "width": 73,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (73x105)"
+    },
+    {
+      "id": "clutter08_busts_64",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1298,
+        "y": 852,
+        "width": 125,
+        "height": 85
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (125x85)"
+    },
+    {
+      "id": "clutter08_statues_65",
+      "category": "statues",
+      "sourceRect": {
+        "x": 32,
+        "y": 942,
+        "width": 145,
+        "height": 123
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (145x123)"
+    },
+    {
+      "id": "clutter08_statues_66",
+      "category": "statues",
+      "sourceRect": {
+        "x": 182,
+        "y": 936,
+        "width": 101,
+        "height": 129
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (101x129)"
+    },
+    {
+      "id": "clutter08_statues_67",
+      "category": "statues",
+      "sourceRect": {
+        "x": 332,
+        "y": 932,
+        "width": 79,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (79x137)"
+    },
+    {
+      "id": "clutter08_busts_68",
+      "category": "busts",
+      "sourceRect": {
+        "x": 456,
+        "y": 962,
+        "width": 119,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (119x105)"
+    },
+    {
+      "id": "clutter08_busts_69",
+      "category": "busts",
+      "sourceRect": {
+        "x": 604,
+        "y": 960,
+        "width": 143,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (143x109)"
+    },
+    {
+      "id": "clutter08_busts_70",
+      "category": "busts",
+      "sourceRect": {
+        "x": 972,
+        "y": 1008,
+        "width": 101,
+        "height": 31
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (101x31)"
+    },
+    {
+      "id": "clutter08_busts_71",
+      "category": "busts",
+      "sourceRect": {
+        "x": 1128,
+        "y": 992,
+        "width": 263,
+        "height": 59
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (263x59)"
+    },
+    {
+      "id": "clutter08_busts_72",
+      "category": "busts",
+      "sourceRect": {
+        "x": 818,
+        "y": 1022,
+        "width": 77,
+        "height": 21
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Busts Statues & Clutter asset (77x21)"
+    }
+  ]
+}

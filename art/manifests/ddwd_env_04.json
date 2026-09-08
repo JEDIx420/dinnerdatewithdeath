@@ -1,0 +1,781 @@
+{
+  "packId": "ddwd_env_04",
+  "environmentId": "mansion",
+  "name": "Great Hall & Gallery",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_04 — Great Hall & Gallery.png",
+  "sourceDimensions": {
+    "width": 1448,
+    "height": 1086
+  },
+  "categories": [
+    "lighting",
+    "sculpture",
+    "furniture",
+    "art",
+    "curios"
+  ],
+  "assets": [
+    {
+      "id": "hall04_chandelier_grand",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 24,
+        "y": 34,
+        "width": 133,
+        "height": 227
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "lightSockets": [
+        {
+          "id": "candle_1",
+          "localX": 18,
+          "localY": 22,
+          "radius": 40,
+          "intensity": 0.35,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "candle_2",
+          "localX": 42,
+          "localY": 26,
+          "radius": 40,
+          "intensity": 0.35,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "candle_3",
+          "localX": 68,
+          "localY": 28,
+          "radius": 44,
+          "intensity": 0.4,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "candle_4",
+          "localX": 94,
+          "localY": 26,
+          "radius": 40,
+          "intensity": 0.35,
+          "flameMode": "overlay"
+        },
+        {
+          "id": "candle_5",
+          "localX": 118,
+          "localY": 22,
+          "radius": 40,
+          "intensity": 0.35,
+          "flameMode": "overlay"
+        }
+      ],
+      "notes": "Great Hall & Gallery asset (133x227)"
+    },
+    {
+      "id": "hall04_statue_bust_marble",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 164,
+        "y": 34,
+        "width": 133,
+        "height": 225
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "statue_large",
+      "notes": "Great Hall & Gallery asset (133x225)"
+    },
+    {
+      "id": "hall04_lighting_03",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 306,
+        "y": 34,
+        "width": 131,
+        "height": 225
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (131x225)"
+    },
+    {
+      "id": "hall04_lighting_04",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1288,
+        "y": 52,
+        "width": 139,
+        "height": 205
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (139x205)"
+    },
+    {
+      "id": "hall04_lighting_05",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 458,
+        "y": 76,
+        "width": 121,
+        "height": 177
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (121x177)"
+    },
+    {
+      "id": "hall04_sculpture_06",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 590,
+        "y": 80,
+        "width": 103,
+        "height": 177
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (103x177)"
+    },
+    {
+      "id": "hall04_sculpture_07",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 710,
+        "y": 70,
+        "width": 93,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (93x183)"
+    },
+    {
+      "id": "hall04_sculpture_08",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 818,
+        "y": 78,
+        "width": 111,
+        "height": 175
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (111x175)"
+    },
+    {
+      "id": "hall04_sculpture_09",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 944,
+        "y": 72,
+        "width": 117,
+        "height": 185
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (117x185)"
+    },
+    {
+      "id": "hall04_sculpture_10",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1080,
+        "y": 82,
+        "width": 95,
+        "height": 169
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (95x169)"
+    },
+    {
+      "id": "hall04_sculpture_11",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1192,
+        "y": 140,
+        "width": 71,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (71x111)"
+    },
+    {
+      "id": "hall04_sculpture_12",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 746,
+        "y": 278,
+        "width": 83,
+        "height": 157
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (83x157)"
+    },
+    {
+      "id": "hall04_sculpture_13",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 876,
+        "y": 278,
+        "width": 87,
+        "height": 167
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (87x167)"
+    },
+    {
+      "id": "hall04_lighting_14",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 30,
+        "y": 342,
+        "width": 211,
+        "height": 79
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (211x79)"
+    },
+    {
+      "id": "hall04_lighting_15",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 272,
+        "y": 320,
+        "width": 245,
+        "height": 107
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (245x107)"
+    },
+    {
+      "id": "hall04_lighting_16",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 548,
+        "y": 338,
+        "width": 153,
+        "height": 91
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (153x91)"
+    },
+    {
+      "id": "hall04_lighting_17",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1012,
+        "y": 320,
+        "width": 169,
+        "height": 105
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (169x105)"
+    },
+    {
+      "id": "hall04_lighting_18",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1250,
+        "y": 310,
+        "width": 125,
+        "height": 129
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "foreground-structure",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (125x129)"
+    },
+    {
+      "id": "hall04_sculpture_19",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 28,
+        "y": 472,
+        "width": 93,
+        "height": 171
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (93x171)"
+    },
+    {
+      "id": "hall04_sculpture_20",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 136,
+        "y": 472,
+        "width": 99,
+        "height": 171
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (99x171)"
+    },
+    {
+      "id": "hall04_sculpture_21",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 368,
+        "y": 468,
+        "width": 101,
+        "height": 175
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (101x175)"
+    },
+    {
+      "id": "hall04_sculpture_22",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 490,
+        "y": 478,
+        "width": 95,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (95x165)"
+    },
+    {
+      "id": "hall04_sculpture_23",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 612,
+        "y": 456,
+        "width": 97,
+        "height": 195
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x195)"
+    },
+    {
+      "id": "hall04_sculpture_24",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 742,
+        "y": 468,
+        "width": 81,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (81x183)"
+    },
+    {
+      "id": "hall04_sculpture_25",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1052,
+        "y": 476,
+        "width": 153,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (153x183)"
+    },
+    {
+      "id": "hall04_sculpture_26",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1212,
+        "y": 446,
+        "width": 193,
+        "height": 207
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (193x207)"
+    },
+    {
+      "id": "hall04_sculpture_27",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 254,
+        "y": 480,
+        "width": 95,
+        "height": 163
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (95x163)"
+    },
+    {
+      "id": "hall04_sculpture_28",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 848,
+        "y": 486,
+        "width": 81,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (81x165)"
+    },
+    {
+      "id": "hall04_sculpture_29",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 960,
+        "y": 490,
+        "width": 59,
+        "height": 161
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (59x161)"
+    },
+    {
+      "id": "hall04_sculpture_30",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1354,
+        "y": 504,
+        "width": 69,
+        "height": 155
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (69x155)"
+    },
+    {
+      "id": "hall04_sculpture_31",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 36,
+        "y": 708,
+        "width": 97,
+        "height": 133
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x133)"
+    },
+    {
+      "id": "hall04_sculpture_32",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 182,
+        "y": 708,
+        "width": 97,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x137)"
+    },
+    {
+      "id": "hall04_sculpture_33",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 326,
+        "y": 716,
+        "width": 97,
+        "height": 125
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x125)"
+    },
+    {
+      "id": "hall04_sculpture_34",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 484,
+        "y": 664,
+        "width": 73,
+        "height": 217
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (73x217)"
+    },
+    {
+      "id": "hall04_sculpture_35",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 618,
+        "y": 700,
+        "width": 121,
+        "height": 159
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (121x159)"
+    },
+    {
+      "id": "hall04_sculpture_36",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 802,
+        "y": 674,
+        "width": 97,
+        "height": 203
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x203)"
+    },
+    {
+      "id": "hall04_sculpture_37",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 964,
+        "y": 674,
+        "width": 97,
+        "height": 203
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x203)"
+    },
+    {
+      "id": "hall04_sculpture_38",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1130,
+        "y": 672,
+        "width": 259,
+        "height": 209
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (259x209)"
+    },
+    {
+      "id": "hall04_sculpture_39",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 44,
+        "y": 860,
+        "width": 83,
+        "height": 193
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (83x193)"
+    },
+    {
+      "id": "hall04_sculpture_40",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 178,
+        "y": 894,
+        "width": 87,
+        "height": 151
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (87x151)"
+    },
+    {
+      "id": "hall04_sculpture_41",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 304,
+        "y": 932,
+        "width": 139,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (139x113)"
+    },
+    {
+      "id": "hall04_sculpture_42",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 496,
+        "y": 934,
+        "width": 77,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (77x113)"
+    },
+    {
+      "id": "hall04_curios_43",
+      "category": "curios",
+      "sourceRect": {
+        "x": 622,
+        "y": 956,
+        "width": 133,
+        "height": 79
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (133x79)"
+    },
+    {
+      "id": "hall04_sculpture_44",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 802,
+        "y": 932,
+        "width": 97,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (97x119)"
+    },
+    {
+      "id": "hall04_sculpture_45",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 944,
+        "y": 934,
+        "width": 57,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (57x111)"
+    },
+    {
+      "id": "hall04_sculpture_46",
+      "category": "sculpture",
+      "sourceRect": {
+        "x": 1060,
+        "y": 932,
+        "width": 59,
+        "height": 115
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (59x115)"
+    },
+    {
+      "id": "hall04_curios_47",
+      "category": "curios",
+      "sourceRect": {
+        "x": 1174,
+        "y": 956,
+        "width": 121,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (121x83)"
+    },
+    {
+      "id": "hall04_curios_48",
+      "category": "curios",
+      "sourceRect": {
+        "x": 1340,
+        "y": 952,
+        "width": 77,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Great Hall & Gallery asset (77x91)"
+    }
+  ]
+}

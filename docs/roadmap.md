@@ -90,6 +90,31 @@ This document tracks engineering and narrative production milestones for **A Din
 - **Automated Test Coverage**:
   - Added `tests/environment.test.ts` (13 tests) validating catalog metadata integrity, footprint decoupling, symmetry math, depth hierarchy, and placement integration. All 42 unit tests passing.
 
+### `v0.0.6.4` — Production Mansion Furnishing & Environment Packs ✅
+- **Ingested 8 Production Environment Packs**:
+  - `DDWD_ENV_02` (Doors, Windows, Staircase: 66 assets), `DDWD_ENV_03` (Death Bedchamber: 41 assets), `DDWD_ENV_04` (Great Hall & Gallery: 48 assets), `DDWD_ENV_05` (Dining Room: 80 assets), `DDWD_ENV_06` (Lounge & Fireplace: 69 assets), `DDWD_ENV_07` (Death's Art Collection: 47 assets), `DDWD_ENV_08` (Busts, Statues & Clutter: 72 assets), `DDWD_ENV_11` (Cemetery: 65 assets).
+  - Preserved strict **Cemetery Isolation**: Cataloged in library, zero cemetery assets placed inside the mansion.
+- **Multi-Pack Texture Atlas Pipeline**:
+  - Implemented shelf packer (`tools/assets/build-pack-atlases.ts`), packing extracted sprites into compact PNG & Hash JSON atlases under `public/game-assets/environment/mansion/packs/` (and `cemetery/packs/`).
+  - Reduced runtime HTTP requests by ~95%, preserving fast title screen loading without 300+ loose file fetches.
+  - Generated labeled preview contact sheets in `art/previews/environment/`.
+- **Physical Light Fixture & Socket Architecture (`LightFixtureSystem.ts`)**:
+  - Eliminated "hovering naked candle flames": attached lights and animated micro-flickering flames (`decor_flame_teardrop`) directly to physical candelabras, sconces, chandeliers, and fireplace wicks via local `lightSockets` metadata.
+  - Zero naked floating flames anywhere in the mansion.
+- **Parent-Relative Surface Attachments (`EnvironmentComposer.ts`)**:
+  - Supported parent-relative surface attachments (`parentPlacementId`, `surfaceName`), sorting plates, wine bottles, and candles on top of banquet tables and nightstands while suppressing child physics collision.
+- **Architectural Room Portals**:
+  - Clean portal doorway frames for lateral and vertical passages without awkward front-facing doors.
+- **Authoritative World Furnishing Across All 5 Zones (`mansionPlacements.ts`, `MansionRoom.ts`)**:
+  - Bedchamber: Grand gothic bed, focal vanity/mirror with framing columns and cornice, tall carved wardrobe, bedside nightstand with candelabra, upholstered armchair.
+  - Dining Room: Hero banquet table with crimson runner, tufted dining chairs, silver 3-branch candelabras, porcelain plates, wine bottle and goblet settings, oak sideboard credenza.
+  - Great Hall: Grand 5-branch bronze chandelier, marble bust sculptures, curated framed fine art.
+  - Lounge: Carved stone fireplace hearth, tufted velvet sofas, coffee table, tall bookshelf, retro console.
+- **Developer QA & Multi-Pack Asset Lab (`AssetLabScene.ts`)**:
+  - Interactive multi-pack QA supporting pack cycling (`[P]`), category cycling, asset cycling, bounding boxes, collision footprints, and light sockets.
+- **Verification & Testing**:
+  - Updated unit test suite (`tests/environment.test.ts`, `tests/world.test.ts`) covering 568 catalog assets, multi-pack registration, collision footprints, parent attachments, zero-cemetery isolation. All 43 tests passing.
+
 ---
 
 ## Upcoming Milestones

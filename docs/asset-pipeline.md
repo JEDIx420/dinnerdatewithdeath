@@ -108,14 +108,36 @@ The source sheet contains 80 distinct components organized across 7 functional c
 
 ## 5. Generic Environment Sheet Runner (`v0.0.6.3`)
 
-For future environment source sheets (`DDWD_ENV_02`, furniture, decor, exterior assets):
+For generic environment source sheets:
 - Script: `tools/assets/process-environment-sheet.ts`
-- Usage:
-  ```bash
-  npx tsx tools/assets/process-environment-sheet.ts <manifestPath>
-  # Or default architecture manifest:
-  npm run assets:environment
-  ```
 - Reads any JSON manifest following the `EnvironmentManifest` schema (`sourceImage`, `sourceDimensions`, `categories`, `assets` with `sourceRect`).
 - Automatically extracts trimmed RGBA sprites into `public/game-assets/environment/mansion/<manifest-name>/<category>/` and builds an organized visual contact preview sheet in `art/previews/environment/mansion/<manifest-name>/contact-sheet.png`.
+
+---
+
+## 6. Multi-Pack Environment Texture Atlas Pipeline (`v0.0.6.4`)
+
+Milestone `v0.0.6.4` scales the asset pipeline from individual loose files to packaged texture atlases, avoiding hundreds of standalone HTTP requests on startup.
+
+### Source Packs
+- `DDWD_ENV_02 — Doors Windows Staircase.png` (1448 × 1086): 66 assets (gothic windows, portal openings, drapery, bronze sconces, stair treads).
+- `DDWD_ENV_03 — Death Bedchamber.png` (1448 × 1086): 41 assets (grand gothic bed, ornate vanity, carved tall wardrobe, bedside cabinet, tufted armchair, chests, clutter).
+- `DDWD_ENV_04 — Great Hall & Gallery.png` (1448 × 1086): 48 assets (grand 5-branch chandelier, marble bust statues, curio displays, heraldry).
+- `DDWD_ENV_05 — Dining Room.png` (1536 × 1024): 80 assets (massive banquet table with runner, tufted dining chairs, oak sideboard, 3-branch candelabras, porcelain plates, wine goblets, roses).
+- `DDWD_ENV_06 — Lounge & Fireplace.png` (1448 × 1086): 69 assets (stone hearth fireplace, velvet tufted sofas, armchairs, coffee table, tall bookshelves, console).
+- `DDWD_ENV_07 — Death's Art Collection.png` (1448 × 1086): 47 assets (framed oil paintings, still-life skulls, maritime tempest, gothic portraits).
+- `DDWD_ENV_08 — Busts Statues & Clutter.png` (1448 × 1086): 72 assets (classical marble and bronze busts, pediment statues, pedestal clutter).
+- `DDWD_ENV_11 — Cemetery.png` (1254 × 1254): 65 assets (mausoleums, tomb markers, weeping angel statues, iron gates). **Cemetery isolation**: Processed and cataloged in the library, but strictly excluded from mansion room placements.
+
+### Deterministic Atlas Packing
+- Tool: `tools/assets/build-all-assets.ts` (orchestrating `build-environment-manifests.ts`, `build-pack-atlases.ts`, and `build-compiled-catalog.ts`).
+- Executes a height-sorted shelf packing algorithm to pack sprites into clean power-of-two width (max 2048px) texture atlases with 4px padding.
+- Emits Phaser 3 compatible Hash JSON texture atlases under `public/game-assets/environment/mansion/packs/` and `public/game-assets/environment/cemetery/packs/`.
+- Emits high-contrast QA contact sheets under `art/previews/environment/mansion/<packId>/contact-sheet.png` and `art/previews/environment/cemetery/ddwd_env_11/contact-sheet.png`.
+- Recompiles `src/game/environment/EnvironmentAssetCatalog.ts` with 568 total assets, light sockets, window masks, and surface regions.
+- Execution:
+  ```bash
+  npm run assets
+  ```
+
 

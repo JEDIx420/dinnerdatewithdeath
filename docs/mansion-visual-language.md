@@ -27,12 +27,13 @@ The mansion floor plan is structured as a vertical narrative journey across two 
 ### Upper Floor (Private Realm)
 1. **Death's Bedchamber / Dressing Chamber (North-West, x: 48..448, y: 72..320)**:
    - Dark patterned stone blocks floor (`floor_stone_blocks_dark`) with deep violet rug (`rug_dressing`).
-   - Ornate Gothic Mirror (`dressing_mirror`) framed by fluted wood columns (`column_wood_fluted`), egg-and-dart carved cornice (`trim_cornice_wood_a`), and fleur-de-lis wall ornament (`ornament_fleur_de_lis`). Carved vanity console, antique wardrobe, bedside nightstand, armchair, and tall window with interior-masked rain.
+   - Hero Grand Gothic Bed (`bed03_bed_grand_gothic`), focal vanity and mirror (`bed03_vanity_ornate`) framed by fluted wood columns (`column_wood_fluted`) and carved cornice (`trim_cornice_wood_a`), antique carved wardrobe (`bed03_wardrobe_tall`), bedside nightstand (`bed03_bedside_cabinet`) with surface-attached candelabra fixture (`dining05_candelabra_three_branch`), upholstered crimson armchair (`bed03_armchair_crimson`), and tall gothic window (`env02_window_gothic_tall`) with masked rain.
    - Death spawns here in front of his mirror on New Year's Eve, facing north.
 2. **Upper Landing & Balustrade Overlook (North-East, x: 448..832, y: 72..288)**:
    - Polished dark mahogany planks (`floor_wood_planks_dark`) with ceremonial bordered crimson runner (`carpet_crimson_border`).
-   - Carved wood wall panels (`wall_panel_fleur_ornate`, `wall_panel_fleur_small`), studded cornice moulding (`trim_cornice_studded`), wall sconces with soft flickering light halos, aristocratic silhouette portrait, and memento mori study.
+   - Carved wood wall panels, bronze wall sconce fixtures (`env02_sconce_bronze`) with attached candles, aristocratic silhouette portrait, and memento mori skull study (`art07_paintings_03`).
    - Production turned balustrade overlook (`balustrade_section`) with large newel posts (`newel_post_large`) looking down over the Great Hall below.
+   - Clean portal doorway framing (`env02_door_jamb_portal`) opening naturally into the private wing without awkward front-facing doors blocking horizontal passage.
 
 ### Connector
 3. **Grand Central Staircase (Hero Traversal, x: 560..720, y: 260..548)**:
@@ -44,24 +45,24 @@ The mansion floor plan is structured as a vertical narrative journey across two 
 ### Ground Floor (Public & Intimate Realm)
 4. **Great Hall / Central Gallery (Ground Center, x: 448..832, y: 520..920)**:
    - Vast polished black-veined marble floor (`floor_marble_black_veined`) centered with an octagonal ornamental compass medallion in gold frame (`floor_medallion_octagonal`).
-   - Massive stone columns (`column_stone_massive`), pointed gothic arches (`arch_gothic_pointed_stone`), foliate spandrels (`arch_spandrel_left/right`), arched bust niche (`wall_niche_bust`), and heraldic crest (`ornament_foliage_crest_a`).
-   - Grand gothic bronze chandelier (`decor_chandelier`) with 6 burning tapers floating overhead at foreground arch depth.
-   - Curated fine artwork collection: *Celestial Chart of the Spheres* and *Study of a Distant Battlefield*.
+   - Massive stone columns (`column_stone_massive`), pointed gothic arches (`arch_gothic_pointed_stone`), arched bust niche (`wall_niche_bust`), heraldic crests, and classical marble bust sculptures (`hall04_statue_bust_marble`).
+   - Grand gothic bronze chandelier (`hall04_chandelier_grand`) with 5 burning tapers floating overhead at foreground structure depth (`6000`), casting light downward.
+   - Curated fine artwork collection: *Study of a Distant Tempest* (`art07_paintings_04`) and *Celestial Astrological Chart* (`art07_paintings_01`).
 5. **Hero Dining Room (Ground West, x: 48..448, y: 520..920)**:
    - Emotional centerpiece of the game. Dark mahogany wood plank floor (`floor_wood_planks_dark`) with deep crimson velvet area rug (`rug_dining`, 288×256).
-   - Rich crimson damask fabric wall panels (`wall_panel_damask_crimson`), gold-framed stone insets (`wall_panel_stone_framed_gold`), ribbed horizontal moulding (`trim_moulding_ribbed_h`), and Corinthian fluted columns (`column_wood_corinthian`).
-   - Hero Banquet Table (`dining_table`, 176×68) set for two:
-     - Rich crimson velvet runner with gold filigree hems.
-     - Centerpiece vintage wine bottle with ivory label and cork, plus crystal decanter with crimson wine.
-     - Two silver 3-branch candelabras with flickering teardrop flames.
-     - Love's setting (left): fine bone china plate with gold rim and crimson well, polished silverware, crystal goblet with red wine, neatly folded ivory linen napkin, and Love's waiting carved high-back chair pulled out slightly.
-     - Death's setting (right): matching plate, cutlery, filled wine goblet, folded napkin, and Death's dark gothic chair.
-     - Wine credenza sideboard along north wall.
+   - Rich crimson damask fabric wall panels, gold-framed stone insets, ribbed horizontal moulding, and Corinthian fluted columns (`column_wood_corinthian`).
+   - Production Banquet Table (`dining05_table_banquet_runner`) set for two:
+     - Crimson velvet table runner with gold filigree hems.
+     - Centerpiece silver 3-branch candelabras (`dining05_candelabra_three_branch`) with teardrop flames anchored precisely to wicks.
+     - Surface-attached tableware: porcelain dinner plates (`dining05_tableware_02`) and vintage wine bottle / crystal goblet settings (`dining05_tableware_10`).
+     - Tufted high-backed dining chairs (`dining05_chair_tufted`) for Love (left) and Death (right).
+     - Carved oak sideboard credenza (`dining05_sideboard_oak`) along north wall.
 6. **Lounge & Hearth Area (Ground East, x: 832..1232, y: 520..920)**:
    - Dark herringbone parquet flooring (`floor_herringbone_dark`) with fireside velvet rug (`rug_lounge`, 240×208).
-   - Recessed stone niche backing (`wall_niche_empty`), ornate grotesque/shield corbels (`corbel_shield_fleur`, `corbel_ornate_foliage`), gold-accented wood panels (`panel_inset_wood_gold`), and fluted stone columns (`column_stone_fluted`).
-   - Carved stone fireplace hearth featuring a 4-layer animated hearth fire and rising ambient embers.
-   - Tufted burgundy velvet sofa, plush armchair, coffee table with leather-bound book and crystal ashtray, tall ancient bookshelf with multi-colored tome spines, and retro television console.
+   - Recessed stone niche backing, grotesque/shield corbels, gold-accented wood panels, and fluted stone columns (`column_stone_fluted`).
+   - Massive carved stone fireplace hearth (`lounge06_fireplace_stone`) with animated hearth fire and rising ember sparks.
+   - Tufted burgundy velvet sofa (`lounge06_sofa_ornate`), plush armchair (`lounge06_armchair_velvet`), wooden coffee table (`lounge06_coffee_table_wood`), tall ancient bookshelf with multi-colored tome spines (`lounge06_bookshelf_tall`), and retro console (`lounge06_tv_retro`).
+   - Zero naked hovering flames: every candle flame in the mansion is anchored to a physical candlestick, sconce, candelabra, chandelier, or fireplace.
 
 ---
 

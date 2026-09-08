@@ -1,0 +1,1671 @@
+{
+  "frames": {
+    "lounge06_furniture_48": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 95,
+        "h": 197
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 197
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 197
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_25": {
+      "frame": {
+        "x": 103,
+        "y": 4,
+        "w": 117,
+        "h": 173
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 173
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 173
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_24": {
+      "frame": {
+        "x": 224,
+        "y": 4,
+        "w": 107,
+        "h": 171
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 171
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 171
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_26": {
+      "frame": {
+        "x": 335,
+        "y": 4,
+        "w": 93,
+        "h": 171
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 93,
+        "h": 171
+      },
+      "sourceSize": {
+        "w": 93,
+        "h": 171
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_27": {
+      "frame": {
+        "x": 432,
+        "y": 4,
+        "w": 107,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_stone": {
+      "frame": {
+        "x": 543,
+        "y": 4,
+        "w": 519,
+        "h": 159
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 519,
+        "h": 159
+      },
+      "sourceSize": {
+        "w": 519,
+        "h": 159
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_32": {
+      "frame": {
+        "x": 1066,
+        "y": 4,
+        "w": 93,
+        "h": 155
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 93,
+        "h": 155
+      },
+      "sourceSize": {
+        "w": 93,
+        "h": 155
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_17": {
+      "frame": {
+        "x": 1163,
+        "y": 4,
+        "w": 91,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 153
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_20": {
+      "frame": {
+        "x": 1258,
+        "y": 4,
+        "w": 105,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 153
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_31": {
+      "frame": {
+        "x": 1367,
+        "y": 4,
+        "w": 99,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 151
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_34": {
+      "frame": {
+        "x": 1470,
+        "y": 4,
+        "w": 105,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 151
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_49": {
+      "frame": {
+        "x": 1579,
+        "y": 4,
+        "w": 83,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 151
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_bookshelf_tall": {
+      "frame": {
+        "x": 1666,
+        "y": 4,
+        "w": 73,
+        "h": 149
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 149
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 149
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_28": {
+      "frame": {
+        "x": 1743,
+        "y": 4,
+        "w": 127,
+        "h": 147
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 127,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 127,
+        "h": 147
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_52": {
+      "frame": {
+        "x": 1874,
+        "y": 4,
+        "w": 161,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 145
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_30": {
+      "frame": {
+        "x": 4,
+        "y": 205,
+        "w": 105,
+        "h": 141
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 141
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 141
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_33": {
+      "frame": {
+        "x": 113,
+        "y": 205,
+        "w": 169,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 169,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 169,
+        "h": 139
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_51": {
+      "frame": {
+        "x": 286,
+        "y": 205,
+        "w": 241,
+        "h": 135
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 241,
+        "h": 135
+      },
+      "sourceSize": {
+        "w": 241,
+        "h": 135
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_21": {
+      "frame": {
+        "x": 531,
+        "y": 205,
+        "w": 155,
+        "h": 131
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 155,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 155,
+        "h": 131
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_29": {
+      "frame": {
+        "x": 690,
+        "y": 205,
+        "w": 129,
+        "h": 131
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 129,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 129,
+        "h": 131
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_40": {
+      "frame": {
+        "x": 823,
+        "y": 205,
+        "w": 43,
+        "h": 129
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 129
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_01": {
+      "frame": {
+        "x": 870,
+        "y": 205,
+        "w": 103,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 103,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 103,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_02": {
+      "frame": {
+        "x": 977,
+        "y": 205,
+        "w": 113,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 113,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_03": {
+      "frame": {
+        "x": 1094,
+        "y": 205,
+        "w": 107,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_18": {
+      "frame": {
+        "x": 1205,
+        "y": 205,
+        "w": 111,
+        "h": 123
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 111,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 111,
+        "h": 123
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_41": {
+      "frame": {
+        "x": 1320,
+        "y": 205,
+        "w": 61,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_50": {
+      "frame": {
+        "x": 1385,
+        "y": 205,
+        "w": 81,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_56": {
+      "frame": {
+        "x": 1470,
+        "y": 205,
+        "w": 119,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_04": {
+      "frame": {
+        "x": 1593,
+        "y": 205,
+        "w": 85,
+        "h": 115
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 115
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_54": {
+      "frame": {
+        "x": 1682,
+        "y": 205,
+        "w": 43,
+        "h": 115
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 115
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_55": {
+      "frame": {
+        "x": 1729,
+        "y": 205,
+        "w": 43,
+        "h": 115
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 115
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_39": {
+      "frame": {
+        "x": 1776,
+        "y": 205,
+        "w": 57,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_16": {
+      "frame": {
+        "x": 1837,
+        "y": 205,
+        "w": 97,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_44": {
+      "frame": {
+        "x": 4,
+        "y": 350,
+        "w": 161,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_57": {
+      "frame": {
+        "x": 169,
+        "y": 350,
+        "w": 119,
+        "h": 107
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 107
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 107
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_60": {
+      "frame": {
+        "x": 292,
+        "y": 350,
+        "w": 83,
+        "h": 105
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_05": {
+      "frame": {
+        "x": 379,
+        "y": 350,
+        "w": 67,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 103
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_07": {
+      "frame": {
+        "x": 450,
+        "y": 350,
+        "w": 71,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 103
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_61": {
+      "frame": {
+        "x": 525,
+        "y": 350,
+        "w": 89,
+        "h": 103
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 103
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 103
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_fireplace_58": {
+      "frame": {
+        "x": 618,
+        "y": 350,
+        "w": 131,
+        "h": 101
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_armchair_velvet": {
+      "frame": {
+        "x": 753,
+        "y": 350,
+        "w": 67,
+        "h": 99
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 99
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_62": {
+      "frame": {
+        "x": 824,
+        "y": 350,
+        "w": 93,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 93,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 93,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_19": {
+      "frame": {
+        "x": 921,
+        "y": 350,
+        "w": 97,
+        "h": 93
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 93
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 93
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_42": {
+      "frame": {
+        "x": 1022,
+        "y": 350,
+        "w": 45,
+        "h": 91
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 45,
+        "h": 91
+      },
+      "sourceSize": {
+        "w": 45,
+        "h": 91
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_45": {
+      "frame": {
+        "x": 1071,
+        "y": 350,
+        "w": 39,
+        "h": 91
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 39,
+        "h": 91
+      },
+      "sourceSize": {
+        "w": 39,
+        "h": 91
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_11": {
+      "frame": {
+        "x": 1114,
+        "y": 350,
+        "w": 73,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 85
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_59": {
+      "frame": {
+        "x": 1191,
+        "y": 350,
+        "w": 89,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 85
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_35": {
+      "frame": {
+        "x": 1284,
+        "y": 350,
+        "w": 109,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_36": {
+      "frame": {
+        "x": 1397,
+        "y": 350,
+        "w": 115,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 115,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 115,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_37": {
+      "frame": {
+        "x": 1516,
+        "y": 350,
+        "w": 97,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_13": {
+      "frame": {
+        "x": 1617,
+        "y": 350,
+        "w": 65,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 81
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_23": {
+      "frame": {
+        "x": 1686,
+        "y": 350,
+        "w": 77,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 81
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_63": {
+      "frame": {
+        "x": 1767,
+        "y": 350,
+        "w": 91,
+        "h": 81
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 81
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 81
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_coffee_table_wood": {
+      "frame": {
+        "x": 1862,
+        "y": 350,
+        "w": 97,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 77
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_sofa_ornate": {
+      "frame": {
+        "x": 4,
+        "y": 463,
+        "w": 105,
+        "h": 77
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 77
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 77
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_14": {
+      "frame": {
+        "x": 113,
+        "y": 463,
+        "w": 81,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 73
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_46": {
+      "frame": {
+        "x": 198,
+        "y": 463,
+        "w": 43,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 73
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_08": {
+      "frame": {
+        "x": 245,
+        "y": 463,
+        "w": 95,
+        "h": 71
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 71
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 71
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_43": {
+      "frame": {
+        "x": 344,
+        "y": 463,
+        "w": 55,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 55,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 55,
+        "h": 69
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_38": {
+      "frame": {
+        "x": 403,
+        "y": 463,
+        "w": 99,
+        "h": 67
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 67
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 67
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_47": {
+      "frame": {
+        "x": 506,
+        "y": 463,
+        "w": 35,
+        "h": 57
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 35,
+        "h": 57
+      },
+      "sourceSize": {
+        "w": 35,
+        "h": 57
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_tv_retro": {
+      "frame": {
+        "x": 545,
+        "y": 463,
+        "w": 75,
+        "h": 55
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 55
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_flame_53": {
+      "frame": {
+        "x": 624,
+        "y": 463,
+        "w": 35,
+        "h": 53
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 35,
+        "h": 53
+      },
+      "sourceSize": {
+        "w": 35,
+        "h": 53
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_67": {
+      "frame": {
+        "x": 663,
+        "y": 463,
+        "w": 113,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 113,
+        "h": 41
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_69": {
+      "frame": {
+        "x": 780,
+        "y": 463,
+        "w": 105,
+        "h": 41
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 41
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 41
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_64": {
+      "frame": {
+        "x": 889,
+        "y": 463,
+        "w": 97,
+        "h": 39
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 39
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 39
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_68": {
+      "frame": {
+        "x": 990,
+        "y": 463,
+        "w": 131,
+        "h": 35
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 35
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 35
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_65": {
+      "frame": {
+        "x": 1125,
+        "y": 463,
+        "w": 117,
+        "h": 33
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 33
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "lounge06_furniture_66": {
+      "frame": {
+        "x": 1246,
+        "y": 463,
+        "w": 109,
+        "h": 33
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 33
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 33
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  },
+  "meta": {
+    "app": "DDWD Environment Atlas Packer",
+    "version": "1.0",
+    "image": "ddwd_env_06.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2043,
+      "h": 544
+    },
+    "scale": 1
+  }
+}

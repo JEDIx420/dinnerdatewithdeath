@@ -1,0 +1,1743 @@
+{
+  "frames": {
+    "clutter08_statues_14": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 119,
+        "h": 221
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 221
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 221
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_12": {
+      "frame": {
+        "x": 127,
+        "y": 4,
+        "w": 95,
+        "h": 219
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 219
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 219
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_13": {
+      "frame": {
+        "x": 226,
+        "y": 4,
+        "w": 119,
+        "h": 211
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 211
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 211
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_22": {
+      "frame": {
+        "x": 349,
+        "y": 4,
+        "w": 61,
+        "h": 193
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 193
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 193
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_23": {
+      "frame": {
+        "x": 414,
+        "y": 4,
+        "w": 63,
+        "h": 187
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 63,
+        "h": 187
+      },
+      "sourceSize": {
+        "w": 63,
+        "h": 187
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_15": {
+      "frame": {
+        "x": 481,
+        "y": 4,
+        "w": 127,
+        "h": 179
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 127,
+        "h": 179
+      },
+      "sourceSize": {
+        "w": 127,
+        "h": 179
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_05": {
+      "frame": {
+        "x": 612,
+        "y": 4,
+        "w": 97,
+        "h": 175
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 175
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 175
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_07": {
+      "frame": {
+        "x": 713,
+        "y": 4,
+        "w": 113,
+        "h": 169
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 169
+      },
+      "sourceSize": {
+        "w": 113,
+        "h": 169
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_06": {
+      "frame": {
+        "x": 830,
+        "y": 4,
+        "w": 97,
+        "h": 165
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 97,
+        "h": 165
+      },
+      "sourceSize": {
+        "w": 97,
+        "h": 165
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_08": {
+      "frame": {
+        "x": 931,
+        "y": 4,
+        "w": 105,
+        "h": 165
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 165
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 165
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_11": {
+      "frame": {
+        "x": 1040,
+        "y": 4,
+        "w": 95,
+        "h": 165
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 165
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 165
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_19": {
+      "frame": {
+        "x": 1139,
+        "y": 4,
+        "w": 113,
+        "h": 165
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 113,
+        "h": 165
+      },
+      "sourceSize": {
+        "w": 113,
+        "h": 165
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_17": {
+      "frame": {
+        "x": 1256,
+        "y": 4,
+        "w": 81,
+        "h": 163
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 163
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 163
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_02": {
+      "frame": {
+        "x": 1341,
+        "y": 4,
+        "w": 73,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_09": {
+      "frame": {
+        "x": 1418,
+        "y": 4,
+        "w": 101,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_16": {
+      "frame": {
+        "x": 1523,
+        "y": 4,
+        "w": 91,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_18": {
+      "frame": {
+        "x": 1618,
+        "y": 4,
+        "w": 85,
+        "h": 161
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 161
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 161
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_03": {
+      "frame": {
+        "x": 1707,
+        "y": 4,
+        "w": 89,
+        "h": 159
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 159
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 159
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_04": {
+      "frame": {
+        "x": 1800,
+        "y": 4,
+        "w": 77,
+        "h": 159
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 159
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 159
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_31": {
+      "frame": {
+        "x": 1881,
+        "y": 4,
+        "w": 125,
+        "h": 159
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 159
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 159
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_10": {
+      "frame": {
+        "x": 4,
+        "y": 229,
+        "w": 95,
+        "h": 157
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 157
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 157
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_21": {
+      "frame": {
+        "x": 103,
+        "y": 229,
+        "w": 71,
+        "h": 155
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 155
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 155
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_20": {
+      "frame": {
+        "x": 178,
+        "y": 229,
+        "w": 83,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 153
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_30": {
+      "frame": {
+        "x": 265,
+        "y": 229,
+        "w": 99,
+        "h": 151
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 151
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 151
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_29": {
+      "frame": {
+        "x": 368,
+        "y": 229,
+        "w": 53,
+        "h": 145
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 53,
+        "h": 145
+      },
+      "sourceSize": {
+        "w": 53,
+        "h": 145
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_34": {
+      "frame": {
+        "x": 425,
+        "y": 229,
+        "w": 141,
+        "h": 143
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 141,
+        "h": 143
+      },
+      "sourceSize": {
+        "w": 141,
+        "h": 143
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_01": {
+      "frame": {
+        "x": 570,
+        "y": 229,
+        "w": 79,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 137
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_67": {
+      "frame": {
+        "x": 653,
+        "y": 229,
+        "w": 79,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 137
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_24": {
+      "frame": {
+        "x": 736,
+        "y": 229,
+        "w": 79,
+        "h": 133
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 79,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 79,
+        "h": 133
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_33": {
+      "frame": {
+        "x": 819,
+        "y": 229,
+        "w": 117,
+        "h": 133
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 133
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 133
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_26": {
+      "frame": {
+        "x": 940,
+        "y": 229,
+        "w": 95,
+        "h": 131
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 131
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 131
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_28": {
+      "frame": {
+        "x": 1039,
+        "y": 229,
+        "w": 99,
+        "h": 129
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 99,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 99,
+        "h": 129
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_66": {
+      "frame": {
+        "x": 1142,
+        "y": 229,
+        "w": 101,
+        "h": 129
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 129
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 129
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_25": {
+      "frame": {
+        "x": 1247,
+        "y": 229,
+        "w": 83,
+        "h": 123
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 83,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 83,
+        "h": 123
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_35": {
+      "frame": {
+        "x": 1334,
+        "y": 229,
+        "w": 127,
+        "h": 123
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 127,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 127,
+        "h": 123
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_65": {
+      "frame": {
+        "x": 1465,
+        "y": 229,
+        "w": 145,
+        "h": 123
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 145,
+        "h": 123
+      },
+      "sourceSize": {
+        "w": 145,
+        "h": 123
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_statues_39": {
+      "frame": {
+        "x": 1614,
+        "y": 229,
+        "w": 65,
+        "h": 121
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 65,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 65,
+        "h": 121
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_36": {
+      "frame": {
+        "x": 1683,
+        "y": 229,
+        "w": 111,
+        "h": 119
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 111,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 111,
+        "h": 119
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_42": {
+      "frame": {
+        "x": 1798,
+        "y": 229,
+        "w": 87,
+        "h": 119
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 87,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 87,
+        "h": 119
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_27": {
+      "frame": {
+        "x": 1889,
+        "y": 229,
+        "w": 109,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_51": {
+      "frame": {
+        "x": 4,
+        "y": 390,
+        "w": 159,
+        "h": 115
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 159,
+        "h": 115
+      },
+      "sourceSize": {
+        "w": 159,
+        "h": 115
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_40": {
+      "frame": {
+        "x": 167,
+        "y": 390,
+        "w": 129,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 129,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 129,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_43": {
+      "frame": {
+        "x": 300,
+        "y": 390,
+        "w": 105,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_46": {
+      "frame": {
+        "x": 409,
+        "y": 390,
+        "w": 61,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 61,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 61,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_48": {
+      "frame": {
+        "x": 474,
+        "y": 390,
+        "w": 57,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_69": {
+      "frame": {
+        "x": 535,
+        "y": 390,
+        "w": 143,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 143,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 143,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_37": {
+      "frame": {
+        "x": 682,
+        "y": 390,
+        "w": 85,
+        "h": 107
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 107
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 107
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_58": {
+      "frame": {
+        "x": 771,
+        "y": 390,
+        "w": 153,
+        "h": 105
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 153,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 153,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_63": {
+      "frame": {
+        "x": 928,
+        "y": 390,
+        "w": 73,
+        "h": 105
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_68": {
+      "frame": {
+        "x": 1005,
+        "y": 390,
+        "w": 119,
+        "h": 105
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 119,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 119,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_38": {
+      "frame": {
+        "x": 1128,
+        "y": 390,
+        "w": 75,
+        "h": 99
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 99
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_62": {
+      "frame": {
+        "x": 1207,
+        "y": 390,
+        "w": 109,
+        "h": 99
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 99
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 99
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_52": {
+      "frame": {
+        "x": 1320,
+        "y": 390,
+        "w": 43,
+        "h": 97
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 97
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 97
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_32": {
+      "frame": {
+        "x": 1367,
+        "y": 390,
+        "w": 89,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 89,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 89,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_45": {
+      "frame": {
+        "x": 1460,
+        "y": 390,
+        "w": 179,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 179,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 179,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_60": {
+      "frame": {
+        "x": 1643,
+        "y": 390,
+        "w": 105,
+        "h": 95
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 95
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 95
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_61": {
+      "frame": {
+        "x": 1752,
+        "y": 390,
+        "w": 123,
+        "h": 93
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 93
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 93
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_47": {
+      "frame": {
+        "x": 1879,
+        "y": 390,
+        "w": 47,
+        "h": 91
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 47,
+        "h": 91
+      },
+      "sourceSize": {
+        "w": 47,
+        "h": 91
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_41": {
+      "frame": {
+        "x": 4,
+        "y": 509,
+        "w": 155,
+        "h": 89
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 155,
+        "h": 89
+      },
+      "sourceSize": {
+        "w": 155,
+        "h": 89
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_50": {
+      "frame": {
+        "x": 163,
+        "y": 509,
+        "w": 161,
+        "h": 87
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 161,
+        "h": 87
+      },
+      "sourceSize": {
+        "w": 161,
+        "h": 87
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_53": {
+      "frame": {
+        "x": 328,
+        "y": 509,
+        "w": 43,
+        "h": 87
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 87
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 87
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_49": {
+      "frame": {
+        "x": 375,
+        "y": 509,
+        "w": 131,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 85
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_64": {
+      "frame": {
+        "x": 510,
+        "y": 509,
+        "w": 125,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 125,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 125,
+        "h": 85
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_59": {
+      "frame": {
+        "x": 639,
+        "y": 509,
+        "w": 121,
+        "h": 83
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 121,
+        "h": 83
+      },
+      "sourceSize": {
+        "w": 121,
+        "h": 83
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_54": {
+      "frame": {
+        "x": 764,
+        "y": 509,
+        "w": 37,
+        "h": 65
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 65
+      },
+      "sourceSize": {
+        "w": 37,
+        "h": 65
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_44": {
+      "frame": {
+        "x": 805,
+        "y": 509,
+        "w": 117,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 117,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 117,
+        "h": 63
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_56": {
+      "frame": {
+        "x": 926,
+        "y": 509,
+        "w": 77,
+        "h": 61
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 61
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 61
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_71": {
+      "frame": {
+        "x": 1007,
+        "y": 509,
+        "w": 263,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 263,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 263,
+        "h": 59
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_55": {
+      "frame": {
+        "x": 1274,
+        "y": 509,
+        "w": 87,
+        "h": 55
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 87,
+        "h": 55
+      },
+      "sourceSize": {
+        "w": 87,
+        "h": 55
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_57": {
+      "frame": {
+        "x": 1365,
+        "y": 509,
+        "w": 171,
+        "h": 51
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 171,
+        "h": 51
+      },
+      "sourceSize": {
+        "w": 171,
+        "h": 51
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_70": {
+      "frame": {
+        "x": 1540,
+        "y": 509,
+        "w": 101,
+        "h": 31
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 101,
+        "h": 31
+      },
+      "sourceSize": {
+        "w": 101,
+        "h": 31
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "clutter08_busts_72": {
+      "frame": {
+        "x": 1645,
+        "y": 509,
+        "w": 77,
+        "h": 21
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 77,
+        "h": 21
+      },
+      "sourceSize": {
+        "w": 77,
+        "h": 21
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  },
+  "meta": {
+    "app": "DDWD Environment Atlas Packer",
+    "version": "1.0",
+    "image": "ddwd_env_08.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2014,
+      "h": 602
+    },
+    "scale": 1
+  }
+}

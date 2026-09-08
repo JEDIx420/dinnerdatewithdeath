@@ -1,0 +1,999 @@
+{
+  "frames": {
+    "bed03_bed_grand_gothic": {
+      "frame": {
+        "x": 4,
+        "y": 4,
+        "w": 721,
+        "h": 371
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 721,
+        "h": 371
+      },
+      "sourceSize": {
+        "w": 721,
+        "h": 371
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_vanity_ornate": {
+      "frame": {
+        "x": 729,
+        "y": 4,
+        "w": 441,
+        "h": 307
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 441,
+        "h": 307
+      },
+      "sourceSize": {
+        "w": 441,
+        "h": 307
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_wardrobe_tall": {
+      "frame": {
+        "x": 1174,
+        "y": 4,
+        "w": 149,
+        "h": 287
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 149,
+        "h": 287
+      },
+      "sourceSize": {
+        "w": 149,
+        "h": 287
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_36": {
+      "frame": {
+        "x": 1327,
+        "y": 4,
+        "w": 131,
+        "h": 265
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 265
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 265
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_37": {
+      "frame": {
+        "x": 1462,
+        "y": 4,
+        "w": 131,
+        "h": 265
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 131,
+        "h": 265
+      },
+      "sourceSize": {
+        "w": 131,
+        "h": 265
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_29": {
+      "frame": {
+        "x": 1597,
+        "y": 4,
+        "w": 183,
+        "h": 261
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 183,
+        "h": 261
+      },
+      "sourceSize": {
+        "w": 183,
+        "h": 261
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_34": {
+      "frame": {
+        "x": 1784,
+        "y": 4,
+        "w": 105,
+        "h": 209
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 105,
+        "h": 209
+      },
+      "sourceSize": {
+        "w": 105,
+        "h": 209
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_bedside_cabinet": {
+      "frame": {
+        "x": 1893,
+        "y": 4,
+        "w": 123,
+        "h": 207
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 207
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 207
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_33": {
+      "frame": {
+        "x": 4,
+        "y": 379,
+        "w": 211,
+        "h": 199
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 211,
+        "h": 199
+      },
+      "sourceSize": {
+        "w": 211,
+        "h": 199
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_35": {
+      "frame": {
+        "x": 219,
+        "y": 379,
+        "w": 37,
+        "h": 157
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 157
+      },
+      "sourceSize": {
+        "w": 37,
+        "h": 157
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_30": {
+      "frame": {
+        "x": 260,
+        "y": 379,
+        "w": 109,
+        "h": 153
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 109,
+        "h": 153
+      },
+      "sourceSize": {
+        "w": 109,
+        "h": 153
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_32": {
+      "frame": {
+        "x": 373,
+        "y": 379,
+        "w": 139,
+        "h": 149
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 139,
+        "h": 149
+      },
+      "sourceSize": {
+        "w": 139,
+        "h": 149
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_31": {
+      "frame": {
+        "x": 516,
+        "y": 379,
+        "w": 167,
+        "h": 147
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 167,
+        "h": 147
+      },
+      "sourceSize": {
+        "w": 167,
+        "h": 147
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_armchair_crimson": {
+      "frame": {
+        "x": 687,
+        "y": 379,
+        "w": 143,
+        "h": 139
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 143,
+        "h": 139
+      },
+      "sourceSize": {
+        "w": 143,
+        "h": 139
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_38": {
+      "frame": {
+        "x": 834,
+        "y": 379,
+        "w": 75,
+        "h": 137
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 137
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 137
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_07": {
+      "frame": {
+        "x": 913,
+        "y": 379,
+        "w": 67,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_13": {
+      "frame": {
+        "x": 984,
+        "y": 379,
+        "w": 71,
+        "h": 127
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 71,
+        "h": 127
+      },
+      "sourceSize": {
+        "w": 71,
+        "h": 127
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_furniture_05": {
+      "frame": {
+        "x": 1059,
+        "y": 379,
+        "w": 271,
+        "h": 125
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 271,
+        "h": 125
+      },
+      "sourceSize": {
+        "w": 271,
+        "h": 125
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_14": {
+      "frame": {
+        "x": 1334,
+        "y": 379,
+        "w": 75,
+        "h": 121
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 75,
+        "h": 121
+      },
+      "sourceSize": {
+        "w": 75,
+        "h": 121
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_15": {
+      "frame": {
+        "x": 1413,
+        "y": 379,
+        "w": 57,
+        "h": 119
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 119
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_24": {
+      "frame": {
+        "x": 1474,
+        "y": 379,
+        "w": 107,
+        "h": 119
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 119
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 119
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_17": {
+      "frame": {
+        "x": 1585,
+        "y": 379,
+        "w": 43,
+        "h": 117
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 43,
+        "h": 117
+      },
+      "sourceSize": {
+        "w": 43,
+        "h": 117
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_06": {
+      "frame": {
+        "x": 1632,
+        "y": 379,
+        "w": 183,
+        "h": 113
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 183,
+        "h": 113
+      },
+      "sourceSize": {
+        "w": 183,
+        "h": 113
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_22": {
+      "frame": {
+        "x": 1819,
+        "y": 379,
+        "w": 57,
+        "h": 111
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 57,
+        "h": 111
+      },
+      "sourceSize": {
+        "w": 57,
+        "h": 111
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_09": {
+      "frame": {
+        "x": 1880,
+        "y": 379,
+        "w": 85,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 85,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 85,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_11": {
+      "frame": {
+        "x": 4,
+        "y": 582,
+        "w": 221,
+        "h": 109
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 109
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 109
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_21": {
+      "frame": {
+        "x": 229,
+        "y": 582,
+        "w": 107,
+        "h": 107
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 107,
+        "h": 107
+      },
+      "sourceSize": {
+        "w": 107,
+        "h": 107
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_25": {
+      "frame": {
+        "x": 340,
+        "y": 582,
+        "w": 91,
+        "h": 105
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 91,
+        "h": 105
+      },
+      "sourceSize": {
+        "w": 91,
+        "h": 105
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_08": {
+      "frame": {
+        "x": 435,
+        "y": 582,
+        "w": 37,
+        "h": 101
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 37,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 37,
+        "h": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_23": {
+      "frame": {
+        "x": 476,
+        "y": 582,
+        "w": 47,
+        "h": 101
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 47,
+        "h": 101
+      },
+      "sourceSize": {
+        "w": 47,
+        "h": 101
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_27": {
+      "frame": {
+        "x": 527,
+        "y": 582,
+        "w": 73,
+        "h": 93
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 93
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 93
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_26": {
+      "frame": {
+        "x": 604,
+        "y": 582,
+        "w": 123,
+        "h": 85
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 123,
+        "h": 85
+      },
+      "sourceSize": {
+        "w": 123,
+        "h": 85
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_12": {
+      "frame": {
+        "x": 731,
+        "y": 582,
+        "w": 189,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 189,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 189,
+        "h": 73
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_41": {
+      "frame": {
+        "x": 924,
+        "y": 582,
+        "w": 137,
+        "h": 73
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 73
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 73
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_28": {
+      "frame": {
+        "x": 1065,
+        "y": 582,
+        "w": 67,
+        "h": 71
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 67,
+        "h": 71
+      },
+      "sourceSize": {
+        "w": 67,
+        "h": 71
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_16": {
+      "frame": {
+        "x": 1136,
+        "y": 582,
+        "w": 95,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 95,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 95,
+        "h": 69
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_40": {
+      "frame": {
+        "x": 1235,
+        "y": 582,
+        "w": 141,
+        "h": 69
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 141,
+        "h": 69
+      },
+      "sourceSize": {
+        "w": 141,
+        "h": 69
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_39": {
+      "frame": {
+        "x": 1380,
+        "y": 582,
+        "w": 137,
+        "h": 63
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 137,
+        "h": 63
+      },
+      "sourceSize": {
+        "w": 137,
+        "h": 63
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_20": {
+      "frame": {
+        "x": 1521,
+        "y": 582,
+        "w": 73,
+        "h": 59
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 73,
+        "h": 59
+      },
+      "sourceSize": {
+        "w": 73,
+        "h": 59
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_18": {
+      "frame": {
+        "x": 1598,
+        "y": 582,
+        "w": 81,
+        "h": 49
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 81,
+        "h": 49
+      },
+      "sourceSize": {
+        "w": 81,
+        "h": 49
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    },
+    "bed03_decor_19": {
+      "frame": {
+        "x": 1683,
+        "y": 582,
+        "w": 63,
+        "h": 47
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 63,
+        "h": 47
+      },
+      "sourceSize": {
+        "w": 63,
+        "h": 47
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 1
+      }
+    }
+  },
+  "meta": {
+    "app": "DDWD Environment Atlas Packer",
+    "version": "1.0",
+    "image": "ddwd_env_03.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2024,
+      "h": 695
+    },
+    "scale": 1
+  }
+}

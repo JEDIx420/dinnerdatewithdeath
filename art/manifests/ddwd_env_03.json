@@ -1,0 +1,633 @@
+{
+  "packId": "ddwd_env_03",
+  "environmentId": "mansion",
+  "name": "Death Bedchamber",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_03 — Death Bedchamber.png",
+  "sourceDimensions": {
+    "width": 1448,
+    "height": 1086
+  },
+  "categories": [
+    "furniture",
+    "personal",
+    "decor",
+    "lighting"
+  ],
+  "assets": [
+    {
+      "id": "bed03_bed_grand_gothic",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 570,
+        "y": 56,
+        "width": 721,
+        "height": 371
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "bed_large",
+      "notes": "Death Bedchamber asset (721x371)"
+    },
+    {
+      "id": "bed03_vanity_ornate",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 18,
+        "y": 108,
+        "width": 441,
+        "height": 307
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "vanity",
+      "notes": "Death Bedchamber asset (441x307)"
+    },
+    {
+      "id": "bed03_wardrobe_tall",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1296,
+        "y": 124,
+        "width": 149,
+        "height": 287
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "wardrobe_large",
+      "notes": "Death Bedchamber asset (149x287)"
+    },
+    {
+      "id": "bed03_bedside_cabinet",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 460,
+        "y": 206,
+        "width": 123,
+        "height": 207
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "nightstand",
+      "notes": "Death Bedchamber asset (123x207)"
+    },
+    {
+      "id": "bed03_furniture_05",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 18,
+        "y": 450,
+        "width": 271,
+        "height": 125
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (271x125)"
+    },
+    {
+      "id": "bed03_decor_06",
+      "category": "decor",
+      "sourceRect": {
+        "x": 302,
+        "y": 464,
+        "width": 183,
+        "height": 113
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (183x113)"
+    },
+    {
+      "id": "bed03_decor_07",
+      "category": "decor",
+      "sourceRect": {
+        "x": 496,
+        "y": 442,
+        "width": 67,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (67x127)"
+    },
+    {
+      "id": "bed03_decor_08",
+      "category": "decor",
+      "sourceRect": {
+        "x": 570,
+        "y": 468,
+        "width": 37,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (37x101)"
+    },
+    {
+      "id": "bed03_decor_09",
+      "category": "decor",
+      "sourceRect": {
+        "x": 638,
+        "y": 462,
+        "width": 85,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (85x109)"
+    },
+    {
+      "id": "bed03_armchair_crimson",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 756,
+        "y": 444,
+        "width": 143,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "armchair",
+      "notes": "Death Bedchamber asset (143x139)"
+    },
+    {
+      "id": "bed03_decor_11",
+      "category": "decor",
+      "sourceRect": {
+        "x": 924,
+        "y": 466,
+        "width": 221,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (221x109)"
+    },
+    {
+      "id": "bed03_decor_12",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1160,
+        "y": 488,
+        "width": 189,
+        "height": 73
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (189x73)"
+    },
+    {
+      "id": "bed03_decor_13",
+      "category": "decor",
+      "sourceRect": {
+        "x": 596,
+        "y": 592,
+        "width": 71,
+        "height": 127
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (71x127)"
+    },
+    {
+      "id": "bed03_decor_14",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1194,
+        "y": 594,
+        "width": 75,
+        "height": 121
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (75x121)"
+    },
+    {
+      "id": "bed03_decor_15",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1372,
+        "y": 594,
+        "width": 57,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (57x119)"
+    },
+    {
+      "id": "bed03_decor_16",
+      "category": "decor",
+      "sourceRect": {
+        "x": 20,
+        "y": 630,
+        "width": 95,
+        "height": 69
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (95x69)"
+    },
+    {
+      "id": "bed03_decor_17",
+      "category": "decor",
+      "sourceRect": {
+        "x": 128,
+        "y": 604,
+        "width": 43,
+        "height": 117
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (43x117)"
+    },
+    {
+      "id": "bed03_decor_18",
+      "category": "decor",
+      "sourceRect": {
+        "x": 182,
+        "y": 642,
+        "width": 81,
+        "height": 49
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (81x49)"
+    },
+    {
+      "id": "bed03_decor_19",
+      "category": "decor",
+      "sourceRect": {
+        "x": 268,
+        "y": 654,
+        "width": 63,
+        "height": 47
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (63x47)"
+    },
+    {
+      "id": "bed03_decor_20",
+      "category": "decor",
+      "sourceRect": {
+        "x": 338,
+        "y": 644,
+        "width": 73,
+        "height": 59
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (73x59)"
+    },
+    {
+      "id": "bed03_decor_21",
+      "category": "decor",
+      "sourceRect": {
+        "x": 410,
+        "y": 616,
+        "width": 107,
+        "height": 107
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (107x107)"
+    },
+    {
+      "id": "bed03_decor_22",
+      "category": "decor",
+      "sourceRect": {
+        "x": 526,
+        "y": 606,
+        "width": 57,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (57x111)"
+    },
+    {
+      "id": "bed03_decor_23",
+      "category": "decor",
+      "sourceRect": {
+        "x": 690,
+        "y": 606,
+        "width": 47,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (47x101)"
+    },
+    {
+      "id": "bed03_decor_24",
+      "category": "decor",
+      "sourceRect": {
+        "x": 740,
+        "y": 602,
+        "width": 107,
+        "height": 119
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (107x119)"
+    },
+    {
+      "id": "bed03_decor_25",
+      "category": "decor",
+      "sourceRect": {
+        "x": 858,
+        "y": 610,
+        "width": 91,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (91x105)"
+    },
+    {
+      "id": "bed03_decor_26",
+      "category": "decor",
+      "sourceRect": {
+        "x": 964,
+        "y": 622,
+        "width": 123,
+        "height": 85
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (123x85)"
+    },
+    {
+      "id": "bed03_decor_27",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1102,
+        "y": 616,
+        "width": 73,
+        "height": 93
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (73x93)"
+    },
+    {
+      "id": "bed03_decor_28",
+      "category": "decor",
+      "sourceRect": {
+        "x": 1290,
+        "y": 622,
+        "width": 67,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (67x71)"
+    },
+    {
+      "id": "bed03_furniture_29",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1244,
+        "y": 718,
+        "width": 183,
+        "height": 261
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (183x261)"
+    },
+    {
+      "id": "bed03_decor_30",
+      "category": "decor",
+      "sourceRect": {
+        "x": 16,
+        "y": 766,
+        "width": 109,
+        "height": 153
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (109x153)"
+    },
+    {
+      "id": "bed03_furniture_31",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 136,
+        "y": 774,
+        "width": 167,
+        "height": 147
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (167x147)"
+    },
+    {
+      "id": "bed03_furniture_32",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 318,
+        "y": 772,
+        "width": 139,
+        "height": 149
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (139x149)"
+    },
+    {
+      "id": "bed03_furniture_33",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 468,
+        "y": 752,
+        "width": 211,
+        "height": 199
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (211x199)"
+    },
+    {
+      "id": "bed03_decor_34",
+      "category": "decor",
+      "sourceRect": {
+        "x": 686,
+        "y": 756,
+        "width": 105,
+        "height": 209
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (105x209)"
+    },
+    {
+      "id": "bed03_decor_35",
+      "category": "decor",
+      "sourceRect": {
+        "x": 816,
+        "y": 764,
+        "width": 37,
+        "height": 157
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (37x157)"
+    },
+    {
+      "id": "bed03_furniture_36",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 956,
+        "y": 740,
+        "width": 131,
+        "height": 265
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (131x265)"
+    },
+    {
+      "id": "bed03_furniture_37",
+      "category": "furniture",
+      "sourceRect": {
+        "x": 1102,
+        "y": 740,
+        "width": 131,
+        "height": 265
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (131x265)"
+    },
+    {
+      "id": "bed03_decor_38",
+      "category": "decor",
+      "sourceRect": {
+        "x": 874,
+        "y": 786,
+        "width": 75,
+        "height": 137
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (75x137)"
+    },
+    {
+      "id": "bed03_decor_39",
+      "category": "decor",
+      "sourceRect": {
+        "x": 38,
+        "y": 974,
+        "width": 137,
+        "height": 63
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (137x63)"
+    },
+    {
+      "id": "bed03_decor_40",
+      "category": "decor",
+      "sourceRect": {
+        "x": 216,
+        "y": 970,
+        "width": 141,
+        "height": 69
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (141x69)"
+    },
+    {
+      "id": "bed03_decor_41",
+      "category": "decor",
+      "sourceRect": {
+        "x": 392,
+        "y": 970,
+        "width": 137,
+        "height": 73
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death Bedchamber asset (137x73)"
+    }
+  ]
+}

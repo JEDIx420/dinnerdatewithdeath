@@ -1,0 +1,723 @@
+{
+  "packId": "ddwd_env_07",
+  "environmentId": "mansion",
+  "name": "Death's Art Collection",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_07 — Death's Art Collection.png",
+  "sourceDimensions": {
+    "width": 1448,
+    "height": 1086
+  },
+  "categories": [
+    "paintings",
+    "portraits",
+    "studies",
+    "frames"
+  ],
+  "assets": [
+    {
+      "id": "art07_paintings_01",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 10,
+        "y": 6,
+        "width": 163,
+        "height": 161
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x161)"
+    },
+    {
+      "id": "art07_paintings_02",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 192,
+        "y": 6,
+        "width": 161,
+        "height": 161
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x161)"
+    },
+    {
+      "id": "art07_paintings_03",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 374,
+        "y": 6,
+        "width": 157,
+        "height": 165
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (157x165)"
+    },
+    {
+      "id": "art07_paintings_04",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 552,
+        "y": 6,
+        "width": 163,
+        "height": 343
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x343)"
+    },
+    {
+      "id": "art07_paintings_05",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 732,
+        "y": 6,
+        "width": 165,
+        "height": 163
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (165x163)"
+    },
+    {
+      "id": "art07_paintings_06",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 916,
+        "y": 6,
+        "width": 159,
+        "height": 163
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x163)"
+    },
+    {
+      "id": "art07_paintings_07",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1094,
+        "y": 6,
+        "width": 165,
+        "height": 161
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (165x161)"
+    },
+    {
+      "id": "art07_paintings_08",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1276,
+        "y": 6,
+        "width": 163,
+        "height": 161
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x161)"
+    },
+    {
+      "id": "art07_paintings_09",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 12,
+        "y": 178,
+        "width": 159,
+        "height": 165
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x165)"
+    },
+    {
+      "id": "art07_paintings_10",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 192,
+        "y": 178,
+        "width": 161,
+        "height": 165
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x165)"
+    },
+    {
+      "id": "art07_paintings_11",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 376,
+        "y": 178,
+        "width": 153,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (153x171)"
+    },
+    {
+      "id": "art07_paintings_12",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 736,
+        "y": 178,
+        "width": 157,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (157x171)"
+    },
+    {
+      "id": "art07_paintings_13",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 918,
+        "y": 178,
+        "width": 155,
+        "height": 167
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (155x167)"
+    },
+    {
+      "id": "art07_paintings_14",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1096,
+        "y": 178,
+        "width": 159,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x169)"
+    },
+    {
+      "id": "art07_paintings_15",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1278,
+        "y": 178,
+        "width": 159,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x171)"
+    },
+    {
+      "id": "art07_paintings_16",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 10,
+        "y": 358,
+        "width": 163,
+        "height": 175
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x175)"
+    },
+    {
+      "id": "art07_paintings_17",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 192,
+        "y": 358,
+        "width": 161,
+        "height": 175
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x175)"
+    },
+    {
+      "id": "art07_paintings_18",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 554,
+        "y": 358,
+        "width": 159,
+        "height": 175
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x175)"
+    },
+    {
+      "id": "art07_paintings_19",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 732,
+        "y": 358,
+        "width": 165,
+        "height": 175
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (165x175)"
+    },
+    {
+      "id": "art07_paintings_20",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 916,
+        "y": 358,
+        "width": 159,
+        "height": 175
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (159x175)"
+    },
+    {
+      "id": "art07_paintings_21",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 374,
+        "y": 360,
+        "width": 157,
+        "height": 173
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (157x173)"
+    },
+    {
+      "id": "art07_paintings_22",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1096,
+        "y": 362,
+        "width": 161,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x171)"
+    },
+    {
+      "id": "art07_paintings_23",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1276,
+        "y": 360,
+        "width": 163,
+        "height": 173
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x173)"
+    },
+    {
+      "id": "art07_paintings_24",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 10,
+        "y": 546,
+        "width": 161,
+        "height": 165
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x165)"
+    },
+    {
+      "id": "art07_paintings_25",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 194,
+        "y": 548,
+        "width": 157,
+        "height": 163
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (157x163)"
+    },
+    {
+      "id": "art07_paintings_26",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 374,
+        "y": 546,
+        "width": 157,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (157x169)"
+    },
+    {
+      "id": "art07_paintings_27",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 554,
+        "y": 546,
+        "width": 161,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x169)"
+    },
+    {
+      "id": "art07_paintings_28",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 734,
+        "y": 548,
+        "width": 163,
+        "height": 161
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x161)"
+    },
+    {
+      "id": "art07_paintings_29",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 914,
+        "y": 556,
+        "width": 163,
+        "height": 143
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (163x143)"
+    },
+    {
+      "id": "art07_paintings_30",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1132,
+        "y": 544,
+        "width": 89,
+        "height": 177
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (89x177)"
+    },
+    {
+      "id": "art07_paintings_31",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1272,
+        "y": 576,
+        "width": 171,
+        "height": 113
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (171x113)"
+    },
+    {
+      "id": "art07_paintings_32",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 26,
+        "y": 724,
+        "width": 129,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (129x171)"
+    },
+    {
+      "id": "art07_paintings_33",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 188,
+        "y": 726,
+        "width": 161,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (161x169)"
+    },
+    {
+      "id": "art07_paintings_34",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 392,
+        "y": 726,
+        "width": 121,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (121x169)"
+    },
+    {
+      "id": "art07_paintings_35",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 568,
+        "y": 724,
+        "width": 131,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (131x171)"
+    },
+    {
+      "id": "art07_paintings_36",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 750,
+        "y": 724,
+        "width": 129,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (129x171)"
+    },
+    {
+      "id": "art07_paintings_37",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 932,
+        "y": 724,
+        "width": 127,
+        "height": 171
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (127x171)"
+    },
+    {
+      "id": "art07_paintings_38",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1110,
+        "y": 726,
+        "width": 133,
+        "height": 169
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (133x169)"
+    },
+    {
+      "id": "art07_paintings_39",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1284,
+        "y": 736,
+        "width": 147,
+        "height": 147
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (147x147)"
+    },
+    {
+      "id": "art07_paintings_40",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 20,
+        "y": 912,
+        "width": 141,
+        "height": 143
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (141x143)"
+    },
+    {
+      "id": "art07_paintings_41",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 200,
+        "y": 908,
+        "width": 145,
+        "height": 153
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (145x153)"
+    },
+    {
+      "id": "art07_paintings_42",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 384,
+        "y": 908,
+        "width": 139,
+        "height": 155
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (139x155)"
+    },
+    {
+      "id": "art07_paintings_43",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 558,
+        "y": 908,
+        "width": 151,
+        "height": 155
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (151x155)"
+    },
+    {
+      "id": "art07_paintings_44",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 744,
+        "y": 908,
+        "width": 141,
+        "height": 155
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (141x155)"
+    },
+    {
+      "id": "art07_paintings_45",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 918,
+        "y": 910,
+        "width": 153,
+        "height": 149
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (153x149)"
+    },
+    {
+      "id": "art07_paintings_46",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1098,
+        "y": 910,
+        "width": 155,
+        "height": 149
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (155x149)"
+    },
+    {
+      "id": "art07_paintings_47",
+      "category": "paintings",
+      "sourceRect": {
+        "x": 1282,
+        "y": 908,
+        "width": 149,
+        "height": 153
+      },
+      "anchorPreset": "center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Death's Art Collection asset (149x153)"
+    }
+  ]
+}

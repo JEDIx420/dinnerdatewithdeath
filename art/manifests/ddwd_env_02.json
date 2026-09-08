@@ -1,0 +1,1027 @@
+{
+  "packId": "ddwd_env_02",
+  "environmentId": "mansion",
+  "name": "Doors Windows Staircase",
+  "sourceImage": "art/source/environment/mansion/DDWD_ENV_02 — Doors Windows Staircase.png",
+  "sourceDimensions": {
+    "width": 1448,
+    "height": 1086
+  },
+  "categories": [
+    "doors",
+    "windows",
+    "curtains",
+    "stairs",
+    "lighting"
+  ],
+  "assets": [
+    {
+      "id": "env02_window_gothic_tall",
+      "category": "windows",
+      "sourceRect": {
+        "x": 18,
+        "y": 114,
+        "width": 71,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "windowMasks": [
+        {
+          "localX": 12,
+          "localY": 16,
+          "width": 55,
+          "height": 131
+        }
+      ],
+      "notes": "Doors Windows Staircase asset (71x165)"
+    },
+    {
+      "id": "env02_windows_02",
+      "category": "windows",
+      "sourceRect": {
+        "x": 100,
+        "y": 114,
+        "width": 75,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (75x165)"
+    },
+    {
+      "id": "env02_windows_03",
+      "category": "windows",
+      "sourceRect": {
+        "x": 184,
+        "y": 114,
+        "width": 125,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (125x165)"
+    },
+    {
+      "id": "env02_windows_04",
+      "category": "windows",
+      "sourceRect": {
+        "x": 316,
+        "y": 82,
+        "width": 115,
+        "height": 197
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (115x197)"
+    },
+    {
+      "id": "env02_windows_05",
+      "category": "windows",
+      "sourceRect": {
+        "x": 438,
+        "y": 94,
+        "width": 109,
+        "height": 189
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (109x189)"
+    },
+    {
+      "id": "env02_windows_06",
+      "category": "windows",
+      "sourceRect": {
+        "x": 554,
+        "y": 92,
+        "width": 149,
+        "height": 189
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (149x189)"
+    },
+    {
+      "id": "env02_windows_07",
+      "category": "windows",
+      "sourceRect": {
+        "x": 710,
+        "y": 114,
+        "width": 73,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (73x165)"
+    },
+    {
+      "id": "env02_windows_08",
+      "category": "windows",
+      "sourceRect": {
+        "x": 792,
+        "y": 114,
+        "width": 69,
+        "height": 165
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (69x165)"
+    },
+    {
+      "id": "env02_windows_09",
+      "category": "windows",
+      "sourceRect": {
+        "x": 876,
+        "y": 104,
+        "width": 73,
+        "height": 175
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (73x175)"
+    },
+    {
+      "id": "env02_windows_10",
+      "category": "windows",
+      "sourceRect": {
+        "x": 956,
+        "y": 90,
+        "width": 195,
+        "height": 191
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (195x191)"
+    },
+    {
+      "id": "env02_sconce_bronze",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1158,
+        "y": 94,
+        "width": 61,
+        "height": 73
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "lightSockets": [
+        {
+          "id": "sconce_candle",
+          "localX": 31,
+          "localY": 8,
+          "radius": 44,
+          "intensity": 0.4,
+          "flameMode": "overlay"
+        }
+      ],
+      "notes": "Doors Windows Staircase asset (61x73)"
+    },
+    {
+      "id": "env02_lighting_12",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1230,
+        "y": 80,
+        "width": 49,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (49x87)"
+    },
+    {
+      "id": "env02_lighting_13",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1350,
+        "y": 82,
+        "width": 81,
+        "height": 197
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (81x197)"
+    },
+    {
+      "id": "env02_lighting_14",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1166,
+        "y": 170,
+        "width": 73,
+        "height": 83
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (73x83)"
+    },
+    {
+      "id": "env02_lighting_15",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1274,
+        "y": 130,
+        "width": 69,
+        "height": 153
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (69x153)"
+    },
+    {
+      "id": "env02_lighting_16",
+      "category": "lighting",
+      "sourceRect": {
+        "x": 1164,
+        "y": 266,
+        "width": 103,
+        "height": 13
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (103x13)"
+    },
+    {
+      "id": "env02_windows_17",
+      "category": "windows",
+      "sourceRect": {
+        "x": 14,
+        "y": 346,
+        "width": 75,
+        "height": 163
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (75x163)"
+    },
+    {
+      "id": "env02_windows_18",
+      "category": "windows",
+      "sourceRect": {
+        "x": 94,
+        "y": 312,
+        "width": 89,
+        "height": 209
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (89x209)"
+    },
+    {
+      "id": "env02_windows_19",
+      "category": "windows",
+      "sourceRect": {
+        "x": 188,
+        "y": 312,
+        "width": 329,
+        "height": 203
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (329x203)"
+    },
+    {
+      "id": "env02_windows_20",
+      "category": "windows",
+      "sourceRect": {
+        "x": 522,
+        "y": 326,
+        "width": 67,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (67x183)"
+    },
+    {
+      "id": "env02_door_jamb_portal",
+      "category": "windows",
+      "sourceRect": {
+        "x": 700,
+        "y": 346,
+        "width": 79,
+        "height": 163
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (79x163)"
+    },
+    {
+      "id": "env02_curtains_22",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 788,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_curtains_23",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 868,
+        "y": 358,
+        "width": 69,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (69x159)"
+    },
+    {
+      "id": "env02_curtains_24",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 946,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_curtains_25",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1028,
+        "y": 358,
+        "width": 73,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (73x159)"
+    },
+    {
+      "id": "env02_curtains_26",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1114,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_curtains_27",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1198,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_curtains_28",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1282,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_curtains_29",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1360,
+        "y": 358,
+        "width": 71,
+        "height": 159
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x159)"
+    },
+    {
+      "id": "env02_doors_30",
+      "category": "doors",
+      "sourceRect": {
+        "x": 592,
+        "y": 366,
+        "width": 103,
+        "height": 101
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (103x101)"
+    },
+    {
+      "id": "env02_curtains_31",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 22,
+        "y": 528,
+        "width": 75,
+        "height": 139
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (75x139)"
+    },
+    {
+      "id": "env02_curtains_32",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 116,
+        "y": 528,
+        "width": 71,
+        "height": 139
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (71x139)"
+    },
+    {
+      "id": "env02_doors_33",
+      "category": "doors",
+      "sourceRect": {
+        "x": 206,
+        "y": 528,
+        "width": 125,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (125x139)"
+    },
+    {
+      "id": "env02_doors_34",
+      "category": "doors",
+      "sourceRect": {
+        "x": 352,
+        "y": 528,
+        "width": 121,
+        "height": 139
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (121x139)"
+    },
+    {
+      "id": "env02_doors_35",
+      "category": "doors",
+      "sourceRect": {
+        "x": 490,
+        "y": 528,
+        "width": 111,
+        "height": 141
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (111x141)"
+    },
+    {
+      "id": "env02_doors_36",
+      "category": "doors",
+      "sourceRect": {
+        "x": 614,
+        "y": 528,
+        "width": 101,
+        "height": 145
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (101x145)"
+    },
+    {
+      "id": "env02_doors_37",
+      "category": "doors",
+      "sourceRect": {
+        "x": 734,
+        "y": 554,
+        "width": 171,
+        "height": 75
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (171x75)"
+    },
+    {
+      "id": "env02_doors_38",
+      "category": "doors",
+      "sourceRect": {
+        "x": 928,
+        "y": 558,
+        "width": 113,
+        "height": 79
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (113x79)"
+    },
+    {
+      "id": "env02_doors_39",
+      "category": "doors",
+      "sourceRect": {
+        "x": 1058,
+        "y": 558,
+        "width": 147,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (147x89)"
+    },
+    {
+      "id": "env02_doors_40",
+      "category": "doors",
+      "sourceRect": {
+        "x": 1226,
+        "y": 552,
+        "width": 197,
+        "height": 91
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "back-wall",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (197x91)"
+    },
+    {
+      "id": "env02_stairs_41",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 152,
+        "y": 716,
+        "width": 57,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (57x71)"
+    },
+    {
+      "id": "env02_stairs_42",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 214,
+        "y": 716,
+        "width": 47,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (47x71)"
+    },
+    {
+      "id": "env02_stairs_43",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 268,
+        "y": 716,
+        "width": 55,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (55x71)"
+    },
+    {
+      "id": "env02_stairs_44",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 328,
+        "y": 708,
+        "width": 159,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (159x87)"
+    },
+    {
+      "id": "env02_stairs_45",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1024,
+        "y": 704,
+        "width": 41,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (41x111)"
+    },
+    {
+      "id": "env02_curtains_46",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1076,
+        "y": 698,
+        "width": 37,
+        "height": 119
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (37x119)"
+    },
+    {
+      "id": "env02_curtains_47",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1120,
+        "y": 682,
+        "width": 51,
+        "height": 133
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (51x133)"
+    },
+    {
+      "id": "env02_stairs_48",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1178,
+        "y": 712,
+        "width": 97,
+        "height": 111
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (97x111)"
+    },
+    {
+      "id": "env02_stairs_49",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1284,
+        "y": 714,
+        "width": 103,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (103x109)"
+    },
+    {
+      "id": "env02_curtains_50",
+      "category": "curtains",
+      "sourceRect": {
+        "x": 1400,
+        "y": 688,
+        "width": 25,
+        "height": 131
+      },
+      "anchorPreset": "top-center",
+      "depthClass": "back-wall-detail",
+      "physicalClass": "none",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (25x131)"
+    },
+    {
+      "id": "env02_stairs_51",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 20,
+        "y": 738,
+        "width": 63,
+        "height": 43
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (63x43)"
+    },
+    {
+      "id": "env02_stairs_52",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 90,
+        "y": 738,
+        "width": 55,
+        "height": 43
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (55x43)"
+    },
+    {
+      "id": "env02_stairs_53",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 490,
+        "y": 724,
+        "width": 61,
+        "height": 71
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (61x71)"
+    },
+    {
+      "id": "env02_stairs_54",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 556,
+        "y": 724,
+        "width": 109,
+        "height": 79
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (109x79)"
+    },
+    {
+      "id": "env02_stairs_55",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 678,
+        "y": 742,
+        "width": 153,
+        "height": 97
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (153x97)"
+    },
+    {
+      "id": "env02_stairs_56",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 852,
+        "y": 720,
+        "width": 27,
+        "height": 95
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (27x95)"
+    },
+    {
+      "id": "env02_stairs_57",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 896,
+        "y": 726,
+        "width": 117,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (117x89)"
+    },
+    {
+      "id": "env02_stairs_58",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 24,
+        "y": 840,
+        "width": 521,
+        "height": 183
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (521x183)"
+    },
+    {
+      "id": "env02_stairs_59",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 550,
+        "y": 898,
+        "width": 89,
+        "height": 125
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (89x125)"
+    },
+    {
+      "id": "env02_stairs_60",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1232,
+        "y": 882,
+        "width": 117,
+        "height": 135
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (117x135)"
+    },
+    {
+      "id": "env02_stairs_61",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1362,
+        "y": 866,
+        "width": 65,
+        "height": 153
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (65x153)"
+    },
+    {
+      "id": "env02_stairs_62",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 644,
+        "y": 914,
+        "width": 111,
+        "height": 109
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (111x109)"
+    },
+    {
+      "id": "env02_stairs_63",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 760,
+        "y": 944,
+        "width": 203,
+        "height": 79
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (203x79)"
+    },
+    {
+      "id": "env02_stairs_64",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 968,
+        "y": 934,
+        "width": 85,
+        "height": 87
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (85x87)"
+    },
+    {
+      "id": "env02_stairs_65",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1058,
+        "y": 932,
+        "width": 69,
+        "height": 89
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (69x89)"
+    },
+    {
+      "id": "env02_stairs_66",
+      "category": "stairs",
+      "sourceRect": {
+        "x": 1136,
+        "y": 916,
+        "width": 91,
+        "height": 105
+      },
+      "anchorPreset": "bottom-center",
+      "depthClass": "dynamic-solid",
+      "physicalClass": "floor-solid",
+      "collisionProfile": "none",
+      "notes": "Doors Windows Staircase asset (91x105)"
+    }
+  ]
+}
