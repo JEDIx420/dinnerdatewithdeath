@@ -1,6 +1,7 @@
 import Phaser from 'phaser';
 import { GAME_CONFIG } from '../config';
 import { InputManager } from '../systems/InputManager';
+import { LightningBoltEffect } from '../effects/LightningBoltEffect';
 
 interface TitleRainStreak {
   x: number;
@@ -22,7 +23,7 @@ export class TitleScene extends Phaser.Scene {
 
   // Title visual components
   private darknessOverlay!: Phaser.GameObjects.Graphics;
-  private lightningGfx!: Phaser.GameObjects.Graphics;
+  private lightningEffect!: LightningBoltEffect;
   private rainGfx!: Phaser.GameObjects.Graphics;
   private rainMaskGfx!: Phaser.GameObjects.Graphics;
   private rainStreaks: TitleRainStreak[] = [];
@@ -43,7 +44,9 @@ export class TitleScene extends Phaser.Scene {
   private titleContainer!: Phaser.GameObjects.Container;
   private newGamePrompt!: Phaser.GameObjects.Text;
   private subPrompt!: Phaser.GameObjects.Text;
-  private lightningTimer: number = 10000;
+  private idleLightningTimer: number = 3500; // First idle lightning 3.5s after intro
+  private introHeroStruck: boolean = false;
+  private introSecondaryStruck: boolean = false;
 
   constructor() {
     super({ key: 'TitleScene' });
@@ -60,6 +63,9 @@ export class TitleScene extends Phaser.Scene {
     this.timeAccumulator = 0;
     this.introTimelineTime = 0;
     this.introComplete = false;
+    this.introHeroStruck = false;
+    this.introSecondaryStruck = false;
+    this.idleLightningTimer = 3500;
   }
 
   public create(): void {
@@ -69,14 +75,14 @@ export class TitleScene extends Phaser.Scene {
     const params = new URLSearchParams(window.location.search);
     const instantSkip = params.get('intro') === 'skip';
 
-    // 1. Dark nocturnal background
+    // 1. Nocturnal atmospheric background
     const bg = this.add.graphics();
-    bg.fillGradientStyle(0x0a0910, 0x0a0910, 0x040306, 0x040306, 1);
+    bg.fillGradientStyle(0x0e0c16, 0x0e0c16, 0x050408, 0x050408, 1);
     bg.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
 
-    // 2. High gothic arched windows in background
-    this.winLeft = this.add.sprite(centerX - 180, 110, 'window_gothic').setAlpha(0);
-    this.winRight = this.add.sprite(centerX + 180, 110, 'window_gothic').setAlpha(0);
+    // 2. High gothic arched windows in background - immediately visible as faint silhouettes (no dead black)
+    this.winLeft = this.add.sprite(centerX - 180, 110, 'window_gothic').setAlpha(0.24);
+    this.winRight = this.add.sprite(centerX + 180, 110, 'window_gothic').setAlpha(0.24);
 
     // Geometry mask strictly containing rain inside window panes
     this.rainMaskGfx = this.make.graphics({ x: 0, y: 0 });
@@ -84,17 +90,18 @@ export class TitleScene extends Phaser.Scene {
     this.rainMaskGfx.fillRect(this.winLeft.x - 26, this.winLeft.y - 32, 52, 70);
     this.rainMaskGfx.fillRect(this.winRight.x - 26, this.winRight.y - 32, 52, 70);
 
-    this.rainGfx = this.add.graphics().setDepth(5).setAlpha(0);
+    // Rain graphics active and immediately visible at t=0
+    this.rainGfx = this.add.graphics().setDepth(5).setAlpha(0.55);
     const rainMask = this.rainMaskGfx.createGeometryMask();
     this.rainGfx.setMask(rainMask);
 
-    for (let i = 0; i < 20; i++) {
-      const isLeft = i < 10;
+    for (let i = 0; i < 22; i++) {
+      const isLeft = i < 11;
       const winSprite = isLeft ? this.winLeft : this.winRight;
       this.rainStreaks.push({
         x: winSprite.x - 24 + Math.random() * 48,
         y: 65 + Math.random() * 80,
-        speed: 130 + Math.random() * 70,
+        speed: 140 + Math.random() * 70,
         length: 8 + Math.random() * 10,
         winX: winSprite.x - 26,
         winY: winSprite.y - 32,
@@ -104,17 +111,17 @@ export class TitleScene extends Phaser.Scene {
     }
 
     // 3. Midground: The Waiting Banquet Table
-    this.tableShadow = this.add.sprite(centerX, 285, 'shadow_table_hero').setAlpha(0);
+    this.tableShadow = this.add.sprite(centerX, 285, 'shadow_table_hero').setAlpha(0.12);
     this.tableShadow.setDisplaySize(190, 32);
 
     // Love's waiting empty chair (left)
-    this.loveChair = this.add.sprite(centerX - 95, 235, 'furniture_chair_love').setAlpha(0);
+    this.loveChair = this.add.sprite(centerX - 95, 235, 'furniture_chair_love').setAlpha(0.15);
 
     // Death's chair (right)
-    this.deathChair = this.add.sprite(centerX + 95, 235, 'furniture_chair_death').setAlpha(0);
+    this.deathChair = this.add.sprite(centerX + 95, 235, 'furniture_chair_death').setAlpha(0.15);
 
-    // The hero banquet table set with crimson runner, wine bottle, glasses
-    this.banquetTable = this.add.sprite(centerX, 275, 'furniture_dining_table').setDepth(10).setAlpha(0);
+    // The hero banquet table set with crimson runner, wine bottle, glasses - faint silhouette at t=0
+    this.banquetTable = this.add.sprite(centerX, 275, 'furniture_dining_table').setDepth(10).setAlpha(0.16);
 
     // Table candles & glowing halos
     if (this.textures.exists('light_glow_warm')) {
@@ -144,11 +151,11 @@ export class TitleScene extends Phaser.Scene {
         .setDepth(12);
     }
 
-    // Distant lightning flash layer
-    this.lightningGfx = this.add.graphics().setDepth(20);
+    // 4. Procedural Layered Lightning Bolt Effect (Depth 20)
+    this.lightningEffect = new LightningBoltEffect(this, 20);
 
-    // 4. Foreground title typography container
-    this.titleContainer = this.add.container(0, 0).setDepth(30).setAlpha(0);
+    // 5. Foreground title typography container (initial y at +4 for subtle settle)
+    this.titleContainer = this.add.container(0, 4).setDepth(30).setAlpha(0);
 
     // Thin elegant crimson rule
     const ruleGfx = this.add.graphics();
@@ -204,12 +211,12 @@ export class TitleScene extends Phaser.Scene {
       .setDepth(35)
       .setAlpha(0);
 
-    // Darkness overlay starting at near total darkness
+    // Mild ambient gothic vignetting (depth 25, non-obscuring)
     this.darknessOverlay = this.add.graphics().setDepth(25);
-    this.darknessOverlay.fillStyle(0x06050a, 0.98);
+    this.darknessOverlay.fillStyle(0x06050a, 0.35);
     this.darknessOverlay.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
 
-    // 5. Input bindings: Clicking or Enter/Space either accelerates/skips intro, or starts game
+    // 6. Input bindings: Clicking or Enter/Space either accelerates/skips intro, or starts game
     this.input.on('pointerdown', () => {
       this.handlePlayerAction();
     });
@@ -218,14 +225,25 @@ export class TitleScene extends Phaser.Scene {
       this.scene.start('AssetLabScene');
     });
 
+    // Developer QA Key: [T] triggers a hero lightning bolt strike on demand
+    this.input.keyboard?.on('keydown-T', () => {
+      this.lightningEffect.strike('intro_hero');
+    });
+
+    this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
+      this.lightningEffect.destroy();
+    });
+
     if (instantSkip) {
       this.skipIntroInstantly();
     }
   }
 
   private skipIntroInstantly(): void {
-    this.introTimelineTime = 5000;
+    this.introTimelineTime = 2500;
     this.introComplete = true;
+    this.introHeroStruck = true;
+    this.introSecondaryStruck = true;
 
     this.darknessOverlay.clear();
     this.winLeft.setAlpha(0.65);
@@ -240,6 +258,7 @@ export class TitleScene extends Phaser.Scene {
     if (this.flameSprite1) this.flameSprite1.setAlpha(1);
     if (this.flameSprite2) this.flameSprite2.setAlpha(1);
     this.titleContainer.setAlpha(1);
+    this.titleContainer.setY(0);
     this.newGamePrompt.setAlpha(1);
     this.subPrompt.setAlpha(1);
 
@@ -270,12 +289,12 @@ export class TitleScene extends Phaser.Scene {
     // 3. Flame micro-flicker
     this.updateFlameAnimation();
 
-    // 4. Occasional distant lightning flash (active after intro)
+    // 4. Idle storm ambient strikes (after intro completion)
     if (this.introComplete) {
-      this.updateLightning(delta);
+      this.updateIdleStorm(delta);
     }
 
-    // 5. Input handling
+    // 6. Input handling
     if (this.inputManager.isJustDown('CONFIRM')) {
       this.handlePlayerAction();
     }
@@ -284,80 +303,110 @@ export class TitleScene extends Phaser.Scene {
   }
 
   /**
-   * 0.0s - 4.5s Choreographed Staged Reveal Timeline:
-   * 0.0s: near complete darkness
-   * 0.4s: single table candle ignites
-   * 1.0s: small candle glow reveals part of table
-   * 1.5s: second candle ignites
-   * 2.0s: windows and rain emerge
-   * 2.4s: silhouette of empty chair visible
-   * 2.8s: title begins fade
-   * 3.8s: title fully visible
-   * 4.2s: NEW GAME fades in
+   * Fast First Impression Choreographed Timeline (~1.65s unskipped):
+   * 0.00s: Windows, table silhouette, active rain immediately visible (no dead black frame)
+   * 0.12s: Hero lightning bolt cuts across upper atmosphere; momentary illumination
+   * 0.25s: Flame 1 catches sharply, radial candlelight bloom begins
+   * 0.45s: Banquet table revealed (200ms tween)
+   * 0.60s: Flame 2 catches sharply, warm pool bridges table
+   * 0.75s: Title typography rises gently (3px) and fades in
+   * 1.05s: Chairs settle into gothic silhouettes; secondary distant bolt
+   * 1.40s: NEW GAME prompt fades in
+   * 1.65s: Sequence complete, atmospheric idle storm armed
    */
   private processIntroTimeline(): void {
     const t = this.introTimelineTime / 1000;
 
-    // 0.4s: Single candle ignites
-    if (t >= 0.4 && this.flameSprite1 && this.flameSprite1.alpha === 0) {
-      this.tweens.add({ targets: this.flameSprite1, alpha: 1, duration: 250 });
-      if (this.candleGlow1) {
-        this.tweens.add({ targets: this.candleGlow1, alpha: 0.2, duration: 400 });
-      }
-    }
-
-    // 1.0s: Table surface and runner revealed
-    if (t >= 1.0 && this.banquetTable.alpha === 0) {
-      this.tweens.add({ targets: [this.banquetTable, this.tableShadow], alpha: { from: 0, to: 1 }, duration: 800 });
-      if (this.candleGlow1) {
-        this.tweens.add({ targets: this.candleGlow1, alpha: 0.35, duration: 600 });
-      }
-    }
-
-    // 1.5s: Second candle ignites
-    if (t >= 1.5 && this.flameSprite2 && this.flameSprite2.alpha === 0) {
-      this.tweens.add({ targets: this.flameSprite2, alpha: 1, duration: 250 });
-      if (this.candleGlow2) {
-        this.tweens.add({ targets: this.candleGlow2, alpha: 0.35, duration: 500 });
-      }
-    }
-
-    // 2.0s: Gothic windows and rain emerge in background
-    if (t >= 2.0 && this.winLeft.alpha === 0) {
-      this.tweens.add({ targets: [this.winLeft, this.winRight], alpha: 0.65, duration: 700 });
-      this.tweens.add({ targets: this.rainGfx, alpha: 1, duration: 700 });
-      // Ambient darkness thins
+    // 0.12s: Hero lightning bolt streaks across sky
+    if (t >= 0.12 && !this.introHeroStruck) {
+      this.introHeroStruck = true;
+      this.lightningEffect.strike('intro_hero');
+      // Subtle window flash
       this.tweens.add({
-        targets: this.darknessOverlay,
-        alpha: 0.4,
-        duration: 900,
-        onComplete: () => {
-          this.darknessOverlay.clear();
-        },
+        targets: [this.winLeft, this.winRight],
+        alpha: { from: 0.55, to: 0.35 },
+        duration: 220,
       });
     }
 
-    // 2.4s: Silhouette of empty waiting chair emerges
-    if (t >= 2.4 && this.loveChair.alpha === 0) {
-      this.tweens.add({ targets: [this.loveChair, this.deathChair], alpha: 0.85, duration: 600 });
+    // 0.25s: Left candle ignites sharply
+    if (t >= 0.25 && this.flameSprite1 && this.flameSprite1.alpha === 0) {
+      this.tweens.add({ targets: this.flameSprite1, alpha: 1, duration: 160 });
+      if (this.candleGlow1) {
+        this.tweens.add({ targets: this.candleGlow1, alpha: 0.22, duration: 250 });
+      }
     }
 
-    // 2.8s: Title typography begins fading in
-    if (t >= 2.8 && this.titleContainer.alpha === 0) {
-      this.tweens.add({ targets: this.titleContainer, alpha: 1, duration: 1000 });
+    // 0.45s: Banquet table revealed cleanly
+    if (t >= 0.45 && this.banquetTable.alpha < 0.5) {
+      this.tweens.add({
+        targets: [this.banquetTable, this.tableShadow],
+        alpha: { from: 0.2, to: 1.0 },
+        duration: 220,
+      });
+      if (this.candleGlow1) {
+        this.tweens.add({ targets: this.candleGlow1, alpha: 0.35, duration: 300 });
+      }
     }
 
-    // 4.2s: NEW GAME prompt fades in
-    if (t >= 4.2 && !this.introComplete) {
-      this.introComplete = true;
+    // 0.60s: Right candle ignites
+    if (t >= 0.60 && this.flameSprite2 && this.flameSprite2.alpha === 0) {
+      this.tweens.add({ targets: this.flameSprite2, alpha: 1, duration: 160 });
+      if (this.candleGlow2) {
+        this.tweens.add({ targets: this.candleGlow2, alpha: 0.35, duration: 300 });
+      }
+    }
+
+    // 0.75s: Title typography emerges with 3px upward settle
+    if (t >= 0.75 && this.titleContainer.alpha === 0) {
+      this.tweens.add({
+        targets: this.titleContainer,
+        alpha: 1,
+        y: 0,
+        duration: 350,
+        ease: 'Cubic.easeOut',
+      });
+    }
+
+    // 1.05s: Gothic chairs settle and faint secondary lightning branch flashes at left window
+    if (t >= 1.05 && !this.introSecondaryStruck) {
+      this.introSecondaryStruck = true;
+      this.lightningEffect.strike('window_top_left');
+      this.tweens.add({
+        targets: [this.loveChair, this.deathChair],
+        alpha: 0.85,
+        duration: 350,
+      });
+      this.tweens.add({
+        targets: [this.winLeft, this.winRight],
+        alpha: 0.65,
+        duration: 400,
+      });
+      this.tweens.add({
+        targets: this.rainGfx,
+        alpha: 1,
+        duration: 400,
+      });
+      this.tweens.add({
+        targets: this.darknessOverlay,
+        alpha: 0.15,
+        duration: 500,
+      });
+    }
+
+    // 1.40s: NEW GAME prompt fades in
+    if (t >= 1.40 && this.newGamePrompt.alpha === 0) {
       this.tweens.add({
         targets: [this.newGamePrompt, this.subPrompt],
         alpha: 1,
-        duration: 500,
-        onComplete: () => {
-          this.startPromptPulse();
-        },
+        duration: 250,
       });
+    }
+
+    // 1.65s: Sequence complete
+    if (t >= 1.65 && !this.introComplete) {
+      this.introComplete = true;
+      this.startPromptPulse();
     }
   }
 
@@ -365,7 +414,7 @@ export class TitleScene extends Phaser.Scene {
     this.tweens.add({
       targets: this.newGamePrompt,
       alpha: { from: 1, to: 0.45 },
-      duration: 1100,
+      duration: 1000,
       yoyo: true,
       repeat: -1,
       ease: 'Sine.easeInOut',
@@ -403,31 +452,27 @@ export class TitleScene extends Phaser.Scene {
     }
   }
 
-  private updateLightning(delta: number): void {
-    this.lightningTimer -= delta;
-    if (this.lightningTimer <= 0) {
-      this.lightningTimer = 12000 + Math.random() * 14000;
-      this.triggerDistantLightning();
+  private updateIdleStorm(delta: number): void {
+    this.idleLightningTimer -= delta;
+    if (this.idleLightningTimer <= 0) {
+      // Next strike scheduled 5 to 11 seconds out
+      this.idleLightningTimer = 5000 + Math.random() * 6000;
+
+      // Weighted selection: 55% distant, 35% medium, 10% hero
+      const roll = Math.random();
+      if (roll < 0.55) {
+        // Distant sheet/fork over windows
+        const preset = Math.random() < 0.5 ? 'window_top_left' : 'window_top_right';
+        this.lightningEffect.strike(preset);
+      } else if (roll < 0.90) {
+        // Medium diagonal streak
+        const preset = Math.random() < 0.5 ? 'screen_diagonal_left' : 'screen_diagonal_right';
+        this.lightningEffect.strike(preset);
+      } else {
+        // Hero strike
+        this.lightningEffect.strike('intro_hero');
+      }
     }
-  }
-
-  private triggerDistantLightning(): void {
-    // Subtle, momentary blue-white illumination revealing gothic details
-    this.lightningGfx.clear();
-    this.lightningGfx.fillStyle(0x829ec2, 0.18);
-    this.lightningGfx.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
-
-    this.time.delayedCall(70, () => {
-      this.lightningGfx.clear();
-      // Second subtle micro-flash
-      this.time.delayedCall(80, () => {
-        this.lightningGfx.fillStyle(0x829ec2, 0.26);
-        this.lightningGfx.fillRect(0, 0, GAME_CONFIG.WIDTH, GAME_CONFIG.HEIGHT);
-        this.time.delayedCall(60, () => {
-          this.lightningGfx.clear();
-        });
-      });
-    });
   }
 
   private triggerStartGame(): void {
@@ -438,9 +483,11 @@ export class TitleScene extends Phaser.Scene {
     this.newGamePrompt.setAlpha(1);
     this.newGamePrompt.setColor('#ffffff');
 
-    this.cameras.main.fadeOut(800, 0, 0, 0);
-    this.time.delayedCall(820, () => {
+    // Snappy transition into MansionScene (400ms fade)
+    this.cameras.main.fadeOut(400, 0, 0, 0);
+    this.time.delayedCall(420, () => {
       this.scene.start('MansionScene', { inputManager: this.inputManager });
     });
   }
 }
+

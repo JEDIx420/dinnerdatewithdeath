@@ -111,15 +111,21 @@ To prevent characters from clipping out of the room or through the architectural
 
 ---
 
-## 6. Title Screen Choreography
+## 6. Title Screen Choreography & Storm Experience (v0.0.6.3)
 
-The title sequence presents a 0–4.5s staged reveal:
-1. **0.0s**: Complete darkness, rain patter audio mood.
-2. **0.5s**: Left candle ignites on the banquet table.
-3. **1.0s**: First warm light halo expands, illuminating the banquet table surface and place settings.
-4. **1.5s**: Second candle ignites on the right; warm glow links across the table.
-5. **2.2s**: Tall gothic background windows become visible with interior rain.
-6. **2.8s**: Love's empty waiting chair emerges on the left in soft candlelight.
-7. **3.5s**: Title typography fades in: "A DINNER DATE WITH DEATH".
-8. **4.2s**: Subtitle and blinking interactive prompt appear: "▶ NEW GAME (Press ENTER or SPACE to Begin)".
-9. **Skip**: Immediate skip on any user keypress or click to fully revealed state.
+The title sequence delivers an immediate, fast-first-impression staged reveal (~1.65s unskipped) that avoids blank screens while establishing the gothic, storm-tossed nocturnal mood:
+
+1. **0.00s (Immediate First Impression)**: Faint gothic window silhouettes, table silhouette, and active interior window rain are immediately readable within the first frame (no dead black canvas).
+2. **0.12s (Hero Lightning Bolt)**: Multi-phase layered procedural lightning bolt cuts across the upper atmosphere, momentarily illuminating the architecture and storm with electrical white/blue glow.
+3. **0.25s**: Left candle ignites sharply on the banquet table; warm radial bloom begins.
+4. **0.45s**: Banquet table surface, runner, and place settings reveal cleanly.
+5. **0.60s**: Second candle ignites on the right; warm glowing pools connect across the table.
+6. **0.75s**: Title typography ("A DINNER DATE WITH DEATH") emerges with a subtle 3px upward settle.
+7. **1.05s**: Love's and Death's high-backed chairs settle into gothic silhouettes; secondary distant lightning fork strikes near left window.
+8. **1.40s**: Interactive prompt ("▶ NEW GAME") and instruction text appear.
+9. **1.65s**: Intro complete; prompts begin gentle sinusoidal breathing; idle atmospheric storm loop armed (strikes every 5–11s; 55% distant, 35% medium, 10% hero).
+10. **Skip & Transition**:
+    - First click/confirm during intro instantly skips to the completed title screen.
+    - Second click/confirm smoothly starts the game with a snappy 400ms fade transition into `MansionScene`.
+    - Developer QA: `?intro=skip` skips directly on load; pressing `[T]` triggers a hero strike on demand.
+

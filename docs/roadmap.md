@@ -67,6 +67,26 @@ This document tracks engineering and narrative production milestones for **A Din
 - Upgraded Developer Asset Lab scene (`AssetLabScene.ts`) with dedicated Architecture QA tab (`[A]` key), category cycling, bounding boxes, dimensions, and filter mode QA.
 - Added comprehensive unit tests in `tests/architecture.test.ts` (6 tests).
 
+### `v0.0.6.3` — Storm Title Experience & Procedural Lightning ✅
+- Eliminated dead black initial screen: faint gothic arched window silhouettes, waiting banquet table silhouette, and active window rain are immediately readable in frame 1 (`0.00s`).
+- Implemented pure procedural layered polyline lightning generator (`LightningBoltGeometry.ts`) with randomized forward segments, bell-curve lateral envelope, longitudinal jitter, and forking branch paths with customizable recursion.
+- Implemented `LightningBoltEffect.ts` with Phaser Graphics, `ADD` blend mode, layered strokes (1px pure white `#ffffff` core, 2.5px soft `#b8d4f8` inner glow, 5px deep blue `#5a7ca8` outer glow), and multi-phase electrical flash (primary strike, rapid extinguish, secondary micro-pulse reusing identical geometry, restrained 0.04–0.12 alpha ambient wash).
+- Accelerated title sequence choreography from ~4.5s down to snappy ~1.65s unskipped:
+  - `0.00s`: Window silhouettes, table silhouette, and active rain visible immediately.
+  - `0.12s`: Hero lightning bolt sweeps across upper sky, illuminating architecture.
+  - `0.25s`: Left candle catches sharply; radial bloom expands.
+  - `0.45s`: Banquet table reveals cleanly.
+  - `0.60s`: Right candle catches sharply; warm glowing pools connect across the table.
+  - `0.75s`: Title typography emerges with 3px upward settle.
+  - `1.05s`: Chairs settle into gothic silhouettes; secondary lightning fork flashes near left window.
+  - `1.40s`: Interactive prompt (`▶ NEW GAME`) and helper text appear.
+  - `1.65s`: Intro complete; prompts begin gentle sinusoidal breathing; idle atmospheric storm loop armed.
+- Responsive input: first click/confirm during intro skips to completed title; second click/confirm triggers snappy 400ms fade transition into `MansionScene`.
+- Idle storm loop: randomized strikes every 5–11s with weighted intensities (55% distant window forks, 35% medium diagonal streaks, 10% hero bolts).
+- Developer QA: `?intro=skip` query parameter bypasses intro; `[T]` key fires hero lightning strike on demand.
+- Audio hook: exposed `onLightning(payload)` event with intensity, distance, and delay to thunder for future sound engine integration without adding fake audio.
+- Added unit tests in `tests/lightning.test.ts` (5 tests).
+
 ---
 
 ## Upcoming Milestones

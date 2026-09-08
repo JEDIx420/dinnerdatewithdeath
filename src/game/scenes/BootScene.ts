@@ -9,6 +9,20 @@ export class BootScene extends Phaser.Scene {
   }
 
   public preload(): void {
+    // 0. Immediate minimal visual presentation so canvas is never a blank screen
+    const bg = this.add.graphics();
+    bg.fillStyle(0x0a0910, 1);
+    bg.fillRect(0, 0, 768, 432);
+
+    const progressGfx = this.add.graphics();
+    this.load.on('progress', (value: number) => {
+      progressGfx.clear();
+      progressGfx.fillStyle(0x3a0c16, 0.6);
+      progressGfx.fillRect(384 - 100, 216 - 2, 200, 4);
+      progressGfx.fillStyle(0x9a7a32, 0.9);
+      progressGfx.fillRect(384 - 100, 216 - 2, 200 * value, 4);
+    });
+
     // Generate crisp gothic procedural environment textures
     generateMansionTextures(this);
 
