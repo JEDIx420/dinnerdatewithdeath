@@ -13,14 +13,14 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   // =========================================================================
   // ZONE 1: DEATH'S BEDCHAMBER (Upper West: x: 48..448, y: 72..320)
   // Private, quiet, gothic elegance. Clean sitting corner on left, away from door.
-  // No hidden windows behind wardrobes. Zero clutter.
+  // Proper visible window on north wall bay with rain outside glass.
   // =========================================================================
-  // 1. Visible Gothic Arched Window on North-West wall bay
+  // 1. Visible Gothic Arched Window on North-West wall bay (y: 155 aligns window top nicely on north wall)
   placements.push({
     id: 'bedchamber_window',
     assetId: 'env02_window_gothic_tall',
     x: 95,
-    y: 75,
+    y: 155,
     scale: 0.65,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
@@ -33,7 +33,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     id: 'bedchamber_armchair',
     assetId: 'bed03_armchair_crimson',
     x: 90,
-    y: 220,
+    y: 235,
     scale: 0.45,
     anchorPreset: 'bottom-center',
     zone: 'bedchamber',
@@ -70,7 +70,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'vanity',
   });
 
-  // 5. Hero Grand Gothic Four-Poster Bed (anchored at x: 180, y: 270)
+  // 5. Hero Grand Gothic Four-Poster Bed (anchored at x: 180, y: 270, pristine floor around it)
   placements.push({
     id: 'bedchamber_bed',
     assetId: 'bed03_bed_grand_gothic',
@@ -111,17 +111,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     disableCollision: true,
   });
 
-  // North wall wainscot panels
-  placements.push({
-    id: 'bedchamber_wainscot_west',
-    assetId: 'wall_panel_wood_wainscot_a',
-    x: 96,
-    y: 84,
-    anchorPreset: 'bottom-center',
-    zone: 'bedchamber',
-    role: 'wainscot',
-    depthClass: 'back-wall',
-  });
+  // North wall wainscot panel (East bay only, leaving window bay on raw stone wall)
   placements.push({
     id: 'bedchamber_wainscot_east',
     assetId: 'wall_panel_wood_wainscot_b',
@@ -159,7 +149,8 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
 
   // =========================================================================
   // ZONE 2: UPPER LANDING & BALUSTRADE OVERLOOK (Upper East: x: 448..832, y: 72..288)
-  // Ceremonial, open, elegant. Grey framed panels removed. Symmetrical and uncluttered.
+  // Ceremonial, open, elegant. Symmetrical and uncluttered.
+  // Balanced architectural statuary flanking staircase balustrade.
   // =========================================================================
   // Symmetrical Balustrades at y: 268
   const [balustradeL, balustradeR] = placeMirroredPair(
@@ -257,7 +248,8 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   // =========================================================================
   // ZONE 3: GREAT HALL & GALLERY (Ground Center: x: 448..832, y: 520..920)
   // Grand, monumental. Bottom of stairs is a STRICT keep-clear zone (zero clutter).
-  // Hero chandelier moved deeper into hall overhead.
+  // Hero chandelier overhead at y: 480 with exact candle-wick lights.
+  // Monumental statues flanking columns in outer gallery.
   // =========================================================================
   // 1. Singular Grand Chandelier lifted overhead at x: 640, y: 480 (revealing floor medallion)
   placements.push({
@@ -323,6 +315,24 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   );
   placements.push(stairBottomNewelL, stairBottomNewelR);
 
+  // Symmetrical Standing Statues in outer gallery corners beside lower massive columns
+  const [hallStatueL, hallStatueR] = placeMirroredPair(
+    'hall_statue_lower',
+    AXIS_X,
+    160,
+    800,
+    'clutter08_statues_02',
+    'clutter08_statues_02',
+    {
+      zone: 'great_hall',
+      role: 'statue',
+      scale: 0.42,
+      flipXRight: true,
+      collisionProfile: 'statue_base',
+    }
+  );
+  placements.push(hallStatueL, hallStatueR);
+
   // =========================================================================
   // ZONE 4: HERO DINING ROOM (Ground West: x: 48..448, y: 520..920)
   // Intimate, formal, romantic dinner for two. Clean isolated banquet table,
@@ -370,7 +380,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     flipX: false, // Faces LEFT toward the table
   });
 
-  // 3. Table Setting: Center Candelabra and individual porcelain plate settings with cutlery
+  // 3. Table Setting: Center Candelabra, individual porcelain plate settings with cutlery, and goblets
   placements.push({
     id: 'dining_candelabra',
     assetId: 'lounge06_candelabra_gold',
@@ -385,9 +395,9 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   placements.push({
     id: 'dining_setting_love',
     assetId: 'dining05_tableware_65',
-    x: -45,
-    y: -20,
-    scale: 0.65,
+    x: -55,
+    y: -28,
+    scale: 0.48,
     parentPlacementId: 'dining_table',
     zone: 'dining_room',
     role: 'tableware',
@@ -396,28 +406,50 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
   placements.push({
     id: 'dining_setting_death',
     assetId: 'dining05_tableware_68',
-    x: 45,
-    y: -20,
-    scale: 0.65,
+    x: 55,
+    y: -28,
+    scale: 0.48,
+    parentPlacementId: 'dining_table',
+    zone: 'dining_room',
+    role: 'tableware',
+    disableCollision: true,
+  });
+  placements.push({
+    id: 'dining_goblet_love',
+    assetId: 'dining05_tableware_69',
+    x: -38,
+    y: -34,
+    scale: 0.60,
+    parentPlacementId: 'dining_table',
+    zone: 'dining_room',
+    role: 'tableware',
+    disableCollision: true,
+  });
+  placements.push({
+    id: 'dining_goblet_death',
+    assetId: 'dining05_tableware_69',
+    x: 38,
+    y: -34,
+    scale: 0.60,
     parentPlacementId: 'dining_table',
     zone: 'dining_room',
     role: 'tableware',
     disableCollision: true,
   });
 
-  // 4. Fear's Velvet Chaise Lounge (along south-west wall, facing right toward landing)
+  // 4. Fear's Velvet Chaise Lounge: Scaled up to match table/chairs (0.58) and rotated facing table
   placements.push({
     id: 'dining_couch_fear',
     assetId: 'lounge06_couch_loveseat',
-    x: 110,
+    x: 120,
     y: 840,
-    scale: 0.46,
+    scale: 0.58,
     anchorPreset: 'bottom-center',
     zone: 'dining_room',
     role: 'sofa_fear',
     depthClass: 'dynamic-solid',
     collisionProfile: 'sofa',
-    flipX: true,
+    angle: -90, // Rotated 90 deg counter-clockwise so seat faces up/toward the table
   });
 
   // 5. North Wall Oak Wine Credenza (clean centered sideboard)
@@ -434,12 +466,12 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'sideboard',
   });
 
-  // 6. Paired Gothic Arched Windows with interior rain masks (restored visible windows)
+  // 6. Paired Gothic Arched Windows with interior rain masks on North Wall (y: 550)
   placements.push({
     id: 'dining_window_left',
     assetId: 'env02_window_gothic_tall',
     x: 105,
-    y: 470,
+    y: 550,
     scale: 0.65,
     anchorPreset: 'bottom-center',
     zone: 'dining_room',
@@ -450,7 +482,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     id: 'dining_window_right',
     assetId: 'env02_window_gothic_tall',
     x: 375,
-    y: 470,
+    y: 550,
     scale: 0.65,
     anchorPreset: 'bottom-center',
     zone: 'dining_room',
@@ -484,7 +516,9 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
 
   // =========================================================================
   // ZONE 5: LOUNGE & HEARTH (Ground East: x: 832..1232, y: 520..920)
-  // Warm, lived-in, cohesive single fireplace composition. Zero scattered fires.
+  // Warm, lived-in, cohesive hearth composition.
+  // Recomposed: Enlarged coffee table, enlarged TV on right facing seating,
+  // single armchair opposite TV, sofas framing table, visible window.
   // =========================================================================
   // 1. Hero Lit Stone Fireplace Hearth at x: 1040, y: 525
   placements.push({
@@ -527,64 +561,7 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     depthClass: 'back-wall-detail',
   });
 
-  // 4. Centered Coffee Table with candelabra & book
-  placements.push({
-    id: 'lounge_coffee_table',
-    assetId: 'lounge06_coffee_table_wood',
-    x: 1040,
-    y: 720,
-    scale: 0.48,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'coffee_table',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'coffee_table',
-  });
-
-  // 5. Main Sofa (West) facing the table
-  placements.push({
-    id: 'lounge_sofa',
-    assetId: 'lounge06_sofa_ornate',
-    x: 935,
-    y: 720,
-    scale: 0.42,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'sofa',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'sofa',
-  });
-
-  // 6. Mirrored Sofa (East) opposite, also facing the table
-  placements.push({
-    id: 'lounge_sofa_mirrored',
-    assetId: 'lounge06_sofa_ornate',
-    x: 1145,
-    y: 720,
-    scale: 0.42,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'sofa',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'sofa',
-    flipX: true,
-  });
-
-  // 7. Small Armchair facing the table from the south
-  placements.push({
-    id: 'lounge_armchair',
-    assetId: 'lounge06_armchair_velvet',
-    x: 1040,
-    y: 795,
-    scale: 0.42,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'armchair',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'armchair',
-  });
-
-  // 8. Tall Leather-Bound Bookshelf with Globe
+  // 4. Tall Leather-Bound Bookshelf with Globe on West wall bay
   placements.push({
     id: 'lounge_bookshelf',
     assetId: 'lounge06_bookshelf_tall',
@@ -598,31 +575,102 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
     collisionProfile: 'bookshelf',
   });
 
-  // 9. Vintage Retro Television Console facing the seating area
-  placements.push({
-    id: 'lounge_tv',
-    assetId: 'lounge06_tv_retro',
-    x: 1180,
-    y: 580,
-    scale: 0.44,
-    anchorPreset: 'bottom-center',
-    zone: 'lounge',
-    role: 'tv',
-    depthClass: 'dynamic-solid',
-    collisionProfile: 'tv_console',
-  });
-
-  // 10. Visible Gothic Arched Window with interior rain mask
+  // 5. Visible Gothic Arched Window on North Wall bay (y: 550)
   placements.push({
     id: 'lounge_window',
     assetId: 'env02_window_gothic_tall',
     x: 1180,
-    y: 470,
+    y: 550,
     scale: 0.65,
     anchorPreset: 'bottom-center',
     zone: 'lounge',
     role: 'window',
     depthClass: 'back-wall-detail',
+  });
+
+  // 6. Larger Centered Coffee Table with candelabra & book (scale: 0.60)
+  placements.push({
+    id: 'lounge_coffee_table',
+    assetId: 'lounge06_coffee_table_wood',
+    x: 1040,
+    y: 720,
+    scale: 0.60,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'coffee_table',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'coffee_table',
+  });
+
+  // 7. Framing Sofas: North Sofa & South Sofa (or West & East)
+  // Two sofas on either side of the table framing the seating area cleanly
+  placements.push({
+    id: 'lounge_sofa',
+    assetId: 'lounge06_sofa_ornate',
+    x: 1040,
+    y: 650,
+    scale: 0.44,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'sofa',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'sofa',
+  });
+  placements.push({
+    id: 'lounge_sofa_south',
+    assetId: 'lounge06_sofa_ornate',
+    x: 1040,
+    y: 795,
+    scale: 0.44,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'sofa',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'sofa',
+  });
+
+  // 8. Single Armchair opposite the TV (West side of table, facing TV/table)
+  placements.push({
+    id: 'lounge_armchair',
+    assetId: 'lounge06_armchair_velvet',
+    x: 915,
+    y: 720,
+    scale: 0.48,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'armchair',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'armchair',
+    flipX: true, // Faces right toward table and TV
+  });
+
+  // 9. Larger Retro TV Console on the RIGHT side, facing the seating/table zone
+  placements.push({
+    id: 'lounge_tv',
+    assetId: 'lounge06_tv_retro',
+    x: 1165,
+    y: 720,
+    scale: 0.56,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'tv',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'tv_console',
+    flipX: true, // Faces left toward the seating area
+  });
+
+  // 10. Restrained Architectural Statuary: Classical statue in South-East corner
+  placements.push({
+    id: 'lounge_statue_corner',
+    assetId: 'clutter08_statues_02',
+    x: 1180,
+    y: 860,
+    scale: 0.46,
+    anchorPreset: 'bottom-center',
+    zone: 'lounge',
+    role: 'statue',
+    depthClass: 'dynamic-solid',
+    collisionProfile: 'statue_base',
   });
 
   // Clean Entrance Portal: Wood columns framing open passage into Great Hall (x: 840)
@@ -651,3 +699,4 @@ export function buildMansionPlacements(): EnvironmentPlacement[] {
 
   return placements;
 }
+

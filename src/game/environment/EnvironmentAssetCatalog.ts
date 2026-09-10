@@ -2950,42 +2950,42 @@ export const ENVIRONMENT_ASSETS: Record<string, EnvironmentAssetDef> = {
     "lightSockets": [
       {
         "id": "candle_1",
-        "localX": 18,
-        "localY": 22,
-        "radius": 40,
-        "intensity": 0.35,
+        "localX": 11,
+        "localY": 130,
+        "radius": 24,
+        "intensity": 0.28,
         "flameMode": "none"
       },
       {
         "id": "candle_2",
-        "localX": 42,
-        "localY": 26,
-        "radius": 40,
-        "intensity": 0.35,
+        "localX": 25,
+        "localY": 104,
+        "radius": 28,
+        "intensity": 0.32,
         "flameMode": "none"
       },
       {
         "id": "candle_3",
-        "localX": 68,
-        "localY": 28,
-        "radius": 44,
-        "intensity": 0.4,
+        "localX": 67,
+        "localY": 115,
+        "radius": 36,
+        "intensity": 0.38,
         "flameMode": "none"
       },
       {
         "id": "candle_4",
-        "localX": 94,
-        "localY": 26,
-        "radius": 40,
-        "intensity": 0.35,
+        "localX": 107,
+        "localY": 104,
+        "radius": 28,
+        "intensity": 0.32,
         "flameMode": "none"
       },
       {
         "id": "candle_5",
-        "localX": 118,
-        "localY": 22,
-        "radius": 40,
-        "intensity": 0.35,
+        "localX": 122,
+        "localY": 130,
+        "radius": 24,
+        "intensity": 0.28,
         "flameMode": "none"
       }
     ],

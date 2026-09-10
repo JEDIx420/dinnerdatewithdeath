@@ -192,16 +192,6 @@ export const MANSION_ROOM_DEF: RoomDefinition = {
       height: 256,
       textureKey: 'floor_stone_blocks_dark',
     },
-    // Bedchamber private subtle runner rug (matching crimson & gold aesthetic)
-    {
-      id: 'dressing_rug',
-      x: 130,
-      y: 240,
-      width: 170,
-      height: 48,
-      textureKey: 'carpet_crimson_border',
-      depth: 200,
-    },
 
     // 2. Upper Landing Floor (Dark wood planks)
     {

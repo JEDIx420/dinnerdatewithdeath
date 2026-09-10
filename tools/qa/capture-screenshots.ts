@@ -23,6 +23,7 @@ async function captureAll(): Promise<void> {
     { name: 'refined_foot_of_stairs.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=greathall' },
     { name: 'refined_dining.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=dining' },
     { name: 'refined_lounge.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=lounge' },
+    { name: 'refined_windows_detail.png', url: 'http://127.0.0.1:4180/?scene=mansion&pos=dining' },
   ];
 
   for (const v of views) {

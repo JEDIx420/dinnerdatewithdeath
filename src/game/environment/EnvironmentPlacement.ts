@@ -23,6 +23,7 @@ export interface EnvironmentPlacement {
   scaleY?: number;
   flipX?: boolean;
   flipY?: boolean;
+  angle?: number;
   alpha?: number;
 
   // Depth control

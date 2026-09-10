@@ -37,7 +37,7 @@ describe('Mansion Room Definition & World Geometry', () => {
     expect(floorIds).toContain('lounge_floor');
 
     // Rugs & Medallion
-    expect(floorIds).toContain('dressing_rug');
+    expect(floorIds).not.toContain('dressing_rug');
     expect(floorIds).toContain('landing_rug');
     expect(floorIds).toContain('hall_medallion');
     expect(floorIds).toContain('dining_rug');

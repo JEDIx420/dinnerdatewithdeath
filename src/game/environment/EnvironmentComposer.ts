@@ -108,6 +108,10 @@ export class EnvironmentComposer {
     }
     sprite.setScale(scaleX, scaleY);
 
+    if (placement.angle !== undefined) {
+      sprite.setAngle(placement.angle);
+    }
+
     if (placement.alpha !== undefined) {
       sprite.setAlpha(placement.alpha);
     }
